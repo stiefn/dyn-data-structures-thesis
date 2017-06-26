@@ -1,0 +1,52 @@
+%
+% Einfache LaTeX-Vorlage für Arbeiten am Lehrstuhl Kranzlmüller / MNM-Team
+% - optimiert für die Arbeit mit gängigen LaTeX-Editoren
+% - funktioniert ohne Makefile und Anpassungen der LaTeX-Verzeichnisstruktur
+% - verwendet Komaskript für ein (nach europäischen Gepflogenheiten) schöneres Layout
+% 
+% v1, 2007 (Michael Brenner)
+% Diese Version: v1.1, 2012 (Michael Brenner)
+% Diese Version: v1.2, 2017 (Michael Brenner)
+% 
+
+
+\documentclass[bibliography=totoc,listof=totoc,BCOR=5mm,DIV=12]{scrbook} % Rand für Bindung: 5mm / falls Index verwendet, ergänze "index=totoc" zu den Optionen 
+\usepackage{ngerman} % Trennung nach neuer deutscher Rechtschreibung, deutsche Sonderzeichen, z.B. \glqq und \grqq für deutsche Anführungszeichen 
+\usepackage[latin1]{inputenc} % Umlaute im Text
+\usepackage{graphicx} % Einfügen von Grafiken  - für PDF-Latex: .pdf und .png (.jpg möglich, sollte aber vermieden werden)
+\usepackage{url}           % URL's (z.B. in Literatur) schöner formatieren
+\usepackage{hyperref} % sorgt für für Hyperlinks in PDF-Dokumenten
+
+\graphicspath{{./Bilder/}}
+
+\input{hyphenation} % in dieses File kommen Wörter die Latex nicht richtig trennt
+
+\begin{document}
+
+% ---------------------------------------------------------------
+\frontmatter % Titelblätter und Erklärung jeweils spezifisch für die jeweilige Uni einbinden
+    \include{./Titel/titel-lmu} % Titelblätter LMU - auskommentieren falls TUM-Arbeit
+%    \include{./Titel/titel-tum} % Titelblätter TUM - auskommentiert lassen falls LMU-Arbeit
+    \thispagestyle{empty}
+    \cleardoublepage
+    \include{./Titel/erklaerung-lmu} % Erklärung (Arbeit selbstständig verfasst) - auskommentieren falls TUM-Arbeit
+%    \include{./Titel/erklaerung-tum} % Erklärung (Arbeit selbstständig verfasst) - auskommentiert lassen falls LMU-Arbeit
+    \thispagestyle{empty}
+    \cleardoublepage
+    \include{abstract} % Abstract
+    \thispagestyle{empty}
+    \tableofcontents % Inhaltsverzeichnis
+
+% ---------------------------------------------------------------
+\mainmatter % die eigentliche Arbeit
+
+    \input{ kapitel1}
+%    \input{kapitel2}
+
+% ---------------------------------------------------------------
+\backmatter % ab hier keine Nummerierung mehr
+    \listoffigures
+    \bibliographystyle{alphadin}
+    \bibliography{./Bib/stud77}
+
+\end{document}
