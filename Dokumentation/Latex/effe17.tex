@@ -16,6 +16,7 @@
 \usepackage{graphicx} % Einfügen von Grafiken  - für PDF-Latex: .pdf und .png (.jpg möglich, sollte aber vermieden werden)
 \usepackage{url}           % URL's (z.B. in Literatur) schöner formatieren
 \usepackage{hyperref} % sorgt für für Hyperlinks in PDF-Dokumenten
+\usepackage{color}
 
 \graphicspath{{./Bilder/}}
 
@@ -40,13 +41,53 @@
 % ---------------------------------------------------------------
 \mainmatter % die eigentliche Arbeit
 
-    \input{ kapitel1}
-%    \input{kapitel2}
+\chapter{Introduction}
+\section{Motivation}
+\section{Scope}
+
+\chapter{Background}
+\section{Graph definition}
+\section{Standard Template Library}
+\section{Partitioned Global Address Space}
+\section{DASH Library}
+
+\chapter{Related Work}
+\section{Shared Memory}
+\subsection{STINGER}
+\subsection{Ligra}
+\section{Distributed Memory}
+\subsection{Parallel Boost Graph Library}
+\subsection{STAPL Parallel Graph Library}
+
+\chapter{Container Concept}
+\section{Interface semantics}
+\section{Computational constraints/assumptions}
+\section{Memory Space}
+\section{Index Space}
+\section{Iteration Space}
+
+\chapter{Reference Implementation}
+
+\chapter{Case studies}
+\section{Static structure}
+\subsection{Graph traversal}
+\subsection{Shortest path evaluation}
+\section{Dynamic Structure}
+\subsection{Graph partitioning}
+\subsection{De Bruijn Graph construction}
+
+\chapter{Evaluation}
+\section{Micro-benchmarks}
+
+\chapter{Conclusion}
+\section{Summary}
+\section{Assessment}
+\section{Outlook}
 
 % ---------------------------------------------------------------
 \backmatter % ab hier keine Nummerierung mehr
     \listoffigures
     \bibliographystyle{alphadin}
-    \bibliography{./Bib/stud77}
+    \bibliography{./Bib/effe17}
 
 \end{document}
