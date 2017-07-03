@@ -8,6 +8,31 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Gus88]{gustafson}
+\textsc{Gustafson}, John~L.:
+\newblock Reevaluating Amdahl's Law.
+\newblock {In: }\emph{Commun. ACM} 31 (1988), Mai, Nr. 5, 532--533.
+\newblock \url{http://dx.doi.org/10.1145/42411.42415}. --
+\newblock DOI 10.1145/42411.42415. --
+\newblock ISSN 0001--0782
+
+\bibitem[Lam13]{numa}
+\textsc{Lameter}, Christoph:
+\newblock NUMA (Non-Uniform Memory Access): An Overview.
+\newblock {In: }\emph{Queue} 11 (2013), Juli, Nr. 7, 40:40--40:51.
+\newblock \url{http://dx.doi.org/10.1145/2508834.2513149}. --
+\newblock DOI 10.1145/2508834.2513149. --
+\newblock ISSN 1542--7730
+
+\bibitem[PTM96]{dismem}
+\textsc{Protic}, J. ; \textsc{Tomasevic}, M.  ; \textsc{Milutinovic}, V.:
+\newblock Distributed shared memory: concepts and systems.
+\newblock {In: }\emph{IEEE Parallel Distributed Technology: Systems
+  Applications} 4 (1996), Summer, Nr. 2, S. 63--71.
+\newblock \url{http://dx.doi.org/10.1109/88.494605}. --
+\newblock DOI 10.1109/88.494605. --
+\newblock ISSN 1063--6552
+
 \bibitem[ZZZ{\etalchar{+}}14]{fusionfs}
 \textsc{Zhao}, D. ; \textsc{Zhang}, Z. ; \textsc{Zhou}, X. ; \textsc{Li}, T. ;
   \textsc{Wang}, K. ; \textsc{Kimpe}, D. ; \textsc{Carns}, P. ; \textsc{Ross},

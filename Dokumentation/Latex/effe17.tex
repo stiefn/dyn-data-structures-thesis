@@ -54,10 +54,27 @@ Furthermore, data-intensive tasks have been gaining a continually growing intere
 \section{Scope and Objectives}
 
 \chapter{Background}
+This chapter covers some fundamental background knowledge needed for a better understanding of the following chapters of this thesis. Only explanations directly relevant to the topics of this thesis are provided.
+
+Since the result of this work is a C++ concept, some important language expressions and concepts are firstly discussed, along with a description of the Standard Template Library on which concepts this work is built upon. The reader is then introduced to the domain of High Performance Computing which is the main application area for this work. A brief overview of the Partitioned Global Address Space programming model is then followed by a description of the DASH Library which provides core concepts used in this thesis.
+
 \section{C++ Concepts}
 \subsection{Language Concepts}
 \subsection{Standard Template Library}
-\section{HPC}
+\section{High Performance Computing}
+High Performance Computing (HPC) is a broad term describing advances for the fastest possible computation of a given problem. Gustafson's Law \cite{gustafson} suggests that a compute system can linearly grow with the problem size: A problem of two times its original size can be computed on a system with twice as many processors in the same time (best case scenario). This means that very large problems can be computed in an acceptable timeframe if there is a sufficiently large compute system available. Depending on the problem size, two different system architectures are used in HPC:
+
+\paragraph{Shared Memory}
+A shared memory system consists of a single node with multiple processors connected to the same random access memory. Memory access for the different processors can be uniform, but many systems implement a non-uniform memory access (NUMA) design where a part of the memory is assigned to each of the processors. A processor in a NUMA system can access its assigned memory faster than the memory of the other processors.
+Because processors can access all data at all times, communication between processors has a low cost which simplifies programming on these systems in comparison to distributed memory systems. Achieving high performance on NUMA systems is more problematic because the programmer has to take data locality into account \cite{numa}.
+
+\paragraph{Distributed Memory}
+Multi-processor systems in which each processor has access to its own memory space are called distributed memory systems. These systems usually consist of several shared memory nodes with the processors of one node not being able to directly access memory of other nodes. While single shared memory systems can only be scaled to a certain extent, the scalability of distributed systems is much higher \cite{dismem}.
+
+The nodes are connected with a network interconnect for communication between the processors. Due to the latency of the interconnect being significantly higher than the latency of a memory bus in a shared memory system, communication is much more costly. This imposes higher demands on the programmers' skills in comparison to shared memory systems.\\
+
+The largest problems in science are computed on ``supercomputers'' like the \textit{SuperMUC} at the \textit{Leibniz Rechenzentrum} in Munich. These distributed memory machines consist of hundreds or even thousands of homogeneous nodes that are connected with a specialized interconnect. To this date, \textit{message passing} is the prevalent programming model for such systems.
+
 \section{Partitioned Global Address Space}
 \section{DASH Library}
 
