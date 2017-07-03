@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Problem statement}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Scope}{1}{section.1.2}
+\contentsline {section}{\numberline {1.2}Scope and Objectives}{1}{section.1.2}
 \contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}C++ Concepts}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Language Concepts}{3}{subsection.2.1.1}
