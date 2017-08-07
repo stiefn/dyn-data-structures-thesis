@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  7 AUG 2017 13:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  7 AUG 2017 16:57
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -369,73 +369,94 @@ chapter 2.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
-[4]
-chapter 3.
-[5
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
 
 
-] [6
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+[4] <Bilder/pgas.pdf, id=287, 268.50313pt x 205.76875pt>
+File: Bilder/pgas.pdf Graphic file (type pdf)
+ <use Bilder/pgas.pdf>
+Package pdftex.def Info: Bilder/pgas.pdf used on input line 114.
+(pdftex.def)             Requested size: 437.46118pt x 335.2525pt.
+
+[5 <./Bilder/pgas.pdf>] [6
 
 
 ]
-chapter 4.
+chapter 3.
 [7] [8
 
 
 ]
-chapter 5.
+chapter 4.
 [9] [10
 
 
 ]
-chapter 6.
+chapter 5.
 [11] [12
 
 
 ]
-chapter 7.
+chapter 6.
 [13] [14
 
 
 ]
-chapter 8.
+chapter 7.
 [15] [16
+
+
+]
+chapter 8.
+[17] [18
 
 
 ] (effe17.lof)
 \tf@lof=\write5
- (effe17.bbl [17
+ (effe17.bbl [19
 
 
-] [18
+] [20
 
 
 ]
 chapter without number
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
  (effe17.aux (Titel/titel-lmu.aux) (Titel/erklaerung-lmu.aux)
 (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
 Package rerunfilecheck Info: File `effe17.out' has not changed.
-(rerunfilecheck)             Checksum: 3D3D146048699FBAACB2E4E2D8B8FC55;2397.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
+(rerunfilecheck)             Checksum: 946483E5970EA137CBD44C339BCDA4DE;2410.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 7116 strings out of 493673
- 111111 string characters out of 3141527
- 264054 words of memory out of 3000000
- 10268 multiletter control sequences out of 15000+200000
+ 7136 strings out of 493673
+ 111354 string characters out of 3141527
+ 264363 words of memory out of 3000000
+ 10279 multiletter control sequences out of 15000+200000
  11491 words of font info for 40 fonts, out of 3000000 for 9000
  1066 hyphenation exceptions out of 8191
- 41i,8n,66p,769b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,66p,809b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
@@ -449,9 +470,9 @@ s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files
 86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on effe17.pdf (29 pages, 236953 bytes).
+Output written on effe17.pdf (31 pages, 1033891 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 310 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 500000)
+ 315 words of extra memory for PDF output out of 10000 (max. 10000000)
 

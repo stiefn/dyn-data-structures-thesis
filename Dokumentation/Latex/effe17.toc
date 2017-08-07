@@ -9,32 +9,32 @@
 \contentsline {paragraph}{\nonumberline Shared Memory}{3}{section*.2}
 \contentsline {paragraph}{\nonumberline Distributed Memory}{3}{section*.3}
 \contentsline {section}{\numberline {2.3}Partitioned Global Address Space}{4}{section.2.3}
-\contentsline {section}{\numberline {2.4}DASH Library}{4}{section.2.4}
-\contentsline {chapter}{\numberline {3}Related Work}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Shared Memory}{5}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}STINGER}{5}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Ligra}{5}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Distributed Memory}{5}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Parallel Boost Graph Library}{5}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}STAPL Parallel Graph Library}{5}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Graph Container Concepts}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Memory Space}{7}{section.4.1}
-\contentsline {section}{\numberline {4.2}Index Space}{7}{section.4.2}
-\contentsline {section}{\numberline {4.3}Iteration Space}{7}{section.4.3}
-\contentsline {section}{\numberline {4.4}Semantics}{7}{section.4.4}
-\contentsline {chapter}{\numberline {5}Reference Implementation}{9}{chapter.5}
-\contentsline {chapter}{\numberline {6}Case studies}{11}{chapter.6}
-\contentsline {section}{\numberline {6.1}Static structure}{11}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{11}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{11}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Dynamic Structure}{11}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{11}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{11}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Evaluation}{13}{chapter.7}
-\contentsline {section}{\numberline {7.1}Micro-benchmarks}{13}{section.7.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{15}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{15}{section.8.1}
-\contentsline {section}{\numberline {8.2}Assessment}{15}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{15}{section.8.3}
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{17}{chapter*.4}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{19}{chapter*.5}
+\contentsline {section}{\numberline {2.4}DASH C++ Template Library}{5}{section.2.4}
+\contentsline {chapter}{\numberline {3}Related Work}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Shared Memory}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}STINGER}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Ligra}{7}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Distributed Memory}{7}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Parallel Boost Graph Library}{7}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}STAPL Parallel Graph Library}{7}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Graph Container Concepts}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Memory Space}{9}{section.4.1}
+\contentsline {section}{\numberline {4.2}Index Space}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}Iteration Space}{9}{section.4.3}
+\contentsline {section}{\numberline {4.4}Semantics}{9}{section.4.4}
+\contentsline {chapter}{\numberline {5}Reference Implementation}{11}{chapter.5}
+\contentsline {chapter}{\numberline {6}Case studies}{13}{chapter.6}
+\contentsline {section}{\numberline {6.1}Static structure}{13}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{13}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{13}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Dynamic Structure}{13}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{13}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{13}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{15}{chapter.7}
+\contentsline {section}{\numberline {7.1}Micro-benchmarks}{15}{section.7.1}
+\contentsline {chapter}{\numberline {8}Conclusion}{17}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{17}{section.8.1}
+\contentsline {section}{\numberline {8.2}Assessment}{17}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{17}{section.8.3}
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{19}{chapter*.4}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{21}{chapter*.5}

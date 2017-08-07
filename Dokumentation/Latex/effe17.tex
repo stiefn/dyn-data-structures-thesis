@@ -82,6 +82,7 @@ Since the result of this work is a C++ concept, some important language expressi
 \subsection{Language Concepts}
 \subsection{Standard Template Library}
 \section{High Performance Computing}
+\label{hpc_section}
 High Performance Computing (HPC) is a broad term describing advances for the fastest possible computation of a given problem. Gustafson's Law \cite{gustafson} suggests that a compute system can linearly grow with the problem size: A problem of two times its original size can be computed on a system with twice as many processors in the same time (best case scenario). This means that very large problems can be computed in an acceptable timeframe if there is a sufficiently large compute system available. Depending on the problem size, two different system architectures are used in HPC:
 
 \paragraph{Shared Memory}
@@ -96,7 +97,28 @@ The nodes are connected with a network interconnect for communication between th
 The largest problems in science are computed on ``supercomputers'' like the \textit{SuperMUC} at the \textit{Leibniz Rechenzentrum} in Munich. These distributed memory machines consist of hundreds or even thousands of homogeneous nodes that are connected with a specialized interconnect. To this date, \textit{message passing} is the prevalent programming model for such systems.
 
 \section{Partitioned Global Address Space}
-\section{DASH Library}
+\textit{Shared Memory} and \textit{Message Passing} are the dominant models in HPC as of this writing. As pointed out in \autoref{hpc_section} however, the usage of Message Passing requires high skills in computer architecture and programming. To ease this problem, the Partitioned Global Address Space (PGAS) model has been proposed. It unifies some of the benefits of both of these models by creating a global address space over the initially local-only address spaces of distributed machines.\\
+
+\autoref{pgas_figure} a) presents the architecture of a shared-memory machine: Multiple processors share a common address space. The processors are attached to the same memory over a bus. In some systems, memory might be local to some processors which means the rest of the processors has a higher latency when trying to access the non-local memory. Still, every processor can access every part of the address space. Communication takes place \textit{implicitly} by writing and reading shared variables.  Because data written by one processor can be accessed by another processor in a fast manner, little care has to be taken regarding the decomposition of data. For this reason however, shared memory programs are typically not scalable on distributed machines \cite{apgas}.\\
+
+\autoref{pgas_figure} b) shows that a distributed memory machine basically consists of several shared memory machines linked to each other via an interconnect. Since processors cannot directly access data stored in the memory of other machines, \textit{explicit communication} is needed in order to synchronize the processors. This is typically done by two-sided communication: The \textit{sending} of a message has to be accepted at the remote machine with a a corresponding \textit{receive} call. 
+
+Machines conduct their computations simultaneously and either synchronize in discrete time intervals or exchange data asynchronously. Either way, sending data over an interconnect imposes high latency and low throughput in comparison to the data access over a memory bus in shared memory systems. For this reason, programmers have to carefully decompose data in order to distribute the work load uniformly and minimize communication overhead.\\
+
+\autoref{pgas_figure} c) illustrates the concept of Partitioned Global Address Space: The local portions of memory are unified under a global address space which allows processors to directly access data on remote machines. Data access is performed using on-sided communication: No \textit{receive} call on the remote machine is needed. 
+
+Since data transferal over an interconnect is still costly, programmers have to take the same care for data locality as with the traditional message passing approach. To allow for this, the locality of a datum is directly exposed to the programmer.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/pgas.pdf}
+	\caption{View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}
+	\label{pgas_figure}
+\end{figure}
+
+Existing PGAS approaches are mainly comprised of dedicated programming languages such as Unified Parallel C (UPC) \cite{upc}, Co-Array Fortran \cite{co_array_fortran} or Chapel \cite{chapel} that allow for compiler optimizations in respect to distributed machines but lack portability and reach. In contrast to this, efforts exist to create libraries for existing programming languages used by many HPC systems.
+
+\section{DASH C++ Template Library}
 
 \chapter{Related Work}
 \section{Shared Memory}
