@@ -105,7 +105,7 @@ The largest problems in science are computed on ``supercomputers'' like the \tex
 
 Machines conduct their computations simultaneously and either synchronize in discrete time intervals or exchange data asynchronously. Either way, sending data over an interconnect imposes high latency and low throughput in comparison to the data access over a memory bus in shared memory systems. For this reason, programmers have to carefully decompose data in order to distribute the work load uniformly and minimize communication overhead.\\
 
-\autoref{pgas_figure} c) illustrates the concept of Partitioned Global Address Space: The local portions of memory are unified under a global address space which allows processors to directly access data on remote machines. Data access is performed using on-sided communication: No \textit{receive} call on the remote machine is needed. 
+\autoref{pgas_figure} c) illustrates the concept of Partitioned Global Address Space: The local portions of memory are unified under a global address space which allows processors to directly access data on remote machines. Data access is performed using one-sided communication: No \textit{receive} call on the remote machine is needed. 
 
 Since data transferal over an interconnect is still costly, programmers have to take the same care for data locality as with the traditional message passing approach. To allow for this, the locality of a datum is directly exposed to the programmer.
 
@@ -119,6 +119,19 @@ Since data transferal over an interconnect is still costly, programmers have to 
 Existing PGAS approaches are mainly comprised of dedicated programming languages such as Unified Parallel C (UPC) \cite{upc}, Co-Array Fortran \cite{co_array_fortran} or Chapel \cite{chapel} that allow for compiler optimizations in respect to distributed machines but lack portability and reach. In contrast to this, efforts exist to create libraries for existing programming languages used by many HPC systems.
 
 \section{DASH C++ Template Library}
+DASH \cite{dash} is a compiler-free PGAS approach: It consists of a simple C++ library that can be compiled with any C++ compiler and thus can be used out-of-the-box on most HPC systems. The library is part of the Priority Programme ``Software for Exascale Computing'' (SPPEXA)\footnote[1]{http://www.sppexa.de} which supports research on computing systems achieving $10^{18}$ floating point operations per second and above. While PGAS languages require existing programs to be completely rewritten from scratch, DASH allows the applications to be incrementally ported and thus facilitates wider adoption of the PGAS model in the HPC community.
+
+DASH operates on top of the \textit{DASH Runtime} (DART) which is a PGAS memory allocation and communication abstraction written in C. DART enables global memory allocation, pointers to remote memory locations and one-sided communication on top of existing libraries like MPI \cite{mpi3} or GASPI \cite{gaspi}. With DART-MPI \cite{dart_mpi}, a fully functional DART abstraction on top of MPI-3 is used in DASH releases at the time of this writing.
+
+In DASH, processing elements are referred to as \textit{units}. Units can be any processing element such as threads or processes. DASH programs are implemented using the Single Program Multiple Data (SPMD) model: The data is partitioned onto the participating units and each unit executes the same code on its part of the data. Furthermore, units  form \textit{teams} that can be created at runtime. Because HPC hardware topologies become more complex over time (e.g. \cite{dragonfly}), DASH supports hierarchical team creation to allow for a more fine-grained exploitation of data locality compared to the typical local-remote distinction of the PGAS model.
+
+Data is referred to in terms of global pointers and references. A \texttt{GlobPtr<T>} object holds information about the unit and local memory location of the referenced datum. It can be dereferenced to a \texttt{GlobRef<T>} object which behaves like a C++ reference and can be converted to an object of type \texttt{T}. This type conversion triggers a one-sided get operation transferring the data from its remote source to the caller. Similarly, data can be written into the referenced memory location of a \texttt{GlobRef<T>} object.
+
+DASH provides a set of containers for distributed data storage. Aside from the static data structures Array and Matrix, dynamic data structures are available. Since the graph concepts of this work belong into the latter category, details of it are discussed in the following.\\
+
+Dynamic allocation in DASH is encapsulated in the \texttt{GlobHeapMem} concept. \texttt{GlobHeapMem} offers two basic operations to dynamically allocate memory during runtime: \texttt{grow} and \texttt{shrink}. These operations increase or decrease the local size of the memory allocated on the respective unit. Changes in memory space are not reflected in global address space until the operation \texttt{commit} is called which publishes the changes across all units.
+
+A dynamic container in DASH pre-allocates some memory during its initialization. When the  memory is completely used, further additions of elements result in \texttt{GlobHeapMem.grow} operations. A call to the \texttt{barrier} operation of the container results in all newly added elements of the container to be publicly available on all units.
 
 \chapter{Related Work}
 \section{Shared Memory}

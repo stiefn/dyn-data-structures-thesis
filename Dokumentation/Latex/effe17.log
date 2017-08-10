@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  7 AUG 2017 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  10 AUG 2017 11:46
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -393,13 +393,29 @@ File: Bilder/pgas.pdf Graphic file (type pdf)
  <use Bilder/pgas.pdf>
 Package pdftex.def Info: Bilder/pgas.pdf used on input line 114.
 (pdftex.def)             Requested size: 437.46118pt x 335.2525pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 122.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 122.
 
-[5 <./Bilder/pgas.pdf>] [6
+[5 <./Bilder/pgas.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
 
 
-]
+Overfull \hbox (0.26495pt too wide) in paragraph at lines 132--133
+\OT1/cmr/m/n/10.95 of-fers two ba-sic ope-ra-ti-ons to dy-na-mi-cal-ly al-lo-ca
+-te me-mo-ry du-ring run-ti-me: \OT1/cmtt/m/n/10.95 grow \OT1/cmr/m/n/10.95 and
+ \OT1/cmtt/m/n/10.95 shrink\OT1/cmr/m/n/10.95 .
+ []
+
+[6]
 chapter 3.
-[7] [8
+[7
+
+
+] [8
 
 
 ]
@@ -437,42 +453,44 @@ chapter 8.
 
 ]
 chapter without number
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
- [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
+[21])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
+ [22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
  (effe17.aux (Titel/titel-lmu.aux) (Titel/erklaerung-lmu.aux)
 (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
 Package rerunfilecheck Info: File `effe17.out' has not changed.
 (rerunfilecheck)             Checksum: 946483E5970EA137CBD44C339BCDA4DE;2410.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
- 7136 strings out of 493673
- 111354 string characters out of 3141527
- 264363 words of memory out of 3000000
- 10279 multiletter control sequences out of 15000+200000
- 11491 words of font info for 40 fonts, out of 3000000 for 9000
+ 7158 strings out of 493673
+ 111568 string characters out of 3141527
+ 264531 words of memory out of 3000000
+ 10291 multiletter control sequences out of 15000+200000
+ 12403 words of font info for 43 fonts, out of 3000000 for 9000
  1066 hyphenation exceptions out of 8191
- 41i,8n,66p,809b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,66p,809b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on effe17.pdf (31 pages, 1033891 bytes).
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on effe17.pdf (32 pages, 1066337 bytes).
 PDF statistics:
- 472 PDF objects out of 1000 (max. 8388607)
- 82 named destinations out of 1000 (max. 500000)
+ 497 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
  315 words of extra memory for PDF output out of 10000 (max. 10000000)
 
