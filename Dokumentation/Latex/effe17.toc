@@ -36,5 +36,5 @@
 \contentsline {section}{\numberline {8.1}Summary}{17}{section.8.1}
 \contentsline {section}{\numberline {8.2}Assessment}{17}{section.8.2}
 \contentsline {section}{\numberline {8.3}Outlook}{17}{section.8.3}
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{19}{chapter*.4}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{21}{chapter*.5}
+\contentsline {chapter}{\nonumberline List of Figures}{19}{chapter*.4}
+\contentsline {chapter}{\nonumberline Bibliography}{21}{chapter*.5}
