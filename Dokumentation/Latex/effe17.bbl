@@ -51,6 +51,16 @@
 \newblock DOI 10.1145/42411.42415. --
 \newblock ISSN 0001--0782
 
+\bibitem[{ISO}12]{c++11}
+\textsc{{ISO}}:
+\newblock \emph{{ISO/IEC 14882:2011 Information technology --- Programming
+  languages --- C++}}.
+\newblock Geneva, Switzerland : International Organization for Standardization,
+  2012. --
+\newblock  1338 (est.) S.
+\newblock
+  \url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=50372}
+
 \bibitem[KDSA08]{dragonfly}
 \textsc{Kim}, John ; \textsc{Dally}, Wiliam~J. ; \textsc{Scott}, Steve  ;
   \textsc{Abts}, Dennis:

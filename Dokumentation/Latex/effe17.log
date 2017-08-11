@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  10 AUG 2017 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  10 AUG 2017 15:54
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -363,103 +363,103 @@ chapter 2.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-[4] <Bilder/pgas.pdf, id=287, 268.50313pt x 205.76875pt>
+<Bilder/pgas.pdf, id=300, 268.50313pt x 205.76875pt>
 File: Bilder/pgas.pdf Graphic file (type pdf)
  <use Bilder/pgas.pdf>
-Package pdftex.def Info: Bilder/pgas.pdf used on input line 113.
+Package pdftex.def Info: Bilder/pgas.pdf used on input line 128.
 (pdftex.def)             Requested size: 437.46118pt x 335.2525pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 121.
+(Font)              <9> on input line 137.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 121.
+(Font)              <5> on input line 137.
 
-[5 <./Bilder/pgas.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
-[6]
-chapter 3.
-[7
-
-
-] [8
+[6 <./Bilder/pgas.pdf>] [7] [8
 
 
 ]
-chapter 4.
+chapter 3.
 [9] [10
 
 
 ]
-chapter 5.
+chapter 4.
 [11] [12
 
 
 ]
-chapter 6.
+chapter 5.
 [13] [14
 
 
 ]
-chapter 7.
+chapter 6.
 [15] [16
 
 
 ]
-chapter 8.
+chapter 7.
 [17] [18
+
+
+]
+chapter 8.
+[19] [20
 
 
 ] (effe17.lof)
 \tf@lof=\write5
- (effe17.bbl [19
+ (effe17.bbl [21
 
 
-] [20
+] [22
 
 
 ]
 chapter without number
-[21])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
- [22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
+[23])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
+ [24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
  (effe17.aux (Titel/titel-lmu.aux) (Titel/erklaerung-lmu.aux)
 (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
 Package rerunfilecheck Info: File `effe17.out' has not changed.
-(rerunfilecheck)             Checksum: 37D57BE0EC62BED144B763AAA92C565E;2396.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
+(rerunfilecheck)             Checksum: 1FB083909A8D7253B860FB8FE885D339;2398.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 6993 strings out of 493673
- 109548 string characters out of 3141527
- 261234 words of memory out of 3000000
- 10130 multiletter control sequences out of 15000+200000
+ 7008 strings out of 493673
+ 109704 string characters out of 3141527
+ 261367 words of memory out of 3000000
+ 10133 multiletter control sequences out of 15000+200000
  12403 words of font info for 43 fonts, out of 3000000 for 9000
  1066 hyphenation exceptions out of 8191
- 41i,8n,66p,809b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,9n,66p,809b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
@@ -475,9 +475,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on effe17.pdf (32 pages, 1067604 bytes).
+Output written on effe17.pdf (34 pages, 1073974 bytes).
 PDF statistics:
- 497 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
+ 523 PDF objects out of 1000 (max. 8388607)
+ 101 named destinations out of 1000 (max. 500000)
  315 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -78,8 +78,23 @@ This chapter covers some fundamental background knowledge needed for a better un
 Since the result of this work is a C++ concept, some important language expressions and concepts are firstly discussed, along with a description of the Standard Template Library on which concepts this work is built upon. The reader is then introduced to the domain of High Performance Computing which is the main application area for this work. A brief overview of the Partitioned Global Address Space programming model is then followed by a description of the DASH Library which provides core concepts used in this thesis.
 
 \section{C++ Concepts}
+The graph concepts of this work are part of the DASH C++ Template Library (see \autoref{dash_section}). For this reason, the reference implementation is written in C++11 \cite{c++11}. This section illustrates some basic knowledge about important C++ concepts used in the implementation description of \autoref{impl_section}.
+
 \subsection{Language Concepts}
+\subsubsection{Value and referential semantics}
+%copy elision
+\subsubsection{Operator Overloading}
+\subsubsection{Const correctness}
+\subsubsection{Static polymorphism}
+\subsubsection{Resource Acquisition Is Initialization}
+\subsubsection{Rule of three/five/zero}
+
 \subsection{Standard Template Library}
+\subsubsection{Concepts}
+\subsubsection{Iterators}
+\subsubsection{Containers}
+
+
 \section{High Performance Computing}
 \label{hpc_section}
 High Performance Computing (HPC) is a broad term describing advances for the fastest possible computation of a given problem. Gustafson's Law \cite{gustafson} suggests that a compute system can linearly grow with the problem size: A problem of two times its original size can be computed on a system with twice as many processors in the same time (best case scenario). This means that very large problems can be computed in an acceptable timeframe if there is a sufficiently large compute system available. Depending on the problem size, two different system architectures are used in HPC:
@@ -118,6 +133,7 @@ Since data transferal over an interconnect is still costly, programmers have to 
 Existing PGAS approaches are mainly comprised of dedicated programming languages such as Unified Parallel C (UPC) \cite{upc}, Co-Array Fortran \cite{co_array_fortran} or Chapel \cite{chapel} that allow for compiler optimizations in respect to distributed machines but lack portability and reach. In contrast to this, efforts exist to create libraries for existing programming languages used by many HPC systems.
 
 \section{DASH C++ Template Library}
+\label{dash_section}
 DASH \cite{dash} is a compiler-free PGAS approach: It consists of a simple C++ library that can be compiled with any C++ compiler and thus can be used out-of-the-box on most HPC systems. The library is part of the Priority Programme ``Software for Exascale Computing'' (SPPEXA)\footnote[1]{http://www.sppexa.de} which supports research on computing systems achieving $10^{18}$ floating point operations per second and above. While PGAS languages require existing programs to be completely rewritten from scratch, DASH allows the applications to be incrementally ported and thus facilitates wider adoption of the PGAS model in the HPC community.
 
 DASH operates on top of the \textit{DASH Runtime} (DART) which is a PGAS memory allocation and communication abstraction written in C. DART enables global memory allocation, pointers to remote memory locations and one-sided communication on top of existing libraries like MPI \cite{mpi3} or GASPI \cite{gaspi}. With DART-MPI \cite{dart_mpi}, a fully functional DART abstraction on top of MPI-3 is used in DASH releases at the time of this writing.
@@ -150,6 +166,7 @@ A dynamic container in DASH pre-allocates some memory during its initialization.
 %Computational constraints/assumptions
 
 \chapter{Reference Implementation}
+\label{impl_section}
 
 \chapter{Case studies}
 \section{Static structure}

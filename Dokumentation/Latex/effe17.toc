@@ -4,37 +4,46 @@
 \contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}C++ Concepts}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Language Concepts}{3}{subsection.2.1.1}
+\contentsline {subsubsection}{\nonumberline Value and referential semantics}{3}{section*.2}
+\contentsline {subsubsection}{\nonumberline Operator Overloading}{3}{section*.3}
+\contentsline {subsubsection}{\nonumberline Const correctness}{3}{section*.4}
+\contentsline {subsubsection}{\nonumberline Static polymorphism}{3}{section*.5}
+\contentsline {subsubsection}{\nonumberline Resource Acquisition Is Initialization}{3}{section*.6}
+\contentsline {subsubsection}{\nonumberline Rule of three/five/zero}{3}{section*.7}
 \contentsline {subsection}{\numberline {2.1.2}Standard Template Library}{3}{subsection.2.1.2}
+\contentsline {subsubsection}{\nonumberline Concepts}{3}{section*.8}
+\contentsline {subsubsection}{\nonumberline Iterators}{3}{section*.9}
+\contentsline {subsubsection}{\nonumberline Containers}{3}{section*.10}
 \contentsline {section}{\numberline {2.2}High Performance Computing}{3}{section.2.2}
-\contentsline {paragraph}{\nonumberline Shared Memory}{3}{section*.2}
-\contentsline {paragraph}{\nonumberline Distributed Memory}{3}{section*.3}
+\contentsline {paragraph}{\nonumberline Shared Memory}{4}{section*.11}
+\contentsline {paragraph}{\nonumberline Distributed Memory}{4}{section*.12}
 \contentsline {section}{\numberline {2.3}Partitioned Global Address Space}{4}{section.2.3}
 \contentsline {section}{\numberline {2.4}DASH C++ Template Library}{5}{section.2.4}
-\contentsline {chapter}{\numberline {3}Related Work}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Shared Memory}{7}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}STINGER}{7}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Ligra}{7}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Distributed Memory}{7}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Parallel Boost Graph Library}{7}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}STAPL Parallel Graph Library}{7}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Graph Container Concepts}{9}{chapter.4}
-\contentsline {section}{\numberline {4.1}Memory Space}{9}{section.4.1}
-\contentsline {section}{\numberline {4.2}Index Space}{9}{section.4.2}
-\contentsline {section}{\numberline {4.3}Iteration Space}{9}{section.4.3}
-\contentsline {section}{\numberline {4.4}Semantics}{9}{section.4.4}
-\contentsline {chapter}{\numberline {5}Reference Implementation}{11}{chapter.5}
-\contentsline {chapter}{\numberline {6}Case studies}{13}{chapter.6}
-\contentsline {section}{\numberline {6.1}Static structure}{13}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{13}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{13}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Dynamic Structure}{13}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{13}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{13}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Evaluation}{15}{chapter.7}
-\contentsline {section}{\numberline {7.1}Micro-benchmarks}{15}{section.7.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{17}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{17}{section.8.1}
-\contentsline {section}{\numberline {8.2}Assessment}{17}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{17}{section.8.3}
-\contentsline {chapter}{\nonumberline List of Figures}{19}{chapter*.4}
-\contentsline {chapter}{\nonumberline Bibliography}{21}{chapter*.5}
+\contentsline {chapter}{\numberline {3}Related Work}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Shared Memory}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}STINGER}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Ligra}{9}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Distributed Memory}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Parallel Boost Graph Library}{9}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}STAPL Parallel Graph Library}{9}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Graph Container Concepts}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Memory Space}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}Index Space}{11}{section.4.2}
+\contentsline {section}{\numberline {4.3}Iteration Space}{11}{section.4.3}
+\contentsline {section}{\numberline {4.4}Semantics}{11}{section.4.4}
+\contentsline {chapter}{\numberline {5}Reference Implementation}{13}{chapter.5}
+\contentsline {chapter}{\numberline {6}Case studies}{15}{chapter.6}
+\contentsline {section}{\numberline {6.1}Static structure}{15}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{15}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{15}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Dynamic Structure}{15}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{15}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{15}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{17}{chapter.7}
+\contentsline {section}{\numberline {7.1}Micro-benchmarks}{17}{section.7.1}
+\contentsline {chapter}{\numberline {8}Conclusion}{19}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{19}{section.8.1}
+\contentsline {section}{\numberline {8.2}Assessment}{19}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{19}{section.8.3}
+\contentsline {chapter}{\nonumberline List of Figures}{21}{chapter*.13}
+\contentsline {chapter}{\nonumberline Bibliography}{23}{chapter*.14}
