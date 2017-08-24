@@ -16,6 +16,32 @@
 \usepackage{url}           % URL's (z.B. in Literatur) schöner formatieren
 \usepackage{hyperref} % sorgt für für Hyperlinks in PDF-Dokumenten
 \usepackage{color}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{lightgray}{rgb}{0.5,0.5,0.5}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=6mm,
+  belowskip=6mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{lightgray},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\newtheorem{defi}{Definition}[chapter]
 
 \graphicspath{{./Bilder/}}
 
@@ -78,9 +104,12 @@ This chapter covers some fundamental background knowledge needed for a better un
 Since the result of this work is a C++ concept, some important language expressions and concepts are firstly discussed, along with a description of the Standard Template Library on which concepts this work is built upon. The reader is then introduced to the domain of High Performance Computing which is the main application area for this work. A brief overview of the Partitioned Global Address Space programming model is then followed by a description of the DASH Library which provides core concepts used in this thesis.
 
 \section{C++ Concepts}
+\label{cpp_section}
 The graph concepts of this work are part of the DASH C++ Template Library (see \autoref{dash_section}). For this reason, the reference implementation is written in C++11 \cite{c++11}. This section illustrates some basic knowledge about important C++ concepts used in the implementation description of \autoref{impl_section}.
 
 \subsection{Language Concepts}
+
+
 \subsubsection{Value and referential semantics}
 %copy elision
 \subsubsection{Operator Overloading}
@@ -144,9 +173,20 @@ Data is referred to in terms of global pointers and references. A \texttt{GlobPt
 
 DASH provides a set of containers for distributed data storage. Aside from the static data structures Array and Matrix, dynamic data structures are available. Since the graph concepts of this work belong into the latter category, details of it are discussed in the following.\\
 
+\subsection{Dynamic memory allocation}
+\label{dash_mem_alloc_section}
 Dynamic allocation in DASH is encapsulated in the \texttt{GlobHeapMem} concept. \texttt{GlobHeapMem} offers two basic operations to dynamically allocate memory during runtime: \texttt{grow} and \texttt{shrink}. These operations increase or decrease the local size of the memory allocated on the respective unit. Changes in memory space are not reflected in global address space until the operation \texttt{commit} is called which publishes the changes across all units.
 
-A dynamic container in DASH pre-allocates some memory during its initialization. When the  memory is completely used, further additions of elements result in \texttt{GlobHeapMem.grow} operations. A call to the \texttt{barrier} operation of the container results in all newly added elements of the container to be publicly available on all units.
+A dynamic container in DASH pre-allocates some memory during its initialization. When the  memory is completely used, further additions of elements result in \texttt{GlobHeapMem.grow} operations. A call to the \texttt{barrier} operation of the container results in all newly added elements of the container to be publicly available on all units.\\
+
+Multiple \texttt{grow} operations result in a scattered memory space: Each call to \texttt{grow} creates a new \textit{bucket} - a contiguous memory region in the local Heap. A class implementing the \texttt{GlobHeapMem} concept keeps track of each bucket on each unit so that element indices can be translated to concrete memory locations. \autoref{dash_dynamic_mem_space_figure} illustrates the memory spaces of two units after two grow operations for six elements each have been called. The buckets are allocated at different memory locations. Data access to an element therefore requires the memory location of the bucket and the offset of the element inside the bucket. For this reason, bucket locations and sizes are exchanged between all units during a \texttt{commit} operation and a reference to the object holding the bucket data is needed in every pointer and iterator.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/dash_dynamic_mem_space.pdf}
+	\caption{Memory space of two units after two \texttt{GlobHeapMem.grow} operations}
+	\label{dash_dynamic_mem_space_figure}
+\end{figure}
 
 \chapter{Related Work}
 \section{Shared Memory}
@@ -157,9 +197,13 @@ A dynamic container in DASH pre-allocates some memory during its initialization.
 \subsection{STAPL Parallel Graph Library}
 
 \chapter{Graph Container Concepts}
-\section{Memory Space}
+\label{concept_section}
+\section{Fundamentals}
 \section{Index Space}
-\section{Iteration Space}
+\section{Memory Space}
+\label{memspace_section}
+\section{Element iteration}
+\label{iteration_concept_section}
 %http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3242.pdf ab 718
 %hierarchie
 \section{Semantics}
@@ -167,6 +211,117 @@ A dynamic container in DASH pre-allocates some memory during its initialization.
 
 \chapter{Reference Implementation}
 \label{impl_section}
+This section explains a concrete reference implementation of the concepts in \autoref{concept_section}. The implementation is part of the DASH C++ Template Library and thus written in C++11. It is based on basic C++ concepts illustrated in \autoref{cpp_section}. The reference implementation will be referred to as \texttt{dash::Graph} in this chapter.
+
+\section{Overview}
+\texttt{dash::Graph} is part of the dynamic data containers of the DASH Library. As such, it is interacting with existing components of the library. \autoref{impl_overview_figure} depicts the components and their main interactions.\\
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/impl_overview.pdf}
+	\caption{dash::Graph component overview}
+	\label{impl_overview_figure}
+\end{figure}
+
+The \texttt{Graph} gets initialized with a reference to an existing \texttt{Team}. By default, this is \texttt{Team::All()} which includes all units DASH has been initialized with. The \texttt{Graph} creates three instances of \texttt{GlobHeapContiguousMem} for vertices, inbound edges and outbound edges. These instances are used to globally allocate memory for the respective elements. Since the \texttt{Graph} also allows for the iteration of all (inbound and outbound) edges, \texttt{GlobHeapCombinedMem} unifies the memory spaces of the two \texttt{GlobHeapContiguousMem} instances. Both \texttt{GlobHeapContiguousMem} and \texttt{GlobHeapCombinedMem} use a specialized template version of \texttt{GlobPtr} to iterate over the memory space. Each \texttt{GlobPtr} object can then be dereferenced to a \texttt{GlobSharedRef} object which enables direct access to the referenced element. 
+
+\subsection{Pointers and references}
+To allow \texttt{GlobPtr} and \texttt{GlobSharedRef} act like real pointers and references respectively, operators like the increment and dereference operators are overloaded. This results in usage analogous to native pointers and references:
+
+\begin{lstlisting}[caption={Operator overloading in GlobPtr and GlobSharedRef}\label{globptr_code}] 
+typedef GlobHeapContigousMem<std::vector<int> g_mem;
+GlobPtr<int, g_mem> ptr(mem, 0);     // position 0 in index space
+++ptr;                               // go to position 1 in index space
+auto ref = *ptr;                     // dereference pointer to GlobSharedRef object
+int val = ref;                       // convert reference to value
+\end{lstlisting}
+
+In this case, \texttt{mem} is an instance of \texttt{GlobHeapContiguousMem} holding at least two globally available elements.
+
+\subsection{Vertices and edges}
+Vertices and edges are modeled as individual classes: \texttt{Vertex} and \texttt{Edge}. Each instance of these classes contains objects of the \textit{property} classes defined by the user as template parameters of \texttt{dash::Graph}. The property classes can only contain variables of static size. These variables are filled with default values upon initialization as per \textit{default initialization} of the C++ standard.\\
+
+Additionally, vertices and edges contain their respective index in global index space. The index is not publicly available and can only be read by the \texttt{Graph} class and some of its internal classes. Storing the indices internally is required because of global iteration and remote memory access: After a unit has globally iterated over the elements and dereferenced an element, its index is lost and the user has no way to recover it. The index, however, is needed for various use cases such as iterating over the outbound edges of a certain vertex.
+
+Edges also contain indices of their source and target vertices.\\
+
+\subsection{Graph types}
+\label{graph_types_section}
+\texttt{dash::Graph} currently supports \textit{directed} and \textit{undirected} graph types. A bidirectional graph type is not implemented but can be integrated later on. As described in \textcolor{red}{LINK CORRECT SECTION}, directed graphs can be instantiated in two different variants depending on the need for inbound edge iteration. This is due to the fact that this iteration is not necessary for most algorithms but requires additional communication that lowers the overall performance of the graph, even if not used at all.
+
+For undirected graphs, edges are replicated to the edge lists of both participating vertices. For directed graphs, the same mechanism is used when inbound edge iteration is needed. Edges in directed graphs without inbound edge iteration are not replicated in any way.
+
+\section{Memory management}
+\label{mem_mgmt_section}
+\texttt{dash::Graph}'s memory space is handled by \texttt{GlobHeapContiguousMem}. This class follows the concept described in \autoref{memspace_section} but adds an additional feature: Fully contiguous global memory regions. While the memory concept only demands single edge lists to be contiguous, \texttt{GlobHeapContiguousMem} allocates a contiguous memory space for all vertices as well as all edges for better locality exploitation. However, this comes at the expense of additional memory re-allocations in each epoch.
+
+\subsection{Contiguous memory}
+\label{contiguous_mem_section}
+\autoref{contiguous_mem_figure} illustrates the basic scheme of the contiguous memory allocation. \textit{Region 1} is a publicly available contiguous memory region. The memory location of \textit{Region 1} is known by other units and thus cannot be changed outside of a commit operation. Because of this, \textit{Region 2} is allocated at another memory location that might not be contiguous to \textit{Region 1}. \textit{Region 2} contains elements that have been added in the current epoch - they are available only locally and cannot be seen by other units.
+
+The \texttt{commit} operation starts a new epoch by packing the elements of the two memory regions into another, contiguous memory region and notifying other units about the changed location and size of the region. Traversing the elements in this region is now as simple as incrementing a pointer. Local iteration over the elements however requires a hop between the publicly available region and the local-only region because they are not contiguous. \texttt{GlobHeapLocalPtr} can iterate over an arbitrary number of buckets with contiguous memory (see \autoref{iteration_impl_section}). In this case, always two buckets (the two mentioned memory regions) are used.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.9\textwidth]{Bilder/contiguous_mem.pdf}
+	\caption{Contiguous memory allocation}
+	\label{contiguous_mem_figure}
+\end{figure}
+
+\subsection{Edge list memory}
+The mechanism in \autoref{contiguous_mem_section} is used for all vertices created at a certain unit. The same mechanism cannot be used for the entirety of all edges created at a single unit, because edge lists have to be contiguous. Appending an element to an edge list would invalidate the offsets of all edges following behind and would also require a re-allocation invalidating the memory location. \autoref{edge_list_insertion_figure} depicts the problem: The new edge inserted at the end of \textit{edge list 1} would be placed at offset 6 in the memory region, incrementing the offsets of all following elements.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.9\textwidth]{Bilder/edge_list_insertion.pdf}
+	\caption{Element insertion into edge list invalidating offsets}
+	\label{edge_list_insertion_figure}
+\end{figure}
+
+For this reason, each edge list has to be maintained with individual second regions for element insertions: The mechanism in \autoref{contiguous_mem_section} is used for each edge list individually and the \texttt{commit} operation packs all edge lists into one contiguous memory region.\\
+
+Vertices contain the indices of their respective edge lists and edge list locations and sizes are maintained in \texttt{GlobHeapContiguousMem} so that edge lists of a given vertex can be easily iterated.
+
+\subsection{Element deletion}
+Deleting an element in contiguous memory regions requires the its memory location to get invalidated instead of removed to avoid shifting of elements and offset invalidation. If many delete operations occur, the memory space will get scattered. For this reason, it is necessary to take measures that reduce the scattering of the memory to a minimum. \texttt{GlobHeapContiguousMem} uses a \textit{free list}: Deleting an element results in its memory location being added to the free list. If another element is added, a memory location from the back of the free list is used to store the element. Only if the free list is empty, new memory is allocated.
+
+Because invalidated elements are not part of the memory space anymore, iterators have access to the free list so that they can skip the respective elements.
+
+\section{Iteration}
+\label{iteration_impl_section}
+The four different iteration spaces of the graph concept (see \autoref{iteration_concept_section}) are handled by the same iterator classes. Since the memory space of \texttt{dash::Graph} is epoch-based, iteration space of local iterators can be different to the local part of the iteration space of global iterators.
+
+\subsection{Local iteration}
+\label{local_iter_section}
+Local iteration in dynamic containers of DASH is handled by \texttt{GlobHeapLocalPtr} that can iterate over multiple non-contiguous memory buckets. \texttt{GlobHeapContiguousMem} holds a list of objects containing bucket meta-data including size and a local native pointer to its beginning memory location. The bucket list is passed to a \texttt{GlobHeapLocalPtr} along with the position the pointer currently holds in the index space of the buckets. The buckets are equal to the allocated memory regions of \texttt{GlobHeapContiguousMem} as described in \autoref{mem_mgmt_section}.
+
+Iteration is done by \texttt{increment}/\texttt{decrement} operations which result in \texttt{GlobHeapLocalPtr} calculating the bucket number the current position belongs to. A \texttt{dereference} operation then accesses the local pointer of the bucket object.
+
+\subsection{Global iteration}
+\label{global_iter_section}
+For global iteration, a template specialization of \texttt{GlobPtr} for \texttt{GlobHeapContiguousMem} is used. It is similar to the template specialization of \texttt{GlobPtr} for \texttt{GlobHeapMem}, which is used for other dynamic DASH containers like \texttt{dash::List}.
+
+While the bucket meta-data used by \texttt{GlobHeapLocalPtr} contains only information about local buckets, \texttt{GlobPtr} requires information about all buckets on all units. Therefore, \texttt{GlobHeapContiguousMem} distributes bucket information between all units during a \texttt{commit} operation. This information includes bucket sizes as well as DART global pointers to the memory locations of the buckets in global address space. \textcolor{red}{EXPLAIN DART POINTERS?}
+
+With the bucket size information and the DART abstraction of global pointers, \texttt{GlobPtr} can iterate over global memory space the same way as \texttt{GlobHeapLocalPtr} iterates over local memory space. The iteration order is given by the canonical order of units.
+
+\subsection{Edge iteration}
+Inbound and outbound edges are handled by separate \texttt{GlobHeapContiguousMem} objects. Iteration of either is therefore handled as described in \autoref{local_iter_section} and \autoref{global_iter_section}. The graph concept however requires iteration over all existing edges. For this reason, \texttt{GlobHeapCombinedMem} is used to unify the iteration spaces of multiple \texttt{GlobHeapContiguousMem} objects.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/combined_edges.pdf}
+	\caption{Combined edge iteration space}
+	\label{combined_edges_figure}
+\end{figure}
+
+\autoref{combined_edges_figure} illustrates the order in which the combination of inbound and outbound edges are iterated over.
+
+\section{Data access}
+Remote memory data access is strictly handled via \texttt{GlobSharedRef} objects. These objects issue DART \texttt{get}/\texttt{put} operations to access data on remote machines. If referenced data resides locally, \texttt{GlobSharedRef} directly accesses it in the memory.
+
+Because edges are replicated for some graph types (see \autoref{graph_types_section}), writing data to an element with a \texttt{GlobSharedRef} object would introduce consistency problems because it is restricted to referencing single memory locations. \texttt{GlobSymValue} \textcolor{red}{ADAPT NAME ONCE DEFINED} is set up with two DART global pointers to account for this problem. An assignment to a \texttt{GlobSymValue} object results in two memory locations being updated.
+
 
 \chapter{Case studies}
 \section{Static structure}
