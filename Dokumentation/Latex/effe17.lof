@@ -1,14 +1,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}}{6}{figure.2.1}
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Memory space of two units after two \texttt {GlobHeapMem.grow} operations}}{7}{figure.2.2}
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}}{8}{figure.2.1}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Memory space of two units after two \texttt {GlobHeapMem.grow} operations}}{10}{figure.2.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces dash::Graph component overview}}{13}{figure.5.1}
-\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Contiguous memory allocation}}{15}{figure.5.2}
-\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Element insertion into edge list invalidating offsets}}{16}{figure.5.3}
-\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Combined edge iteration space}}{17}{figure.5.4}
+\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces dash::Graph component overview}}{15}{figure.5.1}
+\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Contiguous memory allocation}}{17}{figure.5.2}
+\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Element insertion into edge list invalidating offsets}}{18}{figure.5.3}
+\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Combined edge iteration space}}{19}{figure.5.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -27,7 +27,6 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Problem statement}{1}{section.1.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Scope and Objectives}{2}{section.1.2}}
 \citation{c++11}
-\citation{gustafson}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -35,121 +34,127 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}C++ Concepts}{3}{section.2.1}}
 \newlabel{cpp_section}{{2.1}{3}{C++ Concepts}{section.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Language Concepts}{3}{subsection.2.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Value and referential semantics}{3}{section*.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Operator Overloading}{3}{section*.3}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Const correctness}{3}{section*.4}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Static polymorphism}{3}{section*.5}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Resource Acquisition Is Initialization}{3}{section*.6}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Rule of three/five/zero}{3}{section*.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Standard Template Library}{3}{subsection.2.1.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Concepts}{3}{section*.8}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Iterators}{3}{section*.9}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Containers}{3}{section*.10}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}High Performance Computing}{3}{section.2.2}}
-\newlabel{hpc_section}{{2.2}{3}{High Performance Computing}{section.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Value and reference semantics}{3}{section*.2}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}{Value and reference semantics}}{4}{lstlisting.2.1}}
+\newlabel{val_ref_semantics_code}{{2.1}{4}{Value and reference semantics}{lstlisting.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Operator Overloading}{4}{section*.3}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}{Operator overloading}}{4}{lstlisting.2.2}}
+\newlabel{op_overloading_code}{{2.2}{4}{Operator Overloading}{lstlisting.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Static vs. runtime polymorphism}{5}{section*.4}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}{Runtime polymorphism}}{5}{lstlisting.2.3}}
+\newlabel{runtime_polymorphism_code}{{2.3}{5}{Static vs. runtime polymorphism}{lstlisting.2.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}{Static polymorphism with class templates}}{5}{lstlisting.2.4}}
+\newlabel{static_polymorphism_code}{{2.4}{5}{Static vs. runtime polymorphism}{lstlisting.2.4}{}}
+\citation{gustafson}
 \citation{numa}
 \citation{dismem}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Standard Template Library}{6}{subsection.2.1.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Concepts}{6}{section*.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Iterators}{6}{section*.6}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Containers}{6}{section*.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}High Performance Computing}{6}{section.2.2}}
+\newlabel{hpc_section}{{2.2}{6}{High Performance Computing}{section.2.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{\nonumberline Shared Memory}{6}{section*.8}}
 \citation{apgas}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Shared Memory}{4}{section*.11}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Distributed Memory}{4}{section*.12}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Partitioned Global Address Space}{4}{section.2.3}}
+\@writefile{toc}{\contentsline {paragraph}{\nonumberline Distributed Memory}{7}{section*.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Partitioned Global Address Space}{7}{section.2.3}}
 \citation{upc}
 \citation{co_array_fortran}
 \citation{chapel}
 \citation{dash}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}}{8}{figure.2.1}}
+\newlabel{pgas_figure}{{\relax 2.1}{8}{View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}{figure.2.1}{}}
 \citation{mpi3}
 \citation{gaspi}
 \citation{dart_mpi}
 \citation{dragonfly}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}DASH C++ Template Library}{5}{section.2.4}}
-\newlabel{dash_section}{{2.4}{5}{DASH C++ Template Library}{section.2.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}}{6}{figure.2.1}}
-\newlabel{pgas_figure}{{\relax 2.1}{6}{View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}{figure.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Dynamic memory allocation}{7}{subsection.2.4.1}}
-\newlabel{dash_mem_alloc_section}{{2.4.1}{7}{Dynamic memory allocation}{subsection.2.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Memory space of two units after two \texttt  {GlobHeapMem.grow} operations}}{7}{figure.2.2}}
-\newlabel{dash_dynamic_mem_space_figure}{{\relax 2.2}{7}{Memory space of two units after two \texttt {GlobHeapMem.grow} operations}{figure.2.2}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Related Work}{9}{chapter.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}DASH C++ Template Library}{9}{section.2.4}}
+\newlabel{dash_section}{{2.4}{9}{DASH C++ Template Library}{section.2.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Dynamic memory allocation}{9}{subsection.2.4.1}}
+\newlabel{dash_mem_alloc_section}{{2.4.1}{9}{Dynamic memory allocation}{subsection.2.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Memory space of two units after two \texttt  {GlobHeapMem.grow} operations}}{10}{figure.2.2}}
+\newlabel{dash_dynamic_mem_space_figure}{{\relax 2.2}{10}{Memory space of two units after two \texttt {GlobHeapMem.grow} operations}{figure.2.2}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Related Work}{11}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Shared Memory}{9}{section.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}STINGER}{9}{subsection.3.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Ligra}{9}{subsection.3.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Distributed Memory}{9}{section.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Parallel Boost Graph Library}{9}{subsection.3.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}STAPL Parallel Graph Library}{9}{subsection.3.2.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Graph Container Concepts}{11}{chapter.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Shared Memory}{11}{section.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}STINGER}{11}{subsection.3.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Ligra}{11}{subsection.3.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Distributed Memory}{11}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Parallel Boost Graph Library}{11}{subsection.3.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}STAPL Parallel Graph Library}{11}{subsection.3.2.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Graph Container Concepts}{13}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}
-\newlabel{concept_section}{{4}{11}{Graph Container Concepts}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Fundamentals}{11}{section.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Index Space}{11}{section.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Memory Space}{11}{section.4.3}}
-\newlabel{memspace_section}{{4.3}{11}{Memory Space}{section.4.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Element iteration}{11}{section.4.4}}
-\newlabel{iteration_concept_section}{{4.4}{11}{Element iteration}{section.4.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Semantics}{11}{section.4.5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Reference Implementation}{13}{chapter.5}}
+\newlabel{concept_section}{{4}{13}{Graph Container Concepts}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Fundamentals}{13}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Index Space}{13}{section.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Memory Space}{13}{section.4.3}}
+\newlabel{memspace_section}{{4.3}{13}{Memory Space}{section.4.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Element iteration}{13}{section.4.4}}
+\newlabel{iteration_concept_section}{{4.4}{13}{Element iteration}{section.4.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Semantics}{13}{section.4.5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Reference Implementation}{15}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}
-\newlabel{impl_section}{{5}{13}{Reference Implementation}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Overview}{13}{section.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces dash::Graph component overview}}{13}{figure.5.1}}
-\newlabel{impl_overview_figure}{{\relax 5.1}{13}{dash::Graph component overview}{figure.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Pointers and references}{14}{subsection.5.1.1}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.1}{Operator overloading in GlobPtr and GlobSharedRef}}{14}{lstlisting.5.1}}
-\newlabel{globptr_code}{{5.1}{14}{Pointers and references}{lstlisting.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Vertices and edges}{14}{subsection.5.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Graph types}{14}{subsection.5.1.3}}
-\newlabel{graph_types_section}{{5.1.3}{14}{Graph types}{subsection.5.1.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Memory management}{15}{section.5.2}}
-\newlabel{mem_mgmt_section}{{5.2}{15}{Memory management}{section.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{15}{subsection.5.2.1}}
-\newlabel{contiguous_mem_section}{{5.2.1}{15}{Contiguous memory}{subsection.5.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Contiguous memory allocation}}{15}{figure.5.2}}
-\newlabel{contiguous_mem_figure}{{\relax 5.2}{15}{Contiguous memory allocation}{figure.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{16}{subsection.5.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Element insertion into edge list invalidating offsets}}{16}{figure.5.3}}
-\newlabel{edge_list_insertion_figure}{{\relax 5.3}{16}{Element insertion into edge list invalidating offsets}{figure.5.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Element deletion}{16}{subsection.5.2.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Iteration}{16}{section.5.3}}
-\newlabel{iteration_impl_section}{{5.3}{16}{Iteration}{section.5.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Local iteration}{17}{subsection.5.3.1}}
-\newlabel{local_iter_section}{{5.3.1}{17}{Local iteration}{subsection.5.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Global iteration}{17}{subsection.5.3.2}}
-\newlabel{global_iter_section}{{5.3.2}{17}{Global iteration}{subsection.5.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{17}{subsection.5.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Combined edge iteration space}}{17}{figure.5.4}}
-\newlabel{combined_edges_figure}{{\relax 5.4}{17}{Combined edge iteration space}{figure.5.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Data access}{18}{section.5.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Case studies}{19}{chapter.6}}
+\newlabel{impl_section}{{5}{15}{Reference Implementation}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Overview}{15}{section.5.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces dash::Graph component overview}}{15}{figure.5.1}}
+\newlabel{impl_overview_figure}{{\relax 5.1}{15}{dash::Graph component overview}{figure.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Pointers and references}{16}{subsection.5.1.1}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.1}{Operator overloading in GlobPtr and GlobSharedRef}}{16}{lstlisting.5.1}}
+\newlabel{globptr_code}{{5.1}{16}{Pointers and references}{lstlisting.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Vertices and edges}{16}{subsection.5.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Graph types}{16}{subsection.5.1.3}}
+\newlabel{graph_types_section}{{5.1.3}{16}{Graph types}{subsection.5.1.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Memory management}{17}{section.5.2}}
+\newlabel{mem_mgmt_section}{{5.2}{17}{Memory management}{section.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{17}{subsection.5.2.1}}
+\newlabel{contiguous_mem_section}{{5.2.1}{17}{Contiguous memory}{subsection.5.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Contiguous memory allocation}}{17}{figure.5.2}}
+\newlabel{contiguous_mem_figure}{{\relax 5.2}{17}{Contiguous memory allocation}{figure.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{18}{subsection.5.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Element insertion into edge list invalidating offsets}}{18}{figure.5.3}}
+\newlabel{edge_list_insertion_figure}{{\relax 5.3}{18}{Element insertion into edge list invalidating offsets}{figure.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Element deletion}{18}{subsection.5.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Iteration}{18}{section.5.3}}
+\newlabel{iteration_impl_section}{{5.3}{18}{Iteration}{section.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Local iteration}{19}{subsection.5.3.1}}
+\newlabel{local_iter_section}{{5.3.1}{19}{Local iteration}{subsection.5.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Global iteration}{19}{subsection.5.3.2}}
+\newlabel{global_iter_section}{{5.3.2}{19}{Global iteration}{subsection.5.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{19}{subsection.5.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Combined edge iteration space}}{19}{figure.5.4}}
+\newlabel{combined_edges_figure}{{\relax 5.4}{19}{Combined edge iteration space}{figure.5.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Data access}{20}{section.5.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Case studies}{21}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Static structure}{19}{section.6.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{19}{subsection.6.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{19}{subsection.6.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Dynamic Structure}{19}{section.6.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{19}{subsection.6.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{19}{subsection.6.2.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Evaluation}{21}{chapter.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Static structure}{21}{section.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{21}{subsection.6.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{21}{subsection.6.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Dynamic Structure}{21}{section.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{21}{subsection.6.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{21}{subsection.6.2.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Evaluation}{23}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Micro-benchmarks}{21}{section.7.1}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion}{23}{chapter.8}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Micro-benchmarks}{23}{section.7.1}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion}{25}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Summary}{23}{section.8.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Assessment}{23}{section.8.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}Outlook}{23}{section.8.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Summary}{25}{section.8.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Assessment}{25}{section.8.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}Outlook}{25}{section.8.3}}
 \bibstyle{alphadin}
 \bibdata{./Bib/effe17}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Figures}{25}{chapter*.13}}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Figures}{27}{chapter*.10}}
 \bibcite{upc}{C{$^{+}$}05}
 \bibcite{chapel}{CCZ07}
 \bibcite{dash}{FFK16}
@@ -161,7 +166,7 @@
 \bibcite{numa}{Lam13}
 \bibcite{co_array_fortran}{NR98}
 \bibcite{dismem}{PTM96}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{27}{chapter*.14}}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{29}{chapter*.11}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}

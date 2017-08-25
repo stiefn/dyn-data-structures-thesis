@@ -109,14 +109,105 @@ The graph concepts of this work are part of the DASH C++ Template Library (see \
 
 \subsection{Language Concepts}
 
+\subsubsection{Value and reference semantics}
+In object oriented programming, objects can either have value or reference semantics. Objects with value semantics are treated like values: An assignment operation copies the object. This way, the identity of the object is not in focus because the copied object has another identity. Operations on this copy do not affect the original object which means only the value of the object is in focus. Objects with reference semantics are referred to by references or pointers. Their identity becomes important: Multiple references point to the same object.
 
-\subsubsection{Value and referential semantics}
-%copy elision
+Many object-oriented programming languages such as Java only offer reference semantics for non-primitive types. C++ on the other hand allows the programmer to define, whether an object adheres to value semantics or reference semantics.
+
+For an object to be able participating in value semantics, some operations like copy construction and assignment have to be implemented in a certain way. C++ compilers provide default implementations of the required operations, but depending on the object's implementation, further measures might have to be taken by programmers. For example, objects that allocate memory dynamically on the freestore have to explicitly copy the referenced data.\\
+
+\autoref{val_ref_semantics_code} shows an \texttt{increment} function with both value and reference semantics. \texttt{increment\_vs} takes the copy of a \texttt{VertexIndex} object as parameter, increments its offset and returns a copy of the object with incremented offset. The offset of the passed \texttt{VertexIndex} stays the same as only the offset of its copy has been changed. In contrast, \texttt{increment\_rs} changes the offset of the passed object and also returns a reference to the same object.
+
+\begin{lstlisting}[caption={Value and reference semantics}\label{val_ref_semantics_code}] 
+VertexIndex increment_vs(VertexIndex v) { // value semantics
+  return ++(v.offset);
+}
+
+VertexIndex & increment_rs(VertexIndex & v) { // reference semantics
+  return ++(v.offset);
+}
+\end{lstlisting}
+
+Value semantics seem to result in a lot of copying that might hit performance. C++ compilers implement an optimization technique called \textit{copy elision} that omits copy construction in functions returning objects with value semantics by returning the same memory location of the temporarily created object. \textit{Copy elision} is part of the C++ standard and thus compilers are required to enforce it. For this reason, C++ value semantics in many cases have no performance drawbacks in comparison to reference semantics. Therefore, reference semantics is mainly used when identity of an object is important or when copying of an object is expensive.
+
+Reference semantics is also important for runtime polymorphism, because objects with value semantics might be sliced (i.e. only the part of the base class is copied).
+
 \subsubsection{Operator Overloading}
-\subsubsection{Const correctness}
-\subsubsection{Static polymorphism}
-\subsubsection{Resource Acquisition Is Initialization}
-\subsubsection{Rule of three/five/zero}
+In C++, almost all existing operators can be overloaded for any operand types. Any class can therefore be handled with native operators in a completely customized way. Only four operators like the member access operator cannot be overloaded and it is not possible to create new operators that do not exist in the language itself.
+
+\begin{lstlisting}[caption={Operator overloading}\label{op_overloading_code}] 
+class Iterator {
+  public:
+    Iterator & operator++() {
+      ++position;
+      return *this;
+    }
+  private:
+    int position = 0;
+};
+
+Iterator it;
+++it;
+\end{lstlisting}
+
+\autoref{op_overloading_code} shows a class \texttt{Iterator} with an overloaded version of the pre-increment operator. The operator can be directly applied to an object of \texttt{Iterator} incrementing the \texttt{position} member.
+
+\subsubsection{Static vs. runtime polymorphism}
+C++ offers two kinds of polymorphism: static and runtime. The difference lies in the way types are bound. Static polymorphism can be completely resolved at compile time, while types in runtime polymorphism have to be resolved during the runtime of a program. 
+
+In runtime polymorphism, methods of a derived class are called with a pointer of the base class by using \textit{virtual functions} of the base class. A call to such a virtual function requires resolving which concrete derived class the pointer of the base class refers to during runtime. This is achieved by storing a \textit{vtable} for each base class in memory and linking to this \textit{vtable} with a pointer from all related objects. The runtime can then lookup the address of the desired class's method.  \autoref{runtime_polymorphism_code} shows how a method implemented in a derived class is executed calling the same method on a pointer of the base class.
+
+\begin{lstlisting}[caption={Runtime polymorphism}\label{runtime_polymorphism_code}] 
+class Base {
+  virtual void do_something() {
+    // do something
+  }
+};
+
+class Derived : Base {
+  virtual void do_something() {
+    // do something else
+  }
+};
+
+Base * b;
+Derived d;
+b = &d;
+b.doSomething(); // Derived::do_something() is called
+\end{lstlisting}
+
+Because the \textit{vtable} lookup on every call is expensive, C++ allows programmers to design polymorphic types with static polymorphism that can be completely resolved at compile time leading to better performance during runtime. This can be achieved with simple method overloading and with templates.
+
+In C++11, templates can be defined for classes and functions. They allow the programmer to define a family of either. \autoref{static_polymorphism_code} shows a class \texttt{Base} that accepts a template parameter which can be of any type. A call to \texttt{do\_something} is delegated to an object of the type of the template parameter. Type resolving is done during compilation of the program so that a compile error would occur if no \texttt{do\_something} method were available in \texttt{TypeB}.
+
+\begin{lstlisting}[caption={Static polymorphism with class templates}\label{static_polymorphism_code}] 
+struct TypeA {
+  void do_something() {
+    // do something
+  }
+}
+
+struct TypeB {
+  void do_something() {
+    // do something else
+  }
+}
+
+template<typename Type>
+class Base {
+  public:
+    void do_something() {
+      type.do_something();
+    }
+  private:
+    Type type;
+};
+
+Base<TypeB> b;
+b.do_something();
+\end{lstlisting}
+
+Templates actually result in code generation: For every instantiation of a class template, a new type is created which results in a larger binary file.
 
 \subsection{Standard Template Library}
 \subsubsection{Concepts}
@@ -179,7 +270,7 @@ Dynamic allocation in DASH is encapsulated in the \texttt{GlobHeapMem} concept. 
 
 A dynamic container in DASH pre-allocates some memory during its initialization. When the  memory is completely used, further additions of elements result in \texttt{GlobHeapMem.grow} operations. A call to the \texttt{barrier} operation of the container results in all newly added elements of the container to be publicly available on all units.\\
 
-Multiple \texttt{grow} operations result in a scattered memory space: Each call to \texttt{grow} creates a new \textit{bucket} - a contiguous memory region in the local Heap. A class implementing the \texttt{GlobHeapMem} concept keeps track of each bucket on each unit so that element indices can be translated to concrete memory locations. \autoref{dash_dynamic_mem_space_figure} illustrates the memory spaces of two units after two grow operations for six elements each have been called. The buckets are allocated at different memory locations. Data access to an element therefore requires the memory location of the bucket and the offset of the element inside the bucket. For this reason, bucket locations and sizes are exchanged between all units during a \texttt{commit} operation and a reference to the object holding the bucket data is needed in every pointer and iterator.
+Multiple \texttt{grow} operations result in a scattered memory space: Each call to \texttt{grow} creates a new \textit{bucket} - a contiguous memory region in the local freestore. A class implementing the \texttt{GlobHeapMem} concept keeps track of each bucket on each unit so that element indices can be translated to concrete memory locations. \autoref{dash_dynamic_mem_space_figure} illustrates the memory spaces of two units after two grow operations for six elements each have been called. The buckets are allocated at different memory locations. Data access to an element therefore requires the memory location of the bucket and the offset of the element inside the bucket. For this reason, bucket locations and sizes are exchanged between all units during a \texttt{commit} operation and a reference to the object holding the bucket data is needed in every pointer and iterator.
 
 \begin{figure}[ht]
 	\centering
@@ -229,11 +320,11 @@ The \texttt{Graph} gets initialized with a reference to an existing \texttt{Team
 To allow \texttt{GlobPtr} and \texttt{GlobSharedRef} act like real pointers and references respectively, operators like the increment and dereference operators are overloaded. This results in usage analogous to native pointers and references:
 
 \begin{lstlisting}[caption={Operator overloading in GlobPtr and GlobSharedRef}\label{globptr_code}] 
-typedef GlobHeapContigousMem<std::vector<int> g_mem;
-GlobPtr<int, g_mem> ptr(mem, 0);     // position 0 in index space
-++ptr;                               // go to position 1 in index space
-auto ref = *ptr;                     // dereference pointer to GlobSharedRef object
-int val = ref;                       // convert reference to value
+typedef GlobHeapContigousMem<std::vector<int>> g_mem_type;
+GlobPtr<int, g_mem_type> ptr(mem, 0);     // position 0 in index space
+++ptr;                                    // go to position 1 in index space
+auto ref = *ptr;                          // dereference ptr to GlobSharedRef object
+int val = ref;                            // convert reference to value
 \end{lstlisting}
 
 In this case, \texttt{mem} is an instance of \texttt{GlobHeapContiguousMem} holding at least two globally available elements.
