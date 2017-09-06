@@ -233,11 +233,12 @@ std::vector<int> v = { 1 , 2, 3 };
 int sum = std::accumulate(v.begin(), v.end(), 0);
 \end{lstlisting}
 
-Because containers have different memory layouts and algorithms have different requirements on iterators, the C++11 standard defines four iterator concepts that are hierarchically organized, i.e. iterators of a higher category implement all operations of the iterators in lower categories. The following table shows these concepts starting from the lowest category:
-
+Because containers have different memory layouts and algorithms have different requirements on iterators, the C++11 standard defines four iterator concepts that are hierarchically organized, i.e. iterators of a higher category implement all operations of the iterators in lower categories. \autoref{iterator_table} shows these concepts starting from the lowest category:
 
 \renewcommand{\arraystretch}{1.2}
 \begin{center}
+  \captionof{table}{STL iterator categories}
+  \label{iterator_table}
   \begin{tabular}{| l | c | r |}
     \hline
     \textbf{Category} & \textbf{operations} \\ \hline

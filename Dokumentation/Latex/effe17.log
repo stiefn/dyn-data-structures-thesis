@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  6 SEP 2017 18:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  6 SEP 2017 18:11
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -435,58 +435,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 222--223
  []
 
 [6] [7]
-Overfull \hbox (38.8007pt too wide) in paragraph at lines 259--260
+Overfull \hbox (38.8007pt too wide) in paragraph at lines 260--261
 \OT1/cmtt/m/n/10.95 ReversibleContainer \OT1/cmr/m/n/10.95 con-cept for ex-am-p
 le al-lows con-tain-ers to ei-ther use \OT1/cmtt/m/n/10.95 BidirectionalIterato
 rs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--278
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
-<Bilder/pgas.pdf, id=460, 268.50313pt x 205.76875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+<Bilder/pgas.pdf, id=462, 268.50313pt x 205.76875pt>
 File: Bilder/pgas.pdf Graphic file (type pdf)
  <use Bilder/pgas.pdf>
-Package pdftex.def Info: Bilder/pgas.pdf used on input line 291.
+Package pdftex.def Info: Bilder/pgas.pdf used on input line 292.
 (pdftex.def)             Requested size: 437.46118pt x 335.2525pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 300.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 300.
 
-[9] [10 <./Bilder/pgas.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 308--309
+[9]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 301.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 301.
+ [10 <./Bilder/pgas.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
 
  []
 
-<Bilder/dash_dynamic_mem_space.pdf, id=527, 411.03563pt x 138.5175pt>
+<Bilder/dash_dynamic_mem_space.pdf, id=529, 411.03563pt x 138.5175pt>
 File: Bilder/dash_dynamic_mem_space.pdf Graphic file (type pdf)
 
 <use Bilder/dash_dynamic_mem_space.pdf>
 Package pdftex.def Info: Bilder/dash_dynamic_mem_space.pdf used on input line 3
-18.
+19.
 (pdftex.def)             Requested size: 437.46118pt x 147.42387pt.
  [11 <./Bilder/dash_dynamic_mem_space.pdf>] [12]
 chapter 3.
@@ -504,69 +505,69 @@ chapter 4.
 ]
 chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--352
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
-<Bilder/impl_overview.pdf, id=595, 426.59375pt x 264.48813pt>
+<Bilder/impl_overview.pdf, id=597, 426.59375pt x 264.48813pt>
 File: Bilder/impl_overview.pdf Graphic file (type pdf)
 
 <use Bilder/impl_overview.pdf>
-Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 355.
+Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 356.
 (pdftex.def)             Requested size: 437.46118pt x 271.24333pt.
 
-Overfull \hbox (6.37772pt too wide) in paragraph at lines 360--361
+Overfull \hbox (6.37772pt too wide) in paragraph at lines 361--362
 \OT1/cmtt/m/n/10.95 Graph \OT1/cmr/m/n/10.95 also al-lows for the it-er-a-tion 
 of all (in-bound and out-bound) edges, \OT1/cmtt/m/n/10.95 GlobHeapCombinedMem
  []
 
 
-Overfull \hbox (55.61095pt too wide) in paragraph at lines 360--361
+Overfull \hbox (55.61095pt too wide) in paragraph at lines 361--362
 \OT1/cmr/m/n/10.95 uni-fies the mem-ory spaces of the two \OT1/cmtt/m/n/10.95 G
 lobHeapContiguousMem \OT1/cmr/m/n/10.95 in-stances. Both \OT1/cmtt/m/n/10.95 Gl
 obHeapContiguousMem
  []
 
 [17 <./Bilder/impl_overview.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
-[18] <Bilder/contiguous_mem.pdf, id=652, 360.34625pt x 160.6pt>
+[18] <Bilder/contiguous_mem.pdf, id=654, 360.34625pt x 160.6pt>
 File: Bilder/contiguous_mem.pdf Graphic file (type pdf)
 
 <use Bilder/contiguous_mem.pdf>
-Package pdftex.def Info: Bilder/contiguous_mem.pdf used on input line 400.
+Package pdftex.def Info: Bilder/contiguous_mem.pdf used on input line 401.
 (pdftex.def)             Requested size: 393.71239pt x 175.46956pt.
  [19 <./Bilder/contiguous_mem.pdf>]
-<Bilder/edge_list_insertion.pdf, id=696, 350.30875pt x 114.4275pt>
+<Bilder/edge_list_insertion.pdf, id=698, 350.30875pt x 114.4275pt>
 File: Bilder/edge_list_insertion.pdf Graphic file (type pdf)
 
 <use Bilder/edge_list_insertion.pdf>
-Package pdftex.def Info: Bilder/edge_list_insertion.pdf used on input line 410.
+Package pdftex.def Info: Bilder/edge_list_insertion.pdf used on input line 411.
 
 (pdftex.def)             Requested size: 393.71239pt x 128.61363pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
 [20 <./Bilder/edge_list_insertion.pdf>]
-Overfull \hbox (13.58537pt too wide) in paragraph at lines 443--444
+Overfull \hbox (13.58537pt too wide) in paragraph at lines 444--445
 \OT1/cmtt/m/n/10.95 GlobHeapCombinedMem \OT1/cmr/m/n/10.95 is used to unify the
  it-er-a-tion spaces of mul-ti-ple \OT1/cmtt/m/n/10.95 GlobHeapContiguousMem
  []
 
-<Bilder/combined_edges.pdf, id=743, 573.64313pt x 49.18375pt>
+<Bilder/combined_edges.pdf, id=745, 573.64313pt x 49.18375pt>
 File: Bilder/combined_edges.pdf Graphic file (type pdf)
 
 <use Bilder/combined_edges.pdf>
-Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 447.
+Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 448.
 (pdftex.def)             Requested size: 437.46118pt x 37.50835pt.
  [21 <./Bilder/combined_edges.pdf>] [22]
 chapter 6.
@@ -597,26 +598,22 @@ chapter 8.
 ]
 chapter without number
 [31])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 482.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
  [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 482.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
  (effe17.aux (Titel/titel-lmu.aux) (Titel/erklaerung-lmu.aux)
 (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 482.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 482.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
 Package rerunfilecheck Info: File `effe17.out' has not changed.
 (rerunfilecheck)             Checksum: E3A49285BD37A0E797077CB59E98AA4C;3394.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 482.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 483.
  ) 
 Here is how much of TeX's memory you used:
- 9027 strings out of 493673
- 137035 string characters out of 3141527
+ 9029 strings out of 493673
+ 137060 string characters out of 3141527
  320456 words of memory out of 3000000
- 12029 multiletter control sequences out of 15000+200000
+ 12030 multiletter control sequences out of 15000+200000
  12571 words of font info for 44 fonts, out of 3000000 for 9000
  1066 hyphenation exceptions out of 8191
  41i,9n,66p,930b,1856s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -635,9 +632,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on effe17.pdf (42 pages, 4924910 bytes).
+Output written on effe17.pdf (42 pages, 4925232 bytes).
 PDF statistics:
- 942 PDF objects out of 1000 (max. 8388607)
- 199 named destinations out of 1000 (max. 500000)
+ 944 PDF objects out of 1000 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
  452 words of extra memory for PDF output out of 10000 (max. 10000000)
 
