@@ -210,10 +210,53 @@ b.do_something();
 Templates actually result in code generation: For every instantiation of a class template, a new type is created which results in a larger binary file.
 
 \subsection{Standard Template Library}
-\subsubsection{Concepts}
-\subsubsection{Iterators}
-\subsubsection{Containers}
+The Standard Template Library (STL) \cite{stl} is a C++ software library. Most parts of it have been integrated into the C++ Standard and are now part of the C++ Standard Library. The STL has been designed as a library for efficient generic programming with value semantics. Its containers are template classes that enable static polymorphism.
 
+The STL contains a variety of containers and algorithms. Algorithms are decoupled from containers with the help of iterators so that any algorithm can work with any container that is STL-compatible. Because DASH - the library this work is part of (see \autoref{dash_section}) - follows the concepts of the STL, STL algorithms can be executed with any DASH container, including the graph container of this work's reference implementation.
+
+This section focuses on STL concepts in the C++11 standard.
+
+\subsubsection{Concepts}
+In C++11, a \textit{concept} is a named set of requirements for a type. The C++ standard contains concepts for all components of the C++ standard library and this work provides a concept similar to these. At the time of this writing a C++ extension that allows for the formal specification and compile-time evaluation of concepts directly in code is in development \cite{c++_concepts}. Because this extension is still work in progress and not part of C++11, it is not used in this thesis. Thus, the graph concepts of this work require the programmer to manually ensure that all requirements of the respective concept are met in its implementation.
+
+A C++ concept typically contains a description stating other concepts that are used or implemented by the concept. For example, the \texttt{SequenceContainer} concept of the C++ standard implements the \texttt{Container} concept and additionally accounts for linear arrangement of the contained elements. \textit{Types} and \textit{Methods/Operations} are defined along with their semantics. For some expressions, \textit{computational complexity} is additionally defined and programmers have to keep their implementations inside of these constraints.\\
+
+The graph concepts of this work try to assimilate the concepts of the standard library as far as possible.
+
+\subsubsection{Iterators}
+\textit{Iterators} are the connection between \textit{containers} and \textit{algorithms}. Every container offers iterators with a standard interface to allow for the iteration of contained elements. Algorithms only have to comply to iterator interfaces and are agnostic of the actual interface of the container. Thus, the same algorithm can run with a variety of different containers without it being re-implemented for every existing container.
+
+\autoref{vector_sum_code} shows the computation of a sum of vector \texttt{v} using the \texttt{accumulate} algorithm of the C++ standard library. \texttt{v.begin} returns an iterator to the beginning of \texttt{v} and \texttt{v.end} an iterator past the last element of \texttt{v}. The \texttt{accumulate} algorithm then iterates over the elements of \texttt{v} without knowing the details of its underlying container.
+
+\begin{lstlisting}[caption={Vector sum using standard algorithm}\label{vector_sum_code}] 
+std::vector<int> v = { 1 , 2, 3 };
+int sum = std::accumulate(v.begin(), v.end(), 0);
+\end{lstlisting}
+
+Because containers have different memory layouts and algorithms have different requirements on iterators, the C++11 standard defines four iterator concepts that are hierarchically organized, i.e. iterators of a higher category implement all operations of the iterators in lower categories. The following table shows these concepts starting from the lowest category:
+
+
+\renewcommand{\arraystretch}{1.2}
+\begin{center}
+  \begin{tabular}{| l | c | r |}
+    \hline
+    \textbf{Category} & \textbf{operations} \\ \hline
+    InputIterator & increment, read \\ \hline
+    ForwardIterator & multi-pass increment \\ \hline
+    BidirectionalIterator & decrement \\ \hline
+    RandomAccessIterator & random access \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\texttt{InputIterators} can be incremented to iterate over elements one by one. There is no guarantee, that a value dereferenced from an \texttt{InputIterator} is still valid after it has been incremented again. This guarantee is only given by \texttt{ForwardIterators} which makes them a requirement for algorithms that have to iterate over elements more than once. \texttt{BidirectionalIterators} can be decremented and thus are able to iterate in opposing direction. \texttt{RandomAccessIterators} can access any element in a given range in constant time.
+
+Any iterator can also implement the \texttt{OutputIterator} concept that enables writing operations on elements.
+
+\subsubsection{Containers}
+Standard C++ containers implement common data structures like arrays and stacks. The container library consists of sequence containers that store elements in a specific order and associative containers that allow searching for particular elements. Additionally, adaptors like \texttt{std::queue} are used to restrict the interfaces of existing containers.
+
+All concepts of concrete implementations meet the requirements of the standard library's \texttt{Container} concept that defines element access via iterators. The \texttt{Container} concept defines \texttt{ForwardIterator} as iterator type. Containers can additionally meet the requirements of further concepts which might override certain requirements like the iterator type. The \texttt{ReversibleContainer} concept for example allows containers to either use \texttt{BidirectionalIterators} or \texttt{RandomAccessIterators}. A concrete container concept like \texttt{std::vector} that meets the requirements of \texttt{ReversibleContainer} can then define the iterator type as needed (\texttt{RandomAccessIterator} in this case).
 
 \section{High Performance Computing}
 \label{hpc_section}
@@ -281,11 +324,11 @@ Multiple \texttt{grow} operations result in a scattered memory space: Each call 
 
 \chapter{Related Work}
 \section{Shared Memory}
-\subsection{STINGER}
-\subsection{Ligra}
+
 \section{Distributed Memory}
-\subsection{Parallel Boost Graph Library}
-\subsection{STAPL Parallel Graph Library}
+\subsection{Linear algebra based graph processing}
+\subsection{Bulk-synchronous graph processing}
+\subsection{Asynchronous graph processing}
 
 \chapter{Graph Container Concepts}
 \label{concept_section}

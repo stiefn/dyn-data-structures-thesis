@@ -9,53 +9,52 @@
 \contentsline {subsubsection}{\nonumberline Static vs. runtime polymorphism}{5}{section*.4}
 \contentsline {subsection}{\numberline {2.1.2}Standard Template Library}{6}{subsection.2.1.2}
 \contentsline {subsubsection}{\nonumberline Concepts}{6}{section*.5}
-\contentsline {subsubsection}{\nonumberline Iterators}{6}{section*.6}
-\contentsline {subsubsection}{\nonumberline Containers}{6}{section*.7}
-\contentsline {section}{\numberline {2.2}High Performance Computing}{6}{section.2.2}
-\contentsline {paragraph}{\nonumberline Shared Memory}{6}{section*.8}
-\contentsline {paragraph}{\nonumberline Distributed Memory}{7}{section*.9}
-\contentsline {section}{\numberline {2.3}Partitioned Global Address Space}{7}{section.2.3}
-\contentsline {section}{\numberline {2.4}DASH C++ Template Library}{9}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Dynamic memory allocation}{9}{subsection.2.4.1}
-\contentsline {chapter}{\numberline {3}Related Work}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Shared Memory}{11}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}STINGER}{11}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Ligra}{11}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Distributed Memory}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Parallel Boost Graph Library}{11}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}STAPL Parallel Graph Library}{11}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Graph Container Concepts}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Fundamentals}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Index Space}{13}{section.4.2}
-\contentsline {section}{\numberline {4.3}Memory Space}{13}{section.4.3}
-\contentsline {section}{\numberline {4.4}Element iteration}{13}{section.4.4}
-\contentsline {section}{\numberline {4.5}Semantics}{13}{section.4.5}
-\contentsline {chapter}{\numberline {5}Reference Implementation}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Overview}{15}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Pointers and references}{16}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Vertices and edges}{16}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Graph types}{16}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Memory management}{17}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{17}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{18}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Element deletion}{18}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Iteration}{18}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Local iteration}{19}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Global iteration}{19}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{19}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Data access}{20}{section.5.4}
-\contentsline {chapter}{\numberline {6}Case studies}{21}{chapter.6}
-\contentsline {section}{\numberline {6.1}Static structure}{21}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{21}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{21}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Dynamic Structure}{21}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{21}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{21}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Evaluation}{23}{chapter.7}
-\contentsline {section}{\numberline {7.1}Micro-benchmarks}{23}{section.7.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{25}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{25}{section.8.1}
-\contentsline {section}{\numberline {8.2}Assessment}{25}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{25}{section.8.3}
-\contentsline {chapter}{\nonumberline List of Figures}{27}{chapter*.10}
-\contentsline {chapter}{\nonumberline Bibliography}{29}{chapter*.11}
+\contentsline {subsubsection}{\nonumberline Iterators}{7}{section*.6}
+\contentsline {subsubsection}{\nonumberline Containers}{7}{section*.7}
+\contentsline {section}{\numberline {2.2}High Performance Computing}{8}{section.2.2}
+\contentsline {paragraph}{\nonumberline Shared Memory}{8}{section*.8}
+\contentsline {paragraph}{\nonumberline Distributed Memory}{8}{section*.9}
+\contentsline {section}{\numberline {2.3}Partitioned Global Address Space}{9}{section.2.3}
+\contentsline {section}{\numberline {2.4}DASH C++ Template Library}{10}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Dynamic memory allocation}{11}{subsection.2.4.1}
+\contentsline {chapter}{\numberline {3}Related Work}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Shared Memory}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Distributed Memory}{13}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Linear algebra based graph processing}{13}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Bulk-synchronous graph processing}{13}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Asynchronous graph processing}{13}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Graph Container Concepts}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Fundamentals}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}Index Space}{15}{section.4.2}
+\contentsline {section}{\numberline {4.3}Memory Space}{15}{section.4.3}
+\contentsline {section}{\numberline {4.4}Element iteration}{15}{section.4.4}
+\contentsline {section}{\numberline {4.5}Semantics}{15}{section.4.5}
+\contentsline {chapter}{\numberline {5}Reference Implementation}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}Overview}{17}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Pointers and references}{18}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Vertices and edges}{18}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Graph types}{18}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Memory management}{19}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{19}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{20}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Element deletion}{20}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Iteration}{20}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Local iteration}{21}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Global iteration}{21}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{21}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Data access}{22}{section.5.4}
+\contentsline {chapter}{\numberline {6}Case studies}{23}{chapter.6}
+\contentsline {section}{\numberline {6.1}Static structure}{23}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{23}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{23}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Dynamic Structure}{23}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{23}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{23}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{25}{chapter.7}
+\contentsline {section}{\numberline {7.1}Micro-benchmarks}{25}{section.7.1}
+\contentsline {chapter}{\numberline {8}Conclusion}{27}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{27}{section.8.1}
+\contentsline {section}{\numberline {8.2}Assessment}{27}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{27}{section.8.3}
+\contentsline {chapter}{\nonumberline List of Figures}{29}{chapter*.10}
+\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.11}
