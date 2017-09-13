@@ -108,6 +108,7 @@ Since the result of this work is a C++ concept, some important language expressi
 The graph concepts of this work are part of the DASH C++ Template Library (see \autoref{dash_section}). For this reason, the reference implementation is written in C++11 \cite{c++11}. This section illustrates some basic knowledge about important C++ concepts used in the implementation description of \autoref{impl_section}.
 
 \subsection{Language Concepts}
+This section describes features and concepts of the C++ language the reference implementation of this thesis is based on. While C++ offers many different features for different programming styles, only a certain subset is used due to performance reasons.
 
 \subsubsection{Value and reference semantics}
 In object oriented programming, objects can either have value or reference semantics. Objects with value semantics are treated like values: An assignment operation copies the object. This way, the identity of the object is not in focus because the copied object has another identity. Operations on this copy do not affect the original object which means only the value of the object is in focus. Objects with reference semantics are referred to by references or pointers. Their identity becomes important: Multiple references point to the same object.
@@ -325,6 +326,17 @@ Multiple \texttt{grow} operations result in a scattered memory space: Each call 
 
 \chapter{Related Work}
 \section{Shared Memory}
+Graph processing on distributed machines tends to result in low processor utilization due to bad locality \cite{graph_challenges}. Shared memory systems on the other hand allow for simpler graph algorithms with better processor utilization \cite{ligra}. Because some shared memory systems with several terabytes of memory exist (e.g. the LRZ teramem\footnote[1]{https://www.lrz.de/services/compute/special\_systems/teramem/}), graphs up to a certain size can also be computed on such systems. While many libraries and frameworks for graph processing on shared memory systems exist, this section only focuses on work relevant to the HPC community.
+
+\subsubsection{MultiThreaded Graph Library}
+The MultiThreaded Graph Library (MTGL) \cite{mtgl} focuses on graph processing using specialized multithreading systems that contain processors supporting a large amount of thread contexts. The MTGL is specifically designed for the Cray MTA architecture which limits its use significantly because a Cray MTA system has to be available. Brian W. Barrett et al. have implemented an MTGL version for commodity hardware \cite{mainstream_mtgl} but its performance is significantly lower compared to the original version for serial machines.
+
+The Cray MTA architecture \cite{tera_mta} utilizes processors with relatively slow speed and without data caches. Memory access is always blocking but each processor features a large amount of threads so that there are always free threads available for computation in most cases. This results in a simple and fine-grained synchronization model that is not available on commodity hardware, but also creates subtle concurrency and performance issues. These issues are addressed by the MTGL in order to allow straight-forward programming of graph algorithms on these platforms. 
+
+Because of the architecture of the Cray MTA, locality is not an issue in the MTGL: Data is partitioned by the runtime system of the MTA. The interface of the MTGL is - like many graph processing frameworks - based on the Boost Graph Library (BGL) \cite{bgl}. It is less generic though: Only directed graphs are supported.
+
+\subsubsection{STINGER}
+
 
 \section{Distributed Memory}
 \subsection{Linear algebra based graph processing}

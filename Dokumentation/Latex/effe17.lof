@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}}{10}{figure.2.1}
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Memory space of two units after two \texttt {GlobHeapMem.grow} operations}}{11}{figure.2.2}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Memory space of two units after two \texttt {GlobHeapMem.grow} operations}}{12}{figure.2.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

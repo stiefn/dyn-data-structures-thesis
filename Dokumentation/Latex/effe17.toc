@@ -19,6 +19,8 @@
 \contentsline {subsection}{\numberline {2.4.1}Dynamic memory allocation}{11}{subsection.2.4.1}
 \contentsline {chapter}{\numberline {3}Related Work}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}Shared Memory}{13}{section.3.1}
+\contentsline {subsubsection}{\nonumberline MultiThreaded Graph Library}{13}{section*.10}
+\contentsline {subsubsection}{\nonumberline STINGER}{13}{section*.11}
 \contentsline {section}{\numberline {3.2}Distributed Memory}{13}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Linear algebra based graph processing}{13}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Bulk-synchronous graph processing}{13}{subsection.3.2.2}
@@ -56,5 +58,5 @@
 \contentsline {section}{\numberline {8.1}Summary}{27}{section.8.1}
 \contentsline {section}{\numberline {8.2}Assessment}{27}{section.8.2}
 \contentsline {section}{\numberline {8.3}Outlook}{27}{section.8.3}
-\contentsline {chapter}{\nonumberline List of Figures}{29}{chapter*.10}
-\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.11}
+\contentsline {chapter}{\nonumberline List of Figures}{29}{chapter*.12}
+\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.13}
