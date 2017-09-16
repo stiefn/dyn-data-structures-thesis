@@ -328,15 +328,17 @@ Multiple \texttt{grow} operations result in a scattered memory space: Each call 
 \section{Shared Memory}
 Graph processing on distributed machines tends to result in low processor utilization due to bad locality \cite{graph_challenges}. Shared memory systems on the other hand allow for simpler graph algorithms with better processor utilization \cite{ligra}. Because some shared memory systems with several terabytes of memory exist (e.g. the LRZ teramem\footnote[1]{https://www.lrz.de/services/compute/special\_systems/teramem/}), graphs up to a certain size can also be computed on such systems. While many libraries and frameworks for graph processing on shared memory systems exist, this section only focuses on work relevant to the HPC community.
 
+\subsubsection{STINGER}
+Spatio-Temporal Interaction Networks and Graphs Extensible Representation (STINGER) \cite{stinger} is a graph data structure for shared memory systems. STINGER tries to provide a standardized and extensible data structure that allows portability across different graph processing frameworks. The data structure consists of a set of standards that have to be abided by actual implementations.
+
+At its core, STINGER is an adjacency list \textcolor{red}{LINK TO EXPLANATION?} with a fixed structure. Vertices are stored in a contiguous memory region and point to blocks of edges. The set of all edges of a single vertex can be distributed between multiple blocks with each block containing a pointer to the next block. Vertices and edges both store a weight value and edges additionally store timestamps. This allows edges to be automatically removed after they have reached a certain age. STINGER also accounts for fault tolerance by defining standards for checkpointing functionality.
+
 \subsubsection{MultiThreaded Graph Library}
 The MultiThreaded Graph Library (MTGL) \cite{mtgl} focuses on graph processing using specialized multithreading systems that contain processors supporting a large amount of thread contexts. The MTGL is specifically designed for the Cray MTA architecture which limits its use significantly because a Cray MTA system has to be available. Brian W. Barrett et al. have implemented an MTGL version for commodity hardware \cite{mainstream_mtgl} but its performance is significantly lower compared to the original version for serial machines.
 
 The Cray MTA architecture \cite{tera_mta} utilizes processors with relatively slow speed and without data caches. Memory access is always blocking but each processor features a large amount of threads so that there are always free threads available for computation in most cases. This results in a simple and fine-grained synchronization model that is not available on commodity hardware, but also creates subtle concurrency and performance issues. These issues are addressed by the MTGL in order to allow straight-forward programming of graph algorithms on these platforms. 
 
-Because of the architecture of the Cray MTA, locality is not an issue in the MTGL: Data is partitioned by the runtime system of the MTA. The interface of the MTGL is - like many graph processing frameworks - based on the Boost Graph Library (BGL) \cite{bgl}. It is less generic though: Only directed graphs are supported.
-
-\subsubsection{STINGER}
-
+Because of the architecture of the Cray MTA, locality is not an issue in the MTGL: Data is partitioned by the runtime system of the MTA. The interface of the MTGL is - like many graph processing frameworks - based on the Boost Graph Library (BGL) \cite{bgl}. It is less generic though: Only \textit{directed graphs} are supported and data is always stored in an \textit{adjacency list} structure.
 
 \section{Distributed Memory}
 \subsection{Linear algebra based graph processing}
