@@ -24,6 +24,12 @@
 \newblock {In: }\emph{Parallel \& Distributed Processing, 2009. IPDPS 2009.
   IEEE International Symposium on} IEEE, 2009, S. 1--8
 
+\bibitem[BG11]{combinatorial_blas}
+\textsc{Bulu{\c{c}}}, Ayd{\i}n ; \textsc{Gilbert}, John~R.:
+\newblock The Combinatorial BLAS: Design, implementation, and applications.
+\newblock {In: }\emph{The International Journal of High Performance Computing
+  Applications} 25 (2011), Nr. 4, S. 496--509
+
 \bibitem[BHKK07]{mtgl}
 \textsc{Berry}, Jonathan~W. ; \textsc{Hendrickson}, Bruce ; \textsc{Kahan},
   Simon  ; \textsc{Konecny}, Petr:
@@ -31,6 +37,12 @@
   architectures.
 \newblock {In: }\emph{Parallel and Distributed Processing Symposium, 2007.
   IPDPS 2007. IEEE International} IEEE, 2007, S. 1--14
+
+\bibitem[BM11]{2d_bfs}
+\textsc{Bulu{\c{c}}}, Aydin ; \textsc{Madduri}, Kamesh:
+\newblock Parallel breadth-first search on distributed memory systems.
+\newblock {In: }\emph{Proceedings of 2011 International Conference for High
+  Performance Computing, Networking, Storage and Analysis} ACM, 2011, S.~65
 
 \bibitem[C{\etalchar{+}}05]{upc}
 \textsc{Consortium}, UPC u.\,a.:
@@ -66,6 +78,12 @@
 \newblock Chapter author for Collective Communication, Process Topologies, and
   One Sided Communications
 
+\bibitem[FR11]{fundamental_graph_alg}
+\textsc{Fineman}, Jeremy~T. ; \textsc{Robinson}, Eric:
+\newblock Fundamental graph algorithms.
+\newblock {In: }\emph{Graph Algorithms in the Language of Linear Algebra} 22
+  (2011), S.~45
+
 \bibitem[GS13]{gaspi}
 \textsc{Gr{\"u}newald}, Daniel ; \textsc{Simmendinger}, Christian:
 \newblock The GASPI API specification and its implementation GPI 2.0.
@@ -96,12 +114,24 @@
 \newblock Geneva, Switzerland : International Organization for Standardization,
   2015 \url{http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4553.pdf}
 
+\bibitem[KBG12]{graphchi}
+\textsc{Kyrola}, Aapo ; \textsc{Blelloch}, Guy~E.  ; \textsc{Guestrin}, Carlos:
+\newblock Graphchi: Large-scale graph computation on just a pc USENIX, 2012
+
 \bibitem[KDSA08]{dragonfly}
 \textsc{Kim}, John ; \textsc{Dally}, Wiliam~J. ; \textsc{Scott}, Steve  ;
   \textsc{Abts}, Dennis:
 \newblock Technology-driven, highly-scalable dragonfly topology.
 \newblock {In: }\emph{ACM SIGARCH Computer Architecture News} Bd.~36 IEEE
   Computer Society, 2008, S. 77--88
+
+\bibitem[LAB{\etalchar{+}}12]{kdt}
+\textsc{Lugowski}, Adam ; \textsc{Alber}, David ; \textsc{Bulu{\c{c}}}, Aydm ;
+  \textsc{Gilbert}, John~R. ; \textsc{Reinhardt}, Steve ; \textsc{Teng}, Yun  ;
+  \textsc{Waranis}, Andrew:
+\newblock A flexible open-source toolbox for scalable complex graph analysis.
+\newblock {In: }\emph{Proceedings of the 2012 SIAM International Conference on
+  Data Mining} SIAM, 2012, S. 930--941
 
 \bibitem[Lam13]{numa}
 \textsc{Lameter}, Christoph:

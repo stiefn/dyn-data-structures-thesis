@@ -19,12 +19,10 @@
 \contentsline {subsection}{\numberline {2.4.1}Dynamic memory allocation}{11}{subsection.2.4.1}
 \contentsline {chapter}{\numberline {3}Related Work}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}Shared Memory}{13}{section.3.1}
-\contentsline {subsubsection}{\nonumberline STINGER}{13}{section*.10}
-\contentsline {subsubsection}{\nonumberline MultiThreaded Graph Library}{13}{section*.11}
 \contentsline {section}{\numberline {3.2}Distributed Memory}{14}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Linear algebra based graph processing}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Bulk-synchronous graph processing}{14}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Asynchronous graph processing}{14}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.1}Bulk-synchronous graph processing}{14}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Asynchronous graph processing}{14}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Linear algebra based graph processing}{14}{subsection.3.2.3}
 \contentsline {chapter}{\numberline {4}Graph Container Concepts}{15}{chapter.4}
 \contentsline {section}{\numberline {4.1}Fundamentals}{15}{section.4.1}
 \contentsline {section}{\numberline {4.2}Index Space}{15}{section.4.2}
@@ -58,5 +56,5 @@
 \contentsline {section}{\numberline {8.1}Summary}{27}{section.8.1}
 \contentsline {section}{\numberline {8.2}Assessment}{27}{section.8.2}
 \contentsline {section}{\numberline {8.3}Outlook}{27}{section.8.3}
-\contentsline {chapter}{\nonumberline List of Figures}{29}{chapter*.12}
-\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.13}
+\contentsline {chapter}{\nonumberline List of Figures}{29}{chapter*.10}
+\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.11}
