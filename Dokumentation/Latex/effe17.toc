@@ -21,40 +21,40 @@
 \contentsline {section}{\numberline {3.1}Shared Memory}{13}{section.3.1}
 \contentsline {section}{\numberline {3.2}Distributed Memory}{14}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Bulk-synchronous graph processing}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Asynchronous graph processing}{14}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Linear algebra based graph processing}{14}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Graph Container Concepts}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}Fundamentals}{15}{section.4.1}
-\contentsline {section}{\numberline {4.2}Index Space}{15}{section.4.2}
-\contentsline {section}{\numberline {4.3}Memory Space}{15}{section.4.3}
-\contentsline {section}{\numberline {4.4}Element iteration}{15}{section.4.4}
-\contentsline {section}{\numberline {4.5}Semantics}{15}{section.4.5}
-\contentsline {chapter}{\numberline {5}Reference Implementation}{17}{chapter.5}
-\contentsline {section}{\numberline {5.1}Overview}{17}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Pointers and references}{18}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Vertices and edges}{18}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Graph types}{18}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Memory management}{19}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{19}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{20}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Element deletion}{20}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Iteration}{20}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Local iteration}{21}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Global iteration}{21}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{21}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Data access}{22}{section.5.4}
-\contentsline {chapter}{\numberline {6}Case studies}{23}{chapter.6}
-\contentsline {section}{\numberline {6.1}Static structure}{23}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{23}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{23}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Dynamic Structure}{23}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{23}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{23}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Evaluation}{25}{chapter.7}
-\contentsline {section}{\numberline {7.1}Micro-benchmarks}{25}{section.7.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{27}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{27}{section.8.1}
-\contentsline {section}{\numberline {8.2}Assessment}{27}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{27}{section.8.3}
-\contentsline {chapter}{\nonumberline List of Figures}{29}{chapter*.10}
-\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.11}
+\contentsline {subsection}{\numberline {3.2.2}Asynchronous graph processing}{15}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Linear algebra based graph processing}{15}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Graph Container Concepts}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Fundamentals}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Index Space}{17}{section.4.2}
+\contentsline {section}{\numberline {4.3}Memory Space}{17}{section.4.3}
+\contentsline {section}{\numberline {4.4}Element iteration}{17}{section.4.4}
+\contentsline {section}{\numberline {4.5}Semantics}{17}{section.4.5}
+\contentsline {chapter}{\numberline {5}Reference Implementation}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}Overview}{19}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Pointers and references}{20}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Vertices and edges}{20}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Graph types}{20}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Memory management}{21}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{21}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{22}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Element deletion}{22}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Iteration}{22}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Local iteration}{23}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Global iteration}{23}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{23}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Data access}{24}{section.5.4}
+\contentsline {chapter}{\numberline {6}Case studies}{25}{chapter.6}
+\contentsline {section}{\numberline {6.1}Static structure}{25}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{25}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{25}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Dynamic Structure}{25}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{25}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{25}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{27}{chapter.7}
+\contentsline {section}{\numberline {7.1}Micro-benchmarks}{27}{section.7.1}
+\contentsline {chapter}{\numberline {8}Conclusion}{29}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{29}{section.8.1}
+\contentsline {section}{\numberline {8.2}Assessment}{29}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{29}{section.8.3}
+\contentsline {chapter}{\nonumberline List of Figures}{31}{chapter*.10}
+\contentsline {chapter}{\nonumberline Bibliography}{33}{chapter*.11}

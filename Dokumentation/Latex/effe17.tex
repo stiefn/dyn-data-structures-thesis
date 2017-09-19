@@ -342,6 +342,20 @@ Because of the architecture of the Cray MTA, locality is not an issue in the MTG
 Procession of large graphs that do not fit into the memory of a single machine takes place on distributed memory machines in HPC. Shared memory approaches that hold parts of the graph in persistent memory (e.g. GraphChi \cite{graphchi}) do not have sufficient performance in order to be useful in the field of high performance graph processing. However, because some graphs like scale-free social networks lack locality, graph partitioning on distributed memory machines is a challenge that can result in unpredictable performance due to low processor utilization \cite{mtgl}. While performance and scalability are key capabilities of the work mentioned in this section, they can not always be guaranteed.
 
 \subsection{Bulk-synchronous graph processing}
+In \textit{Parallel Computing}, Valiant's \textit{Bulk Synchronous Parallel (BSP)} model \cite{bsp} describes a way to exploit locality: Data is partitioned across processors in a way that allows each processor to perform independent computations. BSP algorithms run a series of \textit{supersteps}, each consisting of three phases:
+
+\begin{enumerate}
+\item Local computation on each processor.
+\item Global exchange of computed data between processors.
+\item Synchronization of all processors.
+\end{enumerate}
+
+The performance of BSP algorithms relies heavily on a well-suited decomposition of the data. Because of the explicit barrier synchronization at the end of each superstep, processor time may be wasted on processors that finish their work faster than others. Deadlocks and data races are however prevented by it.\\
+
+The \textit{Boost Graph Library (BGL)} \cite{bgl} is a widely used sequential graph processing framework. With the \textbf{Parallel Boost Graph Library (PBGL)} \cite{parallel_bgl}, the BGL has been ported to the environment of distributed machines using the BSP model. It aims at providing a general-purpose library for graph processing on distributed machines. The PBGL data structures adjacency list and adjacency matrix therefore are designed as generic as possible and the library includes a wide variety of different graph algorithms that can be extended with the \textit{Visitor Pattern} \cite{visitor_pattern}. Properties of graph components are not restricted to simple edge weights: The PBGL allows programmers to define arbitrary property data structures for vertices and edges. Supported graph types in the PBGL include directed graphs, undirected graphs and bidirectional graphs.
+
+\textbf{Pregel} \cite{pregel} is a framework for large-scale graph processing developed by Google. Like the PBGL, it partitions graphs by vertex and uses the BSP model for computation. Vertices are statically partitioned by a user-defined hash function. Pregel additionally accounts for fault tolerance with checkpointing mechanisms but only supports directed graphs. Programming in Pregel is restrictive because it only allows the definition of vertex visitors that have access to messages sent by other vertices in the previous superstep.
+
 \subsection{Asynchronous graph processing}
 
 \subsection{Linear algebra based graph processing}
