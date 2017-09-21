@@ -61,6 +61,44 @@
 \newblock Performance and Programming Experience on the Tera MTA.
 \newblock {In: }\emph{PPSC}, 1999
 
+\bibitem[CGS{\etalchar{+}}05]{x10}
+\textsc{Charles}, Philippe ; \textsc{Grothoff}, Christian ; \textsc{Saraswat},
+  Vijay ; \textsc{Donawa}, Christopher ; \textsc{Kielstra}, Allan ;
+  \textsc{Ebcioglu}, Kemal ; \textsc{Von~Praun}, Christoph  ; \textsc{Sarkar},
+  Vivek:
+\newblock X10: an object-oriented approach to non-uniform cluster computing.
+\newblock {In: }\emph{Acm Sigplan Notices} Bd.~40 ACM, 2005, S. 519--538
+
+\bibitem[DHS12]{scalegraph}
+\textsc{Dayarathna}, Miyuru ; \textsc{Houngkaew}, Charuwat  ;
+  \textsc{Suzumura}, Toyotaro:
+\newblock Introducing ScaleGraph: an X10 library for billion scale graph
+  analytics.
+\newblock {In: }\emph{Proceedings of the 2012 ACM SIGPLAN X10 Workshop} ACM,
+  2012, S.~6
+
+\bibitem[ECGS92]{active_messages}
+\textsc{Eicken}, TV ; \textsc{Culler}, David~E. ; \textsc{Goldstein}, Seth~C.
+  ; \textsc{Schauser}, Klaus~E.:
+\newblock Active messages: a mechanism for integrated communication and
+  computation.
+\newblock {In: }\emph{Computer Architecture, 1992. Proceedings., The 19th
+  Annual International Symposium on} IEEE, 1992, S. 256--266
+
+\bibitem[EWHL10]{active_message_lib}
+\textsc{Edmonds}, Nicholas ; \textsc{Willcock}, Jeremiah ; \textsc{Hoefler}, T
+  ; \textsc{Lumsdaine}, A:
+\newblock Design of a large-scale hybrid-parallel graph library.
+\newblock {In: }\emph{International Conference on High Performance Computing,
+  Student Research Symposium, Goa, India}, 2010
+
+\bibitem[FAR{\etalchar{+}}12]{stapl}
+\textsc{Fidel}, Adam ; \textsc{Amato}, Nancy~M. ; \textsc{Rauchwerger},
+  Lawrence  u.\,a.:
+\newblock The stapl parallel graph library.
+\newblock {In: }\emph{International Workshop on Languages and Compilers for
+  Parallel Computing} Springer, 2012, S. 46--60
+
 \bibitem[FFK16]{dash}
 \textsc{F{\"u}rlinger}, Karl ; \textsc{Fuchs}, Tobias  ; \textsc{Kowalewski},
   Roger:
@@ -121,6 +159,14 @@
 \newblock Geneva, Switzerland : International Organization for Standardization,
   2015 \url{http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4553.pdf}
 
+\bibitem[KAA{\etalchar{+}}13]{mizan}
+\textsc{Khayyat}, Zuhair ; \textsc{Awara}, Karim ; \textsc{Alonazi}, Amani ;
+  \textsc{Jamjoom}, Hani ; \textsc{Williams}, Dan  ; \textsc{Kalnis}, Panos:
+\newblock Mizan: a system for dynamic load balancing in large-scale graph
+  processing.
+\newblock {In: }\emph{Proceedings of the 8th ACM European Conference on
+  Computer Systems} ACM, 2013, S. 169--182
+
 \bibitem[KBG12]{graphchi}
 \textsc{Kyrola}, Aapo ; \textsc{Blelloch}, Guy~E.  ; \textsc{Guestrin}, Carlos:
 \newblock Graphchi: Large-scale graph computation on just a pc USENIX, 2012
@@ -147,6 +193,15 @@
 \newblock \url{http://dx.doi.org/10.1145/2508834.2513149}. --
 \newblock DOI 10.1145/2508834.2513149. --
 \newblock ISSN 1542--7730
+
+\bibitem[LBG{\etalchar{+}}12]{graphlab}
+\textsc{Low}, Yucheng ; \textsc{Bickson}, Danny ; \textsc{Gonzalez}, Joseph ;
+  \textsc{Guestrin}, Carlos ; \textsc{Kyrola}, Aapo  ; \textsc{Hellerstein},
+  Joseph~M.:
+\newblock Distributed GraphLab: a framework for machine learning and data
+  mining in the cloud.
+\newblock {In: }\emph{Proceedings of the VLDB Endowment} 5 (2012), Nr. 8, S.
+  716--727
 
 \bibitem[LGHB07]{graph_challenges}
 \textsc{Lumsdaine}, Andrew ; \textsc{Gregor}, Douglas ; \textsc{Hendrickson},
@@ -209,6 +264,13 @@
 \newblock \emph{The Boost Graph Library: User Guide and Reference Manual,
   Portable Documents}.
 \newblock Pearson Education, 2001
+
+\bibitem[SU15]{scalegraph2}
+\textsc{Suzumura}, Toyotaro ; \textsc{Ueno}, Koji:
+\newblock ScaleGraph: A high-performance library for billion-scale graph
+  analytics.
+\newblock {In: }\emph{Big Data (Big Data), 2015 IEEE International Conference
+  on} IEEE, 2015, S. 76--84
 
 \bibitem[Val90]{bsp}
 \textsc{Valiant}, Leslie~G.:

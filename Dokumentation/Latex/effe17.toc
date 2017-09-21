@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {3.2}Distributed Memory}{14}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Bulk-synchronous graph processing}{14}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Asynchronous graph processing}{15}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Linear algebra based graph processing}{15}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Linear algebra based graph processing}{16}{subsection.3.2.3}
 \contentsline {chapter}{\numberline {4}Graph Container Concepts}{17}{chapter.4}
 \contentsline {section}{\numberline {4.1}Fundamentals}{17}{section.4.1}
 \contentsline {section}{\numberline {4.2}Index Space}{17}{section.4.2}
