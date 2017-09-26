@@ -80,7 +80,7 @@ On distributed machines, graph data structures can be implemented using a variet
 
 As of today, no generic graph abstractions implementing the PGAS model exist. This work therefore aims to provide a graph abstraction for C++ containers that allows for the implementation of arbitrary graph algorithms following the PGAS model on distributed memory machines.
 
-\section{Scope and Objectives}
+\section{Scope and objectives}
 In this work, a C++ concept for graph containers following the PGAS model is presented. The concept is part of the DASH C++ Template Library and thus uses concepts already present in the library. 
 
 The graph concept is meant to provide a generic framework for the programming of arbitrary graph algorithms in the context of distributed machines and especially the Partitioned Global Address Space model. This means that it meets the following requirements:
@@ -101,13 +101,43 @@ A reference implementation is then used to verify the usability, correctness and
 \chapter{Background}
 This chapter covers some fundamental background knowledge needed for a better understanding of the following chapters of this thesis. Only explanations directly relevant to the topics of this thesis are provided.
 
+\textcolor{red}{INTRODUCE FIRST SECTION WHEN FINISHED}
+
 Since the result of this work is a C++ concept, some important language expressions and concepts are firstly discussed, along with a description of the Standard Template Library on which concepts this work is built upon. The reader is then introduced to the domain of High Performance Computing which is the main application area for this work. A brief overview of the Partitioned Global Address Space programming model is then followed by a description of the DASH Library which provides core concepts used in this thesis.
 
-\section{C++ Concepts}
+\section{Graph representations}
+This section provides a brief overview of different graph representations used in computer sciences \cite{ita}. Basically, there are two different representations with different, but overlapping application areas. 
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/graph_rep.pdf}
+	\caption{a directed graph (a) that is represented as an adjacency matrix (b) and as an adjacency list (c)}
+	\label{graph_rep_figure}
+\end{figure}
+
+\autoref{graph_rep_figure} shows a directed graph that is represented in two forms: \textit{adjacency matrix} and \textit{adjacency list}. Both representations are also suitable for \textit{undirected} and \textit{bidirectional} graphs, but not for \textit{hypergraphs}.
+
+\subsection{Adjacency matrix}
+A graph \(G(V, E)\) with a set of vertices \(V\) and a set of edges \(E\) can be represented by a \(|V| \times |V|\) matrix \(A = a_{ij}\) using a binary edge coding: If an edge \((i, j)\) exists in the set of edges \(E\),  \(a_{ij}\) is set to 1. In all other cases, \(a_{ij}\) is set to 0.
+
+A matrix data structure occupies a memory region for \(|V|^2\) elements regardless of the amount of edges in the graph. For large, \textit{sparse graphs}, this results in an unnecessarily high amount of required memory. A normal matrix therefore is only suitable for \textit{dense graphs}. However, matrices containing a huge amount of elements with the same content (zeros in this case) can be compressed. For example, the \textit{Compressed Sparse Row (CSR)} format \cite{sparse_linear} allows to reduce the memory consumption of sparse matrices significantly. As can be seen in \autoref{graph_rep_figure} b), directed graphs only occupy the fields at the right side of the matrix' main diagonal. For undirected graphs, fields are symmetric along the diagonal. This means, for any directed, undirected or bidirectional graph it is sufficient to only store the matrix values of one side of the diagonal thus further reducing the memory consumption.
+
+2-dimensional matrices are stored in a linear, 1-dimensional order in memory. For this reason, adding new rows and columns to the matrix (i.e. adding new vertices to the graph) would require a complete re-allocation of the memory. Matrices are therefore not a suitable data structure for dynamic graphs for which the number of vertices is not known upon construction.
+
+\subsection{Adjacency list}
+An adjacency list is a set of vertices (preferably stored as an array) each pointing to an \textit{edge list} of vertices adjacent to itself. The data structure is highly dynamic: New vertices can be added to the vertex set and new edges to the corresponding edge lists in \(O(1)\). 
+
+Attributes can be stored directly in an adjacency list by adding stored variables to vertices in the vertex set and edges in the edge lists. For adjacency matrices, these values have to be stored in external data structures.
+
+For undirected graphs, edges have to be stored in the edge lists of source and target vertices. This results in doubled memory consumption for undirected graphs which is contrary to a (correctly implemented) adjacency matrix.
+
+Searching for a particular edge in an adjacency list is also costly, because the complete set of edge lists has to be searched whereas in an adjacency matrix, the information can be obtained straight from the corresponding memory location.
+
+\section{C++ concepts}
 \label{cpp_section}
 The graph concepts of this work are part of the DASH C++ Template Library (see \autoref{dash_section}). For this reason, the reference implementation is written in C++11 \cite{c++11}. This section illustrates some basic knowledge about important C++ concepts used in the implementation description of \autoref{impl_section}.
 
-\subsection{Language Concepts}
+\subsection{Language concepts}
 This section describes features and concepts of the C++ language the reference implementation of this thesis is based on. While C++ offers many different features for different programming styles, only a certain subset is used due to performance reasons.
 
 \subsubsection{Value and reference semantics}
@@ -133,7 +163,7 @@ Value semantics seem to result in a lot of copying that might hit performance. C
 
 Reference semantics is also important for runtime polymorphism, because objects with value semantics might be sliced (i.e. only the part of the base class is copied).
 
-\subsubsection{Operator Overloading}
+\subsubsection{Operator overloading}
 In C++, almost all existing operators can be overloaded for any operand types. Any class can therefore be handled with native operators in a completely customized way. Only four operators like the member access operator cannot be overloaded and it is not possible to create new operators that do not exist in the language itself.
 
 \begin{lstlisting}[caption={Operator overloading}\label{op_overloading_code}] 
@@ -291,7 +321,7 @@ Since data transferal over an interconnect is still costly, programmers have to 
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=1\textwidth]{Bilder/pgas.pdf}
-	\caption{View on a) Shared Memory b) Distributed Memory c) Partitioned Global Address Space}
+	\caption{View on Shared Memory (a), Distributed Memory (b) and Partitioned Global Address Space (c)}
 	\label{pgas_figure}
 \end{figure}
 
@@ -324,7 +354,7 @@ A dynamic container in DASH pre-allocates some memory during its initialization.
 
 Multiple \texttt{grow} operations result in a scattered memory space: Each call to \texttt{grow} creates a new \textit{bucket} - a contiguous memory region in the local freestore. A class implementing the \texttt{GlobHeapMem} concept keeps track of each bucket on each unit so that element indices can be translated to concrete memory locations. \autoref{dash_dynamic_mem_space_figure} illustrates the memory spaces of two units after two grow operations for six elements each have been called. The buckets are allocated at different memory locations. Data access to an element therefore requires the memory location of the bucket and the offset of the element inside the bucket. For this reason, bucket locations and sizes are exchanged between all units during a \texttt{commit} operation and a reference to the object holding the bucket data is needed in every pointer and iterator.
 
-\chapter{Related Work}
+\chapter{Related work}
 \section{Shared Memory}
 Graph processing on distributed machines tends to result in low processor utilization due to bad locality \cite{graph_challenges}. Shared memory systems on the other hand allow for simpler graph algorithms with better processor utilization \cite{ligra}. Because some shared memory systems with several terabytes of memory exist (e.g. the LRZ teramem\footnote[1]{https://www.lrz.de/services/compute/special\_systems/teramem/}), graphs up to a certain size can also be computed on such systems. While many libraries and frameworks for graph processing on shared memory systems exist, this section only focuses on work relevant to the HPC community.\\
 
@@ -380,20 +410,19 @@ The Combinatorial BLAS is also used as a computational engine for a high-level g
 
 For static graphs, \textbf{ScaleGraph} (see \autoref{sync_graph_lib_section}) also supports linear algebra primitives that can be used in the same way as with the Combinatorial BLAS.
 
-\chapter{Graph Container Concepts}
+\chapter{Graph container concepts}
 \label{concept_section}
-\section{Fundamentals}
-\section{Index Space}
-\section{Memory Space}
+\section{Index space}
+\section{Memory space}
 \label{memspace_section}
 \section{Element iteration}
 \label{iteration_concept_section}
 %http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3242.pdf ab 718
 %hierarchie
-\section{Semantics}
+\section{semantics}
 %Computational constraints/assumptions
 
-\chapter{Reference Implementation}
+\chapter{Reference implementation}
 \label{impl_section}
 This section explains a concrete reference implementation of the concepts in \autoref{concept_section}. The implementation is part of the DASH C++ Template Library and thus written in C++11. It is based on basic C++ concepts illustrated in \autoref{cpp_section}. The reference implementation will be referred to as \texttt{dash::Graph} in this chapter.
 
@@ -511,7 +540,7 @@ Because edges are replicated for some graph types (see \autoref{graph_types_sect
 \section{Static structure}
 \subsection{Graph traversal}
 \subsection{Shortest path evaluation}
-\section{Dynamic Structure}
+\section{Dynamic structure}
 \subsection{Graph partitioning}
 \subsection{De Bruijn Graph construction}
 

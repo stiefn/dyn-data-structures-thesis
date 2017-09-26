@@ -69,6 +69,14 @@
 \newblock X10: an object-oriented approach to non-uniform cluster computing.
 \newblock {In: }\emph{Acm Sigplan Notices} Bd.~40 ACM, 2005, S. 519--538
 
+\bibitem[CLRS09]{ita}
+\textsc{Cormen}, Thomas~H. ; \textsc{Leiserson}, Charles~E. ; \textsc{Rivest},
+  Ronald~L.  ; \textsc{Stein}, Clifford:
+\newblock \emph{Introduction to Algorithms, Third Edition}.
+\newblock 3rd.
+\newblock The MIT Press, 2009. --
+\newblock ISBN 0262033844, 9780262033848
+
 \bibitem[DHS12]{scalegraph}
 \textsc{Dayarathna}, Miyuru ; \textsc{Houngkaew}, Charuwat  ;
   \textsc{Suzumura}, Toyotaro:
@@ -237,6 +245,13 @@
 \newblock \url{http://dx.doi.org/10.1109/88.494605}. --
 \newblock DOI 10.1109/88.494605. --
 \newblock ISSN 1063--6552
+
+\bibitem[Saa03]{sparse_linear}
+\textsc{Saad}, Youssef:
+\newblock \emph{Iterative Methods for Sparse Linear Systems}.
+\newblock 2003.
+\newblock \url{http://dx.doi.org/10.1137/1.9780898718003.bm}.
+\newblock \url{http://dx.doi.org/10.1137/1.9780898718003.bm}
 
 \bibitem[SAB{\etalchar{+}}10]{apgas}
 \textsc{Saraswat}, Vijay ; \textsc{Almasi}, George ; \textsc{Bikshandi}, Ganesh
