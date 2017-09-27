@@ -27,20 +27,24 @@
 \contentsline {subsection}{\numberline {3.2.2}Asynchronous graph processing}{17}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Linear algebra based graph processing}{18}{subsection.3.2.3}
 \contentsline {chapter}{\numberline {4}Graph container concepts}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Index space}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}Memory space}{19}{section.4.2}
-\contentsline {section}{\numberline {4.3}Element iteration}{19}{section.4.3}
-\contentsline {section}{\numberline {4.4}semantics}{19}{section.4.4}
+\contentsline {section}{\numberline {4.1}Problem fundamentals}{19}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Elementary graph algorithms}{19}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Functional requirements}{19}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Container concept}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Index space}{20}{section.4.3}
+\contentsline {section}{\numberline {4.4}Memory space}{20}{section.4.4}
+\contentsline {section}{\numberline {4.5}Element iteration}{20}{section.4.5}
 \contentsline {chapter}{\numberline {5}Reference implementation}{21}{chapter.5}
 \contentsline {section}{\numberline {5.1}Overview}{21}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Pointers and references}{22}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Vertices and edges}{22}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Graph types}{22}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.1}Data structure}{22}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Pointers and references}{22}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Vertices and edges}{22}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Graph types}{22}{subsection.5.1.4}
 \contentsline {section}{\numberline {5.2}Memory management}{23}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{23}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{24}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{23}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Element deletion}{24}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Iteration}{24}{section.5.3}
+\contentsline {section}{\numberline {5.3}Iteration}{25}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Local iteration}{25}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Global iteration}{25}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}Edge iteration}{25}{subsection.5.3.3}

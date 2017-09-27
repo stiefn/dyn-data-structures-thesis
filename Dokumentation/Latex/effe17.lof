@@ -7,7 +7,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces dash::Graph component overview}}{21}{figure.5.1}
-\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Contiguous memory allocation}}{23}{figure.5.2}
+\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Contiguous memory allocation}}{24}{figure.5.2}
 \contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Element insertion into edge list invalidating offsets}}{24}{figure.5.3}
 \contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Combined edge iteration space}}{25}{figure.5.4}
 \addvspace {10\p@ }
