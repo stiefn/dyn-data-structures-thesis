@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  27 SEP 2017 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  28 SEP 2017 12:29
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -284,55 +284,56 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 \c@defi=\count108
+\c@lemma=\count109
 
 (hyphenation.tex) (effe17.aux (Titel/titel-lmu.aux) (Titel/erklaerung-lmu.aux)
 (abstract.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count109
+\scratchcounter=\count110
 \scratchdimen=\dimen113
 \scratchbox=\box29
-\nofMPsegments=\count110
-\nofMParguments=\count111
+\nofMPsegments=\count111
+\nofMParguments=\count112
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count112
+\MPscratchCnt=\count113
 \MPscratchDim=\dimen114
-\MPnumerator=\count113
-\makeMPintoPDFobject=\count114
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
 \everyMPtoPDFconversion=\toks19
 )
 \AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 51.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count115
+\c@section@level=\count116
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
 
 (effe17.out) (effe17.out)
 \@outlinefile=\write3
-\c@lstlisting=\count116
+\c@lstlisting=\count117
  (Titel/titel-lmu.tex
 <./Bilder/lmu_siegel.pdf, id=235, 201.75375pt x 201.75375pt>
 File: ./Bilder/lmu_siegel.pdf Graphic file (type pdf)
@@ -403,86 +404,86 @@ Class scrbook Warning: \float@addtolists detected!
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 90.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
  [2]
 chapter 2.
 <Bilder/graph_rep.pdf, id=364, 637.38126pt x 188.20313pt>
 File: Bilder/graph_rep.pdf Graphic file (type pdf)
 
 <use Bilder/graph_rep.pdf>
-Package pdftex.def Info: Bilder/graph_rep.pdf used on input line 113.
+Package pdftex.def Info: Bilder/graph_rep.pdf used on input line 114.
 (pdftex.def)             Requested size: 437.46118pt x 129.17107pt.
  [3
 
 
  <./Bilder/graph_rep.pdf>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 
-Overfull \hbox (26.68858pt too wide) in paragraph at lines 150--151
+Overfull \hbox (26.68858pt too wide) in paragraph at lines 151--152
 [][]\OT1/cmr/m/n/10.95 Listing 2.1[][] shows an \OT1/cmtt/m/n/10.95 increment \
 OT1/cmr/m/n/10.95 func-tion with both value and ref-er-ence se-man-tics. \OT1/c
 mtt/m/n/10.95 increment[]vs
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 152.
+nput line 153.
 [5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
 
 [8]
-Overfull \hbox (38.8007pt too wide) in paragraph at lines 291--292
+Overfull \hbox (38.8007pt too wide) in paragraph at lines 292--293
 \OT1/cmtt/m/n/10.95 ReversibleContainer \OT1/cmr/m/n/10.95 con-cept for ex-am-p
 le al-lows con-tain-ers to ei-ther use \OT1/cmtt/m/n/10.95 BidirectionalIterato
 rs
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
 <Bilder/pgas.pdf, id=550, 268.50313pt x 205.76875pt>
 File: Bilder/pgas.pdf Graphic file (type pdf)
  <use Bilder/pgas.pdf>
-Package pdftex.def Info: Bilder/pgas.pdf used on input line 323.
+Package pdftex.def Info: Bilder/pgas.pdf used on input line 324.
 (pdftex.def)             Requested size: 437.46118pt x 335.2525pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 332.
+(Font)              <9> on input line 333.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 332.
+(Font)              <5> on input line 333.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
 [12 <./Bilder/pgas.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
@@ -491,7 +492,7 @@ File: Bilder/dash_dynamic_mem_space.pdf Graphic file (type pdf)
 
 <use Bilder/dash_dynamic_mem_space.pdf>
 Package pdftex.def Info: Bilder/dash_dynamic_mem_space.pdf used on input line 3
-50.
+51.
 (pdftex.def)             Requested size: 437.46118pt x 147.42387pt.
  [13 <./Bilder/dash_dynamic_mem_space.pdf>] [14
 
@@ -499,52 +500,52 @@ Package pdftex.def Info: Bilder/dash_dynamic_mem_space.pdf used on input line 3
 ]
 chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
  []
 
@@ -553,121 +554,126 @@ chapter 4.
 [19
 
 
-] [20]
-chapter 5.
-
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+]
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
-<Bilder/impl_overview.pdf, id=749, 426.59375pt x 264.48813pt>
+[20] [21] [22]
+chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
+
+ []
+
+<Bilder/impl_overview.pdf, id=771, 426.59375pt x 264.48813pt>
 File: Bilder/impl_overview.pdf Graphic file (type pdf)
 
 <use Bilder/impl_overview.pdf>
-Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 500.
+Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 552.
 (pdftex.def)             Requested size: 437.46118pt x 271.24333pt.
 
-Overfull \hbox (6.37772pt too wide) in paragraph at lines 505--506
+Overfull \hbox (6.37772pt too wide) in paragraph at lines 557--558
 \OT1/cmtt/m/n/10.95 Graph \OT1/cmr/m/n/10.95 also al-lows for the it-er-a-tion 
 of all (in-bound and out-bound) edges, \OT1/cmtt/m/n/10.95 GlobHeapCombinedMem
  []
 
 
-Overfull \hbox (55.61095pt too wide) in paragraph at lines 505--506
+Overfull \hbox (55.61095pt too wide) in paragraph at lines 557--558
 \OT1/cmr/m/n/10.95 uni-fies the mem-ory spaces of the two \OT1/cmtt/m/n/10.95 G
 lobHeapContiguousMem \OT1/cmr/m/n/10.95 in-stances. Both \OT1/cmtt/m/n/10.95 Gl
 obHeapContiguousMem
  []
 
-[21
+[23
 
 
  <./Bilder/impl_overview.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 524--525
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--529
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
 
  []
 
-[22] <Bilder/contiguous_mem.pdf, id=807, 360.34625pt x 160.6pt>
+[24] <Bilder/contiguous_mem.pdf, id=828, 360.34625pt x 160.6pt>
 File: Bilder/contiguous_mem.pdf Graphic file (type pdf)
 
 <use Bilder/contiguous_mem.pdf>
-Package pdftex.def Info: Bilder/contiguous_mem.pdf used on input line 548.
+Package pdftex.def Info: Bilder/contiguous_mem.pdf used on input line 600.
 (pdftex.def)             Requested size: 393.71239pt x 175.46956pt.
 
-<Bilder/edge_list_insertion.pdf, id=810, 350.30875pt x 114.4275pt>
+<Bilder/edge_list_insertion.pdf, id=831, 350.30875pt x 114.4275pt>
 File: Bilder/edge_list_insertion.pdf Graphic file (type pdf)
 
 <use Bilder/edge_list_insertion.pdf>
-Package pdftex.def Info: Bilder/edge_list_insertion.pdf used on input line 558.
+Package pdftex.def Info: Bilder/edge_list_insertion.pdf used on input line 610.
 
 (pdftex.def)             Requested size: 393.71239pt x 128.61363pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
+Underfull \hbox (badness 10000) in paragraph at lines 615--616
 
  []
 
-[23] [24 <./Bilder/contiguous_mem.pdf> <./Bilder/edge_list_insertion.pdf>]
-Overfull \hbox (13.58537pt too wide) in paragraph at lines 591--592
+[25] [26 <./Bilder/contiguous_mem.pdf> <./Bilder/edge_list_insertion.pdf>]
+Overfull \hbox (13.58537pt too wide) in paragraph at lines 643--644
 \OT1/cmtt/m/n/10.95 GlobHeapCombinedMem \OT1/cmr/m/n/10.95 is used to unify the
  it-er-a-tion spaces of mul-ti-ple \OT1/cmtt/m/n/10.95 GlobHeapContiguousMem
  []
 
-<Bilder/combined_edges.pdf, id=898, 573.64313pt x 49.18375pt>
+<Bilder/combined_edges.pdf, id=919, 573.64313pt x 49.18375pt>
 File: Bilder/combined_edges.pdf Graphic file (type pdf)
 
 <use Bilder/combined_edges.pdf>
-Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 595.
+Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 647.
 (pdftex.def)             Requested size: 437.46118pt x 37.50835pt.
- [25 <./Bilder/combined_edges.pdf>] [26]
+ [27 <./Bilder/combined_edges.pdf>] [28]
 chapter 6.
-[27
+[29
 
 
-] [28
+] [30
 
 
 ]
 chapter 7.
-[29] [30
+[31] [32
 
 
 ]
 chapter 8.
-[31] [32
+[33] [34
 
 
 ] (effe17.lof)
 \tf@lof=\write5
- (effe17.bbl [33
+ (effe17.bbl [35
 
 
-] [34
+] [36
 
 
 ]
 chapter without number
-[35] [36] [37])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 630.
- [38]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 630.
+[37] [38] [39])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 682.
+ [40]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 682.
  (effe17.aux (Titel/titel-lmu.aux)
 (Titel/erklaerung-lmu.aux) (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 630.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 630.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 682.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 682.
 Package rerunfilecheck Info: File `effe17.out' has not changed.
-(rerunfilecheck)             Checksum: 0EADD68D7E9EE1B77C4716A139B38B64;3848.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 630.
+(rerunfilecheck)             Checksum: 56CE1C5DBCE25E402A88845590D9A9E6;3848.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 682.
  ) 
 Here is how much of TeX's memory you used:
- 9114 strings out of 493673
- 138206 string characters out of 3141527
+ 9135 strings out of 493673
+ 138386 string characters out of 3141527
  320456 words of memory out of 3000000
- 12071 multiletter control sequences out of 15000+200000
+ 12080 multiletter control sequences out of 15000+200000
  12571 words of font info for 44 fonts, out of 3000000 for 9000
  1066 hyphenation exceptions out of 8191
  41i,9n,66p,1069b,1856s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -688,9 +694,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on effe17.pdf (48 pages, 5763109 bytes).
+Output written on effe17.pdf (50 pages, 5775295 bytes).
 PDF statistics:
- 1127 PDF objects out of 1200 (max. 8388607)
- 243 named destinations out of 1000 (max. 500000)
+ 1156 PDF objects out of 1200 (max. 8388607)
+ 255 named destinations out of 1000 (max. 500000)
  505 words of extra memory for PDF output out of 10000 (max. 10000000)
 

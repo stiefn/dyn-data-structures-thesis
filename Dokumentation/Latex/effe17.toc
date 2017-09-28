@@ -29,38 +29,40 @@
 \contentsline {chapter}{\numberline {4}Graph container concepts}{19}{chapter.4}
 \contentsline {section}{\numberline {4.1}Problem fundamentals}{19}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Elementary graph algorithms}{19}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Functional requirements}{19}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Container concept}{20}{section.4.2}
-\contentsline {section}{\numberline {4.3}Index space}{20}{section.4.3}
-\contentsline {section}{\numberline {4.4}Memory space}{20}{section.4.4}
-\contentsline {section}{\numberline {4.5}Element iteration}{20}{section.4.5}
-\contentsline {chapter}{\numberline {5}Reference implementation}{21}{chapter.5}
-\contentsline {section}{\numberline {5.1}Overview}{21}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Data structure}{22}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Pointers and references}{22}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Vertices and edges}{22}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Graph types}{22}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}Memory management}{23}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{23}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{23}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Element deletion}{24}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Iteration}{25}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Local iteration}{25}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Global iteration}{25}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{25}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Data access}{26}{section.5.4}
-\contentsline {chapter}{\numberline {6}Case studies}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Static structure}{27}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{27}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{27}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Dynamic structure}{27}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{27}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{27}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Evaluation}{29}{chapter.7}
-\contentsline {section}{\numberline {7.1}Micro-benchmarks}{29}{section.7.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{31}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{31}{section.8.1}
-\contentsline {section}{\numberline {8.2}Assessment}{31}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{31}{section.8.3}
-\contentsline {chapter}{\nonumberline List of Figures}{33}{chapter*.10}
-\contentsline {chapter}{\nonumberline Bibliography}{35}{chapter*.11}
+\contentsline {subsubsection}{\nonumberline Breadth-first search}{19}{section*.10}
+\contentsline {subsubsection}{\nonumberline Depth-first search}{20}{section*.11}
+\contentsline {subsection}{\numberline {4.1.2}Functional requirements}{21}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Container concept}{22}{section.4.2}
+\contentsline {section}{\numberline {4.3}Index space}{22}{section.4.3}
+\contentsline {section}{\numberline {4.4}Memory space}{22}{section.4.4}
+\contentsline {section}{\numberline {4.5}Element iteration}{22}{section.4.5}
+\contentsline {chapter}{\numberline {5}Reference implementation}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Overview}{23}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Data structure}{24}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Pointers and references}{24}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Vertices and edges}{24}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Graph types}{24}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Memory management}{25}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{25}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{25}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Element deletion}{26}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Iteration}{27}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Local iteration}{27}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Global iteration}{27}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{27}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Data access}{28}{section.5.4}
+\contentsline {chapter}{\numberline {6}Case studies}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Static structure}{29}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{29}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{29}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Dynamic structure}{29}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{29}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{29}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{31}{chapter.7}
+\contentsline {section}{\numberline {7.1}Micro-benchmarks}{31}{section.7.1}
+\contentsline {chapter}{\numberline {8}Conclusion}{33}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{33}{section.8.1}
+\contentsline {section}{\numberline {8.2}Assessment}{33}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{33}{section.8.3}
+\contentsline {chapter}{\nonumberline List of Figures}{35}{chapter*.12}
+\contentsline {chapter}{\nonumberline Bibliography}{37}{chapter*.13}

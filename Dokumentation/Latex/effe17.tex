@@ -42,6 +42,7 @@
 }
 
 \newtheorem{defi}{Definition}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
 
 \graphicspath{{./Bilder/}}
 
@@ -413,8 +414,59 @@ For static graphs, \textbf{ScaleGraph} (see \autoref{sync_graph_lib_section}) al
 \chapter{Graph container concepts}
 \label{concept_section}
 \section{Problem fundamentals}
+A generic graph container must enable programmers to implement arbitrary graph algorithms with it. For this reason, an analysis of the problem domain is shown in this section. It results in functional requirements that are then used to deduce graph container concepts in later parts of this chapter.
+
 \subsection{Elementary graph algorithms}
 \label{graph_algo_section}
+Many graph algorithms are based on two elementary graph algorithms: \textit{breadth-first search} and \textit{depth-first search} \cite{ita}. Support for these algorithms and any extensions to them therefore is an important requirement for a generic graph container. This section shortly describes both algorithms as well as selected algorithms extending them and analyses their requirements.
+
+\subsubsection{Breadth-first search}
+\textit{Breadth-first search (BFS)} finds all vertices reachable from a source vertex in a graph. The graph is traversed in a way that all vertices are found with the minimum number of edges connecting them to the source vertex: Starting from a certain vertex, all adjacent vertices are explored before their adjacent vertices are explored. All adjacent vertices of a given vertex are called \textit{frontier} or \textit{level}. BFS explores the vertices of a frontier and creates a new frontier for the next step that contains the adjacent vertices of the vertices in the current frontier.
+
+\begin{lemma}
+For successful graph traversal, adjacency information has to be accessible to any algorithm.
+\end{lemma}
+
+Because graphs tend to contain cycles, BFS employs a mechanism for already discovered vertices by graph coloring: All vertices start with a white color. As soon as a vertex is discovered for the first time, its color is changed to grey. Its color is changed to black once all of its adjacent vertices have been discovered. This results in the frontier being colored grey and all other processed vertices being colored black so that the traversal can be progressed in a breadth-first manner.
+
+BFS can be used to construct a \textit{breadth-first tree} that contains all paths from the source vertex to its reachable vertices.
+
+\begin{lemma}
+For BFS to work, a graph container must be able to store mutable attributes for vertices: color and predecessor. A breadth-first tree might be later extracted from the predecessor attributes but it can be convenient if the graph container allows the tree to be constructed in an external data structure during computation of the algorithm. 
+\end{lemma}
+
+\begin{lemma}
+Frontiers need to be managed with a queue or a similar data structure. This data structure might be external or part of the graph container itself. For distributed environments, the vertices of the frontier must be distributed to the nodes holding the respective vertices. The queue data structure therefore has to be distributed.
+\end{lemma}
+
+\textcolor{red}{CAN THIS BE CALLED LEMMA?}\\
+
+Because BFS naturally finds the paths with the least edges between vertices it is obvious that it can be used for \textit{shortest path computation}. \textbf{Dijkstra's shortest path algorithm} \cite{dijkstra} for example is an extension to BFS: Each edge is associated with a distance attribute. Progressing in a breadth-first manner, the smallest sum of edge distances is saved in vertices as an additional attribute. If a vertex is discovered from an edge with a smaller distance sum, the attribute's content is replaced with this new sum.
+
+Similar to Dijkstra's shortest path algorithm, a minimum spanning tree algorithm such as \textbf{Prim's algorithm} \cite{prim} traverses a graph in breadth-first order and creates a tree based on the minimum of edge weight attributes for each frontier.
+
+\begin{lemma}
+Graph containers do not only have to support vertex attributes. Edge attributes are also relevant. While Dijsktra's shortest path algorithm only requires a single attribute for edges, other algorithms might require more.
+\end{lemma}
+
+\subsubsection{Depth-first search}
+\textit{Depth-first search (DFS)} explores vertices starting from a source vertex just like BFS. It differentiates from BFS in that it processes vertices in another order: Instead of exploring the vertices of a frontier one after another, DFS explores adjacent vertices directly from the most recently discovered vertex. If all adjacent vertices have been completely explored, DFS uses backtracking, i.e. it returns to the vertex from which the current vertex has been explored and progresses there. Once finished, DFS proceeds to start another iteration from an arbitrary vertex that has not been discovered in the first iteration - contrary to BFS.
+
+DFS uses a graph coloring scheme similar to BFS. Vertices visited for the first time are colored grey and when the backtracking takes effect, the respective vertex is colored black meaning that all edges from this vertex have been explored. DFS does not need a supporting data structure but apart from that, has the same requirements on graph containers as BFS.
+
+Some algorithms use DFS as a subroutine. For example, a \textbf{topological sort} of a graph runs DFS and then creates a list with sorted vertices based on the findings of the DFS subroutine. A \textbf{strongly connected components} algorithm runs DFS on the graph and then on the transposed version of the graph (i.e. the graph with reversed edges).
+
+\begin{lemma}
+Some algorithms have to access graph attributes after another algorithm has stored them inside the graph. For this reason, attributes of all vertices and edges have to be persistent and accessible across single algorithms.
+\end{lemma}
+
+Because BFS and DFS traverse a graph in such a fundamentally different way, it becomes obvious why locality is problematic with distributed graphs: If a graph partitioning results in high locality exploitation for BFS, it will result in low locality exploitation for DFS and vice versa.
+
+\begin{lemma}
+Partitioning of distributed graphs is dependent on locality information in the graph data itself and the algorithm used. Therefore, no generally valid partitioning scheme can be employed and locality information about a graph as well as information about the used algorithms is needed in advance for a reasonable partitioning.
+\end{lemma}
+ 
+
 \subsection{Functional requirements}
 Based on the observations of \autoref{graph_algo_section}, the following functional requirements for a PGAS graph abstraction have been deduced:
 

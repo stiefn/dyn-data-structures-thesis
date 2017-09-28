@@ -85,6 +85,14 @@
 \newblock {In: }\emph{Proceedings of the 2012 ACM SIGPLAN X10 Workshop} ACM,
   2012, S.~6
 
+\bibitem[Dij59]{dijkstra}
+\textsc{Dijkstra}, E.~W.:
+\newblock A note on two problems in connexion with graphs.
+\newblock {In: }\emph{Numerische Mathematik} 1 (1959), Dec, Nr. 1, 269--271.
+\newblock \url{http://dx.doi.org/10.1007/BF01386390}. --
+\newblock DOI 10.1007/BF01386390. --
+\newblock ISSN 0945--3245
+
 \bibitem[ECGS92]{active_messages}
 \textsc{Eicken}, TV ; \textsc{Culler}, David~E. ; \textsc{Goldstein}, Seth~C.
   ; \textsc{Schauser}, Klaus~E.:
@@ -236,6 +244,15 @@
 \newblock {In: }\emph{Computer Software and Applications Conference, 1998.
   COMPSAC'98. Proceedings. The Twenty-Second Annual International} IEEE, 1998,
   S. 9--15
+
+\bibitem[Pri57]{prim}
+\textsc{Prim}, R.~C.:
+\newblock Shortest Connection Networks And Some Generalizations.
+\newblock {In: }\emph{Bell System Technical Journal} 36 (1957), Nr. 6,
+  1389--1401.
+\newblock \url{http://dx.doi.org/10.1002/j.1538-7305.1957.tb01515.x}. --
+\newblock DOI 10.1002/j.1538--7305.1957.tb01515.x. --
+\newblock ISSN 1538--7305
 
 \bibitem[PTM96]{dismem}
 \textsc{Protic}, J. ; \textsc{Tomasevic}, M.  ; \textsc{Milutinovic}, V.:
