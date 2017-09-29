@@ -33,55 +33,62 @@
 \contentsline {subsubsection}{\nonumberline Depth-first search}{20}{section*.11}
 \contentsline {subsection}{\numberline {4.1.2}Functional requirements}{21}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Container concepts}{22}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Graph}{22}{subsection.4.2.1}
-\contentsline {subsubsection}{\nonumberline Requirements}{22}{section*.12}
-\contentsline {subsubsection}{\nonumberline Types}{23}{section*.13}
-\contentsline {subsubsection}{\nonumberline Methods and operators}{23}{section*.14}
-\contentsline {subsection}{\numberline {4.2.2}DynamicGraph}{24}{subsection.4.2.2}
-\contentsline {subsubsection}{\nonumberline Requirements}{24}{section*.15}
-\contentsline {subsubsection}{\nonumberline Methods and operators}{25}{section*.16}
-\contentsline {subsection}{\numberline {4.2.3}AttributedGraph}{26}{subsection.4.2.3}
-\contentsline {subsubsection}{\nonumberline Requirements}{26}{section*.17}
-\contentsline {subsubsection}{\nonumberline Types}{26}{section*.18}
-\contentsline {subsubsection}{\nonumberline Methods and operators}{26}{section*.19}
-\contentsline {subsection}{\numberline {4.2.4}DuplexGraph}{26}{subsection.4.2.4}
-\contentsline {subsubsection}{\nonumberline Requirements}{27}{section*.20}
-\contentsline {subsubsection}{\nonumberline Types}{27}{section*.21}
-\contentsline {subsubsection}{\nonumberline Methods and operators}{27}{section*.22}
-\contentsline {subsection}{\numberline {4.2.5}CombinedEdgeGraph}{28}{subsection.4.2.5}
-\contentsline {subsubsection}{\nonumberline Requirements}{28}{section*.23}
-\contentsline {subsubsection}{\nonumberline Types}{28}{section*.24}
-\contentsline {subsubsection}{\nonumberline Methods and operators}{28}{section*.25}
-\contentsline {section}{\numberline {4.3}Index space}{29}{section.4.3}
-\contentsline {section}{\numberline {4.4}Memory space}{29}{section.4.4}
-\contentsline {section}{\numberline {4.5}Element iteration}{29}{section.4.5}
-\contentsline {chapter}{\numberline {5}Reference implementation}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}Overview}{31}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Data structure}{32}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Pointers and references}{32}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Vertices and edges}{32}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Graph types}{32}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}Memory management}{33}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{33}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{33}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Element deletion}{34}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Iteration}{35}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Local iteration}{35}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Global iteration}{35}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{35}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Data access}{36}{section.5.4}
-\contentsline {chapter}{\numberline {6}Case studies}{37}{chapter.6}
-\contentsline {section}{\numberline {6.1}Static structure}{37}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{37}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{37}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Dynamic structure}{37}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{37}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{37}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Evaluation}{39}{chapter.7}
-\contentsline {section}{\numberline {7.1}Micro-benchmarks}{39}{section.7.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{41}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{41}{section.8.1}
-\contentsline {section}{\numberline {8.2}Assessment}{41}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{41}{section.8.3}
-\contentsline {chapter}{\nonumberline List of Figures}{43}{chapter*.26}
-\contentsline {chapter}{\nonumberline Bibliography}{45}{chapter*.27}
+\contentsline {section}{\numberline {4.3}Index space}{22}{section.4.3}
+\contentsline {section}{\numberline {4.4}Memory space}{22}{section.4.4}
+\contentsline {section}{\numberline {4.5}Element iteration}{22}{section.4.5}
+\contentsline {chapter}{\numberline {5}Reference implementation}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Overview}{23}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Data structure}{24}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Pointers and references}{24}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Vertices and edges}{24}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Graph types}{24}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Memory management}{25}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{25}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{25}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Element deletion}{26}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Iteration}{27}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Local iteration}{27}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Global iteration}{27}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{27}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Data access}{28}{section.5.4}
+\contentsline {chapter}{\numberline {6}Case studies}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Static structure}{29}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Graph traversal}{29}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Shortest path evaluation}{29}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Dynamic structure}{29}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Graph partitioning}{29}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}De Bruijn Graph construction}{29}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{31}{chapter.7}
+\contentsline {section}{\numberline {7.1}Micro-benchmarks}{31}{section.7.1}
+\contentsline {chapter}{\numberline {8}Conclusion}{33}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{33}{section.8.1}
+\contentsline {section}{\numberline {8.2}Assessment}{33}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{33}{section.8.3}
+\contentsline {chapter}{Appendices}{35}{section*.12}
+\contentsline {chapter}{\numberline {A}Graph container concepts}{37}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Graph}{37}{section.1.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Requirements}{37}{subsection.1.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Types}{37}{subsection.1.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Methods and operators}{38}{subsection.1.A.1.3}
+\contentsline {subsubsection}{\nonumberline Conditions}{38}{section*.13}
+\contentsline {section}{\numberline {A.2}DynamicGraph}{39}{section.1.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Requirements}{39}{subsection.1.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Methods and operators}{39}{subsection.1.A.2.2}
+\contentsline {subsubsection}{\nonumberline Conditions}{40}{section*.14}
+\contentsline {section}{\numberline {A.3}AttributedGraph}{41}{section.1.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Requirements}{41}{subsection.1.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Types}{41}{subsection.1.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Methods and operators}{41}{subsection.1.A.3.3}
+\contentsline {subsubsection}{\nonumberline Conditions}{41}{section*.15}
+\contentsline {section}{\numberline {A.4}DuplexGraph}{42}{section.1.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Requirements}{42}{subsection.1.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Types}{42}{subsection.1.A.4.2}
+\contentsline {subsection}{\numberline {A.4.3}Methods and operators}{42}{subsection.1.A.4.3}
+\contentsline {subsection}{\numberline {A.4.4}Conditions}{43}{subsection.1.A.4.4}
+\contentsline {section}{\numberline {A.5}CombinedEdgeGraph}{43}{section.1.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Requirements}{43}{subsection.1.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Types}{43}{subsection.1.A.5.2}
+\contentsline {subsection}{\numberline {A.5.3}Methods and operators}{44}{subsection.1.A.5.3}
+\contentsline {subsubsection}{\nonumberline conditions}{44}{section*.16}
+\contentsline {chapter}{\nonumberline List of Figures}{47}{chapter*.17}
+\contentsline {chapter}{\nonumberline Bibliography}{49}{chapter*.18}
