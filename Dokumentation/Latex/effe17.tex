@@ -120,7 +120,7 @@ This section provides a brief overview of different graph representations used i
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=1\textwidth]{Bilder/graph_rep.pdf}
-	\caption{a directed graph (a) that is represented as an adjacency matrix (b) and as an adjacency list (c)}
+	\caption{A directed graph (a) that is represented as an adjacency matrix (b) and as an adjacency list (c)}
 	\label{graph_rep_figure}
 \end{figure}
 
@@ -134,7 +134,7 @@ A matrix data structure occupies a memory region for \(|V|^2\) elements regardle
 2-dimensional matrices are stored in a linear, 1-dimensional order in memory. For this reason, adding new rows and columns to the matrix (i.e. adding new vertices to the graph) would require a complete re-allocation of the memory. Matrices are therefore not a suitable data structure for dynamic graphs for which the number of vertices is not known upon construction.
 
 \subsection{Adjacency list}
-An adjacency list is a set of vertices (preferably stored as an array) each pointing to an \textit{edge list} of vertices adjacent to itself. The data structure is highly dynamic: New vertices can be added to the vertex set and new edges to the corresponding edge lists in \(O(1)\). 
+An adjacency list is a set of vertices (preferably stored as an array) each pointing to an \textit{edge list} of vertices adjacent to them. The data structure is highly dynamic: New vertices can be added to the vertex set and new edges to the corresponding edge lists in \(O(1)\). 
 
 Attributes can be stored directly in an adjacency list by adding stored variables to vertices in the vertex set and edges in the edge lists. For adjacency matrices, these values have to be stored in external data structures.
 
@@ -394,18 +394,18 @@ In \textit{Parallel Computing}, Valiant's \textit{Bulk Synchronous Parallel (BSP
 
 The performance of BSP algorithms relies heavily on a well-suited decomposition of the data. Because of the explicit barrier synchronization at the end of each superstep, processor time may be wasted on processors that finish their work faster than others. Deadlocks and data races are however prevented by it.\\
 
-The \textit{Boost Graph Library (BGL)} \cite{bgl} is a widely used sequential graph processing framework. With the \textbf{Parallel Boost Graph Library (PBGL)} \cite{parallel_bgl}, the BGL has been ported to the environment of distributed machines using the BSP model. It aims at providing a general-purpose library for graph processing on distributed machines. The PBGL data structures adjacency list and adjacency matrix therefore are designed as generic as possible and the library includes a wide variety of different graph algorithms that can be extended with the \textit{Visitor Pattern} \cite{visitor_pattern}. Properties of graph components are not restricted to simple edge weights: The PBGL allows programmers to define arbitrary property data structures for vertices and edges. Supported graph types in the PBGL include directed, undirected and bidirectional graphs.\\
+The \textit{Boost Graph Library (BGL)} \cite{bgl} is a widely used sequential graph processing framework. With the \textbf{Parallel Boost Graph Library (PBGL)} \cite{parallel_bgl}, the BGL has been ported to the environment of distributed machines using the BSP model. It aims at providing a general-purpose library for graph processing on distributed machines. The PBGL data structures adjacency list and adjacency matrix therefore are designed as generic as possible and the library includes a wide variety of different graph algorithms that can be extended with the \textit{Visitor Pattern} \cite{visitor_pattern}. Attributes of graph components are not restricted to simple edge weights: The PBGL allows programmers to define arbitrary attribute data structures for vertices and edges. Supported graph types in the PBGL include directed, undirected and bidirectional graphs.\\
 
 \textbf{Pregel} \cite{pregel} is a framework for large-scale graph processing developed by Google. Like the PBGL, it partitions graphs by vertex and uses the BSP model for computation. Vertices are statically partitioned by a user-defined hash function. Pregel additionally accounts for fault tolerance with checkpointing mechanisms but only supports directed graphs. Programming in Pregel is restrictive because it only allows the definition of vertex visitors that have access to messages sent by other vertices in the previous superstep.
 
 The static partitioning mechanism of Pregel can be replaced with a dynamic load balancing system called Mizan \cite{mizan}. It monitors Pregel graphs during runtime and migrates vertices to other partitions based on its observations.\\
 
-\textbf{ScaleGraph} \cite{scalegraph2} is a graph processing library written in IBM's X10 \cite{x10} PGAS language. ScaleGraph supports graphs compute hardware of arbitrary size. This means, it can also process graphs that do not fit completely into the memory of the used compute system. ScaleGraph supports dynamic graphs stored in an adjacency list data structure and static graphs stored in a sparse matrix data structure. For dynamic graphs, only directed edges are supported but ScaleGraph allows the programmer to define arbitrary properties for vertices and edges. Because of bad performance experiences in the first version of the library \cite{scalegraph}, the garbage collection of X10 is disabled for big graphs. On top of the ScaleGraph core, Toyotaro Suzumura et al. have added an API based on the model of Pregel (see \autoref{sync_graph_lib_section}). Therefore, while the library is implemented using a PGAS language, it does not provide PGAS functionality to the user and rather relies on the BSP model of Pregel.
+\textbf{ScaleGraph} \cite{scalegraph2} is a graph processing library written in IBM's X10 \cite{x10} PGAS language. ScaleGraph supports graphs compute hardware of arbitrary size. This means, it can also process graphs that do not fit completely into the memory of the used compute system. ScaleGraph supports dynamic graphs stored in an adjacency list data structure and static graphs stored in a sparse matrix data structure. For dynamic graphs, only directed edges are supported but ScaleGraph allows the programmer to define arbitrary attributes for vertices and edges. Because of bad performance experiences in the first version of the library \cite{scalegraph}, the garbage collection of X10 is disabled for big graphs. On top of the ScaleGraph core, Toyotaro Suzumura et al. have added an API based on the model of Pregel (see \autoref{sync_graph_lib_section}). Therefore, while the library is implemented using a PGAS language, it does not provide PGAS functionality to the user and rather relies on the BSP model of Pregel.
 
 \subsection{Asynchronous graph processing}
-The BSP model requires computation steps to be coarse-grained. This means that computations have to be performed on sufficiently large parts of the data that belong together to minimize costly communication. Some graphs however are fine-grained \cite{active_message_lib} and would require many BSP iterations with short computation steps resulting in low processor utilization. To account for these kind of graphs, algorithms that do not require explicit synchronization steps can be formulated to run asynchronously. Asynchronous execution of algorithms is especially useful in the field of machine learning \cite{graphlab}. Graph processing libraries have to explicitly support asynchronous communication because it requires atomic access to vertex and edge properties.\\
+The BSP model requires computation steps to be coarse-grained. This means that computations have to be performed on sufficiently large parts of the data that belong together to minimize costly communication. Some graphs however are fine-grained \cite{active_message_lib} and would require many BSP iterations with short computation steps resulting in low processor utilization. To account for these kind of graphs, algorithms that do not require explicit synchronization steps can be formulated to run asynchronously. Asynchronous execution of algorithms is especially useful in the field of machine learning \cite{graphlab}. Graph processing libraries have to explicitly support asynchronous communication because it requires atomic access to vertex and edge attributes.\\
 
-Nicholas Edmonds et al. present a \textbf{graph processing library based on Active Messages} in \cite{active_message_lib}. It is based on the PBGL and tries to act as a next generation of the library. The library adds support for asynchronous active messages \cite{active_messages} that replace the two-sided communication used in the PBGL and transactions for access to graph component properties. At the time of this writing, the library has not been released.\\
+Nicholas Edmonds et al. present a \textbf{graph processing library based on Active Messages} in \cite{active_message_lib}. It is based on the PBGL and tries to act as a next generation of the library. The library adds support for asynchronous active messages \cite{active_messages} that replace the two-sided communication used in the PBGL and transactions for access to graph component attributes. At the time of this writing, the library has not been released.\\
 
 The \textbf{STAPL Parallel Graph Library (SGL)} \cite{stapl} is a PGAS library that aims at providing an API similar to sequential graph processing libraries. Thus, it tries to abstract data distribution by offering automated partitioning and load-balancing methods that achieve high scalability. Algorithms in the SGL can either be run bulk-synchronously or asynchronously. With an adjacency list data structure at its core, the SGL graph container is dynamic and a distributed directory is used to identify the location of vertices. This allows for the migration of vertices to other processors and redistribution schemes for load-balancing. The SGL is a promising approach in field of PGAS graph processing libraries, but as of this writing, no release or documentation is to be found.
 
@@ -553,6 +553,149 @@ This section describes the graph container concepts that have been deduced from 
 
 \autoref{concepts_figure} depicts the different concepts and their relationships to each other. The \texttt{Graph} concept provides basic functionality for graph processing while the other concepts refine it with additional functionality.
 
+\textcolor{red}{INTEGRATE TEAM INTO CONCEPT}
+
+\subsection{Graph}
+The \texttt{Graph} concept describes a graph container for static data that is suitable for \textit{directed graphs}. It consists of a constructor that creates a graph based on an existing \textit{edge list}. The 
+
+The constructor takes two iterators of type \texttt{InputIterator} which allows the edge list to be of any STL-compatible container type (e.g. \texttt{std::list}). An edge list has  to contain elements of type \texttt{std::pair} with both contained types being integers describing unique vertices. The constructor then creates the graph by adding vertices based on these integers and connecting them according to the given vertex pairs.
+
+Vertices and edges are represented by their own types containing their index in global index space. This is necessary, because iteration over them does not allow to retrieve indices directly. For example, a unit iterating over remote vertices would have no way of getting the corresponding index of a dereferenced vertex. Additionally, edges have to contain indices of the vertices they connect and make them publicly available.
+
+Vertices and edges are assigned to the local memory of a unit if the corresponding edge list has been assigned to the constructor of this unit. Units can then iterate over elements either locally (over the elements that directly reside in the unit's memory) or globally (over all elements in the graph) by calling the respective iterators.
+
+The \texttt{Graph} concept contains two kinds of iterators:
+
+\begin{itemize}
+\item Vertex iterators
+\item Out-edge iterators
+\end{itemize}
+
+This is the minimum needed for adjacency iteration: Each unit can iterate over the set of all vertices or its local portion of the vertices and for each vertex, the outgoing edges can be iterated. Outgoing edges are only iterable with global iterators which means that these iterators should facilitate a mechanism for direct local dereferencing if the respective element resides on the local machine of the calling unit. 
+
+\autoref{adj_it_code} shows an adjacency iteration over all outgoing edges of local vertices.
+
+\begin{lstlisting}[caption=Adjacency iteration with Graph concept\label{adj_it_code}] 
+std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
+Graph g(4, 3, edge_list.begin(), edge_list.end());
+
+for(auto it = g.vertices.lbegin(); it != g.vertices.lend(); ++it) {
+  Graph::vertex_type v = *it;
+  for(auto it2 = g.out_edges.vbegin(v); it2 != g.out_edges.vend(v); ++it2) {
+    Graph::edge_type e = *it2;
+  }
+}
+\end{lstlisting}
+
+\subsection{DynamicGraph}
+The \texttt{DynamicGraph} concept extends the \texttt{Graph} concept with functionality for dynamic addition and deletion of graph elements. Because elements can be added after construction of the graph, an upfront initialization with an edge list is not required here. For this reason, a new constructor allows the graph to be created without any elements. It initializes the graph with a certain capacity so that each unit has a fixed part of memory already assigned to it. Contrary to the constructor of \texttt{Graph}, the number of edges is not an absolute number but rather the number of edges per vertex. This means that the reserved capacity for edges equals to $number of vertices * number of edges$. The vertex and edge numbers are supplied for the whole graph. This means, they have to be multiples of the amount of units in the graph's \texttt{Team}.
+
+All methods for adding and removing vertices and edges can be called with either a reference of the element type itself or its respective index in global index space. Additionally, a convenience function for removing all outgoing edges from a vertex is supplied.
+
+Addition and deletion of elements happens locally on each unit. The resulting changes in 
+local memory and iteration space are not reflected in the respective global spaces until the graph's \textit{barrier synchronization} is called. This \textit{epoch-based} synchronization allows for a trade-off between dynamics and performance.
+
+\autoref{dynamic_graph_code} shows an empty graph being constructed and two vertices and an edge between them being added to it.
+
+\begin{lstlisting}[caption=Dynamic addition of graph elements\label{dynamic_graph_code}] 
+DynamicGraph g(4, 3); // creates a graph with 0 elements but capacity for
+                        // 4 vertices and 12 edges
+
+auto v1 = g.add_vertex(); // returns index of created vertex
+auto v2 = g.add_vertex();
+
+auto e1 = g.add_edge(v1, v2);
+\end{lstlisting}
+
+\subsection{AttributedGraph}
+The \texttt{AttributedGraph} concept extends the \texttt{Graph} concept with attributed elements. The user can specify static structs (a struct in a contiguous memory region without pointers and references) for vertices and edges respectively. A constructor allows concrete instances of these structs to be added to each element. Vertex and edge types contain copies of the struct instances and make them publicly available.
+
+\autoref{attributed_graph_code} shows a graph being constructed with 2 vertices and en edge between them. The Vertices and edges all hold an attribute \textit{id}. Because the syntax is rather complicated it is advised to implement an \texttt{AttributedDynamicGraph} instead, if feasible.
+
+\begin{lstlisting}[caption=Graph construction with attributed elements\label{attributed_graph_code}] 
+typedef   std::tuple<
+    std::pair<int, v_prop>,
+    std::pair<int, v_prop>,
+    e_prop
+> tuple_t;
+
+struct v_prop {
+  int id
+};
+
+struct e_prop {
+  int id
+};
+
+v_prop vp1 { 1 };
+v_prop vp1 { 2 };
+v_prop ep1 { 1 };
+tuple_t e1 = std::make_tuple(
+  std::make_pair(1, vp1),
+  std::make_pair(2, vp2),
+  ep1
+);
+
+std::list<tuple_t> edge_list = { e1 };
+AttributedGraph<v_prop, e_prop> g(2, 1, edge_list.begin(), edge_list.end());
+\end{lstlisting}
+
+\subsection{AttributedDynamicGraph}
+\label{attributed_dynamic_graph_section}
+The \texttt{AttributedDynamicGraph} concept is a specialization of the concepts \texttt{AttributedGraph} and \texttt{DynamicGraph}. It extends the concepts with functionality for adding attributed graph elements dynamically. Methods for adding vertices and edges are extended with references to user-defined attribute structs.
+
+\autoref{dynamic_attributed_graph_code} shows an empty graph being constructed and two vertices as well as one edge between them added. Vertices and edges contain an attribute \textit{id}.
+
+\begin{lstlisting}[caption=Dynamic addition of attributed graph elements\label{dynamic_attributed_graph_code}] 
+struct v_prop {
+  int id
+};
+
+struct e_prop {
+  int id
+};
+
+AttributedDynamicGraph<v_prop, e_prop> g(2, 1);
+v_prop vp1 { 1 };
+auto v1 = g.add_vertex(vp1);
+v_prop vp2 { 2 };
+auto v2 = g.add_vertex(vp2);
+e_prop ep1 { 1 };
+auto e1 = g.add_edge(v1, v2, ep1);
+\end{lstlisting}
+
+\subsection{DuplexGraph}
+The \texttt{DuplexGraph} concept extends the \texttt{Graph} concept with iterators for inbound edges. It is a requirement for \textit{undirected} and \textit{bidirectional graphs} and optional for \textit{directed graphs}.
+
+\autoref{duplex_code} shows a graph with two edges pointing from vertex 1. These edges are then iterated with the inbound edge iterator.
+
+\begin{lstlisting}[caption=Inbound edge iteration\label{duplex_code}] 
+std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
+Graph g(4, 3, edge_list.begin(), edge_list.end());
+
+auto it = g.vertices.lbegin();
+Graph::vertex_type v = *it; // get first vertex (vertex 1)
+
+for(auto it2 = g.in_edges.vbegin(v); it2 != g.in_edges.vend(v); ++it2) {
+  Graph::edge_type e = *it2; // returns edge (4, 1)
+}
+\end{lstlisting}
+
+\subsection{CombinedEdgeGraph}
+The \texttt{CombinedGraph} concept extends the \texttt{Graph} concept with iterators for a combination of inbound and outbound edges. It is advised that an implementation also satisfies \texttt{DuplexGraph}, but this is not a requirement. The specific iteration order for the combination of inbound and outbound edges is not specified in this concept. It is left to the implementation.
+
+\begin{lstlisting}[caption=Combined edge iteration\label{duplex_code}] 
+std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
+Graph g(4, 3, edge_list.begin(), edge_list.end());
+
+auto it = g.vertices.lbegin();
+Graph::vertex_type v = *it; // get first vertex (vertex 1)
+
+for(auto it2 = g.edges.vbegin(v); it2 != g.edges.vend(v); ++it2) {
+  Graph::edge_type e = *it2; // returns edges (1, 2), (1, 3) and (4, 1)
+}
+\end{lstlisting}
+
 \section{Index space}
 \section{Memory space}
 \label{memspace_section}
@@ -594,7 +737,7 @@ int val = ref;                            // convert reference to value
 In this case, \texttt{mem} is an instance of \texttt{GlobHeapContiguousMem} holding at least two globally available elements.
 
 \subsection{Vertices and edges}
-Vertices and edges are modeled as individual classes: \texttt{Vertex} and \texttt{Edge}. Each instance of these classes contains objects of the \textit{property} classes defined by the user as template parameters of \texttt{dash::Graph}. The property classes can only contain variables of static size. These variables are filled with default values upon initialization as per \textit{default initialization} of the C++ standard.\\
+Vertices and edges are modeled as individual classes: \texttt{Vertex} and \texttt{Edge}. Each instance of these classes contains objects of the \textit{attribute} classes defined by the user as template parameters of \texttt{dash::Graph}. The attribute classes can only contain variables of static size. These variables are filled with default values upon initialization as per \textit{default initialization} of the C++ standard.\\
 
 Additionally, vertices and edges contain their respective index in global index space. The index is not publicly available and can only be read by the \texttt{Graph} class and some of its internal classes. Storing the indices internally is required because of global iteration and remote memory access: After a unit has globally iterated over the elements and dereferenced an element, its index is lost and the user has no way to recover it. The index, however, is needed for various use cases such as iterating over the outbound edges of a certain vertex.
 
@@ -801,6 +944,7 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
   $x.add\_edge(i_{v1}, i_{v2})$ & edge\_index\_type & adds an edge between vertices identified by $i_{v1}$ and $i_{v2}$ \\ \hline
   $x.remove\_edge(e)$ &  & removes edge $e$ \\ \hline
   $x.remove\_edge(i_e)$ &  & removes an edge identified by $i_e$ \\ \hline
+  $x.barrier()$ &  & synchronizes memory space across all units \\ \hline
 \end{tabularx}
 
 \subsubsection{Conditions}
@@ -822,7 +966,48 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
 \end{tabularx}
 
 \section{AttributedGraph}
-An \texttt{AttributedGraph} is a \texttt{DynamicGraph} containing arbitrary attributes for vertices and edges.
+An \texttt{AttributedGraph} is a \texttt{Graph} containing arbitrary attributes for vertices and edges.
+
+\subsection{Requirements}
+\begin{itemize}
+\item $X$, the graph type
+\item $VT$, a vertex attribute type
+\item $ET$, an edge attribute type
+\item $it_1$ and $it_2$, \texttt{InputIterators} with a valid range $[i_1, i_2]$ referring to elements of type \texttt{std::tuple<std::pair<int, VT>, std::pair<int, VT>, ET>}
+\end{itemize}
+
+\subsection{Types}
+\begin{tabularx}{\textwidth}{| X | X | X |}
+  \hline
+  \textbf{Name} & \textbf{Type} & \textbf{Notes} \\ 
+  \endhead  
+  \hline
+  $vertex\_attributes\_type$ & VT & user-specified static struct \\ \hline
+  $edge\_attributes\_type$ & ET & user-specified static struct \\ \hline
+\end{tabularx}
+
+\subsection{Methods and operators}
+\begin{tabularx}{1\textwidth}{| l | l | X |}
+  \hline
+  \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
+  \endhead  
+  \hline
+  $X(n_v, n_e, it_1, it_2)$ &  & constructs the graph holding $n_v$ vertices and $n_e$ edges given by the iterators $i_1$ and $i_2$ of an edge list container\\ \hline
+\end{tabularx}
+
+\subsubsection{Conditions}
+\begin{tabularx}{1\textwidth}{| l | X | X |}
+  \hline
+  \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
+  \endhead  
+  \hline
+  $x.add\_vertex(a_v)$ & $a_v$ is \texttt{CopyInsertable} in X & returned index identifies constructed vertex in global index space \\ \hline
+  $x.add\_edge(v_1, v_2, a_e)$ & $v_1$ and $v_2$ are valid vertices in X \newline $a_e$ is \texttt{CopyInsertable} in X & returned index identifies constructed edge in global index space \\ \hline
+  $x.add\_edge(i_{v1}, i_{v2}, a_e)$ & $i_{v1}$ and $i_{v2}$ identify valid vertices in X \newline $a_e$ is \texttt{CopyInsertable} in X & returned index identifies constructed edge in global index space \\ \hline
+\end{tabularx}
+
+\section{AttributedDynamicGraph}
+An \texttt{AttributedDynamicGraph} is a \texttt{DynamicGraph} containing arbitrary attributes for vertices and edges. An \texttt{AttributedDynamicGraph} also satisfies the \texttt{AttributedGraph} concept.
 
 \subsection{Requirements}
 \begin{itemize}
@@ -835,16 +1020,6 @@ An \texttt{AttributedGraph} is a \texttt{DynamicGraph} containing arbitrary attr
 \item $v_1$ and $v_2$, values of type \texttt{X::vertex\_type}
 \item $i_{v1}$ and $i_{v2}$, values of type \texttt{X::vertex\_index\_type}
 \end{itemize}
-
-\subsection{Types}
-\begin{tabularx}{\textwidth}{| X | X | X |}
-  \hline
-  \textbf{Name} & \textbf{Type} & \textbf{Notes} \\ 
-  \endhead  
-  \hline
-  $vertex\_attributes\_type$ & VT & user-specified static struct \\ \hline
-  $edge\_attributes\_type$ & ET & user-specified static struct \\ \hline
-\end{tabularx}
 
 \subsection{Methods and operators}
 \begin{tabularx}{1\textwidth}{| l | l | X |}
@@ -867,6 +1042,7 @@ An \texttt{AttributedGraph} is a \texttt{DynamicGraph} containing arbitrary attr
   $x.add\_edge(v_1, v_2, a_e)$ & $v_1$ and $v_2$ are valid vertices in X \newline $a_e$ is \texttt{CopyInsertable} in X & returned index identifies constructed edge in global index space \\ \hline
   $x.add\_edge(i_{v1}, i_{v2}, a_e)$ & $i_{v1}$ and $i_{v2}$ identify valid vertices in X \newline $a_e$ is \texttt{CopyInsertable} in X & returned index identifies constructed edge in global index space \\ \hline
 \end{tabularx}
+
 
 \section{DuplexGraph}
 A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for each vertex. A container supporting undirected graphs is necessarily a \texttt{DuplexGraph}. For directed graphs, inbound edge iterators are optional.
