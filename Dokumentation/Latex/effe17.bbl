@@ -175,6 +175,12 @@
 \newblock Geneva, Switzerland : International Organization for Standardization,
   2015 \url{http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4553.pdf}
 
+\bibitem[{ISO}17]{c++17}
+\textsc{{ISO}}:
+\newblock \emph{{ISO/IEC 14882:2017 Working Draft, Standard for Programming
+  Language C++}}.
+\newblock International Organization for Standardization, 2017
+
 \bibitem[KAA{\etalchar{+}}13]{mizan}
 \textsc{Khayyat}, Zuhair ; \textsc{Awara}, Karim ; \textsc{Alonazi}, Amani ;
   \textsc{Jamjoom}, Hani ; \textsc{Williams}, Dan  ; \textsc{Kalnis}, Panos:

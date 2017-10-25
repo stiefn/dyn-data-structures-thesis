@@ -29,8 +29,8 @@
 \BOOKMARK [2][-]{subsection.4.2.4}{AttributedDynamicGraph}{section.4.2}% 29
 \BOOKMARK [2][-]{subsection.4.2.5}{DuplexGraph}{section.4.2}% 30
 \BOOKMARK [2][-]{subsection.4.2.6}{CombinedEdgeGraph}{section.4.2}% 31
-\BOOKMARK [1][-]{section.4.3}{Index space}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.4}{Memory space}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Memory spaces}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.4}{Index spaces}{chapter.4}% 33
 \BOOKMARK [1][-]{section.4.5}{Element iteration}{chapter.4}% 34
 \BOOKMARK [0][-]{chapter.5}{Reference implementation}{}% 35
 \BOOKMARK [1][-]{section.5.1}{Overview}{chapter.5}% 36

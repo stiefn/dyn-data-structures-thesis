@@ -696,13 +696,75 @@ for(auto it2 = g.edges.vbegin(v); it2 != g.edges.vend(v); ++it2) {
 }
 \end{lstlisting}
 
-\section{Index space}
-\section{Memory space}
+\section{Memory spaces}
 \label{memspace_section}
+A \texttt{Graph} contains two distinct memory spaces for vertices and outbound edges. A \texttt{DuplexGraph} additionally contains a memory space for inbound edges. Each memory space comprises its own index space (see \autoref{indexspace_section}). Memory spaces are maintained on a per-unit basis and new memory is allocated locally with an STL-compatible container. The concrete container implementation can be specified by the user but it must allocate \textit {contiguous memory regions} (note: in C++17 \cite{c++17}, this formally means a container's iterators must satisfy the \texttt{ContiguousIterator} concept. Because this work is based on C++11, no formal requirement can be formulated). By default, \texttt{std::vector} should be used as allocator.
+
+An object maintaining a memory space on a certain unit also holds information about the memory spaces on all other units. Changes in local memory space are hidden from other units until a \texttt{commit} operation initiates a communication step that exchanges information about the occupied memory.
+
+Remote data can then be accessed with this information using \textit{Remote Direct Memory Access (RDMA)} features of the used communication layer (e.g. MPI-3).\\
+
+The concrete memory model is up to the implementation. The publicly visible memory space however has to adhere to the following definitions:
+
+\begin{defi}
+Local vertex memory space is logically contiguous. New elements are either added at the end of the memory space or, if available, at the position of elements marked for deletion.
+\end{defi}
+
+\begin{defi}
+Local edge memory space consists of multiple logically contiguous edge-list memory spaces that are connected to each other in arbitrary order.  New elements are either added at the end of their respective edge-list memory spaces or, if available, at the position of elements  marked for deletion in their respective edge-list memory spaces.
+\end{defi}
+
+\begin{defi}
+Global memory spaces are a union of local memory spaces ordered by their unit ID ascendingly.
+\end{defi}
+
+Memory spaces do not have to be completely contiguous in memory. They can consist of several contiguous memory regions. For each of these memory regions, the beginning memory address as well as the length has to be stored. An abstraction can then use this information to present a contiguous memory region to the public.
+
+\autoref{memspace_figure} shows exemplary logical memory spaces for vertices and edges respectively. The memory spaces appear contiguous to the outside but parts of them might reside in different memory locations depending on the inplementation.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/memspace.pdf}
+	\caption{Vertex and edge memory space abstractions}
+	\label{memspace_figure}
+\end{figure}
+
+\section{Index spaces}
+\label{indexspace_section}
+Every unit must be able to retrieve and mutate every graph element whether it resides on the local machine or on a remote machine. Graph elements therefore have to be globally identifiable. This section defines index spaces for each group of elements: \textit{vertices}, \textit{outbound edges} and \textit{inbound edges}.
+
+Simple integer index spaces like they are used in STL containers (e.g. \texttt{std::vector}) or static DASH containers (e.g. \texttt{dash::Array}) are problematic: Because element creation in dynamic containers requires new indices to be generated during runtime, all units would have to find a consensus so that index numbers are continuous and unique. This would require one of the following mechanisms:
+
+\begin{enumerate}
+\item Increment a global \textit{maximum index number} on each element creation.
+\item Create a local index on each element creation and negotiate global indices for multiple elements during \texttt{commit} operation.
+\end{enumerate}
+
+\textit{Variant 1} requires communication between units every time an element is created. This additional overhead is intolerable for high performance applications and therefore not suitable for this work.
+
+\textit{Variant 2} only adds communication during the \texttt{commit} operation. If new elements have been created, the \texttt{commit} operation executes all-to-all communication. An additional mechanism that negotiates index numbers could therefore be performed in the same communication steps adding only a slight overhead in comparison to variant 1. Unfortunately, using the created elements locally before a \texttt{commit} requires the user to handle the elements with a local index that is later substituted by global index. This leads to a additional programming complexity. Because this work focuses on easing the programming model for distributed systems, variant 2 is also not suitable.\\
+
+Indices are therefore split into multiple components:
+
+\begin{defi}
+A vertex index is a 2-component tuple (unit ID, local index). Unit ID refers to an integer index uniquely identifying the unit to which the element is local. Local index refers to an integer index identifying the element in local index space.
+\end{defi}
+
+\begin{defi}
+An edge index is a 3-component tuple (unit ID, edge-list ID, list-local index). Unit ID refers to an integer index uniquely describing the unit to which the element is local. Edge list ID refers to an integer identifying the local edge-list of which the element is part of. List-local index refers to an integer index identifying the element in the index space of the given edge-list.
+\end{defi}
+
+Due to edge lists being contiguous in memory (see \autoref{memspace_section}), edge indices have to be split into three components: If an edge is inserted at the end of an edge-list, local indices of all edge-lists residing in memory behind the newly inserted edge would automatically increment by one resulting in invalidated indices after every edge insertion. \autoref{edge_list_insertion_figure} depicts this situation.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.9\textwidth]{Bilder/edge_list_insertion.pdf}
+	\caption{Element insertion into edge list invalidating offsets}
+	\label{edge_list_insertion_figure}
+\end{figure}
+
 \section{Element iteration}
 \label{iteration_concept_section}
-%http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3242.pdf ab 718
-%hierarchie
 
 \chapter{Reference implementation}
 \label{impl_section}
@@ -767,14 +829,7 @@ The \texttt{commit} operation starts a new epoch by packing the elements of the 
 \end{figure}
 
 \subsection{Edge list memory}
-The mechanism in \autoref{contiguous_mem_section} is used for all vertices created at a certain unit. The same mechanism cannot be used for the entirety of all edges created at a single unit, because edge lists have to be contiguous. Appending an element to an edge list would invalidate the offsets of all edges following behind and would also require a re-allocation invalidating the memory location. \autoref{edge_list_insertion_figure} depicts the problem: The new edge inserted at the end of \textit{edge list 1} would be placed at offset 6 in the memory region, incrementing the offsets of all following elements.
-
-\begin{figure}[ht]
-	\centering
-  \includegraphics[width=0.9\textwidth]{Bilder/edge_list_insertion.pdf}
-	\caption{Element insertion into edge list invalidating offsets}
-	\label{edge_list_insertion_figure}
-\end{figure}
+The mechanism in \autoref{contiguous_mem_section} is used for all vertices created at a certain unit. The same mechanism cannot be used for the entirety of all edges created at a single unit, because edge lists have to be contiguous (see \autoref{indexspace_section}).
 
 For this reason, each edge list has to be maintained with individual second regions for element insertions: The mechanism in \autoref{contiguous_mem_section} is used for each edge list individually and the \texttt{commit} operation packs all edge lists into one contiguous memory region.\\
 
@@ -822,15 +877,12 @@ Because edges are replicated for some graph types (see \autoref{graph_types_sect
 
 
 \chapter{Case studies}
-\section{Static structure}
-\subsection{Graph traversal}
-\subsection{Shortest path evaluation}
-\section{Dynamic structure}
-\subsection{Graph partitioning}
-\subsection{De Bruijn Graph construction}
+\subsection{Connected Components}
+\subsection{Minimum Spanning Tree}
 
 \chapter{Evaluation}
 \section{Micro-benchmarks}
+\section{Case studies}
 
 \chapter{Conclusion}
 \section{Summary}
