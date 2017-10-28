@@ -26,64 +26,58 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Graph}{section.4.2}% 26
 \BOOKMARK [2][-]{subsection.4.2.2}{DynamicGraph}{section.4.2}% 27
 \BOOKMARK [2][-]{subsection.4.2.3}{AttributedGraph}{section.4.2}% 28
-\BOOKMARK [2][-]{subsection.4.2.4}{AttributedDynamicGraph}{section.4.2}% 29
-\BOOKMARK [2][-]{subsection.4.2.5}{DuplexGraph}{section.4.2}% 30
-\BOOKMARK [2][-]{subsection.4.2.6}{CombinedEdgeGraph}{section.4.2}% 31
-\BOOKMARK [1][-]{section.4.3}{Memory spaces}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.4}{Index spaces}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.5}{Element iteration}{chapter.4}% 34
-\BOOKMARK [0][-]{chapter.5}{Reference implementation}{}% 35
-\BOOKMARK [1][-]{section.5.1}{Overview}{chapter.5}% 36
-\BOOKMARK [2][-]{subsection.5.1.1}{Data structure}{section.5.1}% 37
-\BOOKMARK [2][-]{subsection.5.1.2}{Pointers and references}{section.5.1}% 38
-\BOOKMARK [2][-]{subsection.5.1.3}{Vertices and edges}{section.5.1}% 39
-\BOOKMARK [2][-]{subsection.5.1.4}{Graph types}{section.5.1}% 40
-\BOOKMARK [1][-]{section.5.2}{Memory management}{chapter.5}% 41
-\BOOKMARK [2][-]{subsection.5.2.1}{Contiguous memory}{section.5.2}% 42
-\BOOKMARK [2][-]{subsection.5.2.2}{Edge list memory}{section.5.2}% 43
-\BOOKMARK [2][-]{subsection.5.2.3}{Element deletion}{section.5.2}% 44
-\BOOKMARK [1][-]{section.5.3}{Iteration}{chapter.5}% 45
-\BOOKMARK [2][-]{subsection.5.3.1}{Local iteration}{section.5.3}% 46
-\BOOKMARK [2][-]{subsection.5.3.2}{Global iteration}{section.5.3}% 47
-\BOOKMARK [2][-]{subsection.5.3.3}{Edge iteration}{section.5.3}% 48
-\BOOKMARK [1][-]{section.5.4}{Data access}{chapter.5}% 49
-\BOOKMARK [0][-]{chapter.6}{Case studies}{}% 50
-\BOOKMARK [1][-]{section.6.1}{Static structure}{chapter.6}% 51
-\BOOKMARK [2][-]{subsection.6.1.1}{Graph traversal}{section.6.1}% 52
-\BOOKMARK [2][-]{subsection.6.1.2}{Shortest path evaluation}{section.6.1}% 53
-\BOOKMARK [1][-]{section.6.2}{Dynamic structure}{chapter.6}% 54
-\BOOKMARK [2][-]{subsection.6.2.1}{Graph partitioning}{section.6.2}% 55
-\BOOKMARK [2][-]{subsection.6.2.2}{De Bruijn Graph construction}{section.6.2}% 56
-\BOOKMARK [0][-]{chapter.7}{Evaluation}{}% 57
-\BOOKMARK [1][-]{section.7.1}{Micro-benchmarks}{chapter.7}% 58
-\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 59
-\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}% 60
-\BOOKMARK [1][-]{section.8.2}{Assessment}{chapter.8}% 61
-\BOOKMARK [1][-]{section.8.3}{Outlook}{chapter.8}% 62
-\BOOKMARK [0][-]{section*.12}{Appendices}{}% 63
-\BOOKMARK [0][-]{Appendix.1.A}{Graph container concepts}{}% 64
-\BOOKMARK [1][-]{section.1.A.1}{Graph}{Appendix.1.A}% 65
-\BOOKMARK [2][-]{subsection.1.A.1.1}{Requirements}{section.1.A.1}% 66
-\BOOKMARK [2][-]{subsection.1.A.1.2}{Types}{section.1.A.1}% 67
-\BOOKMARK [2][-]{subsection.1.A.1.3}{Methods and operators}{section.1.A.1}% 68
-\BOOKMARK [1][-]{section.1.A.2}{DynamicGraph}{Appendix.1.A}% 69
-\BOOKMARK [2][-]{subsection.1.A.2.1}{Requirements}{section.1.A.2}% 70
-\BOOKMARK [2][-]{subsection.1.A.2.2}{Methods and operators}{section.1.A.2}% 71
-\BOOKMARK [1][-]{section.1.A.3}{AttributedGraph}{Appendix.1.A}% 72
-\BOOKMARK [2][-]{subsection.1.A.3.1}{Requirements}{section.1.A.3}% 73
-\BOOKMARK [2][-]{subsection.1.A.3.2}{Types}{section.1.A.3}% 74
-\BOOKMARK [2][-]{subsection.1.A.3.3}{Methods and operators}{section.1.A.3}% 75
-\BOOKMARK [1][-]{section.1.A.4}{AttributedDynamicGraph}{Appendix.1.A}% 76
-\BOOKMARK [2][-]{subsection.1.A.4.1}{Requirements}{section.1.A.4}% 77
-\BOOKMARK [2][-]{subsection.1.A.4.2}{Methods and operators}{section.1.A.4}% 78
-\BOOKMARK [1][-]{section.1.A.5}{DuplexGraph}{Appendix.1.A}% 79
-\BOOKMARK [2][-]{subsection.1.A.5.1}{Requirements}{section.1.A.5}% 80
-\BOOKMARK [2][-]{subsection.1.A.5.2}{Types}{section.1.A.5}% 81
-\BOOKMARK [2][-]{subsection.1.A.5.3}{Methods and operators}{section.1.A.5}% 82
-\BOOKMARK [2][-]{subsection.1.A.5.4}{Conditions}{section.1.A.5}% 83
-\BOOKMARK [1][-]{section.1.A.6}{CombinedEdgeGraph}{Appendix.1.A}% 84
-\BOOKMARK [2][-]{subsection.1.A.6.1}{Requirements}{section.1.A.6}% 85
-\BOOKMARK [2][-]{subsection.1.A.6.2}{Types}{section.1.A.6}% 86
-\BOOKMARK [2][-]{subsection.1.A.6.3}{Methods and operators}{section.1.A.6}% 87
-\BOOKMARK [0][-]{chapter*.18}{List of Figures}{}% 88
-\BOOKMARK [0][-]{chapter*.19}{Bibliography}{}% 89
+\BOOKMARK [2][-]{subsection.4.2.4}{DuplexGraph}{section.4.2}% 29
+\BOOKMARK [2][-]{subsection.4.2.5}{CombinedEdgeGraph}{section.4.2}% 30
+\BOOKMARK [1][-]{section.4.3}{Memory spaces}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.4}{Index spaces}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.5}{Element iteration}{chapter.4}% 33
+\BOOKMARK [0][-]{chapter.5}{Reference implementation}{}% 34
+\BOOKMARK [1][-]{section.5.1}{Overview}{chapter.5}% 35
+\BOOKMARK [2][-]{subsection.5.1.1}{Data structure}{section.5.1}% 36
+\BOOKMARK [2][-]{subsection.5.1.2}{Pointers and references}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.3}{Vertices and edges}{section.5.1}% 38
+\BOOKMARK [2][-]{subsection.5.1.4}{Graph types}{section.5.1}% 39
+\BOOKMARK [1][-]{section.5.2}{Memory management}{chapter.5}% 40
+\BOOKMARK [2][-]{subsection.5.2.1}{Contiguous memory}{section.5.2}% 41
+\BOOKMARK [2][-]{subsection.5.2.2}{Edge list memory}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.3}{Element deletion}{section.5.2}% 43
+\BOOKMARK [1][-]{section.5.3}{Iteration}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.3.1}{Local iteration}{section.5.3}% 45
+\BOOKMARK [2][-]{subsection.5.3.2}{Global iteration}{section.5.3}% 46
+\BOOKMARK [2][-]{subsection.5.3.3}{Edge iteration}{section.5.3}% 47
+\BOOKMARK [1][-]{section.5.4}{Data access}{chapter.5}% 48
+\BOOKMARK [0][-]{chapter.6}{Case studies}{}% 49
+\BOOKMARK [1][-]{subsection.6.0.1}{Connected Components}{chapter.6}% 50
+\BOOKMARK [2][-]{subsection.6.0.2}{Minimum Spanning Tree}{subsection.6.0.1}% 51
+\BOOKMARK [0][-]{chapter.7}{Evaluation}{}% 52
+\BOOKMARK [1][-]{section.7.1}{Micro-benchmarks}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.2}{Case studies}{chapter.7}% 54
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 55
+\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}% 56
+\BOOKMARK [1][-]{section.8.2}{Assessment}{chapter.8}% 57
+\BOOKMARK [1][-]{section.8.3}{Outlook}{chapter.8}% 58
+\BOOKMARK [0][-]{section*.12}{Appendices}{}% 59
+\BOOKMARK [0][-]{Appendix.1.A}{Graph container concepts}{}% 60
+\BOOKMARK [1][-]{section.1.A.1}{Graph}{Appendix.1.A}% 61
+\BOOKMARK [2][-]{subsection.1.A.1.1}{Requirements}{section.1.A.1}% 62
+\BOOKMARK [2][-]{subsection.1.A.1.2}{Types}{section.1.A.1}% 63
+\BOOKMARK [2][-]{subsection.1.A.1.3}{Methods and operators}{section.1.A.1}% 64
+\BOOKMARK [1][-]{section.1.A.2}{DynamicGraph}{Appendix.1.A}% 65
+\BOOKMARK [2][-]{subsection.1.A.2.1}{Requirements}{section.1.A.2}% 66
+\BOOKMARK [2][-]{subsection.1.A.2.2}{Methods and operators}{section.1.A.2}% 67
+\BOOKMARK [1][-]{section.1.A.3}{AttributedGraph}{Appendix.1.A}% 68
+\BOOKMARK [2][-]{subsection.1.A.3.1}{Requirements}{section.1.A.3}% 69
+\BOOKMARK [2][-]{subsection.1.A.3.2}{Types}{section.1.A.3}% 70
+\BOOKMARK [2][-]{subsection.1.A.3.3}{Methods and operators}{section.1.A.3}% 71
+\BOOKMARK [1][-]{section.1.A.4}{DuplexGraph}{Appendix.1.A}% 72
+\BOOKMARK [2][-]{subsection.1.A.4.1}{Requirements}{section.1.A.4}% 73
+\BOOKMARK [2][-]{subsection.1.A.4.2}{Types}{section.1.A.4}% 74
+\BOOKMARK [2][-]{subsection.1.A.4.3}{Methods and operators}{section.1.A.4}% 75
+\BOOKMARK [2][-]{subsection.1.A.4.4}{Conditions}{section.1.A.4}% 76
+\BOOKMARK [1][-]{section.1.A.5}{CombinedEdgeGraph}{Appendix.1.A}% 77
+\BOOKMARK [2][-]{subsection.1.A.5.1}{Requirements}{section.1.A.5}% 78
+\BOOKMARK [2][-]{subsection.1.A.5.2}{Types}{section.1.A.5}% 79
+\BOOKMARK [2][-]{subsection.1.A.5.3}{Methods and operators}{section.1.A.5}% 80
+\BOOKMARK [2][-]{subsection.1.A.5.4}{conditions}{section.1.A.5}% 81
+\BOOKMARK [0][-]{chapter*.16}{List of Figures}{}% 82
+\BOOKMARK [0][-]{chapter*.17}{Bibliography}{}% 83

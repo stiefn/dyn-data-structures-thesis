@@ -47,7 +47,7 @@
 }
 
 \newtheorem{defi}{Definition}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{lemma}{Observation}[chapter]
 
 \usepackage{array}
 \setlength\extrarowheight{2pt}
@@ -579,9 +579,8 @@ This is the minimum needed for adjacency iteration: Each unit can iterate over t
 std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
 Graph g(4, 3, edge_list.begin(), edge_list.end());
 
-for(auto it = g.vertices.lbegin(); it != g.vertices.lend(); ++it) {
-  Graph::vertex_type v = *it;
-  for(auto it2 = g.out_edges.vbegin(v); it2 != g.out_edges.vend(v); ++it2) {
+for(auto it = g.vertices().lbegin(); it != g.vertices().lend(); ++it) {
+  for(auto it2 = g[it].out_edges().begin(); it2 != g[it].out_edges().end(); ++it2) {
     Graph::edge_type e = *it2;
   }
 }
@@ -608,9 +607,9 @@ auto e1 = g.add_edge(v1, v2);
 \end{lstlisting}
 
 \subsection{AttributedGraph}
-The \texttt{AttributedGraph} concept extends the \texttt{Graph} concept with attributed elements. The user can specify static structs (a struct in a contiguous memory region without pointers and references) for vertices and edges respectively. A constructor allows concrete instances of these structs to be added to each element. Vertex and edge types contain copies of the struct instances and make them publicly available.
+The \texttt{AttributedGraph} concept extends the \texttt{Graph} concept with attributed elements. The user can specify static structs (a struct in a contiguous memory region without pointers and references) for vertices and edges respectively. A constructor allows concrete instances of these structs to be added to each element. Vertex and edge types contain copies of the struct instances and make them publicly available. Attributes can be replaced.
 
-\autoref{attributed_graph_code} shows a graph being constructed with 2 vertices and en edge between them. The Vertices and edges all hold an attribute \textit{id}. Because the syntax is rather complicated it is advised to implement an \texttt{AttributedDynamicGraph} instead, if feasible.
+\autoref{attributed_graph_code} shows a graph being constructed with 2 vertices and an edge between them. The vertices and edges hold an attribute \textit{id}.
 
 \begin{lstlisting}[caption=Graph construction with attributed elements\label{attributed_graph_code}] 
 typedef   std::tuple<
@@ -640,11 +639,7 @@ std::list<tuple_t> edge_list = { e1 };
 AttributedGraph<v_prop, e_prop> g(2, 1, edge_list.begin(), edge_list.end());
 \end{lstlisting}
 
-\subsection{AttributedDynamicGraph}
-\label{attributed_dynamic_graph_section}
-The \texttt{AttributedDynamicGraph} concept is a specialization of the concepts \texttt{AttributedGraph} and \texttt{DynamicGraph}. It extends the concepts with functionality for adding attributed graph elements dynamically. Methods for adding vertices and edges are extended with references to user-defined attribute structs.
-
-\autoref{dynamic_attributed_graph_code} shows an empty graph being constructed and two vertices as well as one edge between them added. Vertices and edges contain an attribute \textit{id}.
+A \texttt{DynamicGraph} that also satisfies the requirements of \texttt{AttributedGraph} can add attributes on-the-fly, reducing the complexity of the syntax. An example is shown in \autoref{dynamic_attributed_graph_code}.
 
 \begin{lstlisting}[caption=Dynamic addition of attributed graph elements\label{dynamic_attributed_graph_code}] 
 struct v_prop {
@@ -657,11 +652,14 @@ struct e_prop {
 
 AttributedDynamicGraph<v_prop, e_prop> g(2, 1);
 v_prop vp1 { 1 };
-auto v1 = g.add_vertex(vp1);
+auto v1 = g.add_vertex();
+g.set_attribute(v1, vp1);
 v_prop vp2 { 2 };
-auto v2 = g.add_vertex(vp2);
+auto v2 = g.add_vertex();
+g.set_attribute(v1, vp1);
 e_prop ep1 { 1 };
-auto e1 = g.add_edge(v1, v2, ep1);
+auto e1 = g.add_edge(v1, v2);
+g.set_attribute(e1, ep1);
 \end{lstlisting}
 
 \subsection{DuplexGraph}
@@ -673,10 +671,9 @@ The \texttt{DuplexGraph} concept extends the \texttt{Graph} concept with iterato
 std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
 Graph g(4, 3, edge_list.begin(), edge_list.end());
 
-auto it = g.vertices.lbegin();
-Graph::vertex_type v = *it; // get first vertex (vertex 1)
+auto it = g.vertices().lbegin();
 
-for(auto it2 = g.in_edges.vbegin(v); it2 != g.in_edges.vend(v); ++it2) {
+for(auto it2 = g[it].in_edges().begin(); it2 != g[it].in_edges().end(); ++it2) {
   Graph::edge_type e = *it2; // returns edge (4, 1)
 }
 \end{lstlisting}
@@ -688,10 +685,9 @@ The \texttt{CombinedGraph} concept extends the \texttt{Graph} concept with itera
 std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
 Graph g(4, 3, edge_list.begin(), edge_list.end());
 
-auto it = g.vertices.lbegin();
-Graph::vertex_type v = *it; // get first vertex (vertex 1)
+auto it = g.vertices().lbegin();
 
-for(auto it2 = g.edges.vbegin(v); it2 != g.edges.vend(v); ++it2) {
+for(auto it2 = g[it].edges().begin(); it2 != g[it].edges().begin(); ++it2) {
   Graph::edge_type e = *it2; // returns edges (1, 2), (1, 3) and (4, 1)
 }
 \end{lstlisting}
@@ -731,6 +727,8 @@ Memory spaces do not have to be completely contiguous in memory. They can consis
 
 \section{Index spaces}
 \label{indexspace_section}
+\textcolor{red}{CONCEPT CHANGED - MOVE OR REMOVE SECTION}\\
+
 Every unit must be able to retrieve and mutate every graph element whether it resides on the local machine or on a remote machine. Graph elements therefore have to be globally identifiable. This section defines index spaces for each group of elements: \textit{vertices}, \textit{outbound edges} and \textit{inbound edges}.
 
 Simple integer index spaces like they are used in STL containers (e.g. \texttt{std::vector}) or static DASH containers (e.g. \texttt{dash::Array}) are problematic: Because element creation in dynamic containers requires new indices to be generated during runtime, all units would have to find a consensus so that index numbers are continuous and unique. This would require one of the following mechanisms:
@@ -893,16 +891,20 @@ Because edges are replicated for some graph types (see \autoref{graph_types_sect
 \begin{appendices}
 \chapter{Graph container concepts}
 \label{concept_appendix}
+
 \section{Graph}
 A \texttt{Graph} is a container providing minimal functionality for the creation and adjacency iteration of a graph data structure.
 
 \subsection{Requirements}
 \begin{itemize}
 \item $X$, the graph type
+\item $P$, a pair type satisfying the STL \texttt{pair} concept
 \item $x$, a value of type X
-\item $it_1$ and $it_2$, \texttt{InputIterators}\footnote[2]{see \autoref{stl_iterator_section}} with a valid range $[i_1, i_2]$ referring to elements of type \texttt{std::pair<int, int>}
-\item $v$, a value of type \texttt{X::vertex\_type}
-\item $i_v$, a value of type \texttt{X::vertex\_index\_type}
+\item $it_1$ and $it_2$, \texttt{InputIterators}\footnote[2]{see \autoref{stl_iterator_section}} with a valid range $[it_1, it_2]$ referring to elements of type \texttt{P<int, int>}
+\item $it_v$, a value of type \texttt{X::global\_vertex\_iterator}
+\item $lit_v$, a value of type \texttt{X::local\_vertex\_iterator}
+\item $it_e$, a value of type \texttt{X::global\_edge\_iterator}
+\item $lit_e$, a value of type \texttt{X::local\_edge\_iterator}
 \end{itemize}
 
 \subsection{Types}
@@ -911,12 +913,10 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   \textbf{Name} & \textbf{Type} & \textbf{Notes} \\ 
   \endhead  
   \hline
-  $vertex\_type$ & a type holding vertex information &  \\ \hline
-  $edge\_type$ & a type holding edge information &  \\ \hline
+  $vertex\_type$ & a model describing vertex information &  \\ \hline
+  $edge\_type$ & a model describing edge information &  \\ \hline
   $vertex\_size\_type$ & unsigned integer &  \\ \hline
   $edge\_size\_type$ & unsigned integer &  \\ \hline
-  $vertex\_index\_type$ & integer &  \\ \hline
-  $edge\_index\_type$ & integer &  \\ \hline
   $global\_vertex\_iterator$ & iterator pointing to elements of type \texttt{vertex\_type} & global iterator type satisfying \texttt{InputIterator} \\ \hline
   $local\_vertex\_iterator$ & iterator pointing to elements of type \texttt{vertex\_type} & local iterator type satisfying \texttt{InputIterator} \\ \hline
   $global\_out\_edge\_iterator$ & iterator pointing to elements of type \texttt{edge\_type} & global iterator satisfying \texttt{InputIterator} \\ \hline
@@ -929,19 +929,23 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
   \endhead
   \hline
-  $X(n_v, n_e, it_1, it_2)$ &  & constructs the graph holding $n_v$ vertices and $n_e$ edges given by the iterators $i_1$ and $i_2$ of an edge list container\\ \hline
-  $x.vertices.begin()$ & global\_vertex\_iterator & iterator to the first vertex in global iteration space \\ \hline
-  $x.vertices.end()$ & global\_vertex\_iterator & iterator past the last vertex in global iteration space \\ \hline
-  $x.vertices.lbegin()$ & local\_vertex\_iterator & iterator to the first vertex in local iteration space \\ \hline
-  $x.vertices.lend()$ & local\_vertex\_iterator & iterator past the last vertex in local iteration space \\ \hline
-  $x.out\_edges.begin()$ & global\_out\_edge\_iterator & iterator to the first outbound edge in global iteration space \\ \hline
-  $x.out\_edges.end()$ & global\_out\_edge\_iterator & iterator past the last outbound edge in global iteration space \\ \hline
-  $x.out\_edges.lbegin()$ & local\_out\_edge\_iterator & iterator to the first outbound edge in local iteration space \\ \hline
-  $x.out\_edges.lend()$ & local\_out\_edge\_iterator & iterator past the last outbound edge in local iteration space \\ \hline
-  $x.out_edges.vbegin(v)$ & global\_out\_edge\_iterator & iterator to the first outbound edge connected to vertex $v$ in global iteration space \\ \hline
-  $x.out\_edges.vend(v)$ & global\_out\_edge\_iterator & iterator past the last outbound edge connected to vertex $v$ in global iteration space \\ \hline
-  $x.out\_edges.vbegin(i_v)$ & global\_out\_edge\_iterator & iterator to the first outbound edge connected to the vertex identified by $i_v$ in global iteration space \\ \hline
-  $x.out\_edges.vend(i_v)$ & global\_out\_edge\_iterator & iterator past the last outbound edge connected to to the vertex identified by $i_v$ in global iteration space \\ \hline
+  $X(n_v, it_1, it_2)$ &  & constructs the graph holding $n_v$ vertices and std::distance($it_1$, $it_2$) edges given by the iterators $i_1$ and $i_2$ of an edge list container\\ \hline
+  $x.operator[](it_v)$ & vertex\_type & vertex identified by $it_v$ \\ \hline
+  $x.operator[](lit_v)$ & vertex\_type & vertex identified by $lit_v$ \\ \hline
+  $x.operator[](it_e)$ & edge\_type & edge identified by $it_e$ \\ \hline
+  $x.operator[](lit_e)$ & edge\_type & edge identified by $lit_e$ \\ \hline
+  $x.vertices().begin()$ & global\_vertex\_iterator & iterator to the first vertex in global iteration space \\ \hline
+  $x.vertices().end()$ & global\_vertex\_iterator & iterator past the last vertex in global iteration space \\ \hline
+  $x.vertices().lbegin()$ & local\_vertex\_iterator & iterator to the first vertex in local iteration space \\ \hline
+  $x.vertices().lend()$ & local\_vertex\_iterator & iterator past the last vertex in local iteration space \\ \hline
+  $x.out\_edges().begin()$ & global\_out\_edge\_iterator & iterator to the first outbound edge in global iteration space \\ \hline
+  $x.out\_edges().end()$ & global\_out\_edge\_iterator & iterator past the last outbound edge in global iteration space \\ \hline
+  $x.out\_edges().lbegin()$ & local\_out\_edge\_iterator & iterator to the first outbound edge in local iteration space \\ \hline
+  $x.out\_edges().lend()$ & local\_out\_edge\_iterator & iterator past the last outbound edge in local iteration space \\ \hline
+  $x[it_v].out\_edges().begin()$ & global\_out\_edge\_iterator & iterator pointing to the first element in the edge-list of the vertex pointed to by $it_v$ \\ \hline
+  $x[it_v].out\_edges().end()$ & global\_out\_edge\_iterator & iterator pointing past the last element in the edge-list of the vertex pointed to by $it_v$ \\ \hline
+  $x[lit_v].out\_edges().begin()$ & local\_out\_edge\_iterator & iterator pointing to the first element in the edge-list of the vertex pointed to by $lit_v$ \\ \hline
+  $x[lit_v].out\_edges().end()$ & local\_out\_edge\_iterator & iterator pointing past the last element in the edge-list of the vertex pointed to by $lit_v$ \\ \hline
 \end{tabularx}
 
 \subsubsection{Conditions}
@@ -950,19 +954,23 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
   \endhead
   \hline
-  $X(n_v, n_e, it_1, it_2)$ & $n_e$ == std::distance($it_1$, $it_2$),\newline$n_v$ == the amount of different integer values in elements of $[it_1, it_2]$ & std::distance(x.vertices.\newline begin(), x.vertices.end()) == $n_v$\newline std::distance(x.out\_edges.\newline  begin(), x.out\_edges.end()) == $n_e$\\ \hline
-  $x.vertices.begin()$ & & \\ \hline
-  $x.vertices.end()$ & & \\ \hline
-  $x.vertices.lbegin()$ & & \\ \hline
-  $x.vertices.lend()$ & & \\ \hline
-  $x.out\_edges.begin()$ & & \\ \hline
-  $x.out\_edges.end()$ & & \\ \hline
-  $x.out\_edges.lbegin()$ & & \\ \hline
-  $x.out\_edges.lend()$ & & \\ \hline
-  $x.out_edges.vbegin(v)$ & $v$ is a valid vertex in X & \\ \hline
-  $x.out\_edges.vend(v)$ & $v$ is a valid vertex in X & \\ \hline
-  $x.out\_edges.vbegin(i_v)$ & $i_v$ identifies a valid vertex in X & \\ \hline
-  $x.out\_edges.vend(i_v)$ & $i_v$ identifies a valid vertex in X & \\ \hline
+  $X(n_v, it_1, it_2)$ & $n_v$ = the amount of different integer values in elements of $[it_1, it_2]$ & std::distance(x.vertices.\newline begin(), x.vertices.end()) == $n_v$\newline std::distance(x.out\_edges.\newline  begin(), x.out\_edges.end()) == $n_e$\\ \hline
+  $x.operator[](it_v)$ & vertex\_type & vertex identified by $it_v$ \\ \hline
+  $x.operator[](lit_v)$ & vertex\_type & vertex identified by $lit_v$ \\ \hline
+  $x.operator[](it_e)$ & edge\_type & edge identified by $it_e$ \\ \hline
+  $x.operator[](lit_e)$ & edge\_type & edge identified by $lit_e$ \\ \hline
+  $x.vertices().begin()$ & & \\ \hline
+  $x.vertices().end()$ & & \\ \hline
+  $x.vertices().lbegin()$ & & \\ \hline
+  $x.vertices().lend()$ & & \\ \hline
+  $x.out\_edges().begin()$ & & \\ \hline
+  $x.out\_edges().end()$ & & \\ \hline
+  $x.out\_edges().lbegin()$ & & \\ \hline
+  $x.out\_edges().lend()$ & & \\ \hline
+  $x[it_v].out\_edges().begin()$ & & \\ \hline
+  $x[it_v].out\_edges().end()$ & & \\ \hline
+  $x[lit_v].out\_edges().begin()$ & & \\ \hline
+  $x[lit_v].out\_edges().end()$ & & \\ \hline
 \end{tabularx}
 
 \section{DynamicGraph}
@@ -976,8 +984,10 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
 \item $n_e$, a value of type \texttt{X::edge\_size\_type}
 \item $v$, $v_1$ and $v_2$, values of type \texttt{X::vertex\_type}
 \item $e$, a value of type \texttt{X::edge\_type}
-\item $i_v$, $i_{v1}$ and $i_{v2}$, values of type \texttt{X::vertex\_index\_type}
-\item $i_e$, a value of type \texttt{X::edge\_index\_type}
+\item $it_v$, $it_{v1}$ and $it_{v2}$, values of type \texttt{X::global\_vertex\_iterator}
+\item $lit_v$, $lit_{v1}$ and $lit_{v2}$, values of type \texttt{X::local\_vertex\_iterator}
+\item $it_e$, a value of type \texttt{X::global\_out\_edge\_iterator}
+\item $lit_e$, a value of type \texttt{X::local\_out\_edge\_iterator}
 \end{itemize}
 
 \subsection{Methods and operators}
@@ -987,16 +997,14 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
   \endhead  
   \hline
   $X(n_v, n_e)$ &  & constructs the graph with reserved memory for $n_v$ vertices and $n_v * n_e$ edges \\ \hline
-  $x.add\_vertex()$ & vertex\_index\_type & adds a vertex \\ \hline
-  $x.remove\_vertex(v)$ &  & removes vertex $v$ \\ \hline
-  $x.remove\_vertex(i_v)$ &  & removes a vertex identified by $i_v$ \\ \hline
-  $x.clear\_vertex(v)$ &  & removes all outgoing edges from vertex $v$ \\ \hline
-  $x.clear\_vertex(i_v)$ &  & removes all outgoing edges from a vertex identified by $i_v$ \\ \hline
-  $x.add\_edge(v_1, v_2)$ & edge\_index\_type & adds an edge between vertices $v_1$ and $v_2$ \\ \hline
-  $x.add\_edge(i_{v1}, i_{v2})$ & edge\_index\_type & adds an edge between vertices identified by $i_{v1}$ and $i_{v2}$ \\ \hline
-  $x.remove\_edge(e)$ &  & removes edge $e$ \\ \hline
-  $x.remove\_edge(i_e)$ &  & removes an edge identified by $i_e$ \\ \hline
-  $x.barrier()$ &  & synchronizes memory space across all units \\ \hline
+  $x.add\_vertex()$ & global\_vertex\_iterator & adds a vertex \\ \hline
+  $x.remove\_vertex(it_v)$ &  & removes a vertex pointed to by $it_v$ \\ \hline
+  $x.remove\_vertex(lit_v)$ &  & removes a vertex pointed to by $lit_v$ \\ \hline
+  $x.add\_edge(it_{v1}, it_{v2})$ & global\_out\_edge\_iterator & adds an edge between vertices pointed to by $it_{v1}$ and $it_{v2}$ \\ \hline
+  $x.add\_edge(lit_{v1}, lit_{v2})$ & global\_out\_edge\_iterator & adds an edge between vertices pointed to by $lit_{v1}$ and $lit_{v2}$ \\ \hline
+  $x.remove\_edge(it_e)$ &  & removes an edge identified by $it_e$ \\ \hline
+  $x.remove\_edge(lit_e)$ &  & removes an edge identified by $lit_e$ \\ \hline
+  $x.commit()$ &  & synchronizes memory space across all units \\ \hline
 \end{tabularx}
 
 \subsubsection{Conditions}
@@ -1006,15 +1014,14 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
   \endhead  
   \hline
   $X(n_v, n_e)$ & & memory allocated for $n_v$ vertices and $n_v * n_e$ edges \\ \hline
-  $x.add\_vertex()$ &  & returned index identifies constructed vertex in global index space \\ \hline
-  $x.remove\_vertex(v)$ & $v$ is a valid vertex in X & \\ \hline
-  $x.remove\_vertex(i_v)$ & $i_v$ identifies a valid vertex in X & \\ \hline
-  $x.clear\_vertex(v)$ & $v$ is a valid vertex in X & \\ \hline
-  $x.clear\_vertex(i_v)$ & $i_v$ identifies a valid vertex in X & \\ \hline
-  $x.add\_edge(v_1, v_2)$ & $v_1$ and $v_2$ are valid vertices in X & returned index identifies constructed edge in global index space \\ \hline
-  $x.add\_edge(i_{v1}, i_{v2})$ & $i_{v1}$ and $i_{v2}$ identify valid vertices in X & returned index identifies constructed edge in global index space \\ \hline
-  $x.remove\_edge(e)$ & $e$ is a valid edge in X & \\ \hline
-  $x.remove\_edge(i_e)$ & $i_e$ identifies a valid edge in X & \\ \hline
+  $x.add\_vertex()$ &  & returned iterator points to constructed vertex in global iteration space \\ \hline
+  $x.remove\_vertex(it_v)$ & $it_v$ points to a valid vertex in X & \\ \hline
+  $x.remove\_vertex(lit_v)$ & $lit_v$ points to a valid vertex in X & \\ \hline
+  $x.add\_edge(it_{v1}, it_{v2})$ & $it_{v1}$ and $it_{v2}$ point to valid vertices in X & returned index identifies constructed edge in global index space \\ \hline
+  $x.add\_edge(lit_{v1}, lit_{v2})$ & $lit_{v1}$ and $lit_{v2}$ point to valid vertices in X & returned index identifies constructed edge in global index space \\ \hline
+  $x.remove\_edge(it_e)$ & $it_e$ points to a valid edge in X & \\ \hline
+  $x.remove\_edge(lit_e)$ & $lit_e$ points to a valid edge in X & \\ \hline
+  $x.commit()$ & & locally added elements published in global address space \\ \hline
 \end{tabularx}
 
 \section{AttributedGraph}
@@ -1025,7 +1032,17 @@ An \texttt{AttributedGraph} is a \texttt{Graph} containing arbitrary attributes 
 \item $X$, the graph type
 \item $VT$, a vertex attribute type
 \item $ET$, an edge attribute type
-\item $it_1$ and $it_2$, \texttt{InputIterators} with a valid range $[i_1, i_2]$ referring to elements of type \texttt{std::tuple<std::pair<int, VT>, std::pair<int, VT>, ET>}
+\item $TP$, a tuple type satisfying the STL \texttt{tuple} concept
+\item $P$, a pair type satisfying the STL \texttt{pair} concept
+\item $x$, a value of type X
+\item $n_v$, a value of type \texttt{X::vertex\_size\_type}
+\item $it_1$ and $it_2$, \texttt{InputIterators} with a valid range $[i_1, i_2]$ referring to elements of type \texttt{TP<std::pair<int, VT>, P<int, VT>, ET>}
+\item $it_v$, a value of type \texttt{X::global\_vertex\_iterator}
+\item $lit_v$, a value of type \texttt{X::local\_vertex\_iterator}
+\item $it_e$, a value of type \texttt{X::global\_out\_edge\_iterator}
+\item $lit_e$, a value of type \texttt{X::local\_out\_edge\_iterator}
+\item $a_v$, a value of type \texttt{X::vertex\_attributes\_type}
+\item $a_e$, a value of type \texttt{X::edge\_attributes\_type}
 \end{itemize}
 
 \subsection{Types}
@@ -1044,7 +1061,11 @@ An \texttt{AttributedGraph} is a \texttt{Graph} containing arbitrary attributes 
   \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
   \endhead  
   \hline
-  $X(n_v, n_e, it_1, it_2)$ &  & constructs the graph holding $n_v$ vertices and $n_e$ edges given by the iterators $i_1$ and $i_2$ of an edge list container\\ \hline
+  $X(n_v, it_1, it_2)$ &  & constructs the graph holding $n_v$ vertices and std::distance($it_1$, $it_2$) edges given by the iterators $i_1$ and $i_2$ of an edge list container\\ \hline
+  $x.set\_attribute(it_v, a_v)$ &  & replaces the attributes of the vertex pointed to by $it_v$ with a copy of $a_v$\\ \hline
+  $x.set\_attribute(lit_v, a_v)$ &  & replaces the attributes of the vertex pointed to by $lit_v$ with a copy of $a_v$\\ \hline
+  $x.set\_attribute(it_e, a_e)$ &  & replaces the attributes of the vertex pointed to by $it_e$ with a copy of $a_e$\\ \hline
+  $x.set\_attribute(lit_e, a_e)$ &  & replaces the attributes of the vertex pointed to by $lit_e$ with a copy of $a_e$\\ \hline
 \end{tabularx}
 
 \subsubsection{Conditions}
@@ -1053,48 +1074,12 @@ An \texttt{AttributedGraph} is a \texttt{Graph} containing arbitrary attributes 
   \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
   \endhead  
   \hline
-  $x.add\_vertex(a_v)$ & $a_v$ is \texttt{CopyInsertable} in X & returned index identifies constructed vertex in global index space \\ \hline
-  $x.add\_edge(v_1, v_2, a_e)$ & $v_1$ and $v_2$ are valid vertices in X \newline $a_e$ is \texttt{CopyInsertable} in X & returned index identifies constructed edge in global index space \\ \hline
-  $x.add\_edge(i_{v1}, i_{v2}, a_e)$ & $i_{v1}$ and $i_{v2}$ identify valid vertices in X \newline $a_e$ is \texttt{CopyInsertable} in X & returned index identifies constructed edge in global index space \\ \hline
+  $X(n_v, it_1, it_2)$ &  & memory allocated for $n_v$ vertices and std::distance($it_1$, $it_2$) edges\\ \hline
+  $x.set\_attribute(it_v, a_v)$ & $it_v$ points to a valid vertex in X & \\ \hline
+  $x.set\_attribute(lit_v, a_v)$ & $lit_v$ points to a valid vertex in X & \\ \hline
+  $x.set\_attribute(it_e, a_e)$ & $it_e$ points to a valid edge in X & \\ \hline
+  $x.set\_attribute(lit_e, a_e)$ & $lit_e$ points to a valid edge in X & \\ \hline
 \end{tabularx}
-
-\section{AttributedDynamicGraph}
-An \texttt{AttributedDynamicGraph} is a \texttt{DynamicGraph} containing arbitrary attributes for vertices and edges. An \texttt{AttributedDynamicGraph} also satisfies the \texttt{AttributedGraph} concept.
-
-\subsection{Requirements}
-\begin{itemize}
-\item $X$, the graph type
-\item $VT$, a vertex attribute type
-\item $ET$, an edge attribute type
-\item $x$, a value of type X
-\item $a_v$, a value of type \texttt{X::vertex\_attributes\_type}
-\item $a_e$, a value of type \texttt{X::edge\_attributes\_type}
-\item $v_1$ and $v_2$, values of type \texttt{X::vertex\_type}
-\item $i_{v1}$ and $i_{v2}$, values of type \texttt{X::vertex\_index\_type}
-\end{itemize}
-
-\subsection{Methods and operators}
-\begin{tabularx}{1\textwidth}{| l | l | X |}
-  \hline
-  \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
-  \endhead  
-  \hline
-  $x.add\_vertex(a_v)$ & vertex\_index\_type & adds a vertex holding a copy of $a_v$ \\ \hline
-  $x.add\_edge(v_1, v_2, a_e)$ & edge\_index\_type & adds an edge between vertices $v_1$ and $v_2$ holding a copy of $a_e$ \\ \hline
-  $x.add\_edge(i_{v1}, i_{v2}, a_e)$ &  edge\_index\_type & adds an edge between vertices identified by $i_{v1}$ and $i_{v2}$ holding a copy of $a_e$ \\ \hline
-\end{tabularx}
-
-\subsubsection{Conditions}
-\begin{tabularx}{1\textwidth}{| l | X | X |}
-  \hline
-  \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
-  \endhead  
-  \hline
-  $x.add\_vertex(a_v)$ & $a_v$ is \texttt{CopyInsertable} in X & returned index identifies constructed vertex in global index space \\ \hline
-  $x.add\_edge(v_1, v_2, a_e)$ & $v_1$ and $v_2$ are valid vertices in X \newline $a_e$ is \texttt{CopyInsertable} in X & returned index identifies constructed edge in global index space \\ \hline
-  $x.add\_edge(i_{v1}, i_{v2}, a_e)$ & $i_{v1}$ and $i_{v2}$ identify valid vertices in X \newline $a_e$ is \texttt{CopyInsertable} in X & returned index identifies constructed edge in global index space \\ \hline
-\end{tabularx}
-
 
 \section{DuplexGraph}
 A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for each vertex. A container supporting undirected graphs is necessarily a \texttt{DuplexGraph}. For directed graphs, inbound edge iterators are optional.
@@ -1103,8 +1088,8 @@ A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for 
 \begin{itemize}
 \item $X$, the graph type
 \item $x$, a value of type X
-\item $v$, a value of type \texttt{X::vertex\_type}
-\item $i_v$, a value of type \texttt{X::vertex\_index\_type}
+\item $it_v$, a value of type \texttt{X::global\_vertex\_iterator}
+\item $lit_v$, a value of type \texttt{X::local\_vertex\_iterator}
 \end{itemize}
 
 \subsection{Types}
@@ -1123,14 +1108,14 @@ A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for 
   \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
   \endhead
   \hline
-  $x.in\_edges.begin()$ & global\_in\_edge\_iterator & iterator to the first inbound edge in global iteration space \\ \hline
-  $x.in\_edges.end()$ & global\_in\_edge\_iterator & iterator past the last inbound edge in global iteration space \\ \hline
-  $x.in\_edges.lbegin()$ & local\_in\_edge\_iterator & iterator to the first inbound edge in local iteration space \\ \hline
-  $x.in\_edges.lend()$ & local\_in\_edge\_iterator & iterator past the last inbound edge in local iteration space \\ \hline
-  $x.in_edges.vbegin(v)$ & global\_in\_edge\_iterator & iterator to the first inbound edge connected to vertex $v$ in global iteration space \\ \hline
-  $x.in\_edges.vend(v)$ & global\_in\_edge\_iterator & iterator past the last inbound edge connected to vertex $v$ in global iteration space \\ \hline
-  $x.in\_edges.vbegin(i_v)$ & global\_in\_edge\_iterator & iterator to the first inbound edge connected to the vertex identified by $i_v$ in global iteration space \\ \hline
-  $x.in\_edges.vend(i_v)$ & global\_in\_edge\_iterator & iterator past the last inbound edge connected to to the vertex identified by $i_v$ in global iteration space \\ \hline
+  $x.in\_edges().begin()$ & global\_in\_edge\_iterator & iterator to the first inbound edge in global iteration space \\ \hline
+  $x.in\_edges().end()$ & global\_in\_edge\_iterator & iterator past the last inbound edge in global iteration space \\ \hline
+  $x.in\_edges().lbegin()$ & local\_in\_edge\_iterator & iterator to the first inbound edge in local iteration space \\ \hline
+  $x.in\_edges().lend()$ & local\_in\_edge\_iterator & iterator past the last inbound edge in local iteration space \\ \hline
+  $x[it_v].in\_edges().begin()$ & global\_in\_edge\_iterator & iterator to the first inbound edge connected to the vertex pointed to by $it_v$ \\ \hline
+  $x[it_v].in\_edges().end()$ & global\_in\_edge\_iterator & iterator past the last inbound edge connected to to the vertex pointed to by $it_v$ \\ \hline
+  $x[lit_v].in\_edges().begin()$ & local\_in\_edge\_iterator & iterator to the first inbound edge connected to the vertex pointed to by $lit_v$ \\ \hline
+  $x[lit_v].in\_edges().end()$ & local\_in\_edge\_iterator & iterator past the last inbound edge connected to to the vertex pointed to by $lit_v$ \\ \hline
 \end{tabularx}
 
 \subsection{Conditions}
@@ -1139,14 +1124,14 @@ A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for 
   \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
   \endhead
   \hline
-  $x.in\_edges.begin()$ & & \\ \hline
-  $x.in\_edges.end()$ & & \\ \hline
-  $x.in\_edges.lbegin()$ & & \\ \hline
-  $x.in\_edges.lend()$ & & \\ \hline
-  $x.in_edges.vbegin(v)$ & $v$ is a valid vertex in X & \\ \hline
-  $x.in\_edges.vend(v)$ & $v$ is a valid vertex in X & \\ \hline
-  $x.in\_edges.vbegin(i_v)$ & $i_v$ identifies a valid vertex in X & \\ \hline
-  $x.in\_edges.vend(i_v)$ & $i_v$ identifies a valid vertex in X & \\ \hline
+  $x.in\_edges().begin()$ & & \\ \hline
+  $x.in\_edges().end()$ & & \\ \hline
+  $x.in\_edges().lbegin()$ & & \\ \hline
+  $x.in\_edges().lend()$ & & \\ \hline
+  $x[it_v].in\_edges().begin()$ & $it_v$ points to a valid vertex in X & \\ \hline
+  $x[it_v].in\_edges().end()$ & $it_v$ points to a valid vertex in X & \\ \hline
+  $x[lit_v].in\_edges().begin()$ & $lit_v$ points to a valid vertex in X & \\ \hline
+  $x[lit_v].in\_edges().end()$ & $lit_v$ points to a valid vertex in X & \\ \hline
 \end{tabularx}
 
 \section{CombinedEdgeGraph}
@@ -1156,8 +1141,8 @@ A \texttt{CombinedEdgeGraph} is a \texttt{Graph} with additional iterators for a
 \begin{itemize}
 \item $X$, the graph type
 \item $x$, a value of type X
-\item $v$, a value of type \texttt{X::vertex\_type}
-\item $i_v$, a value of type \texttt{X::vertex\_index\_type}
+\item $it_v$, a value of type \texttt{X::global\_vertex\_iterator}
+\item $lit_v$, a value of type \texttt{X::local\_vertex\_iterator}
 \end{itemize}
 
 \subsection{Types}
@@ -1176,30 +1161,30 @@ A \texttt{CombinedEdgeGraph} is a \texttt{Graph} with additional iterators for a
   \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
   \endhead
   \hline
-  $x.edges.begin()$ & global\_edge\_iterator & iterator to the first edge (inbound and outbound) in global iteration space \\ \hline
-  $x.edges.end()$ & global\_edge\_iterator & iterator past the last edge (inbound and outbound) in global iteration space \\ \hline
-  $x.edges.lbegin()$ & local\_edge\_iterator & iterator to the first edge (inbound and outbound) in local iteration space \\ \hline
-  $x.edges.lend()$ & local\_edge\_iterator & iterator past the last edge (inbound and outbound) in local iteration space \\ \hline
-  $x.edges.vbegin(v)$ & global\_edge\_iterator & iterator to the first edge (inbound and outbound) connected to vertex $v$ in global iteration space \\ \hline
-  $x.edges.vend(v)$ & global\_edge\_iterator & iterator past the last edge (inbound and outbound) connected to vertex $v$ in global iteration space \\ \hline
-  $x.edges.vbegin(i_v)$ & global\_edge\_iterator & iterator to the first edge (inbound and outbound) connected to the vertex identified by $i_v$ in global iteration space \\ \hline
-  $x.edges.vend(i_v)$ & global\_edge\_iterator & iterator past the last edge (inbound and outbound) connected to to the vertex identified by $i_v$ in global iteration space \\ \hline
+  $x.edges().begin()$ & global\_edge\_iterator & iterator to the first edge (inbound and outbound) in global iteration space \\ \hline
+  $x.edges().end()$ & global\_edge\_iterator & iterator past the last edge (inbound and outbound) in global iteration space \\ \hline
+  $x.edges().lbegin()$ & local\_edge\_iterator & iterator to the first edge (inbound and outbound) in local iteration space \\ \hline
+  $x.edges().lend()$ & local\_edge\_iterator & iterator past the last edge (inbound and outbound) in local iteration space \\ \hline
+  $x[it_v].edges().begin()$ & global\_edge\_iterator & iterator to the first edge (inbound and outbound) connected to the vertex pointed to by $it_v$ \\ \hline
+  $x[it_v].edges().end()$ & global\_edge\_iterator & iterator past the last edge (inbound and outbound) connected to to the vertex pointed to by $it_v$ \\ \hline
+  $x[lit_v].edges().begin()$ & local\_edge\_iterator & iterator to the first edge (inbound and outbound) connected to the vertex pointed to by $lit_v$ \\ \hline
+  $x[lit_v].edges().end()$ & local\_edge\_iterator & iterator past the last edge (inbound and outbound) connected to to the vertex pointed to by $lit_v$ \\ \hline
 \end{tabularx}
 
-\subsubsection{conditions}
+\subsection{conditions}
 \begin{tabularx}{1\textwidth}{| l | X | X |}
   \hline
   \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
   \endhead
   \hline
-  $x.edges.begin()$ & & \\ \hline
-  $x.edges.end()$ & & \\ \hline
-  $x.edges.lbegin()$ & & \\ \hline
-  $x.edges.lend()$ & & \\ \hline
-  $x.edges.vbegin(v)$ & $v$ is a valid vertex in X & \\ \hline
-  $x.edges.vend(v)$ & $v$ is a valid vertex in X & \\ \hline
-  $x.edges.vbegin(i_v)$ & $i_v$ identifies a valid vertex in X & \\ \hline
-  $x.edges.vend(i_v)$ & $i_v$ identifies a valid vertex in X & \\ \hline
+  $x.edges().begin()$ & & \\ \hline
+  $x.edges().end()$ & & \\ \hline
+  $x.edges().lbegin()$ & & \\ \hline
+  $x.edges().lend()$ & & \\ \hline
+  $x[it_v].edges().begin()$ & $it_v$ points to a valid vertex in X & \\ \hline
+  $x[it_v].edges().end()$ & $it_v$ points to a valid vertex in X & \\ \hline
+  $x[lit_v].edges().begin()$ & $lit_v$ points to a valid vertex in X & \\ \hline
+  $x[lit_v].edges().end()$ & $lit_v$ points to a valid vertex in X & \\ \hline
 \end{tabularx}
 
 \end{appendices}
