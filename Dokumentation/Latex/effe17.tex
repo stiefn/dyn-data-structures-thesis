@@ -694,7 +694,7 @@ for(auto it2 = g[it].edges().begin(); it2 != g[it].edges().begin(); ++it2) {
 
 \section{Memory spaces}
 \label{memspace_section}
-A \texttt{Graph} contains two distinct memory spaces for vertices and outbound edges. A \texttt{DuplexGraph} additionally contains a memory space for inbound edges. Each memory space comprises its own index space (see \autoref{indexspace_section}). Memory spaces are maintained on a per-unit basis and new memory is allocated locally with an STL-compatible container. The concrete container implementation can be specified by the user but it must allocate \textit {contiguous memory regions} (note: in C++17 \cite{c++17}, this formally means a container's iterators must satisfy the \texttt{ContiguousIterator} concept. Because this work is based on C++11, no formal requirement can be formulated). By default, \texttt{std::vector} should be used as allocator.
+A \texttt{Graph} contains two distinct memory spaces for vertices and outbound edges. A \texttt{DuplexGraph} additionally contains a memory space for inbound edges. Each memory space comprises its own index space (see \autoref{indexspace_section}). Memory spaces are maintained on a per-unit basis and new memory is allocated locally with an STL-compatible container. The concrete container implementation can be specified by the user but it must allocatesatisfy the \texttt{ContiguousContainer} STL concept. By default, \texttt{std::vector} should be used as allocator.
 
 An object maintaining a memory space on a certain unit also holds information about the memory spaces on all other units. Changes in local memory space are hidden from other units until a \texttt{commit} operation initiates a communication step that exchanges information about the occupied memory.
 

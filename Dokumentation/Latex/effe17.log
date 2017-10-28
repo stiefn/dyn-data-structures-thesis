@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  28 OCT 2017 14:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  28 OCT 2017 14:53
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -656,7 +656,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 701--702
 
  []
 
-[26] <Bilder/memspace.pdf, id=1053, 378.91562pt x 68.75688pt>
+[26] <Bilder/memspace.pdf, id=1051, 378.91562pt x 68.75688pt>
 File: Bilder/memspace.pdf Graphic file (type pdf)
 
 <use Bilder/memspace.pdf>
@@ -673,7 +673,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 743--744
  []
 
 [27 <./Bilder/memspace.pdf>]
-<Bilder/edge_list_insertion.pdf, id=1099, 350.30875pt x 114.4275pt>
+<Bilder/edge_list_insertion.pdf, id=1098, 350.30875pt x 114.4275pt>
 File: Bilder/edge_list_insertion.pdf Graphic file (type pdf)
 
 <use Bilder/edge_list_insertion.pdf>
@@ -687,7 +687,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 772--773
 
  []
 
-<Bilder/impl_overview.pdf, id=1146, 426.59375pt x 264.48813pt>
+<Bilder/impl_overview.pdf, id=1144, 426.59375pt x 264.48813pt>
 File: Bilder/impl_overview.pdf Graphic file (type pdf)
 
 <use Bilder/impl_overview.pdf>
@@ -719,7 +719,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 804--805
 
  []
 
-[30] <Bilder/contiguous_mem.pdf, id=1203, 360.34625pt x 160.6pt>
+[30] <Bilder/contiguous_mem.pdf, id=1201, 360.34625pt x 160.6pt>
 File: Bilder/contiguous_mem.pdf Graphic file (type pdf)
 
 <use Bilder/contiguous_mem.pdf>
@@ -736,7 +736,7 @@ Overfull \hbox (13.58537pt too wide) in paragraph at lines 860--861
  it-er-a-tion spaces of mul-ti-ple \OT1/cmtt/m/n/10.95 GlobHeapContiguousMem
  []
 
-<Bilder/combined_edges.pdf, id=1257, 573.64313pt x 49.18375pt>
+<Bilder/combined_edges.pdf, id=1255, 573.64313pt x 49.18375pt>
 File: Bilder/combined_edges.pdf Graphic file (type pdf)
 
 <use Bilder/combined_edges.pdf>
@@ -969,9 +969,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on effe17.pdf (70 pages, 7370863 bytes).
+Output written on effe17.pdf (70 pages, 7370541 bytes).
 PDF statistics:
- 1594 PDF objects out of 1728 (max. 8388607)
+ 1593 PDF objects out of 1728 (max. 8388607)
  408 named destinations out of 1000 (max. 500000)
  715 words of extra memory for PDF output out of 10000 (max. 10000000)
 
