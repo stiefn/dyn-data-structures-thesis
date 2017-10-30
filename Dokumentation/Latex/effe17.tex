@@ -979,12 +979,13 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
 \subsection{Requirements}
 \begin{itemize}
 \item $X$, the graph type
+\item $P$, a pair type satisfying the STL \texttt{pair} concept
 \item $x$, a value of type X
 \item $n_v$, a value of type \texttt{X::vertex\_size\_type}
 \item $n_e$, a value of type \texttt{X::edge\_size\_type}
 \item $v$, $v_1$ and $v_2$, values of type \texttt{X::vertex\_type}
 \item $e$, a value of type \texttt{X::edge\_type}
-\item $it_v$, $it_{v1}$ and $it_{v2}$, values of type \texttt{X::global\_vertex\_iterator}
+\item $it_v$, a value of type \texttt{X::global\_vertex\_iterator}
 \item $lit_v$, $lit_{v1}$ and $lit_{v2}$, values of type \texttt{X::local\_vertex\_iterator}
 \item $it_e$, a value of type \texttt{X::global\_out\_edge\_iterator}
 \item $lit_e$, a value of type \texttt{X::local\_out\_edge\_iterator}
@@ -997,11 +998,11 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
   \endhead  
   \hline
   $X(n_v, n_e)$ &  & constructs the graph with reserved memory for $n_v$ vertices and $n_v * n_e$ edges \\ \hline
-  $x.add\_vertex()$ & global\_vertex\_iterator & adds a vertex \\ \hline
+  $x.add\_vertex()$ & local\_vertex\_iterator & adds a vertex \\ \hline
   $x.remove\_vertex(it_v)$ &  & removes a vertex pointed to by $it_v$ \\ \hline
   $x.remove\_vertex(lit_v)$ &  & removes a vertex pointed to by $lit_v$ \\ \hline
-  $x.add\_edge(it_{v1}, it_{v2})$ & global\_out\_edge\_iterator & adds an edge between vertices pointed to by $it_{v1}$ and $it_{v2}$ \\ \hline
-  $x.add\_edge(lit_{v1}, lit_{v2})$ & global\_out\_edge\_iterator & adds an edge between vertices pointed to by $lit_{v1}$ and $lit_{v2}$ \\ \hline
+  $x.add\_edge(lit_{v1}, lit_{v2})$ & P\textless local\_out\_edge\_iterator, bool\textgreater & adds an edge between vertices pointed to by $lit_{v1}$ and $lit_{v2}$ and returns, whether the edge has been added \\ \hline
+  $x.add\_edge(lit_v, it_{v1})$ & P\textless local\_out\_edge\_iterator, bool\textgreater & adds an edge between vertices pointed to by $lit_v$ and $it_{v1}$ and returns, whether the edge has been added \\ \hline
   $x.remove\_edge(it_e)$ &  & removes an edge identified by $it_e$ \\ \hline
   $x.remove\_edge(lit_e)$ &  & removes an edge identified by $lit_e$ \\ \hline
   $x.commit()$ &  & synchronizes memory space across all units \\ \hline
@@ -1017,8 +1018,8 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
   $x.add\_vertex()$ &  & returned iterator points to constructed vertex in global iteration space \\ \hline
   $x.remove\_vertex(it_v)$ & $it_v$ points to a valid vertex in X & \\ \hline
   $x.remove\_vertex(lit_v)$ & $lit_v$ points to a valid vertex in X & \\ \hline
-  $x.add\_edge(it_{v1}, it_{v2})$ & $it_{v1}$ and $it_{v2}$ point to valid vertices in X & returned index identifies constructed edge in global index space \\ \hline
   $x.add\_edge(lit_{v1}, lit_{v2})$ & $lit_{v1}$ and $lit_{v2}$ point to valid vertices in X & returned index identifies constructed edge in global index space \\ \hline
+  $x.add\_edge(lit_v, it_{v1}$) & $it_{v1}$ and $lit_v$ point to valid vertices in X & returned index identifies constructed edge in global index space \\ \hline
   $x.remove\_edge(it_e)$ & $it_e$ points to a valid edge in X & \\ \hline
   $x.remove\_edge(lit_e)$ & $lit_e$ points to a valid edge in X & \\ \hline
   $x.commit()$ & & locally added elements published in global address space \\ \hline

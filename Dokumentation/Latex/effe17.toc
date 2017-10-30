@@ -76,7 +76,7 @@
 \contentsline {section}{\numberline {A.2}DynamicGraph}{45}{section.1.A.2}
 \contentsline {subsection}{\numberline {A.2.1}Requirements}{46}{subsection.1.A.2.1}
 \contentsline {subsection}{\numberline {A.2.2}Methods and operators}{46}{subsection.1.A.2.2}
-\contentsline {subsubsection}{\nonumberline Conditions}{46}{section*.14}
+\contentsline {subsubsection}{\nonumberline Conditions}{47}{section*.14}
 \contentsline {section}{\numberline {A.3}AttributedGraph}{47}{section.1.A.3}
 \contentsline {subsection}{\numberline {A.3.1}Requirements}{47}{subsection.1.A.3.1}
 \contentsline {subsection}{\numberline {A.3.2}Types}{48}{subsection.1.A.3.2}
@@ -89,8 +89,8 @@
 \contentsline {subsection}{\numberline {A.4.4}Conditions}{50}{subsection.1.A.4.4}
 \contentsline {section}{\numberline {A.5}CombinedEdgeGraph}{50}{section.1.A.5}
 \contentsline {subsection}{\numberline {A.5.1}Requirements}{50}{subsection.1.A.5.1}
-\contentsline {subsection}{\numberline {A.5.2}Types}{50}{subsection.1.A.5.2}
-\contentsline {subsection}{\numberline {A.5.3}Methods and operators}{50}{subsection.1.A.5.3}
+\contentsline {subsection}{\numberline {A.5.2}Types}{51}{subsection.1.A.5.2}
+\contentsline {subsection}{\numberline {A.5.3}Methods and operators}{51}{subsection.1.A.5.3}
 \contentsline {subsection}{\numberline {A.5.4}conditions}{51}{subsection.1.A.5.4}
 \contentsline {chapter}{\nonumberline List of Figures}{53}{chapter*.16}
 \contentsline {chapter}{\nonumberline Bibliography}{55}{chapter*.17}
