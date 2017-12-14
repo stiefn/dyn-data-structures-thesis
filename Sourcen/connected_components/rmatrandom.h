@@ -4,13 +4,16 @@
 #include <random>
 
 template<typename GraphType>
-class RMATGenerator {
+class RMATRandomGenerator {
+
+public:
 
   typedef GraphType                                     graph_type;
-  typedef RMATGenerator<graph_type>                     self_t;
+  typedef RMATRandomGenerator<graph_type>               self_t;
   typedef typename graph_type::vertex_size_type         vertex_size_type;
   typedef typename graph_type::edge_size_type           edge_size_type;
   typedef std::uniform_real_distribution<double>        dist_type;
+  typedef std::uniform_int_distribution<int>            dist_int_type;
   typedef std::minstd_rand                              rng_type;
   typedef std::pair<vertex_size_type, vertex_size_type> value_type;
 
@@ -19,50 +22,66 @@ public:
   /**
    * Begin iterator
    */
-  RMATGenerator(vertex_size_type n, edge_size_type m, double a, double b,
+  RMATRandomGenerator(vertex_size_type n, edge_size_type m, double a, double b,
       double c, double d) 
     : _dist(0.0, 1.0),
       _gen((std::random_device())()),
       _blocksize(n / _size)
   { 
+    // generate 50% of the edges with RMAT
+    m /= 2;
+    edge_size_type m_unit_random = m / _size;
     int SCALE = int(floor(log(double(n))/log(2.)));
 
     std::map<value_type, bool> edge_map;
 
+    // generate whole graph on each unit, but only use edges belonging to this
+    // unit
     edge_size_type generated = 0;
     edge_size_type local_edges = 0;
     do {
-      edge_size_type tossed = 0;
+      edge_size_type rejected = 0;
       do {
         vertex_size_type u, v;
-        std::tie(u, v) = generate_edge(n, SCALE, a, b, c, d);
+        std::tie(u, v) = generate_rmat_edge(n, SCALE, a, b, c, d);
 
         if (owner(u) == _myid) {
+          // reject loop edges and multi-edges
           if (u != v 
               && edge_map.find(std::make_pair(u, v)) == edge_map.end()) {
             edge_map[std::make_pair(u, v)] = true;
             ++local_edges;
           } else {
-            ++tossed;
+            ++rejected;
           }
         }
         ++generated;
       } while (generated < m);
-      int tossed_all;
-      dart_allreduce(&tossed, &tossed_all, 1, DART_TYPE_INT, DART_OP_SUM,
+      // generate more edges based on the amount of edges rejected on each unit
+      int rejected_all;
+      dart_allreduce(&rejected, &rejected_all, 1, DART_TYPE_INT, DART_OP_SUM,
           dash::Team::All().dart_id());
-      if(tossed_all > generated) {
-        tossed_all = generated;
-      }
-      generated -= tossed_all;
+      generated -= rejected_all;
     } while (generated < m);
 
-    _values.reserve(local_edges);
+    // reserve space for generated rmat edges and for coming random edges
+    _values.reserve(local_edges + m_unit_random);
     typename std::map<value_type, bool>::reverse_iterator em_end = 
       edge_map.rend();
     for (typename std::map<value_type, bool>::reverse_iterator em_i = 
         edge_map.rbegin(); em_i != em_end; ++em_i) {
       _values.push_back(em_i->first);
+    }
+
+    // generate 50% random edges
+    auto n_unit = n / _size;
+    // source edge has to belong to this unit
+    dist_int_type dist_u(n_unit * _myid, n_unit * (_myid + 1) - 1);
+    dist_int_type dist_v(0, n - 1);
+    for(int i = 0; i < m_unit_random; ++i) {
+      vertex_size_type u = dist_u(_gen);
+      vertex_size_type v = dist_v(_gen);
+      _values.push_back(std::make_pair(u, v));
     }
 
     _current = _values.back();
@@ -72,13 +91,13 @@ public:
   /**
    * End iterator
    */
-  RMATGenerator() 
+  RMATRandomGenerator() 
     : _dist(0.0, 1.0),
       _gen((std::random_device())()),
       _done(true)
   { }
 
-  RMATGenerator & operator++() {
+  self_t & operator++() {
     if(!_values.empty()) {
       _current = _values.back();
       _values.pop_back();
@@ -109,8 +128,8 @@ private:
     return v / _blocksize;
   }
 
-  value_type generate_edge(vertex_size_type n, unsigned int SCALE, double a, 
-      double b, double c, double d) {
+  value_type generate_rmat_edge(vertex_size_type n, unsigned int SCALE, 
+      double a, double b, double c, double d) {
     vertex_size_type u = 0;
     vertex_size_type v = 0;
     vertex_size_type step = n/2;
