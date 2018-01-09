@@ -7,7 +7,6 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Hierarchy of graph container concepts}}{22}{figure.4.1}
 \contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Vertex and edge memory space abstractions}}{27}{figure.4.2}
-\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces Element insertion into edge list invalidating offsets}}{28}{figure.4.3}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces dash::Graph component overview}}{29}{figure.5.1}
 \contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Contiguous memory allocation}}{32}{figure.5.2}

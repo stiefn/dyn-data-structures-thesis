@@ -449,7 +449,7 @@ For BFS to work, a graph container must be able to store mutable attributes for 
 Frontiers need to be managed with a queue or a similar data structure. This data structure might be external or part of the graph container itself. For distributed environments, the vertices of the frontier must be distributed to the nodes holding the respective vertices. The queue data structure therefore has to be distributed.
 \end{lemma}
 
-Because BFS naturally finds the paths with the least edges between vertices it is obvious that it can be used for \textit{shortest path computation}. \textbf{Dijkstra's shortest path algorithm} \cite{dijkstra} for example is an extension to BFS: Each edge is associated with a distance attribute. Progressing in a breadth-first manner, the smallest sum of edge distances is saved in vertices as an additional attribute. If a vertex is discovered from an edge with a smaller distance sum, the attribute's content is replaced with this new sum.
+Because BFS naturally finds the paths with the least edges between vertices, it is obvious that it can be used for \textit{shortest path computation}. \textbf{Dijkstra's shortest path algorithm} \cite{dijkstra} for example is an extension to BFS: Each edge is associated with a distance attribute. Progressing in a breadth-first manner, the smallest sum of edge distances is saved in vertices as an additional attribute. If a vertex is discovered from an edge with a smaller distance sum, the attribute's content is replaced with this new sum.
 
 Similar to Dijkstra's shortest path algorithm, a minimum spanning tree algorithm such as \textbf{Prim's algorithm} \cite{prim} traverses a graph in breadth-first order and creates a tree based on the minimum of edge weight attributes for each frontier.
 
@@ -460,7 +460,7 @@ Graph containers do not only have to support vertex attributes. Edge attributes 
 \subsubsection{Depth-first search}
 \textit{Depth-first search (DFS)} explores vertices starting from a source vertex just like BFS. It differentiates from BFS in that it processes vertices in another order: Instead of exploring the vertices of a frontier one after another, DFS explores adjacent vertices directly from the most recently discovered vertex. If all adjacent vertices have been completely explored, DFS uses backtracking, i.e. it returns to the vertex from which the current vertex has been explored and progresses there. Once finished, DFS proceeds to start another iteration from an arbitrary vertex that has not been discovered in the first iteration - contrary to BFS.
 
-DFS uses a graph coloring scheme similar to BFS. Vertices visited for the first time are colored grey and when the backtracking takes effect, the respective vertex is colored black meaning that all edges from this vertex have been explored. DFS does not need a supporting data structure but apart from that, has the same requirements on graph containers as BFS.
+DFS uses a graph coloring scheme similar to BFS. Vertices visited for the first time are colored grey and when the backtracking takes effect, the respective vertex is colored black meaning that all edges from this vertex have been explored. DFS does not need a supporting data structure but apart from that has the same requirements on graph containers as BFS.
 
 Some algorithms use DFS as a subroutine. For example, a \textbf{topological sort} of a graph runs DFS and then creates a list with sorted vertices based on the findings of the DFS subroutine. A \textbf{strongly connected components} algorithm runs DFS on the graph and then on the transposed version of the graph (i.e. the graph with reversed edges).
 
@@ -478,69 +478,32 @@ Partitioning of distributed graphs is dependent on locality information in the g
 \subsection{Functional requirements}
 Based on the observations of \autoref{graph_algo_section}, the following functional requirements for a PGAS graph abstraction have been deduced:
 
-\textcolor{red}{CREATE TABLE WITH MORE DETAILED REQUIREMENT DESCRIPTIONS}
-
-\begin{itemize}
-\item Element creation
-  \begin{itemize}
-  \item Vertex creation
-  \item Edge creation
-    \begin{itemize}
-    \item Directed edges
-    \item Undirected edges
-    \end{itemize}
-  \end{itemize}
-\item Element deletion
-  \begin{itemize}
-  \item Vertex deletion
-  \item Edge deletion
-  \end{itemize}
-\item Element iteration
-  \begin{itemize}
-  \item Global iteration
-    \begin{itemize}
-    \item Vertex iteration
-    \item Edge iteration
-    \item Adjacency iteration
-    \end{itemize}
-  \end{itemize}
-  \begin{itemize}
-  \item Local iteration
-    \begin{itemize}
-    \item Vertex iteration
-    \item Edge iteration
-    \item Adjacency iteration
-    \end{itemize}
-  \end{itemize}
-\item Attribute creation
-  \begin{itemize}
-  \item Vertex attributes
-  \item Edge attributes
-  \end{itemize}
-\item Attribute mutation
-  \begin{itemize}
-  \item Vertex attributes
-  \item Edge attributes
-  \end{itemize}
-\item Global, asynchronous element access
-\item Global, asynchronous attribute access
-\item Data distribution
-  \begin{itemize}
-  \item User-specified
-  \item \textcolor{red}{LOAD-BALANCING?}
-  \end{itemize}
-\item Global memory allocation
-\item Global memory de-allocation
-\item Epoch-based memory/index space synchronization
-\item Container metadata
-  \begin{itemize}
-  \item size etc.
-  \item \textcolor{red}{LIST ALL OPS}
-  \end{itemize}
-\end{itemize}
+\begin{tabularx}{1\textwidth}{| X | X |}
+  \hline
+  \textbf{Requirement} & \textbf{Notes} \\ 
+  \endhead  
+  \hline
+  Vertex element creation & creation of single vertices inside the graph data structure \\ \hline
+  Edge element creation & creation of single directed or undirected edges inside the graph data structure \\ \hline
+  Vertex element deletion & removal of single vertices from the graph data structure \\ \hline
+  Edge element deletion & removal of single edges from the graph data structure \\ \hline
+  Global element iteration & iteration over vertices, edges and adjacent vertices of the whole data structure \\ \hline
+  Local element iteration & iteration over vertices, edges and adjacent vertices of parts of the data structure hosted on the same machine \\ \hline
+  Vertex attribute creation & permanent storage of attributes belonging to particular vertices along with these vertices \\ \hline
+  Edge attribute creation & permanent storage of attributes belonging to particular edges along with these edges \\ \hline
+  Vertex attribute mutation & adjustment of attributes belonging to particular vertices \\ \hline
+  Edge attribute mutation & adjustment of attributes belonging to particular edges \\ \hline
+  Global, asynchronous element access & access to elements on other machines without synchronization enforcement \\ \hline
+  Global, asynchronous attribute access & access to attributes belopnging to particular elements on other machines without synchronization enforcement \\ \hline
+  User-specified data distribution & storage location of elements and attributes specified by the user \\ \hline
+  Global dynamic memory allocation & allocation of memory for elements and attributes across multiple machines during runtime \\ \hline
+  Global dynamic memory de-allocation & freeing of memory for elements and attributes across multiple machines during runtime \\ \hline
+  Epoch-based memory space synchronization & Explicit synchronization of newly added/removed memory space between machines in user-defined time-steps \\ \hline
+  Container meta-data retrieval & Retrieval of container metadata like \textbf{number of vertices} during runtime \\ \hline
+\end{tabularx}
 
 \section{Container concepts}
-This section describes the graph container concepts that have been deduced from the related work analysis of \autoref{related_work_section} and the graph algorithm analysis of \autoref{graph_algo_section}. The concepts follow the C++ standard library's container concept schemes. A complete concept definition can be found in \autoref{concept_appendix}.
+This section describes graph container concepts that have been deduced from the related work analysis of \autoref{related_work_section} and the graph algorithm analysis of \autoref{graph_algo_section}. The concepts follow the C++ standard library's container concept schemes. A complete concept definition can be found in \autoref{concept_appendix}.
 
 \begin{figure}[ht]
 	\centering
@@ -551,16 +514,16 @@ This section describes the graph container concepts that have been deduced from 
 
 \autoref{concepts_figure} depicts the different concepts and their relationships to each other. The \texttt{Graph} concept provides basic functionality for graph processing while the other concepts refine it with additional functionality.
 
-\textcolor{red}{INTEGRATE TEAM INTO CONCEPT}
+\textcolor{red}{INTEGRATE TEAM CONCEPT, EXPLAIN UNIT CONCEPT}
 
 \subsection{Graph}
-The \texttt{Graph} concept describes a graph container for static data that is suitable for \textit{directed graphs}. It consists of a constructor that creates a graph based on an existing \textit{edge list}. The 
+The \texttt{Graph} concept describes a graph container for static data that is suitable for \textit{directed graphs}. It consists of a constructor that creates a graph based on an existing \textit{edge list}.
 
 The constructor takes two iterators of type \texttt{InputIterator} which allows the edge list to be of any STL-compatible container type (e.g. \texttt{std::list}). An edge list has  to contain elements of type \texttt{std::pair} with both contained types being integers describing unique vertices. The constructor then creates the graph by adding vertices based on these integers and connecting them according to the given vertex pairs.
 
-Vertices and edges are represented by their own types containing their index in global index space. This is necessary, because iteration over them does not allow to retrieve indices directly. For example, a unit iterating over remote vertices would have no way of getting the corresponding index of a dereferenced vertex. Additionally, edges have to contain indices of the vertices they connect and make them publicly available.
+Vertices and edges are represented by their own types. Edge types have to contain data identifying the source and target vertices. Since the \texttt{Graph} concept does not comprise an index space, iterators may be used for this task depending on their implementation. The concept is however compatible to index spaces being implemented on top of it.
 
-Vertices and edges are assigned to the local memory of a unit if the corresponding edge list has been assigned to the constructor of this unit. Units can then iterate over elements either locally (over the elements that directly reside in the unit's memory) or globally (over all elements in the graph) by calling the respective iterators.
+Vertices and edges are assigned to the local memory of a unit if the corresponding edge list has been assigned to the constructor of this unit. Units can then iterate over elements either locally (over the elements that directly reside in the unit's memory) or globally (over all elements in the graph) by calling the respective iterators. Due to the default \texttt{Graph} concept describing a static graph, no more elements can be added removed after the constructor has been called.
 
 The \texttt{Graph} concept contains two kinds of iterators:
 
@@ -569,25 +532,27 @@ The \texttt{Graph} concept contains two kinds of iterators:
 \item Out-edge iterators
 \end{itemize}
 
-This is the minimum needed for adjacency iteration: Each unit can iterate over the set of all vertices or its local portion of the vertices and for each vertex, the outgoing edges can be iterated. Outgoing edges are only iterable with global iterators which means that these iterators should facilitate a mechanism for direct local dereferencing if the respective element resides on the local machine of the calling unit. 
+This is the minimum needed for adjacency iteration: Each unit can iterate over the set of all vertices or its local portion of the vertices and for each vertex, the outgoing edges can be iterated. Global iterators should facilitate a mechanism for direct local dereferencing if the respective element resides on the local machine of the calling unit. 
 
-\autoref{adj_it_code} shows an adjacency iteration over all outgoing edges of local vertices.
+\autoref{adj_it_code} shows an adjacency iteration over all outgoing edges of local vertices. Since all edges belonging to a particular vertex reside on the same unit, only local iterators are available for adjacency iteration of a given vertex identified by a local iterator (\texttt{it}).
 
 \begin{lstlisting}[caption=Adjacency iteration with Graph concept\label{adj_it_code}] 
 std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
 Graph g(4, 3, edge_list.begin(), edge_list.end());
 
-for(auto it = g.vertices().lbegin(); it != g.vertices().lend(); ++it) {
-  for(auto it2 = g[it].out_edges().begin(); it2 != g[it].out_edges().end(); ++it2) {
-    Graph::edge_type e = *it2;
+for(auto v_it = g.vertices().lbegin(); v_it != g.vertices().lend(); ++v_it) {
+  for(auto e_it = g[v_it].out_edges().lbegin(); e_it != g[v_it].out_edges().lend(); ++e_it) {
+    Graph::edge_type e = *e_it;
   }
 }
 \end{lstlisting}
 
 \subsection{DynamicGraph}
-The \texttt{DynamicGraph} concept extends the \texttt{Graph} concept with functionality for dynamic addition and deletion of graph elements. Because elements can be added after construction of the graph, an upfront initialization with an edge list is not required here. For this reason, a new constructor allows the graph to be created without any elements. It initializes the graph with a certain capacity so that each unit has a fixed part of memory already assigned to it. Contrary to the constructor of \texttt{Graph}, the number of edges is not an absolute number but rather the number of edges per vertex. This means that the reserved capacity for edges equals to $number of vertices * number of edges$. The vertex and edge numbers are supplied for the whole graph. This means, they have to be multiples of the amount of units in the graph's \texttt{Team}.
+The \texttt{DynamicGraph} concept extends the \texttt{Graph} concept with functionality for dynamic addition and deletion of graph elements during runtime. Because elements can be added after construction of the graph, an upfront initialization with an edge list is not required here. For this reason, a new constructor allows the graph to be created without any elements. It initializes the graph with a certain capacity so that each unit has a fixed part of memory already assigned to it. Contrary to the constructor of \texttt{Graph}, the number of edges is not an absolute number but rather the number of edges per vertex. This means that the reserved capacity for edges equals to $number of vertices * number of edges$. The vertex and edge numbers are supplied for the whole graph, meaning that they have to be multiples of the amount of units in the graph's \texttt{Team}.
 
-All methods for adding and removing vertices and edges can be called with either a reference of the element type itself or its respective index in global index space. Additionally, a convenience function for removing all outgoing edges from a vertex is supplied.
+All methods for adding and removing vertices and edges can be called with either local or global iterators pointing to them. 
+
+Dynamic data changes of the graph are not reflected in global memory space until the user explicitly issues a \texttt{commit} operation. Before that, the changes can be only seen on the same unit using local iterators. A \texttt{commit} operation can invalidate global iterators.
 
 Addition and deletion of elements happens locally on each unit. The resulting changes in 
 local memory and iteration space are not reflected in the respective global spaces until the graph's \textit{barrier synchronization} is called. This \textit{epoch-based} synchronization allows for a trade-off between dynamics and performance.
@@ -602,12 +567,14 @@ auto v1 = g.add_vertex(); // returns index of created vertex
 auto v2 = g.add_vertex();
 
 auto e1 = g.add_edge(v1, v2);
+
+g.commit();               // changes are published
 \end{lstlisting}
 
 \subsection{AttributedGraph}
 The \texttt{AttributedGraph} concept extends the \texttt{Graph} concept with attributed elements. The user can specify static structs (a struct in a contiguous memory region without pointers and references) for vertices and edges respectively. A constructor allows concrete instances of these structs to be added to each element. Vertex and edge types contain copies of the struct instances and make them publicly available. Attributes can be replaced.
 
-\autoref{attributed_graph_code} shows a graph being constructed with 2 vertices and an edge between them. The vertices and edges hold an attribute \textit{id}.
+\autoref{attributed_graph_code} shows a graph being constructed with two vertices and an edge between them. The vertices and edges store an attribute \textit{id}.
 
 \begin{lstlisting}[caption=Graph construction with attributed elements\label{attributed_graph_code}] 
 typedef   std::tuple<
@@ -658,21 +625,22 @@ g.set_attribute(v1, vp1);
 e_prop ep1 { 1 };
 auto e1 = g.add_edge(v1, v2);
 g.set_attribute(e1, ep1);
+g.commit();
 \end{lstlisting}
 
 \subsection{DuplexGraph}
 The \texttt{DuplexGraph} concept extends the \texttt{Graph} concept with iterators for inbound edges. It is a requirement for \textit{undirected} and \textit{bidirectional graphs} and optional for \textit{directed graphs}.
 
-\autoref{duplex_code} shows a graph with two edges pointing from vertex 1. These edges are then iterated with the inbound edge iterator.
+\autoref{duplex_code} shows a graph with two edges pointing from \textit{vertex 1}. These edges are then iterated with the inbound edge iterator.
 
 \begin{lstlisting}[caption=Inbound edge iteration\label{duplex_code}] 
 std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
 Graph g(4, 3, edge_list.begin(), edge_list.end());
 
-auto it = g.vertices().lbegin();
+auto v_it = g.vertices().lbegin();
 
-for(auto it2 = g[it].in_edges().begin(); it2 != g[it].in_edges().end(); ++it2) {
-  Graph::edge_type e = *it2; // returns edge (4, 1)
+for(auto e_it = g[v_it].in_edges().begin(); e_it != g[v_it].in_edges().end(); ++e_it) {
+  Graph::edge_type e = *e_it; // returns edge (4, 1)
 }
 \end{lstlisting}
 
@@ -683,16 +651,16 @@ The \texttt{CombinedGraph} concept extends the \texttt{Graph} concept with itera
 std::list<std::pair<int, int>> edge_list = { {1, 2}, {1, 3}, {4, 1} };
 Graph g(4, 3, edge_list.begin(), edge_list.end());
 
-auto it = g.vertices().lbegin();
+auto v_it = g.vertices().lbegin();
 
-for(auto it2 = g[it].edges().begin(); it2 != g[it].edges().begin(); ++it2) {
-  Graph::edge_type e = *it2; // returns edges (1, 2), (1, 3) and (4, 1)
+for(auto e_it = g[v_it].edges().begin(); e_it != g[v_it].edges().begin(); ++e_it) {
+  Graph::edge_type e = *e_it; // returns edges (1, 2), (1, 3) and (4, 1)
 }
 \end{lstlisting}
 
 \section{Memory spaces}
 \label{memspace_section}
-A \texttt{Graph} contains two distinct memory spaces for vertices and outbound edges. A \texttt{DuplexGraph} additionally contains a memory space for inbound edges. Each memory space comprises its own index space (see \autoref{indexspace_section}). Memory spaces are maintained on a per-unit basis and new memory is allocated locally with an STL-compatible container. The concrete container implementation can be specified by the user but it must allocate \textit {contiguous memory regions} (note: in C++17 \cite{c++17}, means the container must satsify the requirements of the \texttt{ContiguousContainer} concept. Because this work is based on C++11, no formal requirement can be formulated). By default, \texttt{std::vector} should be used as allocator.
+A \texttt{Graph} contains two distinct memory spaces for vertices and outbound edges. A \texttt{DuplexGraph} additionally contains a memory space for inbound edges. Each memory space comprises its own iteration space (see \autoref{iteration_concept_section}). Memory spaces are maintained on a per-unit basis and new memory is allocated locally with an STL-compatible container. The concrete container implementation can be specified by the user but it must allocate \textit {contiguous memory regions} (note: in C++17 \cite{c++17}, this means the container must satisfy the requirements of the \texttt{ContiguousContainer} concept. Because this work is based on C++11, no formal requirement can be formulated). By default, \texttt{std::vector} should be used as allocator.
 
 An object maintaining a memory space on a certain unit also holds information about the memory spaces on all other units. Changes in local memory space are hidden from other units until a \texttt{commit} operation initiates a communication step that exchanges information about the occupied memory.
 
@@ -714,7 +682,7 @@ Global memory spaces are a union of local memory spaces ordered by their unit ID
 
 Memory spaces do not have to be completely contiguous in memory. They can consist of several contiguous memory regions. For each of these memory regions, the beginning memory address as well as the length has to be stored. An abstraction can then use this information to present a contiguous memory region to the public.
 
-\autoref{memspace_figure} shows exemplary logical memory spaces for vertices and edges respectively. The memory spaces appear contiguous to the outside but parts of them might reside in different memory locations depending on the inplementation.
+\autoref{memspace_figure} shows exemplary logical memory spaces for vertices and edges respectively. The memory spaces appear contiguous to the outside but parts of them might reside in different memory locations depending on the implementation.
 
 \begin{figure}[ht]
 	\centering
@@ -723,11 +691,21 @@ Memory spaces do not have to be completely contiguous in memory. They can consis
 	\label{memspace_figure}
 \end{figure}
 
+\section{Iteration spaces}
+\label{iteration_concept_section}
+Elements in all graph concepts of this works are identified by iterators. Two different kinds of iterators exist:\\
+
+\textbf{Global iterators} identify elements in the whole graph. They are needed to iterate over portions of the graph that do not reside locally on a unit and to access these elements. Dereferencing a global iterator yields a global reference which in turn can be dereferenced to access the actual data. A \textit{global reference} is therefore responsible for \textit{remote memory access}.\\
+
+\textbf{Local iterators} identify elements residing locally on a unit. A simple pointer to a contiguous memory region can already suffice for this task. However, dynamic containers usually require multiple memory regions to be created during their lifetime. Because local iterators must be able to iterate over the complete local portion of the elements, a more sophisticated abstraction will be needed in case the local memory space consists of more than one contiguous region.\\
+
+Global and local iterators have to strictly follow the \texttt{STL Iterator} concepts in order to be usable by STL algorithms. Additionally, they have to implement mechanisms geared towards PGAS concepts. For example, a global iterator should provide a possibility for finding out if the element it points to resides locally or on a remote unit. This work is based upon \texttt{DASH Iterator} concepts \textcolor{red}{FIND SOURCE} that are suitable for any implementation of the presented graph concepts.\\
+
+Global and local iteration spaces directly map to global and local memory spaces explained in \autoref{memspace_section}. Because of this, iterators are invalidated when changes to the memory spaces are published.
+
 \section{Index spaces}
 \label{indexspace_section}
-\textcolor{red}{CONCEPT CHANGED - MOVE OR REMOVE SECTION}\\
-
-Every unit must be able to retrieve and mutate every graph element whether it resides on the local machine or on a remote machine. Graph elements therefore have to be globally identifiable. This section defines index spaces for each group of elements: \textit{vertices}, \textit{outbound edges} and \textit{inbound edges}.
+The concept of this work does not comprise index spaces. They can however be implemented on top of it and exist alongside the iteration spaces that are primarily used to identify elements. This section gives a brief overview of possibilities in this regard:\\
 
 Simple integer index spaces like they are used in STL containers (e.g. \texttt{std::vector}) or static DASH containers (e.g. \texttt{dash::Array}) are problematic: Because element creation in dynamic containers requires new indices to be generated during runtime, all units would have to find a consensus so that index numbers are continuous and unique. This would require one of the following mechanisms:
 
@@ -736,31 +714,17 @@ Simple integer index spaces like they are used in STL containers (e.g. \texttt{s
 \item Create a local index on each element creation and negotiate global indices for multiple elements during \texttt{commit} operation.
 \end{enumerate}
 
-\textit{Variant 1} requires communication between units every time an element is created. This additional overhead is intolerable for high performance applications and therefore not suitable for this work.
+\textit{Variant 1} requires communication between units every time an element is created. This additional overhead is intolerable for high performance applications and therefore not suitable for this concept.\\
 
-\textit{Variant 2} only adds communication during the \texttt{commit} operation. If new elements have been created, the \texttt{commit} operation executes all-to-all communication. An additional mechanism that negotiates index numbers could therefore be performed in the same communication steps adding only a slight overhead in comparison to variant 1. Unfortunately, using the created elements locally before a \texttt{commit} requires the user to handle the elements with a local index that is later substituted by global index. This leads to a additional programming complexity. Because this work focuses on easing the programming model for distributed systems, variant 2 is also not suitable.\\
+\textit{Variant 2} only adds communication during the \texttt{commit} operation. If new elements have been created, the \texttt{commit} operation executes all-to-all communication. An additional mechanism that negotiates index numbers could therefore be performed in the same communication steps adding only a slight overhead. Unfortunately, using the created elements locally before a \texttt{commit} requires the user to handle the elements with a local index that is later substituted by a global index. This leads to additional programming complexity.\\
 
-Indices are therefore split into multiple components:
+A split index can be used to circumvent this problem:
 
-\begin{defi}
-A vertex index is a 2-component tuple (unit ID, local index). Unit ID refers to an integer index uniquely identifying the unit to which the element is local. Local index refers to an integer index identifying the element in local index space.
-\end{defi}
+\begin{enumerate}\addtocounter{enumi}{2}
+\item Use indices with multiple components (global and local).
+\end{enumerate}
 
-\begin{defi}
-An edge index is a 3-component tuple (unit ID, edge-list ID, list-local index). Unit ID refers to an integer index uniquely describing the unit to which the element is local. Edge list ID refers to an integer identifying the local edge-list of which the element is part of. List-local index refers to an integer index identifying the element in the index space of the given edge-list.
-\end{defi}
-
-Due to edge lists being contiguous in memory (see \autoref{memspace_section}), edge indices have to be split into three components: If an edge is inserted at the end of an edge-list, local indices of all edge-lists residing in memory behind the newly inserted edge would automatically increment by one resulting in invalidated indices after every edge insertion. \autoref{edge_list_insertion_figure} depicts this situation.
-
-\begin{figure}[ht]
-	\centering
-  \includegraphics[width=0.9\textwidth]{Bilder/edge_list_insertion.pdf}
-	\caption{Element insertion into edge list invalidating offsets}
-	\label{edge_list_insertion_figure}
-\end{figure}
-
-\section{Element iteration}
-\label{iteration_concept_section}
+\textit{Variant 3} allows for indices to be created without global consensus: Indices contain the unit ID and the local index on that unit. This however comes with another problem: If mechanisms for element migration are employed, the global (unit) part of the indices has to be either changed or a global directory structure has to be built in order to redirect requests to a certain index to the correct unit.
 
 \chapter{Reference implementation}
 \label{impl_section}
@@ -1023,7 +987,7 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
   $x.add\_edge(lit_v, it_{v}$) & $it_{v}$ and $lit_v$ point to valid vertices in X & returned index identifies constructed edge in global index space \\ \hline
   $x.remove\_edge(it_e)$ & $it_e$ points to a valid edge in X & \\ \hline
   $x.remove\_edge(lit_e)$ & $lit_e$ points to a valid edge in X & \\ \hline
-  $x.commit()$ & & locally added elements published in global address space \\ \hline
+  $x.commit()$ & & locally added elements published in global address space,\newline global iteratos are invalidated \\ \hline
 \end{tabularx}
 
 \section{AttributedGraph}
