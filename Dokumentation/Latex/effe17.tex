@@ -629,6 +629,7 @@ g.commit();
 \end{lstlisting}
 
 \subsection{DuplexGraph}
+\label{duplex_graph_section}
 The \texttt{DuplexGraph} concept extends the \texttt{Graph} concept with iterators for inbound edges. It is a requirement for \textit{undirected} and \textit{bidirectional graphs} and optional for \textit{directed graphs}.
 
 \autoref{duplex_code} shows a graph with two edges pointing from \textit{vertex 1}. These edges are then iterated with the inbound edge iterator.
@@ -740,10 +741,25 @@ This section explains a concrete reference implementation of the concepts in \au
 	\label{impl_overview_figure}
 \end{figure}
 
-The \texttt{Graph} gets initialized with a reference to an existing \texttt{Team}. By default, this is \texttt{Team::All()} which includes all units DASH has been initialized with. The \texttt{Graph} creates three instances of \texttt{GlobHeapContiguousMem} for vertices, inbound edges and outbound edges. These instances are used to globally allocate memory for the respective elements. Since the \texttt{Graph} also allows for the iteration of all (inbound and outbound) edges, \texttt{GlobHeapCombinedMem} unifies the memory spaces of the two \texttt{GlobHeapContiguousMem} instances. Both \texttt{GlobHeapContiguousMem} and \texttt{GlobHeapCombinedMem} use a specialized template version of \texttt{GlobPtr} to iterate over the memory space. Each \texttt{GlobPtr} object can then be dereferenced to a \texttt{GlobSharedRef} object which enables direct access to the referenced element. 
+The \texttt{Graph} gets initialized with a reference to an existing \texttt{Team}. By default, this is \texttt{Team::All()} which includes all units DASH has been initialized with. The \texttt{Graph} creates three instances of \texttt{GlobHeapContiguousMem} for vertices, inbound edges and outbound edges. These instances are used to globally allocate memory for the respective elements. Since the \texttt{Graph} also allows for the iteration of all (inbound and outbound) edges, \texttt{GlobHeapCombinedMem} unifies the memory spaces of the two \texttt{GlobHeapContiguousMem} instances. Both \texttt{GlobHeapContiguousMem} and \texttt{GlobHeapCombinedMem} use a specialized template version of \texttt{GlobPtr} to iterate over the memory space. Each \texttt{GlobPtr} object can then be dereferenced to a \texttt{GlobSharedRef} object which enables remote memory access to the referenced element. For locally residing elements, \texttt{GlobPtr} dereferences to a local reference pointing to a concrete memory location.
 
 \subsection{Data structure}
-\textcolor{red}{EXPLAIN DATA STRUCTURE IN DETAIL}
+The reference implementation's underlying data structure is an \textit{adjacency list}. It consists of a logically contiguous array of vertices and two logically contiguous arrays of edges (inbound and outbound edges respectively). The arrays are connected with each other by a separate data structure that stores information about starting point and length of an edge list belonging to a particular vertex. \autoref{data_structure_mapping_figure} depicts the mapping of vertices to their corresponding edge lists using.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.7\textwidth]{Bilder/data_structure_mapping.pdf}
+	\caption{Data structure mapping}
+	\label{data_structure_mapping_figure}
+\end{figure}
+
+Vertices and edges are modeled as individual classes: \texttt{Vertex} and \texttt{Edge}.Because the meta-information that links the vertex array to the edge arrays is also used by iterators it is not stored inside of the \texttt{Vertex} objects but in an independent data structure. Vertices store attribute information only, while edges additionally store identifiers of their source and target vertices. While \texttt{dash::Graph} exposes only iterators to the public, source and target vertices are identified by indices internally because iterators can be invalidated during \texttt{commit} operations and because the iterators in use have a higher memory consumption.
+
+\begin{defi}
+A vertex index is a split index tuple (unit ID, local index)
+\end{defi}
+
+Attribute information can only consist of variables of static size. These variables are filled with default values upon initialization as per \textit{default initialization} of the C++ standard.
 
 \subsection{Pointers and references}
 To allow \texttt{GlobPtr} and \texttt{GlobSharedRef} act like real pointers and references respectively, operators like the increment and dereference operators are overloaded. This results in usage analogous to native pointers and references:
@@ -758,26 +774,19 @@ int val = ref;                            // convert reference to value
 
 In this case, \texttt{mem} is an instance of \texttt{GlobHeapContiguousMem} holding at least two globally available elements.
 
-\subsection{Vertices and edges}
-Vertices and edges are modeled as individual classes: \texttt{Vertex} and \texttt{Edge}. Each instance of these classes contains objects of the \textit{attribute} classes defined by the user as template parameters of \texttt{dash::Graph}. The attribute classes can only contain variables of static size. These variables are filled with default values upon initialization as per \textit{default initialization} of the C++ standard.\\
-
-Additionally, vertices and edges contain their respective index in global index space. The index is not publicly available and can only be read by the \texttt{Graph} class and some of its internal classes. Storing the indices internally is required because of global iteration and remote memory access: After a unit has globally iterated over the elements and dereferenced an element, its index is lost and the user has no way to recover it. The index, however, is needed for various use cases such as iterating over the outbound edges of a certain vertex.
-
-Edges also contain indices of their source and target vertices.\\
-
 \subsection{Graph types}
 \label{graph_types_section}
-\texttt{dash::Graph} currently supports \textit{directed} and \textit{undirected} graph types. A bidirectional graph type is not implemented but can be integrated later on. As described in \textcolor{red}{LINK CORRECT SECTION}, directed graphs can be instantiated in two different variants depending on the need for inbound edge iteration. This is due to the fact that this iteration is not necessary for most algorithms but requires additional communication that lowers the overall performance of the graph, even if not used at all.
+\texttt{dash::Graph} currently supports \textit{directed} and \textit{undirected} graph types. A bidirectional graph type is not implemented but is consistent with the graph concept and can therefore be integrated. As described in \autoref{duplex_graph_section}, directed graphs can be instantiated in two different variants depending on the need for inbound edge iteration. This is due to the fact that this iteration is not necessary for most algorithms but requires additional communication that lowers the overall performance of the graph, even if not used at all.
 
 For undirected graphs, edges are replicated to the edge lists of both participating vertices. For directed graphs, the same mechanism is used when inbound edge iteration is needed. Edges in directed graphs without inbound edge iteration are not replicated in any way.
 
 \section{Memory management}
 \label{mem_mgmt_section}
-\texttt{dash::Graph}'s memory space is handled by \texttt{GlobHeapContiguousMem}. This class follows the concept described in \autoref{memspace_section} but adds an additional feature: Fully contiguous global memory regions. While the memory concept only demands single edge lists to be contiguous, \texttt{GlobHeapContiguousMem} allocates a contiguous memory space for all vertices as well as all edges for better locality exploitation. However, this comes at the expense of additional memory re-allocations in each epoch.
+\texttt{dash::Graph}'s memory space is handled by \texttt{GlobHeapContiguousMem}. This class follows the concept described in \autoref{memspace_section} but adds an additional feature: Fully contiguous global memory regions. While the memory concept only demands single edge lists to be contiguous, \texttt{GlobHeapContiguousMem} allocates a contiguous memory space for all globally visible vertices and edges for better locality exploitation. However, this comes at the expense of additional memory re-allocations in each epoch.
 
 \subsection{Contiguous memory}
 \label{contiguous_mem_section}
-\autoref{contiguous_mem_figure} illustrates the basic scheme of the contiguous memory allocation. \textit{Region 1} is a publicly available contiguous memory region. The memory location of \textit{Region 1} is known by other units and thus cannot be changed outside of a commit operation. Because of this, \textit{Region 2} is allocated at another memory location that might not be contiguous to \textit{Region 1}. \textit{Region 2} contains elements that have been added in the current epoch - they are available only locally and cannot be seen by other units.
+\autoref{contiguous_mem_figure} illustrates the basic scheme of the contiguous memory allocation. \textit{Region 1} is a publicly available contiguous memory region. The memory location of \textit{Region 1} is known by other units and thus cannot be changed outside of a commit operation. Because of this, the \textit{Region 2} is allocated at another memory location that might not be contiguous to \textit{Region 1}. \textit{Region 2} contains elements that have been added in the current epoch - they are available only locally and cannot be seen by other units.
 
 The \texttt{commit} operation starts a new epoch by packing the elements of the two memory regions into another, contiguous memory region and notifying other units about the changed location and size of the region. Traversing the elements in this region is now as simple as incrementing a pointer. Local iteration over the elements however requires a hop between the publicly available region and the local-only region because they are not contiguous. \texttt{GlobHeapLocalPtr} can iterate over an arbitrary number of buckets with contiguous memory (see \autoref{iteration_impl_section}). In this case, always two buckets (the two mentioned memory regions) are used.
 
@@ -789,16 +798,14 @@ The \texttt{commit} operation starts a new epoch by packing the elements of the 
 \end{figure}
 
 \subsection{Edge list memory}
-The mechanism in \autoref{contiguous_mem_section} is used for all vertices created at a certain unit. The same mechanism cannot be used for the entirety of all edges created at a single unit, because edge lists have to be contiguous (see \autoref{indexspace_section}).
-
-For this reason, each edge list has to be maintained with individual second regions for element insertions: The mechanism in \autoref{contiguous_mem_section} is used for each edge list individually and the \texttt{commit} operation packs all edge lists into one contiguous memory region.\\
-
-Vertices contain the indices of their respective edge lists and edge list locations and sizes are maintained in \texttt{GlobHeapContiguousMem} so that edge lists of a given vertex can be easily iterated.
+Each edge list has to be maintained with individual second regions for element insertions: The mechanism in \autoref{contiguous_mem_section} is used for each edge list individually and the \texttt{commit} operation packs all edge lists into one contiguous memory region.\\
 
 \subsection{Element deletion}
-Deleting an element in contiguous memory regions requires the its memory location to get invalidated instead of removed to avoid shifting of elements and offset invalidation. If many delete operations occur, the memory space will get scattered. For this reason, it is necessary to take measures that reduce the scattering of the memory to a minimum. \texttt{GlobHeapContiguousMem} uses a \textit{free list}: Deleting an element results in its memory location being added to the free list. If another element is added, a memory location from the back of the free list is used to store the element. Only if the free list is empty, new memory is allocated.
+Element deletion is at the time of this wirting not implemented. This section however describes how a deletion mechanism can be implemented.
 
-Because invalidated elements are not part of the memory space anymore, iterators have access to the free list so that they can skip the respective elements.
+Deleting an element in contiguous memory regions requires its memory location to get invalidated instead of removed to avoid shifting of elements and offset invalidation. If many delete operations occur, the memory space will get scattered. For this reason, it is necessary to take measures that reduce the scattering of the memory to a minimum. A \textit{free list} is a simple way to achieve this: Deleting an element results in its memory location being added to the free list. If another element is added, a memory location from the back of the free list is used to store the element. Only if the free list is empty, new memory is allocated.
+
+Because invalidated elements are not part of the memory space anymore, iterators must have access to the free list so that they can skip the respective elements.
 
 \section{Iteration}
 \label{iteration_impl_section}
@@ -814,7 +821,7 @@ Iteration is done by \texttt{increment}/\texttt{decrement} operations which resu
 \label{global_iter_section}
 For global iteration, a template specialization of \texttt{GlobPtr} for \texttt{GlobHeapContiguousMem} is used. It is similar to the template specialization of \texttt{GlobPtr} for \texttt{GlobHeapMem}, which is used for other dynamic DASH containers like \texttt{dash::List}.
 
-While the bucket meta-data used by \texttt{GlobHeapLocalPtr} contains only information about local buckets, \texttt{GlobPtr} requires information about all buckets on all units. Therefore, \texttt{GlobHeapContiguousMem} distributes bucket information between all units during a \texttt{commit} operation. This information includes bucket sizes as well as DART global pointers to the memory locations of the buckets in global address space. \textcolor{red}{EXPLAIN DART POINTERS?}
+While the bucket meta-data used by \texttt{GlobHeapLocalPtr} contains only information about local buckets, \texttt{GlobPtr} requires information about all buckets on all units. Therefore, \texttt{GlobHeapContiguousMem} distributes bucket information between all units during a \texttt{commit} operation. This information includes bucket sizes as well as DART global pointers to the memory locations of the buckets in global address space.
 
 With the bucket size information and the DART abstraction of global pointers, \texttt{GlobPtr} can iterate over global memory space the same way as \texttt{GlobHeapLocalPtr} iterates over local memory space. The iteration order is given by the canonical order of units.
 
@@ -833,7 +840,7 @@ Inbound and outbound edges are handled by separate \texttt{GlobHeapContiguousMem
 \section{Data access}
 Remote memory data access is strictly handled via \texttt{GlobSharedRef} objects. These objects issue DART \texttt{get}/\texttt{put} operations to access data on remote machines. If referenced data resides locally, \texttt{GlobSharedRef} directly accesses it in the memory.
 
-Because edges are replicated for some graph types (see \autoref{graph_types_section}), writing data to an element with a \texttt{GlobSharedRef} object would introduce consistency problems because it is restricted to referencing single memory locations. \texttt{GlobSymValue} \textcolor{red}{ADAPT NAME ONCE DEFINED} is set up with two DART global pointers to account for this problem. An assignment to a \texttt{GlobSymValue} object results in two memory locations being updated.
+Because edges are replicated for some graph types (see \autoref{graph_types_section}), writing data to an element with a \texttt{GlobSharedRef} object would introduce consistency problems because it is restricted to referencing single memory locations. \texttt{GlobSymValue} \textcolor{red}{THIS IS NOT IMPLEMENTED RIGHT NOW} is set up with two DART global pointers to account for this problem. An assignment to a \texttt{GlobSymValue} object results in two memory locations being updated.
 
 
 \chapter{Case studies}
