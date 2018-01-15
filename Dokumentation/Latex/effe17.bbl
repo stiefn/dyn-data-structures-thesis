@@ -49,6 +49,18 @@
 \newblock UPC language specifications v1. 2.
 \newblock {In: }\emph{Lawrence Berkeley National Laboratory}  (2005)
 
+\bibitem[CAS10]{pgas_algorithms}
+\textsc{Cong}, Guojing ; \textsc{Almasi}, George  ; \textsc{Saraswat}, Vijay:
+\newblock Fast PGAS Implementation of Distributed Graph Algorithms.
+\newblock   (2010), 11, S. 1--11
+
+\bibitem[CB06]{boruvka}
+\textsc{Cong}, Guojing ; \textsc{Bader}, David~A.:
+\newblock Designing irregular parallel algorithms with mutual exclusion and
+  lock-free protocols.
+\newblock {In: }\emph{Journal of Parallel and Distributed Computing} 66 (2006),
+  Nr. 6, S. 854--866
+
 \bibitem[CCZ07]{chapel}
 \textsc{Chamberlain}, Bradford~L. ; \textsc{Callahan}, David  ; \textsc{Zima},
   Hans~P.:
@@ -77,6 +89,13 @@
 \newblock The MIT Press, 2009. --
 \newblock ISBN 0262033844, 9780262033848
 
+\bibitem[CZF04]{rmat}
+\textsc{Chakrabarti}, Deepayan ; \textsc{Zhan}, Yiping  ; \textsc{Faloutsos},
+  Christos:
+\newblock R-MAT: A recursive model for graph mining.
+\newblock {In: }\emph{Proceedings of the 2004 SIAM International Conference on
+  Data Mining} SIAM, 2004, S. 442--446
+
 \bibitem[DHS12]{scalegraph}
 \textsc{Dayarathna}, Miyuru ; \textsc{Houngkaew}, Charuwat  ;
   \textsc{Suzumura}, Toyotaro:
@@ -92,6 +111,12 @@
 \newblock \url{http://dx.doi.org/10.1007/BF01386390}. --
 \newblock DOI 10.1007/BF01386390. --
 \newblock ISSN 0945--3245
+
+\bibitem[DSB99]{simple_cc}
+\textsc{Di~Stefano}, Luigi ; \textsc{Bulgarelli}, Andrea:
+\newblock A simple and efficient connected components labeling algorithm.
+\newblock {In: }\emph{Image Analysis and Processing, 1999. Proceedings.
+  International Conference on} IEEE, 1999, S. 322--327
 
 \bibitem[ECGS92]{active_messages}
 \textsc{Eicken}, TV ; \textsc{Culler}, David~E. ; \textsc{Goldstein}, Seth~C.
@@ -137,6 +162,12 @@
 \newblock Fundamental graph algorithms.
 \newblock {In: }\emph{Graph Algorithms in the Language of Linear Algebra} 22
   (2011), S.~45
+
+\bibitem[GH85]{prim_kruskal}
+\textsc{Graham}, Ronald~L. ; \textsc{Hell}, Pavol:
+\newblock On the history of the minimum spanning tree problem.
+\newblock {In: }\emph{Annals of the History of Computing} 7 (1985), Nr. 1, S.
+  43--57
 
 \bibitem[GL05]{parallel_bgl}
 \textsc{Gregor}, Douglas ; \textsc{Lumsdaine}, Andrew:
@@ -289,6 +320,13 @@
 \textsc{Shun}, Julian ; \textsc{Blelloch}, Guy~E.:
 \newblock Ligra: a lightweight graph processing framework for shared memory.
 \newblock {In: }\emph{ACM Sigplan Notices} Bd.~48 ACM, 2013, S. 135--146
+
+\bibitem[SHS03]{lineartime_cc}
+\textsc{Suzuki}, Kenji ; \textsc{Horiba}, Isao  ; \textsc{Sugie}, Noboru:
+\newblock Linear-time connected-component labeling based on sequential local
+  operations.
+\newblock {In: }\emph{Computer Vision and Image Understanding} 89 (2003), Nr.
+  1, S. 1--23
 
 \bibitem[SL95]{stl}
 \textsc{Stepanov}, Alexander ; \textsc{Lee}, Meng:

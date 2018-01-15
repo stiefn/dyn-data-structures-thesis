@@ -22,11 +22,14 @@
 \usepackage{booktabs}
 \usepackage{ltablex}
 \usepackage[toc,page]{appendix}
+\usepackage[]{algorithm2e}
 \newcommand*{\Appendixautorefname}{appendix}
 
 \definecolor{lightgray}{rgb}{0.5,0.5,0.5}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\SetAlCapSkip{1em}
 
 \lstset{frame=tb,
   language=C++,
@@ -842,12 +845,242 @@ Remote memory data access is strictly handled via \texttt{GlobSharedRef} objects
 
 Because edges are replicated for some graph types (see \autoref{graph_types_section}), writing data to an element with a \texttt{GlobSharedRef} object would introduce consistency problems because it is restricted to referencing single memory locations. \texttt{GlobSymValue} \textcolor{red}{THIS IS NOT IMPLEMENTED RIGHT NOW} is set up with two DART global pointers to account for this problem. An assignment to a \texttt{GlobSymValue} object results in two memory locations being updated.
 
-
 \chapter{Case studies}
+This chapter illustrates use cases for the previously described graph concepts using the reference implementation explained in \autoref{impl_section}. These use cases are then evaluated against existing implementations in \autoref{eval_section}.
+
+The use cases consist of two important basic graph algorithms: \textit{connected components} and \textit{minimum spanning tree}. Both algorithms have been examined in PGAS implementations using the UPC programming language \cite{upc} and their implementations in this work will roughly follow the specifications explained in \cite{pgas_algorithms} which consists of shared-memory algorithms ported to UPC.
+
+\section{Graph setup}
+This section describes the properties of \texttt{dash::Graph} used for the examined case studies.
+
+\begin{tabularx}{1\textwidth}{| l | l | X |}
+  \hline
+  \textbf{Property} & \textbf{Value} \\
+  \endhead
+  \hline
+  Graph type & Directed graph\\ \hline
+  Vertex attributes & - Parent component \\ \hline
+  Edge attributes &  \\ \hline
+  \caption{Graph setup for connected components}
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{| l | l | X |}
+  \hline
+  \textbf{Property} & \textbf{Value} \\
+  \endhead
+  \hline
+  Graph type & Undirected graph\\ \hline
+  Vertex attributes & - Parent component \\ \hline
+  Edge attributes & - Weight \\ \hline
+  \caption{Graph setup for minimum spanning tree}
+\end{tabularx}
+
+\section{Input data}
+To maintain comparability, the input graphs of the case studies discussed in this chapter are generated in roughly the same way as described in \cite{pgas_algorithms}. The graphs are generated using a hybrid generation scheme: 50\% of the edges are generated randomly, the rest of the edges is generated using an RMAT graph generator \cite{rmat}.
+
+Because Cong et al. do not specify the exact input variables for the RMAT generator in their paper, default values are chosen: 
+
+\begin{tabularx}{1\textwidth}{| l | l | X |}
+  \hline
+  \textbf{Variable} & \textbf{Value} \\
+  \endhead
+  \hline
+  a & 0.57\\ \hline
+  b & 0.19 \\ \hline
+  c & 0.19 \\ \hline
+  d & 0.05 \\ \hline
+  \caption{Input variables for RMAT graph generator}
+\end{tabularx}
+
+\section{Optimizations}
+While shared-memory algorithms can be directly ported to distributed machines in PGAS, performance might suffer from irregular data accesses across machines as the latency of the network is much higher than the latency of memory access in shared-memory machines. Cong et al. therefore propose performance optimizations including \textit{communication coalescing} and \textit{cache performance optimization}. While the results show that these optimizations are significant (up to 5 times faster for the designated graph size), this case study only employs the \textit{communication coalescing} optimization because it is the most beneficial for scalability and an implementation of all optimization techniques is beyond the scope of this thesis.
+
+\subsection{Communication coalescing}
+\label{comm_coal_section}
+Because shared-memory algorithms typically do not employ domain decomposition the way needed for distributed systems, processors issue many access requests to data belonging to other processors. On a shared-memory system, this is not problematic as the access latency is the same or, in case of NUMA domains, only slightly higher. On distributed systems however, these accesses result in remote memory accesses for which the latency is determined by the network and therefore orders of magnitude higher. Directly porting shared-memory algorithms in the PGAS space therefore can result in low performance.
+
+To overcome this problem, data accesses have to happen in batches rather than individually (similar to bulk-synchronous messaging in BSP models). The \textit{communication coalescing} mechanism of \cite{pgas_algorithms} proposes to collect all data reads and/or data writes of one synchronization step and distribute them to the respective processors in one message. In \autoref{comm_coal_algorithm}, a less generalized version of the algorithm that does not account for local cache-performance optimization is shown.\\
+
+\begin{center}
+\begin{algorithm}[h]
+ \KwData{array \textit{indices} of indices to read}
+ \KwResult{array \textit{output}}
+ sort \textit{indices} by unit ID and save permutations\;
+ alltoall(\textit{indices}, \textit{indices\_recv})\;
+ \For{$i \gets 0$ \textbf{to} $indices\_recv.size()$} {
+   \textit{data}[i] $\gets$ data attribute of the element $indices\_recv$[i]\;
+ }
+ alltoall(\textit{data}, \textit{data\_recv})\;
+ restore original order with saved permutations on \textit{data\_recv}\;
+ return \textit{data\_recv}\;
+ \caption{Communication coalescing algorithm for data reads}
+ \label{comm_coal_algorithm}
+\end{algorithm}
+\end{center}
+
+A \textit{communication coalescing} algorithm for data writes works analogously.
+
+\section{Graph algorithms}
+This section presents a description of the algorithms used in the case studies as well as a high level description of their implementation.
+
 \subsection{Connected Components}
+\textit{Connected components} is an elementary graph algorithm based on depth-first-search \cite{ita}. It aims to find components in a graph in which every vertex is connected to at least one other vertex. The algorithm finds one or more sub-graphs with no edges between them. \autoref{cc_figure} depicts a graph comprising two connected components.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textwidth]{Bilder/cc.pdf}
+	\caption{Graph with two connected components}
+	\label{cc_figure}
+\end{figure}
+
+The classical variant of the algorithm performs a depth-first search on a graph $G$ and another depth-first search on the transposed version of the graph $G^T$.
+Because locality can hardly be exploited in depth-first search and because two runs per iteration are necessary to compute this algorithm, variations of the algorithm exist that account for better performance \cite{lineartime_cc} \cite{simple_cc}. 
+
+The algorithm used in this case study is based on the shared-memory version found in \cite{pgas_algorithms}. Contrary to the classical variant of the algorithm, no depth-first search is performed. All edges of the graph are examined in an arbitrary order leading to much better locality exploitation: Each unit can just examine the edges in the order they are placed in the memory.
+
+The algorithms requires vertex attributes for the parent component a vertex belongs to. This parent component attribute is initially set to the vertex itself. The algorithm then proceeds with iteration over the following two steps until no more component changes can be found:
+
+\begin{enumerate}
+\item For each edge, set the component of the source vertex' current parent to the target vertex' parent.
+\item Perform pointer-jumping over all components until the parent components of all vertices point to themselves.
+\end{enumerate} 
+
+The described algorithm is then optimized using communication coalescing explained in \autoref{comm_coal_section}. The resulting algorithm can be seen in \autoref{cc_algorithm}. The components of the target vertices of all edges local to each unit are gathered in a bulk communication step. This data is used to set the parent component of each target's parent to the source's parent component in another bulk communication step. Pointer jumping is then performed in a synchronized way in order to allow for communication coalescing: The components of each vertex is updated and the pointers are not immediately followed but rather updated in the next iteration. The algorithm stops if there are no changes in the parent components of all vertices in an iteration. 
+
+\begin{center}
+\begin{algorithm}[h]
+ \KwData{reference \textit{G} to the graph}
+ \While{1}{
+   \textit{gr} $\gets$ $0$\;
+   \textit{i} $\gets$ $0$\;
+   \For{all local out-edges $e$ in $G$} {
+     \textit{indices}[i] $\gets$ global iterator position of $e.target()$\;
+     ++\textit{i}\;
+   }
+   $data \gets $ parent components of $indices$ (communication coalescing step)\;
+   \textit{i} $\gets$ $0$\;
+   \For{all local out-edges $e$ in $G$} {
+     $source\_parent \gets$ parent component of $e.source()$\;
+     $target\_parent \gets$ parent component of $e.target()$\;
+     \If{$source\_parent$ \textless{} $target\_parent$} {
+       \textit{set\_data}[i] $\gets$ (global iterator position of $target\_parent$, $source\_parent$)\;
+       \textit{gr} $\gets$ $1$\;
+     }
+     ++\textit{i}\;
+   }
+   update components with $set\_data$ (communication coalescing step)\;
+   allreduce($gr$, ADD)\;
+   \textbf{if} $gr = 0$ \textbf{then} break\;
+   \While{1}{
+     \textit{pj} $\gets$ $0$\;
+     \textit{i} $\gets$ $0$\;
+     \For{all local vertices $v$ in $G$} {
+       $vertex\_parent \gets$ parent component of $v$\;
+       \textit{indices}[i] $\gets$ global iterator position of $vertex\_parent$\;
+       ++\textit{i}\;
+     }
+     $data \gets $ parent components of $indices$ (communication coalescing step)\;
+     \textit{i} $\gets$ $0$\;
+     \For{all local vertices $v$ in $G$} {
+       \If{component of $v \neq$ $data$[i]} {
+         set parent component of $v$ to $data$[i]\;
+         \textit{pj} $\gets$ $1$\;
+         ++\textit{i}\;
+       }
+     }
+     allreduce($pj$, ADD)\;
+     \textbf{if} $pj = 0$ \textbf{then} break\;
+   }
+ }
+ \caption{Connected components with communication coalescing}
+ \label{cc_algorithm}
+\end{algorithm}
+\end{center}
+
 \subsection{Minimum Spanning Tree}
+A \textit{minimum spanning tree} is a tree structure spanning a connected component along paths of minimum edge weight \cite{ita}. A graph containing multiple connected components contains a \textit{minimum spanning forest} of trees for each component. \autoref{mst_figure} shows a graph and its corresponding minimum spanning tree.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{Bilder/mst.pdf}
+	\caption{Minimum spanning tree}
+	\label{mst_figure}
+\end{figure}
+
+Classical implementations of the algorithm are \textit{Kruskal's algorithm} and \textit{Prim's algorithm} \cite{prim_kruskal}. Both algorithms are greedy but have been proven to create trees with minimum edge weight.
+
+This case study however is based on a shared-memory version of \textit{Boruvka's algorithm} \cite{boruvka} due to its increased performance in parallel environments \cite{pgas_algorithms}. It comprises iteration of three steps:
+
+\begin{enumerate}
+\item For each vertex, find the outgoing edge with the minimum weight.
+\item Find connected components for the induced graph of the found edges.
+\item Compact each connected component into a supervertex.
+\end{enumerate}
+
+Each new iteration is computed on a graph composed of supervertices which contain all edges of their respective vertices. Because compacting vertices is costly, vertices are simply labeled with their supervertex index. To find the outgoing edge with minimum weight of a supervertex, multiple vertices have to be iterated over. 
+
+Because these vertices can reside on different units, there has to be consensus between multiple units about the minimum weight edge. This is achieved by computing the minimum weight edge on each unit individually and then exchanging the computed edges along with their weight between all participating units. Each unit can then determine the edge with the minimum weight and the unit it belongs to updates the edge accordingly.
+
+The minimum spanning tree algorithm of this case study can be seen in \autoref{mst_algorithm}. It is similar to \autoref{cc_algorithm} but uses adjacency iteration to determine the minimum weight edge for each (super)vertex.
+
+\begin{center}
+\begin{algorithm}[h]
+ \KwData{reference \textit{G} to the graph}
+ \While{1}{
+   \textit{gr} $\gets$ $0$\;
+   \textit{i} $\gets$ $0$\;
+   \For{all local vertices $v$ in $G$} {
+     \For{all local out-edges $e$ of $v$} {
+       \textit{indices}[i] $\gets$ global iterator position of $e.target()$\;
+       ++\textit{i}\;
+     }
+   }
+   $data \gets $ parent components of $indices$ (communication coalescing step)\;
+   \textit{i} $\gets$ $0$\;
+   \For{all local vertices $v$ in $G$} {
+     \For{all local out-edges $e$ of $v$} {
+       $source\_parent \gets$ parent component of $e.source()$\;
+       $target\_parent \gets$ parent component of $e.target()$\;
+       \If{$source\_parent \neq target\_parent \land e$ = edge with minimum weight} {
+         \textit{set\_data}[global iterator position of $source\_parent]$ $\gets$ ($target\_parent$, $e$)\;
+         \textit{set\_data}[global iterator position of $target\_parent]$ $\gets$ ($source\_parent$, $e$)\;
+         \textit{gr} $\gets$ $1$\;
+       }
+       ++\textit{i}\;
+     }
+   }
+   update components with $set\_data$ (communication coalescing step):
+     if multiple edges for the same (supervertex, supervertex) pair exist, update the edge with the minimum weight\;
+   allreduce($gr$, ADD)\;
+   \textbf{if} $gr = 0$ \textbf{then} break\;
+   \While{1}{
+     \textit{pj} $\gets$ $0$\;
+     \textit{i} $\gets$ $0$\;
+     \For{all local vertices $v$ in $G$} {
+       $vertex\_parent \gets$ parent component of $v$\;
+       \textit{indices}[i] $\gets$ global iterator position of $vertex\_parent$\;
+       ++\textit{i}\;
+     }
+     $data \gets $ parent components of $indices$ (communication coalescing step)\;
+     \textit{i} $\gets$ $0$\;
+     \For{all local vertices $v$ in $G$} {
+       \If{component of $v \neq$ $data$[i]} {
+         set parent component of $v$ to $data$[i]\;
+         \textit{pj} $\gets$ $1$\;
+         ++\textit{i}\;
+       }
+     }
+     allreduce($pj$, ADD)\;
+     \textbf{if} $pj = 0$ \textbf{then} break\;
+   }
+ }
+ \caption{Minimum spanning tree with communication coalescing}
+ \label{mst_algorithm}
+\end{algorithm}
+\end{center}
 
 \chapter{Evaluation}
+\label{eval_section}
 \section{Micro-benchmarks}
 \section{Case studies}
 

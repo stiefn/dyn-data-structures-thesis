@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  10 JAN 2018 12:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  15 JAN 2018 16:22
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -342,6 +342,61 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@ppsavesec=\count119
 \c@@ppsaveapp=\count120
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count121
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip55
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count122
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+)
+\skiptotal=\skip56
+\skiplinenumber=\skip57
+\skiprule=\skip58
+\skiphlne=\skip59
+\skiptext=\skip60
+\skiplength=\skip61
+\algomargin=\skip62
+\skipalgocfslide=\skip63
+\algowidth=\dimen134
+\inoutsize=\dimen135
+\inoutindent=\dimen136
+\interspacetitleruled=\dimen137
+\interspacealgoruled=\dimen138
+\interspacetitleboxruled=\dimen139
+\algocf@ruledwidth=\skip64
+\algocf@inoutbox=\box33
+\algocf@inputbox=\box34
+\AlCapSkip=\skip65
+\AlCapHSkip=\skip66
+\algoskipindent=\skip67
+\algocf@nlbox=\box35
+\algocf@hangingbox=\box36
+\algocf@untilbox=\box37
+\algocf@skipuntil=\skip68
+\algocf@capbox=\box38
+\algocf@lcaptionbox=\skip69
+\algoheightruledefault=\skip70
+\algoheightrule=\skip71
+\algotitleheightruledefault=\skip72
+\algotitleheightrule=\skip73
+\c@algocfline=\count123
+\c@algocfproc=\count124
+\c@algocf=\count125
+\algocf@algoframe=\box39
+\algocf@algobox=\box40
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -351,59 +406,59 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-\c@defi=\count121
-\c@lemma=\count122
+\c@defi=\count126
+\c@lemma=\count127
 
 (hyphenation.tex) (effe17.aux (Titel/titel-lmu.aux) (Titel/erklaerung-lmu.aux)
 (abstract.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
-\scratchdimen=\dimen134
-\scratchbox=\box33
-\nofMPsegments=\count124
-\nofMParguments=\count125
+\scratchcounter=\count128
+\scratchdimen=\dimen140
+\scratchbox=\box41
+\nofMPsegments=\count129
+\nofMParguments=\count130
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count126
-\MPscratchDim=\dimen135
-\MPnumerator=\count127
-\makeMPintoPDFobject=\count128
+\MPscratchCnt=\count131
+\MPscratchDim=\dimen141
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
 \everyMPtoPDFconversion=\toks22
 )
-\AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 59.
+\AtBeginShipoutBox=\box42
+Package hyperref Info: Link coloring OFF on input line 62.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count129
+\c@section@level=\count134
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
-LaTeX Info: Redefining \nameref on input line 59.
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+LaTeX Info: Redefining \nameref on input line 62.
 
 (effe17.out) (effe17.out)
 \@outlinefile=\write3
-\c@lstlisting=\count130
+\c@lstlisting=\count135
  (Titel/titel-lmu.tex
-<./Bilder/lmu_siegel.pdf, id=331, 201.75375pt x 201.75375pt>
+<./Bilder/lmu_siegel.pdf, id=351, 201.75375pt x 201.75375pt>
 File: ./Bilder/lmu_siegel.pdf Graphic file (type pdf)
 
 <use ./Bilder/lmu_siegel.pdf>
@@ -473,95 +528,96 @@ Class scrbook Warning: \float@addtolists detected!
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 98.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 101.
+
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 98.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
  [2]
 chapter 2.
-<Bilder/graph_rep.pdf, id=493, 637.38126pt x 188.20313pt>
+<Bilder/graph_rep.pdf, id=518, 637.38126pt x 188.20313pt>
 File: Bilder/graph_rep.pdf Graphic file (type pdf)
 
 <use Bilder/graph_rep.pdf>
-Package pdftex.def Info: Bilder/graph_rep.pdf used on input line 122.
+Package pdftex.def Info: Bilder/graph_rep.pdf used on input line 125.
 (pdftex.def)             Requested size: 437.46118pt x 129.17107pt.
  [3
 
 
  <./Bilder/graph_rep.pdf>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
 
-Overfull \hbox (26.68858pt too wide) in paragraph at lines 159--160
+Overfull \hbox (26.68858pt too wide) in paragraph at lines 162--163
 [][]\OT1/cmr/m/n/10.95 Listing 2.1[][] shows an \OT1/cmtt/m/n/10.95 increment \
 OT1/cmr/m/n/10.95 func-tion with both value and ref-er-ence se-man-tics. \OT1/c
 mtt/m/n/10.95 increment[]vs
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 161.
+nput line 164.
 [5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
 [8]
-Overfull \hbox (38.8007pt too wide) in paragraph at lines 301--302
+Overfull \hbox (38.8007pt too wide) in paragraph at lines 304--305
 \OT1/cmtt/m/n/10.95 ReversibleContainer \OT1/cmr/m/n/10.95 con-cept for ex-am-p
 le al-lows con-tain-ers to ei-ther use \OT1/cmtt/m/n/10.95 BidirectionalIterato
 rs
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
-<Bilder/pgas.pdf, id=677, 268.50313pt x 205.76875pt>
+<Bilder/pgas.pdf, id=702, 268.50313pt x 205.76875pt>
 File: Bilder/pgas.pdf Graphic file (type pdf)
  <use Bilder/pgas.pdf>
-Package pdftex.def Info: Bilder/pgas.pdf used on input line 333.
+Package pdftex.def Info: Bilder/pgas.pdf used on input line 336.
 (pdftex.def)             Requested size: 437.46118pt x 335.2525pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 342.
+(Font)              <9> on input line 345.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 342.
+(Font)              <5> on input line 345.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
 [12 <./Bilder/pgas.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
-<Bilder/dash_dynamic_mem_space.pdf, id=743, 411.03563pt x 138.5175pt>
+<Bilder/dash_dynamic_mem_space.pdf, id=768, 411.03563pt x 138.5175pt>
 File: Bilder/dash_dynamic_mem_space.pdf Graphic file (type pdf)
 
 <use Bilder/dash_dynamic_mem_space.pdf>
 Package pdftex.def Info: Bilder/dash_dynamic_mem_space.pdf used on input line 3
-60.
+63.
 (pdftex.def)             Requested size: 437.46118pt x 147.42387pt.
  [13 <./Bilder/dash_dynamic_mem_space.pdf>] [14
 
@@ -569,52 +625,52 @@ Package pdftex.def Info: Bilder/dash_dynamic_mem_space.pdf used on input line 3
 ]
 chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--419
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
  []
 
@@ -624,96 +680,96 @@ chapter 4.
 
 
 ] [20]
-Underfull \vbox (badness 10000) detected at line 503
+Underfull \vbox (badness 10000) detected at line 506
  []
 
-[21] <Bilder/concepts.pdf, id=896, 437.635pt x 57.71562pt>
+[21] <Bilder/concepts.pdf, id=921, 437.635pt x 57.71562pt>
 File: Bilder/concepts.pdf Graphic file (type pdf)
 
 <use Bilder/concepts.pdf>
-Package pdftex.def Info: Bilder/concepts.pdf used on input line 510.
+Package pdftex.def Info: Bilder/concepts.pdf used on input line 513.
 (pdftex.def)             Requested size: 349.97028pt x 46.15494pt.
  [22 <./Bilder/concepts.pdf>] [23] [24]
-Overfull \hbox (3.57014pt too wide) in paragraph at lines 649--650
+Overfull \hbox (3.57014pt too wide) in paragraph at lines 652--653
 \OT1/cmr/m/n/10.95 in-bound and out-bound edges. It is ad-vised that an im-ple-
 men-ta-tion also sat-is-fies \OT1/cmtt/m/n/10.95 DuplexGraph\OT1/cmr/m/n/10.95 
 ,
  []
 
 [25]
-Overfull \hbox (6.7915pt too wide) in paragraph at lines 664--665
+Overfull \hbox (6.7915pt too wide) in paragraph at lines 667--668
 \OT1/cmr/m/n/10.95 A \OT1/cmtt/m/n/10.95 Graph \OT1/cmr/m/n/10.95 con-tains two
  dis-tinct mem-ory spaces for ver-tices and out-bound edges. A \OT1/cmtt/m/n/10
 .95 DuplexGraph
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
 
  []
 
-[26] <Bilder/memspace.pdf, id=1052, 378.91562pt x 68.75688pt>
+[26] <Bilder/memspace.pdf, id=1077, 378.91562pt x 68.75688pt>
 File: Bilder/memspace.pdf Graphic file (type pdf)
 
 <use Bilder/memspace.pdf>
-Package pdftex.def Info: Bilder/memspace.pdf used on input line 690.
+Package pdftex.def Info: Bilder/memspace.pdf used on input line 693.
 (pdftex.def)             Requested size: 437.46118pt x 79.38138pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 697--698
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
+Underfull \hbox (badness 10000) in paragraph at lines 702--703
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 701--702
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--704
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
 [27 <./Bilder/memspace.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 709--710
+Underfull \hbox (badness 10000) in paragraph at lines 712--713
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 718--719
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--721
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
 
  []
 
 [28]
 chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 735--736
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
-<Bilder/impl_overview.pdf, id=1105, 426.59375pt x 264.48813pt>
+<Bilder/impl_overview.pdf, id=1130, 426.59375pt x 264.48813pt>
 File: Bilder/impl_overview.pdf Graphic file (type pdf)
 
 <use Bilder/impl_overview.pdf>
-Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 739.
+Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 742.
 (pdftex.def)             Requested size: 437.46118pt x 271.24333pt.
 
-Overfull \hbox (6.37772pt too wide) in paragraph at lines 744--745
+Overfull \hbox (6.37772pt too wide) in paragraph at lines 747--748
 \OT1/cmtt/m/n/10.95 Graph \OT1/cmr/m/n/10.95 also al-lows for the it-er-a-tion 
 of all (in-bound and out-bound) edges, \OT1/cmtt/m/n/10.95 GlobHeapCombinedMem
  []
 
 
-Overfull \hbox (55.61095pt too wide) in paragraph at lines 744--745
+Overfull \hbox (55.61095pt too wide) in paragraph at lines 747--748
 \OT1/cmr/m/n/10.95 uni-fies the mem-ory spaces of the two \OT1/cmtt/m/n/10.95 G
 lobHeapContiguousMem \OT1/cmr/m/n/10.95 in-stances. Both \OT1/cmtt/m/n/10.95 Gl
 obHeapContiguousMem
@@ -723,280 +779,335 @@ obHeapContiguousMem
 
 
  <./Bilder/impl_overview.pdf>]
-<Bilder/data_structure_mapping.pdf, id=1150, 251.43938pt x 120.95187pt>
+<Bilder/data_structure_mapping.pdf, id=1175, 251.43938pt x 120.95187pt>
 File: Bilder/data_structure_mapping.pdf Graphic file (type pdf)
 
 <use Bilder/data_structure_mapping.pdf>
 Package pdftex.def Info: Bilder/data_structure_mapping.pdf used on input line 7
-51.
+54.
 (pdftex.def)             Requested size: 306.22148pt x 147.30452pt.
- [30 <./Bilder/data_structure_mapping.pdf>] <Bilder/contiguous_mem.pdf, id=1197
+ [30 <./Bilder/data_structure_mapping.pdf>] <Bilder/contiguous_mem.pdf, id=1222
 , 360.34625pt x 160.6pt>
 File: Bilder/contiguous_mem.pdf Graphic file (type pdf)
 
 <use Bilder/contiguous_mem.pdf>
-Package pdftex.def Info: Bilder/contiguous_mem.pdf used on input line 795.
+Package pdftex.def Info: Bilder/contiguous_mem.pdf used on input line 798.
 (pdftex.def)             Requested size: 393.71239pt x 175.46956pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 801--802
+Underfull \hbox (badness 10000) in paragraph at lines 804--805
 
  []
 
 [31] [32 <./Bilder/contiguous_mem.pdf>]
-Overfull \hbox (13.58537pt too wide) in paragraph at lines 829--830
+Overfull \hbox (13.58537pt too wide) in paragraph at lines 832--833
 \OT1/cmtt/m/n/10.95 GlobHeapCombinedMem \OT1/cmr/m/n/10.95 is used to unify the
  it-er-a-tion spaces of mul-ti-ple \OT1/cmtt/m/n/10.95 GlobHeapContiguousMem
  []
 
-<Bilder/combined_edges.pdf, id=1255, 573.64313pt x 49.18375pt>
+<Bilder/combined_edges.pdf, id=1280, 573.64313pt x 49.18375pt>
 File: Bilder/combined_edges.pdf Graphic file (type pdf)
 
 <use Bilder/combined_edges.pdf>
-Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 833.
+Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 836.
 (pdftex.def)             Requested size: 437.46118pt x 37.50835pt.
  [33 <./Bilder/combined_edges.pdf>] [34]
 chapter 6.
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 847.
+Underfull \vbox (badness 10000) detected at line 865
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 876
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 893
+ []
 
 [35
 
 
-] [36
+]
+Underfull \hbox (badness 10000) in paragraph at lines 902--903
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (9.51227pt too wide) in paragraph at lines 927--928
+\OT1/cmr/m/n/10.95 Connected com-po-nents is an el-e-men-tary graph al-go-rithm
+ based on depth-first-search [[]].
+ []
+
+[36] <Bilder/cc.pdf, id=1354, 215.30438pt x 144.54pt>
+File: Bilder/cc.pdf Graphic file (type pdf)
+ <use Bilder/cc.pdf>
+Package pdftex.def Info: Bilder/cc.pdf used on input line 931.
+(pdftex.def)             Requested size: 218.73059pt x 146.84436pt.
+
+[37 <./Bilder/cc.pdf>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 995.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 995.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Bilder/mst.pdf, id=1407, 358.84062pt x 147.04938pt>
+File: Bilder/mst.pdf Graphic file (type pdf)
+ <use Bilder/mst.pdf>
+Package pdftex.def Info: Bilder/mst.pdf used on input line 1005.
+(pdftex.def)             Requested size: 349.97028pt x 143.42302pt.
+
+[38 <./Bilder/mst.pdf>]
+
+LaTeX Warning: Float too large for page by 105.0598pt on input line 1079.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[39] [40] [41] [42
 
 
 ]
 chapter 7.
-[37] [38
+[43] [44
 
 
 ]
 chapter 8.
-[39] [40
+[45] [46
 
 
-] [41
+] [47
 
 
-] [42]
+] [48]
 chapter A.
 
-Underfull \hbox (badness 1742) in paragraph at lines 898--898
+Underfull \hbox (badness 1742) in paragraph at lines 1131--1131
 \OT1/cmr/m/n/10.95 meth-ods for the re-trieval
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 898--898
+Underfull \hbox (badness 1742) in paragraph at lines 1131--1131
 \OT1/cmr/m/n/10.95 meth-ods for the re-trieval
  []
 
 
-Underfull \hbox (badness 2165) in paragraph at lines 898--898
+Underfull \hbox (badness 2165) in paragraph at lines 1131--1131
 \OT1/cmr/m/n/10.95 and mod-i-fi-ca-tion of edge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--898
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1131
 []|\OT1/cmr/m/n/10.95 user-specified STL-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--898
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1131
 \OT1/cmr/m/n/10.95 compatible con-tainer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--898
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1131
 []|\OT1/cmr/m/n/10.95 user-specified STL-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--898
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1131
 \OT1/cmr/m/n/10.95 compatible con-tainer
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 898--898
+Underfull \hbox (badness 5388) in paragraph at lines 1131--1131
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 898--898
+Underfull \hbox (badness 5388) in paragraph at lines 1131--1131
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 898--898
+Underfull \hbox (badness 5388) in paragraph at lines 1131--1131
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--898
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1131
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 898--898
+Underfull \hbox (badness 5388) in paragraph at lines 1131--1131
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--898
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1131
 []|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \vbox (badness 10000) detected at line 898
+Underfull \vbox (badness 10000) detected at line 1131
  []
 
-[43
+[49
 
 
 ]
-Underfull \hbox (badness 1533) in paragraph at lines 923--923
+Underfull \hbox (badness 1533) in paragraph at lines 1156--1156
 []|\OT1/cmr/m/n/10.95 iterator to the first ver-tex in
  []
 
 
-Underfull \vbox (badness 10000) detected at line 923
+Underfull \vbox (badness 10000) detected at line 1156
  []
 
-[44]
-Underfull \hbox (badness 6592) in paragraph at lines 948--948
+[50]
+Underfull \hbox (badness 6592) in paragraph at lines 1181--1181
 \OT1/cmr/m/n/10.95 begin(), x.vertices().end())
  []
 
 
-Underfull \vbox (badness 10000) detected at line 948
+Underfull \vbox (badness 10000) detected at line 1181
  []
 
-[45] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd")
-Underfull \hbox (badness 1430) in paragraph at lines 981--981
+[51]
+Underfull \hbox (badness 1430) in paragraph at lines 1214--1214
 $\OML/cmm/m/it/10.95 lit[]$ \OT1/cmr/m/n/10.95 and re-turns whether
  []
 
 
-Underfull \vbox (badness 10000) detected at line 981
+Underfull \vbox (badness 10000) detected at line 1214
  []
 
-[46]
-Underfull \hbox (badness 1430) in paragraph at lines 998--998
+[52]
+Underfull \hbox (badness 1430) in paragraph at lines 1231--1231
 []|\OT1/cmr/m/n/10.95 locally added el-e-ments pub-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 998
+Underfull \vbox (badness 10000) detected at line 1231
  []
 
-[47]
-Underfull \vbox (badness 10000) detected at line 1029
+[53]
+Underfull \vbox (badness 10000) detected at line 1262
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1046
+Underfull \vbox (badness 10000) detected at line 1279
  []
 
-[48]
-Underfull \hbox (badness 8019) in paragraph at lines 1063--1063
+[54]
+Underfull \hbox (badness 8019) in paragraph at lines 1296--1296
 \OT1/cmr/m/n/10.95 tices and std::distance($\OML/cmm/m/it/10.95 it[]$\OT1/cmr/m
 /n/10.95 ,
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1063
+Underfull \vbox (badness 10000) detected at line 1296
  []
 
-[49]
-Underfull \hbox (badness 5388) in paragraph at lines 1084--1084
+[55]
+Underfull \hbox (badness 5388) in paragraph at lines 1317--1317
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1084--1084
+Underfull \hbox (badness 10000) in paragraph at lines 1317--1317
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1084--1084
+Underfull \hbox (badness 5388) in paragraph at lines 1317--1317
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1084--1084
+Underfull \hbox (badness 10000) in paragraph at lines 1317--1317
 []|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1084
+Underfull \vbox (badness 10000) detected at line 1317
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1100
+Underfull \vbox (badness 10000) detected at line 1333
  []
 
-[50]
-Underfull \vbox (badness 10000) detected at line 1116
+[56]
+Underfull \vbox (badness 10000) detected at line 1349
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1137
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1370
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1137
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1370
 []|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1137
+Underfull \vbox (badness 10000) detected at line 1370
  []
 
-[51]
-Underfull \vbox (badness 10000) detected at line 1153
+[57]
+Underfull \vbox (badness 10000) detected at line 1386
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1169
+Underfull \vbox (badness 10000) detected at line 1402
  []
 
-[52] [53] [54
+[58] [59] [60
 
 
 ] (effe17.lof)
 \tf@lof=\write5
- (effe17.bbl [55
+ (effe17.bbl [61
 
 
-] [56
+] [62
 
 
 ]
 chapter without number
-[57] [58] [59])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1179.
- [60]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1179.
+[63] [64] [65] [66])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1412.
+ [67]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1412.
  (effe17.aux (Titel/titel-lmu.aux)
 (Titel/erklaerung-lmu.aux) (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1179.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1179.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1412.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1412.
 
 Package rerunfilecheck Info: File `effe17.out' has not changed.
-(rerunfilecheck)             Checksum: B4CC498CB83AA1DCDEC711991F0758AA;5479.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1179.
+(rerunfilecheck)             Checksum: 7EB8AB39BBB2298D4096E4980252460C;5797.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1412.
  ) 
 Here is how much of TeX's memory you used:
- 9807 strings out of 493673
- 147806 string characters out of 3141527
- 341152 words of memory out of 3000000
- 12570 multiletter control sequences out of 15000+200000
- 12571 words of font info for 44 fonts, out of 3000000 for 9000
+ 10877 strings out of 493673
+ 164967 string characters out of 3141527
+ 366687 words of memory out of 3000000
+ 13588 multiletter control sequences out of 15000+200000
+ 12930 words of font info for 45 fonts, out of 3000000 for 9000
  1066 hyphenation exceptions out of 8191
- 41i,12n,66p,1069b,1856s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,22n,66p,1069b,1857s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
@@ -1012,9 +1123,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on effe17.pdf (72 pages, 7379395 bytes).
+Output written on effe17.pdf (79 pages, 8928938 bytes).
 PDF statistics:
- 1601 PDF objects out of 1728 (max. 8388607)
- 413 named destinations out of 1000 (max. 500000)
- 707 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1790 PDF objects out of 2073 (max. 8388607)
+ 447 named destinations out of 1000 (max. 500000)
+ 757 words of extra memory for PDF output out of 10000 (max. 10000000)
 
