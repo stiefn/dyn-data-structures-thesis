@@ -101,19 +101,15 @@ The graph concept is meant to provide a generic framework for the programming of
 \item Native support for one-sided communication
 \item Support for the programming of synchronous graph algorithms
 \item Support for the programming of asynchronous graph algorithms
-\item Portability across platforms (\textcolor{red}{PORTABLE EFFICIENCY?})
-\item Support for heterogenous systems
-\item \textcolor{red}{FINISH REQUIREMENTS}
+\item Portability across platforms and portable efficiency
 \end{itemize}
 
-Furthermore, this work provides concepts for the dynamic allocation of graph data across multiple machines with a focus on optimized data locality. \textcolor{red}{LOAD BALANCING?}
+Furthermore, this work provides concepts for the dynamic allocation of graph data across multiple machines with a focus on optimized data locality.
 
 A reference implementation is then used to verify the usability, correctness and universality of the given concepts. While the concepts are designed for high performance, the reference implementation is not. This means that the evaluation of this implementation does not account for the performance of this work's concepts.
 
 \chapter{Background}
 This chapter covers some fundamental background knowledge needed for a better understanding of the following chapters of this thesis. Only explanations directly relevant to the topics of this thesis are provided.
-
-\textcolor{red}{INTRODUCE FIRST SECTION WHEN FINISHED}
 
 Since the result of this work is a C++ concept, some important language expressions and concepts are firstly discussed, along with a description of the Standard Template Library on which concepts this work is built upon. The reader is then introduced to the domain of High Performance Computing which is the main application area for this work. A brief overview of the Partitioned Global Address Space programming model is then followed by a description of the DASH Library which provides core concepts used in this thesis.
 
@@ -374,7 +370,7 @@ Graph processing on distributed machines tends to result in low processor utiliz
 
 \textbf{Spatio-Temporal Interaction Networks and Graphs Extensible Representation (STINGER)} \cite{stinger} is a graph data structure for shared memory systems. STINGER tries to provide a standardized and extensible data structure that allows portability across different graph processing frameworks. The data structure consists of a set of standards that have to be abided by actual implementations.
 
-At its core, STINGER is an adjacency list \textcolor{red}{LINK TO EXPLANATION?} with a fixed structure. Vertices are stored in a contiguous memory region and point to blocks of edges. The set of all edges of a single vertex can be distributed between multiple blocks with each block containing a pointer to the next block. Vertices and edges both store a weight value and edges additionally store timestamps. This allows edges to be automatically removed after they have reached a certain age. STINGER also accounts for fault tolerance by defining standards for checkpointing functionality.\\
+At its core, STINGER is an adjacency list with a fixed structure. Vertices are stored in a contiguous memory region and point to blocks of edges. The set of all edges of a single vertex can be distributed between multiple blocks with each block containing a pointer to the next block. Vertices and edges both store a weight value and edges additionally store timestamps. This allows edges to be automatically removed after they have reached a certain age. STINGER also accounts for fault tolerance by defining standards for checkpointing functionality.\\
 
 The \textbf{MultiThreaded Graph Library (MTGL)} \cite{mtgl} focuses on graph processing using specialized multithreading systems that contain processors supporting a large amount of thread contexts. The MTGL is specifically designed for the Cray MTA architecture which limits its use significantly because a Cray MTA system has to be available. Brian W. Barrett et al. have implemented an MTGL version for commodity hardware \cite{mainstream_mtgl} but its performance is significantly lower compared to the original version for serial machines.
 

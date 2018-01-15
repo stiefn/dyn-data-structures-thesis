@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces A directed graph (a) that is represented as an adjacency matrix (b) and as an adjacency list (c)}}{3}{figure.2.1}
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces View on Shared Memory (a), Distributed Memory (b) and Partitioned Global Address Space (c)}}{12}{figure.2.2}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces View on Shared Memory (a), Distributed Memory (b) and Partitioned Global Address Space (c)}}{11}{figure.2.2}
 \contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Memory space of two units after two \texttt {GlobHeapMem.grow} operations}}{13}{figure.2.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
