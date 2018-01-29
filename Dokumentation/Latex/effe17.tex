@@ -338,7 +338,7 @@ Existing PGAS approaches are mainly comprised of dedicated programming languages
 
 \section{DASH C++ Template Library}
 \label{dash_section}
-DASH \cite{dash} is a compiler-free PGAS approach: It consists of a simple C++ library that can be compiled with any C++ compiler and thus can be used out-of-the-box on most HPC systems. The library is part of the Priority Programme ``Software for Exascale Computing'' (SPPEXA)\footnote[1]{http://www.sppexa.de} which supports research on computing systems achieving $10^{18}$ floating point operations per second and above. While PGAS languages require existing programs to be completely rewritten from scratch, DASH allows the applications to be incrementally ported and thus facilitates wider adoption of the PGAS model in the HPC community.
+DASH \cite{dash} is a compiler-free PGAS approach: It consists of a simple C++ library that can be compiled with any C++ compiler and thus can be used out-of-the-box on most HPC systems. The library is part of the Priority Programme ``Software for Exascale Computing'' (SPPEXA)\footnote[1]{\url{http://www.sppexa.de}} which supports research on computing systems achieving $10^{18}$ floating point operations per second and above. While PGAS languages require existing programs to be completely rewritten from scratch, DASH allows the applications to be incrementally ported and thus facilitates wider adoption of the PGAS model in the HPC community.
 
 DASH operates on top of the \textit{DASH Runtime} (DART) which is a PGAS memory allocation and communication abstraction written in C. DART enables global memory allocation, pointers to remote memory locations and one-sided communication on top of existing libraries like MPI \cite{mpi3} or GASPI \cite{gaspi}. With DART-MPI \cite{dart_mpi}, a fully functional DART abstraction on top of MPI-3 is used in DASH releases at the time of this writing.
 
@@ -366,7 +366,7 @@ Multiple \texttt{grow} operations result in a scattered memory space: Each call 
 \chapter{Related work}
 \label{related_work_section}
 \section{Shared Memory}
-Graph processing on distributed machines tends to result in low processor utilization due to bad locality \cite{graph_challenges}. Shared memory systems on the other hand allow for simpler graph algorithms with better processor utilization \cite{ligra}. Because some shared memory systems with several terabytes of memory exist (e.g. the LRZ teramem\footnote[1]{https://www.lrz.de/services/compute/special\_systems/teramem/}), graphs up to a certain size can also be computed on such systems. While many libraries and frameworks for graph processing on shared memory systems exist, this section only focuses on work relevant to the HPC community.\\
+Graph processing on distributed machines tends to result in low processor utilization due to bad locality \cite{graph_challenges}. Shared memory systems on the other hand allow for simpler graph algorithms with better processor utilization \cite{ligra}. Because some shared memory systems with several terabytes of memory exist (e.g. the LRZ teramem\footnote[1]{\url{https://www.lrz.de/services/compute/special\_systems/teramem/}}), graphs up to a certain size can also be computed on such systems. While many libraries and frameworks for graph processing on shared memory systems exist, this section only focuses on work relevant to the HPC community.\\
 
 \textbf{Spatio-Temporal Interaction Networks and Graphs Extensible Representation (STINGER)} \cite{stinger} is a graph data structure for shared memory systems. STINGER tries to provide a standardized and extensible data structure that allows portability across different graph processing frameworks. The data structure consists of a set of standards that have to be abided by actual implementations.
 
@@ -842,51 +842,10 @@ Remote memory data access is strictly handled via \texttt{GlobSharedRef} objects
 Because edges are replicated for some graph types (see \autoref{graph_types_section}), writing data to an element with a \texttt{GlobSharedRef} object would introduce consistency problems because it is restricted to referencing single memory locations. \texttt{GlobSymValue} \textcolor{red}{THIS IS NOT IMPLEMENTED RIGHT NOW} is set up with two DART global pointers to account for this problem. An assignment to a \texttt{GlobSymValue} object results in two memory locations being updated.
 
 \chapter{Case studies}
+\label{case_studies_section}
 This chapter illustrates use cases for the previously described graph concepts using the reference implementation explained in \autoref{impl_section}. These use cases are then evaluated against existing implementations in \autoref{eval_section}.
 
 The use cases consist of two important basic graph algorithms: \textit{connected components} and \textit{minimum spanning tree}. Both algorithms have been examined in PGAS implementations using the UPC programming language \cite{upc} and their implementations in this work will roughly follow the specifications explained in \cite{pgas_algorithms} which consists of shared-memory algorithms ported to UPC.
-
-\section{Graph setup}
-This section describes the properties of \texttt{dash::Graph} used for the examined case studies.
-
-\begin{tabularx}{1\textwidth}{| l | l | X |}
-  \hline
-  \textbf{Property} & \textbf{Value} \\
-  \endhead
-  \hline
-  Graph type & Directed graph\\ \hline
-  Vertex attributes & - Parent component \\ \hline
-  Edge attributes &  \\ \hline
-  \caption{Graph setup for connected components}
-\end{tabularx}
-
-\begin{tabularx}{1\textwidth}{| l | l | X |}
-  \hline
-  \textbf{Property} & \textbf{Value} \\
-  \endhead
-  \hline
-  Graph type & Undirected graph\\ \hline
-  Vertex attributes & - Parent component \\ \hline
-  Edge attributes & - Weight \\ \hline
-  \caption{Graph setup for minimum spanning tree}
-\end{tabularx}
-
-\section{Input data}
-To maintain comparability, the input graphs of the case studies discussed in this chapter are generated in roughly the same way as described in \cite{pgas_algorithms}. The graphs are generated using a hybrid generation scheme: 50\% of the edges are generated randomly, the rest of the edges is generated using an RMAT graph generator \cite{rmat}.
-
-Because Cong et al. do not specify the exact input variables for the RMAT generator in their paper, default values are chosen: 
-
-\begin{tabularx}{1\textwidth}{| l | l | X |}
-  \hline
-  \textbf{Variable} & \textbf{Value} \\
-  \endhead
-  \hline
-  a & 0.57\\ \hline
-  b & 0.19 \\ \hline
-  c & 0.19 \\ \hline
-  d & 0.05 \\ \hline
-  \caption{Input variables for RMAT graph generator}
-\end{tabularx}
 
 \section{Optimizations}
 While shared-memory algorithms can be directly ported to distributed machines in PGAS, performance might suffer from irregular data accesses across machines as the latency of the network is much higher than the latency of memory access in shared-memory machines. Cong et al. therefore propose performance optimizations including \textit{communication coalescing} and \textit{cache performance optimization}. While the results show that these optimizations are significant (up to 5 times faster for the designated graph size), this case study only employs the \textit{communication coalescing} optimization because it is the most beneficial for scalability and an implementation of all optimization techniques is beyond the scope of this thesis.
@@ -932,16 +891,25 @@ This section presents a description of the algorithms used in the case studies a
 The classical variant of the algorithm performs a depth-first search on a graph $G$ and another depth-first search on the transposed version of the graph $G^T$.
 Because locality can hardly be exploited in depth-first search and because two runs per iteration are necessary to compute this algorithm, variations of the algorithm exist that account for better performance \cite{lineartime_cc} \cite{simple_cc}. 
 
-The algorithm used in this case study is based on the shared-memory version found in \cite{pgas_algorithms}. Contrary to the classical variant of the algorithm, no depth-first search is performed. All edges of the graph are examined in an arbitrary order leading to much better locality exploitation: Each unit can just examine the edges in the order they are placed in the memory.
+The algorithm used in this case study is based on the shared-memory version found in \cite{pgas_algorithms}. Contrary to the classical variant of the algorithm, no depth-first search is performed. All edges of the graph are examined in an arbitrary order leading to much better locality exploitation: Each unit can examine the edges in the order they are placed in memory.
 
-The algorithms requires vertex attributes for the parent component a vertex belongs to. This parent component attribute is initially set to the vertex itself. The algorithm then proceeds with iteration over the following two steps until no more component changes can be found:
+The algorithm requires vertex attributes for the parent component a vertex belongs to. This parent component attribute is initially set to the vertex itself. The algorithm then proceeds with iteration over the following two steps until no more component changes can be found:
 
 \begin{enumerate}
-\item For each edge, set the component of the source vertex' current parent to the target vertex' parent.
-\item Perform pointer-jumping over all components until the parent components of all vertices point to themselves.
-\end{enumerate} 
+\item For each edge, set the component of the target vertex' current parent to the source vertex' parent if source vertex parent \textless{} target vertex parent
+\item Perform \textit{pointer-jumping} over all component attributes until the parent components of all vertices point to themselves.
+\end{enumerate}
 
-The described algorithm is then optimized using communication coalescing explained in \autoref{comm_coal_section}. The resulting algorithm can be seen in \autoref{cc_algorithm}. The components of the target vertices of all edges local to each unit are gathered in a bulk communication step. This data is used to set the parent component of each target's parent to the source's parent component in another bulk communication step. Pointer jumping is then performed in a synchronized way in order to allow for communication coalescing: The components of each vertex is updated and the pointers are not immediately followed but rather updated in the next iteration. The algorithm stops if there are no changes in the parent components of all vertices in an iteration. 
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.7\textwidth]{Bilder/cc_steps.pdf}
+	\caption{Steps of connected components with a) initial setup, b) first step, c) second step}
+	\label{cc_steps_figure}
+\end{figure}
+
+\autoref{cc_steps_figure} a) shows the initial setup for the connected components algorithm according to the example graph of \autoref{cc_figure}: Each vertex has a parent component attribute assigned to it that is initially set to the vertex itself. For each edge in the graph, the component of the target vertex component is set to the component of the source vertex if the target component is greater than the source component in \autoref{cc_steps_figure} b). Pointer-jumping (\texttt{parent[vertex] = parent[parent[vertex]]}) is then performed in \autoref{cc_steps_figure} c) so that each vertex either points to itself or to another vertex that points to itself. It is worth to note that, because edge-lists can be traversed in arbitrary order, the component of \textit{vertex 4} in the first algorithm step can also be \textit{2}. In this case, the pointer-jumping step will not perform any changes. After a second iteration, the component of \textit{vertex 2} will be set to \textit{1} resulting in termination of the algorithm.\\
+
+The described algorithm is optimized using communication coalescing explained in \autoref{comm_coal_section}. The resulting algorithm can be seen in \autoref{cc_algorithm}. The components of the target vertices of all edges local to each unit are gathered in a bulk communication step. This data is used to set the parent component of each target's parent to the source's parent component in another bulk communication step. Pointer jumping is then performed in a synchronized way in order to allow for communication coalescing: The components of each vertex is updated and the pointers are not immediately followed but rather updated in the next iteration. The algorithm stops if there are no changes in the parent components of all vertices in an iteration. 
 
 \begin{center}
 \begin{algorithm}[h]
@@ -994,7 +962,7 @@ The described algorithm is then optimized using communication coalescing explain
 \end{center}
 
 \subsection{Minimum Spanning Tree}
-A \textit{minimum spanning tree} is a tree structure spanning a connected component along paths of minimum edge weight \cite{ita}. A graph containing multiple connected components contains a \textit{minimum spanning forest} of trees for each component. \autoref{mst_figure} shows a graph and its corresponding minimum spanning tree.
+A \textit{minimum spanning tree (MST)} is a tree structure spanning a connected component along paths of minimum edge weight \cite{ita}. The tree spans all vertices in the component and the sum of edge weights of each path is guaranteed to be minimal. The MST therefore is a subset of the graph. \autoref{mst_figure} shows a graph and its corresponding minimum spanning tree.
 
 \begin{figure}[ht]
 	\centering
@@ -1002,6 +970,8 @@ A \textit{minimum spanning tree} is a tree structure spanning a connected compon
 	\caption{Minimum spanning tree}
 	\label{mst_figure}
 \end{figure}
+
+A graph consisting of multiple connected components contains a \textit{minimum spanning forest} of trees for each component. The algorithm presented in this section computes minimum spanning trees for a all components of a graph and therefore results in a minimum spanning forest without the need of classifying the connected components beforehand.
 
 Classical implementations of the algorithm are \textit{Kruskal's algorithm} and \textit{Prim's algorithm} \cite{prim_kruskal}. Both algorithms are greedy but have been proven to create trees with minimum edge weight.
 
@@ -1013,9 +983,18 @@ This case study however is based on a shared-memory version of \textit{Boruvka's
 \item Compact each connected component into a supervertex.
 \end{enumerate}
 
-Each new iteration is computed on a graph composed of supervertices which contain all edges of their respective vertices. Because compacting vertices is costly, vertices are simply labeled with their supervertex index. To find the outgoing edge with minimum weight of a supervertex, multiple vertices have to be iterated over. 
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{Bilder/mst_boruvka.pdf}
+	\caption{Distributed minimum spanning tree example showing a) the graph, b) the first iteration, c) the second iteration \cite{boruvka}}
+	\label{mst_boruvka_figure}
+\end{figure}
 
-Because these vertices can reside on different units, there has to be consensus between multiple units about the minimum weight edge. This is achieved by computing the minimum weight edge on each unit individually and then exchanging the computed edges along with their weight between all participating units. Each unit can then determine the edge with the minimum weight and the unit it belongs to updates the edge accordingly.
+Each new iteration is computed on a graph composed of \textit{supervertices} which contain all edges of their respective vertices. Because compacting vertices is costly, vertices are simply labeled with their supervertex index. To find the outgoing minimum weight edge of a supervertex, multiple vertices have to be iterated over. 
+
+Since these vertices can reside on different units, there has to be consensus between multiple units about the minimum weight edge. This is achieved by computing the minimum weight edge on each unit individually and then exchanging the computed edges along with their weight between all participating units. Each unit can then determine the edge with the minimum weight and the unit it belongs to updates the edge accordingly.\\
+
+\autoref{mst_boruvka_figure} a) depicts an exemplary graph that is distributed among two units. \autoref{mst_boruvka_figure} b) shows the first iteration of the algorithm: For each vertex, the edges with minimum weight are chosen. The resulting connected components (1, 3, 5) and (2, 6, 4) are then compacted to the new supervertices 1' and 2' which are shown in \autoref{mst_boruvka_figure} c). Because unit 1 and unit 2 see different edges between these supervertices, both units choose a different edge as a candidate for the minimum weight edge between the supervertices. To reach consensus, both units exchange these edges along with their weight and the unit owning the edge with minimum weight updates the minimum spanning tree.\\
 
 The minimum spanning tree algorithm of this case study can be seen in \autoref{mst_algorithm}. It is similar to \autoref{cc_algorithm} but uses adjacency iteration to determine the minimum weight edge for each (super)vertex.
 
@@ -1077,8 +1056,85 @@ The minimum spanning tree algorithm of this case study can be seen in \autoref{m
 
 \chapter{Evaluation}
 \label{eval_section}
+To examine the performance and functionality of the graph concepts, the reference implementation is evaluated on a live HPC system with various kernels as described in detail in this chapter.\\
+
+The testing environment consists of the \textit{SuperMUC Phase 2}\footnote[2]{\url{https://www.lrz.de/services/compute/supermuc/systemdescription/}} system at the \textit{Leibniz Supercomputing Centre} in Munich. It comprises \textit{six islands} composed of \textit{512 nodes} each. The nodes are interconnected with an \textit{Infiniband FDR14} network and contain two \textit{Intel Xeon E5-2697 v3} processors and 64GB of RAM.
+
+All tests are performed on a single island with a varying amount of nodes. Because the load on the network inside the islands might vary depending on other jobs currently running on the system, each test is performed 10 times and a mean is calculated from the results.
+
 \section{Micro-benchmarks}
+This section presents a performance analysis of specific parts of the graph concepts. Because the concepts do not require inbound edge-lists in implementations of \textit{directed graph containers}, the micro-benchmarks in this section are performed on two different graph implementations to examine the difference an additional inbound edge-list imposes on performance. 
+
+Since element deletion is currently not implemented in the reference implementation, no micro-benchmarking could be performed in this regard.
+
+\subsection{Element creation}
+Elements are strictly created on local machines. As no communication is performed during this micro-benchmark, the tests are performed on a single node with a varying amount of elements.
+
+\subsection{Attribute access}
+Attribute values of elements can be accessed on local as well as remote nodes. This test aims to highlight the differences in access times for read operations with a varying amount of elements and nodes. 
+
+\subsection{Attribute mutation}
+Attribute values of elements can be changed on local as well as remote nodes. This test aims to highlight the differences in access times for write operations with a varying amount of elements and nodes.
+
+\subsection{Local iteration}
+Iteration over local elements does not have any dependencies with remote nodes. This test is therefore performed on a single node with a varying amount of elements.
+
+\subsection{Global iteration}
+Iteration over elements stored on multiple nodes requires additional information that can degrade performance in comparison to local iteration. This test aims to highlight the differences between global and local iteration in terms of runtime. It is performed with a varying amount of nodes and a varying amount of elements.
+
+\subsection{Memory space synchronization}
+The memory space synchronization is performed between all participating nodes and requires additional communication for edges if inbound edge-lists are implemented: The edges have to be replicated to the node owning the target vertex. This test examines the runtime of the synchronization process with a varying amount of elements and nodes.
+
 \section{Case studies}
+The case studies presented in \autoref{case_studies_section} are evaluated against their UPC counterparts \cite{pgas_algorithms} in this section. Because Cong et al. used a different HPC setup for their evaluation, the resulting numbers can not be considered as directly comparable.
+
+\subsection{Graph setup}
+This section describes the properties of \texttt{dash::Graph} used for the examined case studies.
+
+\begin{tabularx}{1\textwidth}{| l | l | X |}
+  \hline
+  \textbf{Property} & \textbf{Value} \\
+  \endhead
+  \hline
+  Graph type & Directed graph\\ \hline
+  Vertex attributes & - Parent component \\ \hline
+  Edge attributes &  \\ \hline
+  \caption{Graph setup for connected components}
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{| l | l | X |}
+  \hline
+  \textbf{Property} & \textbf{Value} \\
+  \endhead
+  \hline
+  Graph type & Undirected graph\\ \hline
+  Vertex attributes & - Parent component \\ \hline
+  Edge attributes & - Weight \\ \hline
+  \caption{Graph setup for minimum spanning tree}
+\end{tabularx}
+
+\subsection{Input data}
+To maintain comparability, the input graphs of the case studies discussed in this chapter are generated in roughly the same way as described in \cite{pgas_algorithms}. The graphs are generated using a hybrid generation scheme: 50\% of the edges are generated randomly, the rest of the edges is generated using an RMAT graph generator \cite{rmat}.
+
+Because Cong et al. do not specify the exact input variables for the RMAT generator in their paper, default values are chosen: 
+
+\begin{tabularx}{1\textwidth}{| l | l | X |}
+  \hline
+  \textbf{Variable} & \textbf{Value} \\
+  \endhead
+  \hline
+  a & 0.57 \\ \hline
+  b & 0.19 \\ \hline
+  c & 0.19 \\ \hline
+  d & 0.05 \\ \hline
+  \caption{Input variables for RMAT graph generator}
+\end{tabularx}
+
+The generated graphs have a total of approximately \textit{100 million vertices} and \textit{400 million edges}.
+
+\subsection{Experimental results (connected components)}
+
+\subsection{Experimental results (minimum spanning tree)}
 
 \chapter{Conclusion}
 \section{Summary}

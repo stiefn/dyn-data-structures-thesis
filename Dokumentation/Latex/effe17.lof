@@ -13,8 +13,10 @@
 \contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Contiguous memory allocation}}{32}{figure.5.3}
 \contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Combined edge iteration space}}{33}{figure.5.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Graph with two connected components}}{37}{figure.6.1}
-\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Minimum spanning tree}}{38}{figure.6.2}
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Graph with two connected components}}{36}{figure.6.1}
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Steps of connected components with a) initial setup, b) first step, c) second step}}{37}{figure.6.2}
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Minimum spanning tree}}{38}{figure.6.3}
+\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Distributed minimum spanning tree example showing a) the graph, b) the first iteration, c) the second iteration \cite {boruvka}}}{39}{figure.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
