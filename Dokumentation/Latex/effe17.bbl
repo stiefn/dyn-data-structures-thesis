@@ -140,7 +140,14 @@
 \newblock {In: }\emph{International Workshop on Languages and Compilers for
   Parallel Computing} Springer, 2012, S. 46--60
 
-\bibitem[FFK16]{dash}
+\bibitem[FFK16a]{dash_new}
+\textsc{Fürlinger}, Karl ; \textsc{Fuchs}, Tobias  ; \textsc{Kowalewski},
+  Roger:
+\newblock DASH: A C++ PGAS Library for Distributed Data Structures and Parallel
+  Algorithms.
+\newblock   (2016), 12
+
+\bibitem[FFK16b]{dash}
 \textsc{F{\"u}rlinger}, Karl ; \textsc{Fuchs}, Tobias  ; \textsc{Kowalewski},
   Roger:
 \newblock DASH: a C++ PGAS library for distributed data structures and parallel
