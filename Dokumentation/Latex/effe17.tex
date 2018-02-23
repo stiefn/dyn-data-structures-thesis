@@ -852,7 +852,7 @@ To overcome this problem, data accesses have to happen in batches rather than in
 \begin{algorithm}[h]
  \KwData{array \textit{indices} of indices to read}
  \KwResult{array \textit{output}}
- sort \textit{indices} by unit ID and save permutations\;
+ sort \textit{indices} by processor ID and save permutations\;
  alltoall(\textit{indices}, \textit{indices\_recv})\;
  \For{$i \gets 0$ \textbf{to} $indices\_recv.size()$} {
    \textit{data}[i] $\gets$ data attribute of the element $indices\_recv$[i]\;
@@ -883,7 +883,7 @@ This section presents a description of the algorithms used in the case studies a
 The classical variant of the algorithm performs a depth-first search on a graph $G$ and another depth-first search on the transposed version of the graph $G^T$.
 Because locality can hardly be exploited in depth-first search and because two runs per iteration are necessary to compute this algorithm, variations of the algorithm exist that account for better performance \cite{lineartime_cc} \cite{simple_cc}. 
 
-The algorithm used in this case study is based on the shared-memory version found in \cite{pgas_algorithms}. Contrary to the classical variant of the algorithm, no depth-first search is performed. All edges of the graph are examined in an arbitrary order leading to much better locality exploitation: Each unit can examine the edges in the order they are placed in memory.
+The algorithm used in this case study is based on the shared-memory version found in \cite{pgas_algorithms}. Contrary to the classical variant of the algorithm, no depth-first search is performed. All edges of the graph are examined in an arbitrary order leading to much better locality exploitation: Each processor can examine the edges in the order they are placed in memory.
 
 The algorithm requires vertex attributes for the parent component a vertex belongs to. This parent component attribute is initially set to the vertex itself. The algorithm then proceeds with iteration over the following two steps until no more component changes can be found:
 
@@ -901,7 +901,7 @@ The algorithm requires vertex attributes for the parent component a vertex belon
 
 \autoref{cc_steps_figure} a) shows the initial setup for the connected components algorithm according to the example graph of \autoref{cc_figure}: Each vertex has a parent component attribute assigned to it that is initially set to the vertex itself. For each edge in the graph, the component of the target vertex component is set to the component of the source vertex if the target component is greater than the source component in \autoref{cc_steps_figure} b). Pointer-jumping (\texttt{parent[vertex]} $\gets$ \texttt{parent[parent[vertex]]}) is then performed in \autoref{cc_steps_figure} c) so that each vertex either points to itself or to another vertex that points to itself. It is worth to note that, because edge-lists can be traversed in arbitrary order, the component of \textit{vertex 4} in the first algorithm step can also be \textit{2}. In this case, the pointer-jumping step will not perform any changes. After a second iteration, the component of \textit{vertex 2} will be set to \textit{1} resulting in termination of the algorithm.\\
 
-The described algorithm is optimized using communication coalescing explained in \autoref{comm_coal_section}. The resulting algorithm can be seen in \autoref{cc_algorithm}. The components of the target vertices of all edges local to each unit are gathered in a bulk communication step. This data is used to set the parent component of each target's parent to the source's parent component in another bulk communication step. Pointer jumping is then performed in a synchronized way in order to allow for communication coalescing: The component of each vertex is updated and the pointers are not immediately followed but rather updated in the next iteration. The algorithm stops if there are no changes in the parent components of all vertices in an iteration. 
+The described algorithm is optimized using communication coalescing explained in \autoref{comm_coal_section}. The resulting algorithm can be seen in \autoref{cc_algorithm}. The components of the target vertices of all edges local to each processor are gathered in a bulk communication step. This data is used to set the parent component of each target's parent to the source's parent component in another bulk communication step. Pointer jumping is then performed in a synchronized way in order to allow for communication coalescing: The component of each vertex is updated and the pointers are not immediately followed but rather updated in the next iteration. The algorithm stops if there are no changes in the parent components of all vertices in an iteration. 
 
 \begin{center}
 \begin{algorithm}[h]
@@ -984,9 +984,9 @@ This case study however is based on a shared-memory version of \textit{Boruvka's
 
 Each new iteration is computed on a graph composed of \textit{supervertices} which contain all edges of their respective vertices. Because compacting vertices is costly, vertices are simply labeled with their supervertex index. To find the outgoing minimum weight edge of a supervertex, multiple vertices have to be iterated over. 
 
-Since these vertices can reside on different units, there has to be consensus between multiple units about the minimum weight edge. This is achieved by computing the minimum weight edge on each unit individually and then exchanging the computed edges along with their weight between all participating units. Each unit can then determine the edge with the minimum weight and the unit it belongs to updates the edge accordingly.\\
+Since these vertices can reside on different processors, there has to be consensus between multiple processors about the minimum weight edge. This is achieved by computing the minimum weight edge on each processor individually and then exchanging the computed edges along with their weight between all participating processors. Each processor can then determine the edge with the minimum weight and the processor it belongs to updates the edge accordingly.\\
 
-\autoref{mst_boruvka_figure} a) depicts an exemplary graph that is distributed among two units. \autoref{mst_boruvka_figure} b) shows the first iteration of the algorithm: For each vertex, the edges with minimum weight are chosen. The resulting connected components (1, 3, 5) and (2, 6, 4) are then compacted to the new supervertices 1' and 2' which are shown in \autoref{mst_boruvka_figure} c). Because unit 1 and unit 2 see different edges between these supervertices, both units choose a different edge as a candidate for the minimum weight edge between the them. To reach consensus, both units exchange these edges along with their weight and the unit owning the edge with minimum weight updates the minimum spanning tree.\\
+\autoref{mst_boruvka_figure} a) depicts an exemplary graph that is distributed among two processors. \autoref{mst_boruvka_figure} b) shows the first iteration of the algorithm: For each vertex, the edges with minimum weight are chosen. The resulting connected components (1, 3, 5) and (2, 6, 4) are then compacted to the new supervertices 1' and 2' which are shown in \autoref{mst_boruvka_figure} c). Because processor 1 and processor 2 see different edges between these supervertices, both processors choose a different edge as a candidate for the minimum weight edge between the them. To reach consensus, both processors exchange these edges along with their weight and the processor owning the edge with minimum weight updates the minimum spanning tree.\\
 
 The MST algorithm of this case study can be seen in \autoref{mst_algorithm}. It is similar to \autoref{cc_algorithm} but uses adjacency iteration to determine the minimum weight edge for each (super)vertex.
 
@@ -1254,7 +1254,7 @@ A \texttt{DynamicGraph} is a \texttt{Graph} that enables dynamic addition and re
   $x.add\_edge(lit_v, it_{v})$ & P\textless local\_out\_edge\_iterator, bool\textgreater & adds an edge between vertices pointed to by $lit_v$ and $it_{v}$ and returns whether the edge has been added \\ \hline
   $x.remove\_edge(it_e)$ &  & removes an edge identified by $it_e$ \\ \hline
   $x.remove\_edge(lit_e)$ &  & removes an edge identified by $lit_e$ \\ \hline
-  $x.commit()$ &  & synchronizes memory space across all units \\ \hline
+  $x.commit()$ &  & synchronizes memory space across all processors \\ \hline
 \end{tabularx}
 
 \subsubsection{Conditions}
