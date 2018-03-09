@@ -1,3 +1,0 @@
-/home/cpppc/workspaces/dash-test/CMakeFiles/edit_cache.dir
-/home/cpppc/workspaces/dash-test/CMakeFiles/rebuild_cache.dir
-/home/cpppc/workspaces/dash-test/CMakeFiles/dummy_app.dir

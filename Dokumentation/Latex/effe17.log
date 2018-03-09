@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  30 JAN 2018 17:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  23 FEB 2018 14:01
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -1117,10 +1117,6 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1456.
 
 Package rerunfilecheck Info: File `effe17.out' has not changed.
 (rerunfilecheck)             Checksum: 5BD52625D48FE795E0A070AD47582B42;6451.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1456.
  ) 
 Here is how much of TeX's memory you used:
@@ -1150,9 +1146,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on effe17.pdf (81 pages, 10498300 bytes).
+Output written on effe17.pdf (81 pages, 10498565 bytes).
 PDF statistics:
- 1946 PDF objects out of 2073 (max. 8388607)
+ 1947 PDF objects out of 2073 (max. 8388607)
  460 named destinations out of 1000 (max. 500000)
  831 words of extra memory for PDF output out of 10000 (max. 10000000)
 
