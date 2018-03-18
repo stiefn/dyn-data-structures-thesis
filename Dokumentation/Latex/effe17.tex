@@ -833,6 +833,42 @@ Remote memory data access is strictly handled via \texttt{GlobSharedRef} objects
 
 Because edges are replicated for some graph types (see \autoref{graph_types_section}), writing data to an element with a \texttt{GlobSharedRef} object would introduce consistency problems as it is restricted to referencing single memory locations. At the time of this writing, the reference implementation does not support a mechanism to cover this problem. It can however be achieved by another kind of \textit{global reference} that additionally stores locations of replicated edges.
 
+\section{Additional methods}
+The following methods have been added to the reference implementation in order to facilitate faster attribute access:
+
+\subsection{Requirements}
+\begin{itemize}
+\item $X$, the graph type
+\item $x$, a value of type X
+\item $li_v$, a value of type \texttt{X::vertex\_size\_type}
+\item $li_e$, a value of type \texttt{X::edge\_size\_type}
+\end{itemize}
+
+\subsection{Types}
+\begin{tabularx}{1\textwidth}{| X | X | X |}
+  \hline
+  \textbf{Name} & \textbf{Type} & \textbf{Notes} \\ 
+  \endhead  
+  \hline
+  $vertex\_size\_type$ & unsigned integer &  \\ \hline
+\end{tabularx}
+
+\subsection{Methods and operators}
+\begin{tabularx}{1\textwidth}{| l | l | X |}
+  \hline
+  \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
+  \endhead
+  \hline
+  $x.vertices().attributes(li_v)$ & vertex\_attributes\_type & reference to the attributes of the vertex identified by $li_v$ \\ \hline
+  $x.vertices().set_attributes(li_v, va)$ & & sets the attributes of the vertex identified by $li_v$ \\ \hline
+  $x.out\_edges().attributes(li_e)$ & vertex\_attributes\_type & reference to the attributes of the vertex identified by $li_e$ \\ \hline
+  $x.out\_edges().set_attributes(li_e, ea)$ & & sets the attributes of the vertex identified by $li_e$ \\ \hline
+  $x.in\_edges().attributes(li_e)$ & vertex\_attributes\_type & reference to the attributes of the vertex identified by $li_e$ \\ \hline
+  $xin\_edges().set_attributes(li_e, ea)$ & & sets the attributes of the vertex identified by $li_e$ \\ \hline
+\end{tabularx}
+
+The mentioned methods are not part of the concept.
+
 \chapter{Case studies}
 \label{case_studies_section}
 This chapter illustrates use cases for the previously described graph concepts using the reference implementation explained in \autoref{impl_section}. These use cases are then evaluated against existing implementations in \autoref{eval_section}.

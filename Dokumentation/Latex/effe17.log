@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  18 MAR 2018 14:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  18 MAR 2018 15:26
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -458,7 +458,7 @@ LaTeX Info: Redefining \nameref on input line 62.
 \@outlinefile=\write3
 \c@lstlisting=\count135
  (Titel/titel-lmu.tex
-<./Bilder/lmu_siegel.pdf, id=383, 201.75375pt x 201.75375pt>
+<./Bilder/lmu_siegel.pdf, id=399, 201.75375pt x 201.75375pt>
 File: ./Bilder/lmu_siegel.pdf Graphic file (type pdf)
 
 <use ./Bilder/lmu_siegel.pdf>
@@ -536,7 +536,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
  [2]
 chapter 2.
-<Bilder/graph_rep.pdf, id=561, 637.38126pt x 188.20313pt>
+<Bilder/graph_rep.pdf, id=581, 637.38126pt x 188.20313pt>
 File: Bilder/graph_rep.pdf Graphic file (type pdf)
 
 <use Bilder/graph_rep.pdf>
@@ -590,7 +590,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
-<Bilder/pgas.pdf, id=745, 268.50313pt x 205.76875pt>
+<Bilder/pgas.pdf, id=765, 268.50313pt x 205.76875pt>
 File: Bilder/pgas.pdf Graphic file (type pdf)
  <use Bilder/pgas.pdf>
 Package pdftex.def Info: Bilder/pgas.pdf used on input line 331.
@@ -611,7 +611,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
-[12] <Bilder/dash_dynamic_mem_space.pdf, id=810, 411.03563pt x 138.5175pt>
+[12] <Bilder/dash_dynamic_mem_space.pdf, id=830, 411.03563pt x 138.5175pt>
 File: Bilder/dash_dynamic_mem_space.pdf Graphic file (type pdf)
 
 <use Bilder/dash_dynamic_mem_space.pdf>
@@ -682,7 +682,7 @@ chapter 4.
 Underfull \vbox (badness 10000) detected at line 500
  []
 
-[21] <Bilder/concepts.pdf, id=964, 437.635pt x 57.71562pt>
+[21] <Bilder/concepts.pdf, id=984, 437.635pt x 57.71562pt>
 File: Bilder/concepts.pdf Graphic file (type pdf)
 
 <use Bilder/concepts.pdf>
@@ -707,7 +707,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
-[26] <Bilder/memspace.pdf, id=1120, 378.91562pt x 68.75688pt>
+[26] <Bilder/memspace.pdf, id=1140, 378.91562pt x 68.75688pt>
 File: Bilder/memspace.pdf Graphic file (type pdf)
 
 <use Bilder/memspace.pdf>
@@ -755,7 +755,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 730--731
 
  []
 
-<Bilder/impl_overview.pdf, id=1175, 360.84813pt x 264.48813pt>
+<Bilder/impl_overview.pdf, id=1195, 360.84813pt x 264.48813pt>
 File: Bilder/impl_overview.pdf Graphic file (type pdf)
 
 <use Bilder/impl_overview.pdf>
@@ -765,14 +765,14 @@ Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 734.
 
 
  <./Bilder/impl_overview.pdf>]
-<Bilder/data_structure_mapping.pdf, id=1220, 251.43938pt x 120.95187pt>
+<Bilder/data_structure_mapping.pdf, id=1240, 251.43938pt x 120.95187pt>
 File: Bilder/data_structure_mapping.pdf Graphic file (type pdf)
 
 <use Bilder/data_structure_mapping.pdf>
 Package pdftex.def Info: Bilder/data_structure_mapping.pdf used on input line 7
 46.
 (pdftex.def)             Requested size: 306.22148pt x 147.30452pt.
- [30 <./Bilder/data_structure_mapping.pdf>] <Bilder/contiguous_mem.pdf, id=1266
+ [30 <./Bilder/data_structure_mapping.pdf>] <Bilder/contiguous_mem.pdf, id=1286
 , 360.34625pt x 160.6pt>
 File: Bilder/contiguous_mem.pdf Graphic file (type pdf)
 
@@ -791,382 +791,377 @@ n/10.95 is used to unify the it-er-a-tion spaces of mul-ti-ple \OT1/cmtt/m/n/10
 .95 GlobHeapContiguousMem
  []
 
-<Bilder/combined_edges.pdf, id=1324, 573.64313pt x 49.18375pt>
+<Bilder/combined_edges.pdf, id=1344, 573.64313pt x 49.18375pt>
 File: Bilder/combined_edges.pdf Graphic file (type pdf)
 
 <use Bilder/combined_edges.pdf>
 Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 824.
 (pdftex.def)             Requested size: 437.46118pt x 37.50835pt.
- [33 <./Bilder/combined_edges.pdf>] [34]
+ [33 <./Bilder/combined_edges.pdf>]
+Underfull \vbox (badness 10000) detected at line 854
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 868
+ []
+
+[34] [35] [36
+
+
+]
 chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 849--850
+Underfull \hbox (badness 10000) in paragraph at lines 885--886
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[35
-
-
-]
-Overfull \hbox (7.74567pt too wide) in paragraph at lines 874--875
+[37]
+Overfull \hbox (7.74567pt too wide) in paragraph at lines 910--911
 \OT1/cmr/m/it/10.95 Connected com-po-nents \OT1/cmr/m/n/10.95 is an el-e-men-ta
 ry graph al-go-rithm based on depth-first-search [[]].
  []
 
-<Bilder/cc.pdf, id=1387, 215.30438pt x 144.54pt>
+<Bilder/cc.pdf, id=1418, 215.30438pt x 144.54pt>
 File: Bilder/cc.pdf Graphic file (type pdf)
  <use Bilder/cc.pdf>
-Package pdftex.def Info: Bilder/cc.pdf used on input line 878.
+Package pdftex.def Info: Bilder/cc.pdf used on input line 914.
 (pdftex.def)             Requested size: 218.73059pt x 146.84436pt.
- [36 <./Bilder/cc.pdf>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 891.
+ [38 <./Bilder/cc.pdf>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 927.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 891.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 927.
 
-<Bilder/cc_steps.pdf, id=1435, 251.43938pt x 217.81375pt>
+<Bilder/cc_steps.pdf, id=1466, 251.43938pt x 217.81375pt>
 File: Bilder/cc_steps.pdf Graphic file (type pdf)
 
 <use Bilder/cc_steps.pdf>
-Package pdftex.def Info: Bilder/cc_steps.pdf used on input line 897.
+Package pdftex.def Info: Bilder/cc_steps.pdf used on input line 933.
 (pdftex.def)             Requested size: 306.22148pt x 265.27039pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 902--903
+Underfull \hbox (badness 10000) in paragraph at lines 938--939
 
  []
 
-[37 <./Bilder/cc_steps.pdf>]
+[39 <./Bilder/cc_steps.pdf>]
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 951.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 987.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Bilder/mst.pdf, id=1489, 358.84062pt x 147.04938pt>
+<Bilder/mst.pdf, id=1519, 358.84062pt x 147.04938pt>
 File: Bilder/mst.pdf Graphic file (type pdf)
  <use Bilder/mst.pdf>
-Package pdftex.def Info: Bilder/mst.pdf used on input line 961.
+Package pdftex.def Info: Bilder/mst.pdf used on input line 997.
 (pdftex.def)             Requested size: 349.97028pt x 143.42302pt.
 
-[38 <./Bilder/mst.pdf>]
-<Bilder/mst_boruvka.pdf, id=1540, 394.47375pt x 408.52625pt>
+[40 <./Bilder/mst.pdf>]
+<Bilder/mst_boruvka.pdf, id=1570, 394.47375pt x 408.52625pt>
 File: Bilder/mst_boruvka.pdf Graphic file (type pdf)
 
 <use Bilder/mst_boruvka.pdf>
-Package pdftex.def Info: Bilder/mst_boruvka.pdf used on input line 980.
+Package pdftex.def Info: Bilder/mst_boruvka.pdf used on input line 1016.
 (pdftex.def)             Requested size: 349.97028pt x 362.44023pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 987--988
+Underfull \hbox (badness 10000) in paragraph at lines 1023--1024
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--990
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
  []
 
-[39 <./Bilder/mst_boruvka.pdf>]
+[41 <./Bilder/mst_boruvka.pdf>]
 
-LaTeX Warning: Float too large for page by 105.0598pt on input line 1046.
+LaTeX Warning: Float too large for page by 105.0598pt on input line 1082.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[40] [41] [42]
+[42] [43] [44]
 chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1051--1052
+Underfull \hbox (badness 10000) in paragraph at lines 1087--1088
 
  []
 
-[43
+[45
 
 
 ]
-Underfull \vbox (badness 10000) detected at line 1095
+Underfull \vbox (badness 10000) detected at line 1131
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1107
+Underfull \vbox (badness 10000) detected at line 1143
  []
 
-[44]
-Underfull \vbox (badness 10000) detected at line 1124
+[46]
+Underfull \vbox (badness 10000) detected at line 1160
  []
 
-[45] [46
+[47] [48
 
 
 ]
 chapter 8.
-[47] [48
+[49] [50
 
 
-] [49
+] [51
 
 
-] [50]
+] [52]
 chapter A.
 
-Underfull \hbox (badness 1107) in paragraph at lines 1184--1184
+Underfull \hbox (badness 1107) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 a proxy type for the re-
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 1184--1184
+Underfull \hbox (badness 1742) in paragraph at lines 1220--1220
 \OT1/cmr/m/n/10.95 meth-ods for the re-trieval
  []
 
 
-Underfull \hbox (badness 2165) in paragraph at lines 1184--1184
+Underfull \hbox (badness 2165) in paragraph at lines 1220--1220
 \OT1/cmr/m/n/10.95 and mod-i-fi-ca-tion of edge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1184--1184
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 user-specified STL-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1184--1184
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1220
 \OT1/cmr/m/n/10.95 compatible con-tainer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1184--1184
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 user-specified STL-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1184--1184
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1220
 \OT1/cmr/m/n/10.95 compatible con-tainer
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1184--1184
+Underfull \hbox (badness 5388) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1184--1184
+Underfull \hbox (badness 5388) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1184--1184
+Underfull \hbox (badness 5388) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1184--1184
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1184--1184
+Underfull \hbox (badness 5388) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1184--1184
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1220
 []|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1184
+Underfull \vbox (badness 10000) detected at line 1220
  []
 
-[51
+[53
 
 
 ]
-Underfull \hbox (badness 1533) in paragraph at lines 1219--1219
+Underfull \hbox (badness 1533) in paragraph at lines 1255--1255
 []|\OT1/cmr/m/n/10.95 iterator to the first ver-tex in
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 1219--1219
+Underfull \hbox (badness 1803) in paragraph at lines 1255--1255
 []|\OT1/cmr/m/n/10.95 amount of lo-cally vis-i-ble out-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1219
+Underfull \vbox (badness 10000) detected at line 1255
  []
 
-[52] [53]
-Underfull \hbox (badness 6592) in paragraph at lines 1254--1254
+[54] [55]
+Underfull \hbox (badness 6592) in paragraph at lines 1290--1290
 \OT1/cmr/m/n/10.95 begin(), x.vertices().end())
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1254
+Underfull \vbox (badness 10000) detected at line 1290
  []
 
-[54]
-Underfull \hbox (badness 1430) in paragraph at lines 1287--1287
+[56]
+Underfull \hbox (badness 1430) in paragraph at lines 1323--1323
 $\OML/cmm/m/it/10.95 lit[]$ \OT1/cmr/m/n/10.95 and re-turns whether
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1287
+Underfull \vbox (badness 10000) detected at line 1323
  []
 
-[55]
-Underfull \hbox (badness 1430) in paragraph at lines 1304--1304
+[57]
+Underfull \hbox (badness 1430) in paragraph at lines 1340--1340
 []|\OT1/cmr/m/n/10.95 locally added el-e-ments pub-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1304
+Underfull \vbox (badness 10000) detected at line 1340
  []
 
-[56]
-Underfull \vbox (badness 10000) detected at line 1336
+[58]
+Underfull \vbox (badness 10000) detected at line 1372
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1353
+Underfull \vbox (badness 10000) detected at line 1389
  []
 
-[57]
-Underfull \hbox (badness 8019) in paragraph at lines 1370--1370
+[59]
+Underfull \hbox (badness 8019) in paragraph at lines 1406--1406
 \OT1/cmr/m/n/10.95 tices and std::distance($\OML/cmm/m/it/10.95 it[]$\OT1/cmr/m
 /n/10.95 ,
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1370
- []
-
-[58]
-Underfull \hbox (badness 5388) in paragraph at lines 1392--1392
-[]|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1392--1392
-[]|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
- []
-
-
-Underfull \hbox (badness 5388) in paragraph at lines 1392--1392
-[]|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1392--1392
-[]|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1392
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1413
- []
-
-[59]
-Underfull \vbox (badness 10000) detected at line 1434
+Underfull \vbox (badness 10000) detected at line 1406
  []
 
 [60]
-Underfull \hbox (badness 10000) in paragraph at lines 1456--1456
+Underfull \hbox (badness 5388) in paragraph at lines 1428--1428
+[]|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1428--1428
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1456--1456
+Underfull \hbox (badness 5388) in paragraph at lines 1428--1428
+[]|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1428--1428
 []|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1456
+Underfull \vbox (badness 10000) detected at line 1428
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1477
+Underfull \vbox (badness 10000) detected at line 1449
  []
 
 [61]
-Underfull \vbox (badness 10000) detected at line 1498
+Underfull \vbox (badness 10000) detected at line 1470
  []
 
-[62] [63] [64
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 1492--1492
+[]|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1492--1492
+[]|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1492
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1513
+ []
+
+[63]
+Underfull \vbox (badness 10000) detected at line 1534
+ []
+
+[64] [65] [66
 
 
 ] (effe17.lof)
 \tf@lof=\write5
- (effe17.bbl [65
+ (effe17.bbl [67
 
 
-] [66
+] [68
 
 
 ]
 chapter without number
-[67] [68] [69] [70])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1508.
- [71]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1508.
+[69] [70] [71] [72])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1544.
+ [73]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1544.
  (effe17.aux (Titel/titel-lmu.aux)
 (Titel/erklaerung-lmu.aux) (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1508.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1508.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1544.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1544.
 
-
-
-Package rerunfilecheck Warning: File `effe17.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `effe17.out':
-(rerunfilecheck)             Before: 5BD52625D48FE795E0A070AD47582B42;6451
-(rerunfilecheck)             After:  BA9EF42786096595F447484B7CBF5252;6451.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1508.
+Package rerunfilecheck Info: File `effe17.out' has not changed.
+(rerunfilecheck)             Checksum: CA1E8504074915E07F2E6DA9543BE4DB;6720.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1544.
  ) 
 Here is how much of TeX's memory you used:
- 10925 strings out of 493673
- 165746 string characters out of 3141527
+ 10937 strings out of 493673
+ 165893 string characters out of 3141527
  381687 words of memory out of 3000000
- 13610 multiletter control sequences out of 15000+200000
+ 13616 multiletter control sequences out of 15000+200000
  13097 words of font info for 46 fonts, out of 3000000 for 9000
  1066 hyphenation exceptions out of 8191
  41i,22n,66p,1084b,1857s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{chapter*.17} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.16} has been referenced but does not exist
-, replaced by a fixed one
-
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on effe17.pdf (83 pages, 10506363 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on effe17.pdf (85 pages, 10512305 bytes).
 PDF statistics:
- 1966 PDF objects out of 2073 (max. 8388607)
- 470 named destinations out of 1000 (max. 500000)
- 831 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1996 PDF objects out of 2073 (max. 8388607)
+ 476 named destinations out of 1000 (max. 500000)
+ 863 words of extra memory for PDF output out of 10000 (max. 10000000)
 
