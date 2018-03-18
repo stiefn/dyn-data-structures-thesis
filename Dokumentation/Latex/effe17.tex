@@ -1088,7 +1088,7 @@ This section describes the properties of \texttt{dash::Graph} used for the exami
   \textbf{Property} & \textbf{Value} \\
   \endhead
   \hline
-  Graph type & Directed graph\\ \hline
+  Graph type & Undirected graph\\ \hline
   Vertex attributes & - Parent component \\ \hline
   Edge attributes &  \\ \hline
   \caption{Graph setup for connected components}
@@ -1101,7 +1101,8 @@ This section describes the properties of \texttt{dash::Graph} used for the exami
   \hline
   Graph type & Undirected graph\\ \hline
   Vertex attributes & - Parent component \\ \hline
-  Edge attributes & - Weight \\ \hline
+  Edge attributes & - Weight \\ 
+  & - Processor ID \\ \hline
   \caption{Graph setup for minimum spanning tree}
 \end{tabularx}
 
@@ -1115,18 +1116,22 @@ Because Cong et al. do not specify the exact input variables for the RMAT genera
   \textbf{Variable} & \textbf{Value} \\
   \endhead
   \hline
-  a & 0.57 \\ \hline
-  b & 0.19 \\ \hline
-  c & 0.19 \\ \hline
-  d & 0.05 \\ \hline
+  a & 0.25 \\ \hline
+  b & 0.25 \\ \hline
+  c & 0.25 \\ \hline
+  d & 0.25 \\ \hline
   \caption{Input variables for RMAT graph generator}
 \end{tabularx}
 
-The generated graphs have a total of approximately \textit{100 million vertices} and \textit{400 million edges}.
-
 \subsection{Experimental results (connected components)}
+\subsubsection{Weak scaling (single node)}
+\subsubsection{Weak scaling (multiple nodes)}
+\subsubsection{Strong scaling (multiple nodes)}
 
 \subsection{Experimental results (minimum spanning tree)}
+\subsubsection{Weak scaling (single node)}
+\subsubsection{Weak scaling (multiple nodes)}
+\subsubsection{Strong scaling (multiple nodes)}
 
 \chapter{Conclusion}
 \section{Summary}

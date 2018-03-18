@@ -73,27 +73,33 @@
 \contentsline {subsection}{\numberline {7.2.1}Graph setup}{44}{subsection.7.2.1}
 \contentsline {subsection}{\numberline {7.2.2}Input data}{45}{subsection.7.2.2}
 \contentsline {subsection}{\numberline {7.2.3}Experimental results (connected components)}{45}{subsection.7.2.3}
+\contentsline {subsubsection}{\nonumberline Weak scaling (single node)}{45}{section*.12}
+\contentsline {subsubsection}{\nonumberline Weak scaling (multiple nodes)}{45}{section*.13}
+\contentsline {subsubsection}{\nonumberline Strong scaling (multiple nodes)}{45}{section*.14}
 \contentsline {subsection}{\numberline {7.2.4}Experimental results (minimum spanning tree)}{45}{subsection.7.2.4}
+\contentsline {subsubsection}{\nonumberline Weak scaling (single node)}{45}{section*.15}
+\contentsline {subsubsection}{\nonumberline Weak scaling (multiple nodes)}{45}{section*.16}
+\contentsline {subsubsection}{\nonumberline Strong scaling (multiple nodes)}{45}{section*.17}
 \contentsline {chapter}{\numberline {8}Conclusion}{47}{chapter.8}
 \contentsline {section}{\numberline {8.1}Summary}{47}{section.8.1}
 \contentsline {section}{\numberline {8.2}Assessment}{47}{section.8.2}
 \contentsline {section}{\numberline {8.3}Outlook}{47}{section.8.3}
-\contentsline {chapter}{Appendices}{49}{section*.12}
+\contentsline {chapter}{Appendices}{49}{section*.18}
 \contentsline {chapter}{\numberline {A}Graph container concepts}{51}{Appendix.1.A}
 \contentsline {section}{\numberline {A.1}Graph}{51}{section.1.A.1}
 \contentsline {subsection}{\numberline {A.1.1}Requirements}{51}{subsection.1.A.1.1}
 \contentsline {subsection}{\numberline {A.1.2}Types}{51}{subsection.1.A.1.2}
 \contentsline {subsection}{\numberline {A.1.3}Methods and operators}{52}{subsection.1.A.1.3}
-\contentsline {subsubsection}{\nonumberline Conditions}{54}{section*.13}
+\contentsline {subsubsection}{\nonumberline Conditions}{54}{section*.19}
 \contentsline {section}{\numberline {A.2}DynamicGraph}{55}{section.1.A.2}
 \contentsline {subsection}{\numberline {A.2.1}Requirements}{55}{subsection.1.A.2.1}
 \contentsline {subsection}{\numberline {A.2.2}Methods and operators}{55}{subsection.1.A.2.2}
-\contentsline {subsubsection}{\nonumberline Conditions}{56}{section*.14}
+\contentsline {subsubsection}{\nonumberline Conditions}{56}{section*.20}
 \contentsline {section}{\numberline {A.3}AttributedGraph}{57}{section.1.A.3}
 \contentsline {subsection}{\numberline {A.3.1}Requirements}{57}{subsection.1.A.3.1}
 \contentsline {subsection}{\numberline {A.3.2}Types}{57}{subsection.1.A.3.2}
 \contentsline {subsection}{\numberline {A.3.3}Methods and operators}{57}{subsection.1.A.3.3}
-\contentsline {subsubsection}{\nonumberline Conditions}{58}{section*.15}
+\contentsline {subsubsection}{\nonumberline Conditions}{58}{section*.21}
 \contentsline {section}{\numberline {A.4}DuplexGraph}{59}{section.1.A.4}
 \contentsline {subsection}{\numberline {A.4.1}Requirements}{59}{subsection.1.A.4.1}
 \contentsline {subsection}{\numberline {A.4.2}Types}{59}{subsection.1.A.4.2}
@@ -104,5 +110,5 @@
 \contentsline {subsection}{\numberline {A.5.2}Types}{61}{subsection.1.A.5.2}
 \contentsline {subsection}{\numberline {A.5.3}Methods and operators}{61}{subsection.1.A.5.3}
 \contentsline {subsection}{\numberline {A.5.4}conditions}{62}{subsection.1.A.5.4}
-\contentsline {chapter}{\nonumberline List of Figures}{65}{chapter*.16}
-\contentsline {chapter}{\nonumberline Bibliography}{67}{chapter*.17}
+\contentsline {chapter}{\nonumberline List of Figures}{65}{chapter*.22}
+\contentsline {chapter}{\nonumberline Bibliography}{67}{chapter*.23}
