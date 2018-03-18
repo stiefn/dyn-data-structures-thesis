@@ -84,25 +84,25 @@
 \contentsline {subsection}{\numberline {A.1.1}Requirements}{51}{subsection.1.A.1.1}
 \contentsline {subsection}{\numberline {A.1.2}Types}{51}{subsection.1.A.1.2}
 \contentsline {subsection}{\numberline {A.1.3}Methods and operators}{52}{subsection.1.A.1.3}
-\contentsline {subsubsection}{\nonumberline Conditions}{53}{section*.13}
-\contentsline {section}{\numberline {A.2}DynamicGraph}{54}{section.1.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Requirements}{54}{subsection.1.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Methods and operators}{54}{subsection.1.A.2.2}
-\contentsline {subsubsection}{\nonumberline Conditions}{55}{section*.14}
-\contentsline {section}{\numberline {A.3}AttributedGraph}{56}{section.1.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Requirements}{56}{subsection.1.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Types}{56}{subsection.1.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Methods and operators}{56}{subsection.1.A.3.3}
-\contentsline {subsubsection}{\nonumberline Conditions}{57}{section*.15}
-\contentsline {section}{\numberline {A.4}DuplexGraph}{58}{section.1.A.4}
-\contentsline {subsection}{\numberline {A.4.1}Requirements}{58}{subsection.1.A.4.1}
-\contentsline {subsection}{\numberline {A.4.2}Types}{58}{subsection.1.A.4.2}
-\contentsline {subsection}{\numberline {A.4.3}Methods and operators}{58}{subsection.1.A.4.3}
-\contentsline {subsection}{\numberline {A.4.4}Conditions}{59}{subsection.1.A.4.4}
-\contentsline {section}{\numberline {A.5}CombinedEdgeGraph}{59}{section.1.A.5}
-\contentsline {subsection}{\numberline {A.5.1}Requirements}{59}{subsection.1.A.5.1}
-\contentsline {subsection}{\numberline {A.5.2}Types}{59}{subsection.1.A.5.2}
-\contentsline {subsection}{\numberline {A.5.3}Methods and operators}{60}{subsection.1.A.5.3}
-\contentsline {subsection}{\numberline {A.5.4}conditions}{60}{subsection.1.A.5.4}
-\contentsline {chapter}{\nonumberline List of Figures}{63}{chapter*.16}
-\contentsline {chapter}{\nonumberline Bibliography}{65}{chapter*.17}
+\contentsline {subsubsection}{\nonumberline Conditions}{54}{section*.13}
+\contentsline {section}{\numberline {A.2}DynamicGraph}{55}{section.1.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Requirements}{55}{subsection.1.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Methods and operators}{55}{subsection.1.A.2.2}
+\contentsline {subsubsection}{\nonumberline Conditions}{56}{section*.14}
+\contentsline {section}{\numberline {A.3}AttributedGraph}{57}{section.1.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Requirements}{57}{subsection.1.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Types}{57}{subsection.1.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Methods and operators}{57}{subsection.1.A.3.3}
+\contentsline {subsubsection}{\nonumberline Conditions}{58}{section*.15}
+\contentsline {section}{\numberline {A.4}DuplexGraph}{59}{section.1.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Requirements}{59}{subsection.1.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Types}{59}{subsection.1.A.4.2}
+\contentsline {subsection}{\numberline {A.4.3}Methods and operators}{59}{subsection.1.A.4.3}
+\contentsline {subsection}{\numberline {A.4.4}Conditions}{60}{subsection.1.A.4.4}
+\contentsline {section}{\numberline {A.5}CombinedEdgeGraph}{61}{section.1.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Requirements}{61}{subsection.1.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Types}{61}{subsection.1.A.5.2}
+\contentsline {subsection}{\numberline {A.5.3}Methods and operators}{61}{subsection.1.A.5.3}
+\contentsline {subsection}{\numberline {A.5.4}conditions}{62}{subsection.1.A.5.4}
+\contentsline {chapter}{\nonumberline List of Figures}{65}{chapter*.16}
+\contentsline {chapter}{\nonumberline Bibliography}{67}{chapter*.17}

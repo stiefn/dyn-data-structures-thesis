@@ -1146,12 +1146,14 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
 \item $X$, the graph type
 \item $P$, a pair type satisfying the STL \texttt{pair} concept
 \item $C$, a container type satisfying the STL \texttt{SequenceContainer} concept
+\item $m$, an object of type \texttt{X::mapper}
 \item $x$, a value of type X
 \item $it_1$ and $it_2$, \texttt{InputIterators}\footnote[2]{see \autoref{stl_iterator_section}} with a valid range $[it_1, it_2]$ referring to elements of type \texttt{P<int, int>}
 \item $it_v$, a value of type \texttt{X::global\_vertex\_iterator}
 \item $lit_v$, a value of type \texttt{X::local\_vertex\_iterator}
 \item $it_e$, a value of type \texttt{X::global\_edge\_iterator}
 \item $lit_e$, a value of type \texttt{X::local\_edge\_iterator}
+\item $proc$, a value of type \texttt{X::processor\_id\_type}
 \end{itemize}
 
 \subsection{Types}
@@ -1162,7 +1164,7 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   \hline
   $vertex\_type$ & a model describing vertex information &  \\ \hline
   $edge\_type$ & a model describing edge information &  \\ \hline
-  $vertex\_proxy\_type$ & a proxy type encapsulating methods for the retrieval and modification of vertex data &  \\ \hline
+  $vertex\_proxy\_type$ & a proxy type for the retrieval and modification of vertex data &  \\ \hline
   $edge\_proxy\_type$ & a proxy type encapsulating methods for the retrieval and modification of edge data &  \\ \hline
   $vertex\_size\_type$ & unsigned integer &  \\ \hline
   $edge\_size\_type$ & unsigned integer &  \\ \hline
@@ -1172,6 +1174,8 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   $local\_vertex\_iterator$ & iterator pointing to elements of type \texttt{vertex\_type} & local iterator type satisfying \texttt{InputIterator} \\ \hline
   $global\_out\_edge\_iterator$ & iterator pointing to elements of type \texttt{edge\_type} & global iterator satisfying \texttt{InputIterator} \\ \hline
   $local\_out\_edge\_iterator$ & iterator pointing to elements of type \texttt{edge\_type} & local iterator satisfying \texttt{InputIterator} \\ \hline
+  $mapper$ & a function object mapping vertices to processors &  \\ \hline
+  $processor\_id\_type$ & a type identifying a processor mapped to the container &  \\ \hline
 \end{tabularx}
 
 \subsection{Methods and operators}
@@ -1180,7 +1184,7 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
   \endhead
   \hline
-  $X(n_v, it_1, it_2)$ &  & constructs the graph holding $n_v$ vertices and std::distance($it_1$, $it_2$) edges given by the iterators $it_1$ and $it_2$ of an edge list container\\ \hline
+  $X(n_v, it_1, it_2, m)$ &  & constructs the graph holding $n_v$ vertices and std::distance($it_1$, $it_2$) edges given by the iterators $it_1$ and $it_2$ of an edge list container\\ \hline
   $x.operator[](it_v)$ & vertex\_proxy\_type & vertex identified by $it_v$ \\ \hline
   $x.operator[](lit_v)$ & vertex\_proxy\_type & vertex identified by $lit_v$ \\ \hline
   $x.operator[](it_e)$ & edge\_proxy\_type & edge identified by $it_e$ \\ \hline
@@ -1189,6 +1193,11 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   $x.vertices().end()$ & global\_vertex\_iterator & iterator past the last vertex in global iteration space \\ \hline
   $x.vertices().lbegin()$ & local\_vertex\_iterator & iterator to the first vertex in local iteration space \\ \hline
   $x.vertices().lend()$ & local\_vertex\_iterator & iterator past the last vertex in local iteration space \\ \hline
+  $x.vertices().size()$ & vertex\_size\_type & amount of globally visible vertices \\ \hline
+  $x.vertices().size(proc)$ & vertex\_size\_type & amount of globally visible vertices owned by a processor $proc$ \\ \hline
+  $x.vertices().lsize()$ & vertex\_size\_type & amount of locally visible vertices on the respective processor \\ \hline
+  $x.vertices().empty()$ & bool & true if there are more than 0 vertices globally visible \\ \hline
+  $x.vertices().max\_size()$ & vertex\_size\_type & maximum amount of vertices possible \\ \hline
   $x.out\_edges().begin()$ & global\_out\_edge\_iterator & iterator to the first outbound edge in global iteration space \\ \hline
   $x.out\_edges().end()$ & global\_out\_edge\_iterator & iterator past the last outbound edge in global iteration space \\ \hline
   $x.out\_edges().lbegin()$ & local\_out\_edge\_iterator & iterator to the first outbound edge in local iteration space \\ \hline
@@ -1196,7 +1205,12 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   $x[it_v].out\_edges().begin()$ & global\_out\_edge\_iterator & iterator pointing to the first element in the edge-list of the vertex pointed to by $it_v$ \\ \hline
   $x[it_v].out\_edges().end()$ & global\_out\_edge\_iterator & iterator pointing past the last element in the edge-list of the vertex pointed to by $it_v$ \\ \hline
   $x[lit_v].out\_edges().lbegin()$ & local\_out\_edge\_iterator & iterator pointing to the first element in the edge-list of the vertex pointed to by $lit_v$ \\ \hline
-  $x[lit_v].out\_edges().lend()$ & local\_out\_edge\_iterator & iterator pointing past the last element in the edge-list of the vertex pointed to by $lit_v$ \textcolor{red}{ONLY FOR LOCAL ITERATORS?} \\ \hline
+  $x[lit_v].out\_edges().lend()$ & local\_out\_edge\_iterator & iterator pointing past the last element in the edge-list of the vertex pointed to by $lit_v$ \\ \hline
+  $x.out\_edges().size()$ & vertex\_size\_type & amount of globally visible out-edges \\ \hline
+  $x.out\_edges().size(proc)$ & edge\_size\_type & amount of globally visible out-edges owned by a processor $proc$ \\ \hline
+  $x.out\_edges().lsize()$ & edge\_size\_type & amount of locally visible out-edges on the respective processor \\ \hline
+  $x.out\_edges().empty()$ & bool & true if there are more than 0 out-edges globally visible \\ \hline
+  $x.out\_edges().max\_size()$ & edge\_size\_type & maximum amount of out-edges possible \\ \hline
 \end{tabularx}
 
 \subsubsection{Conditions}
@@ -1205,7 +1219,7 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
   \endhead
   \hline
-  $X(n_v, it_1, it_2)$ & $n_v$ = the amount of different integer values in elements of $[it_1, it_2]$ & std::distance(x.vertices().\newline begin(), x.vertices().end()) == $n_v$\newline std::distance(x.out\_edges().\newline  begin(), x.out\_edges().end()) == $n_e$\\ \hline
+  $X(n_v, it_1, it_2, m)$ & $n_v$ = the amount of different integer values in elements of $[it_1, it_2]$ & std::distance(x.vertices().\newline begin(), x.vertices().end()) == $n_v$\newline std::distance(x.out\_edges().\newline  begin(), x.out\_edges().end()) == $n_e$\\ \hline
   $x.operator[](it_v)$ &  & vertex identified by $it_v$ \\ \hline
   $x.operator[](lit_v)$ &  & vertex identified by $lit_v$ \\ \hline
   $x.operator[](it_e)$ &  & edge identified by $it_e$ \\ \hline
@@ -1214,6 +1228,11 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   $x.vertices().end()$ & & \\ \hline
   $x.vertices().lbegin()$ & & \\ \hline
   $x.vertices().lend()$ & & \\ \hline
+  $x.vertices().size()$ & & \\ \hline
+  $x.vertices().size(proc)$ & & processor identified by $proc$ \\ \hline
+  $x.vertices().lsize()$ & & \\ \hline
+  $x.vertices().empty()$ & & \\ \hline
+  $x.vertices().max\_size()$ & & \\ \hline
   $x.out\_edges().begin()$ & & \\ \hline
   $x.out\_edges().end()$ & & \\ \hline
   $x.out\_edges().lbegin()$ & & \\ \hline
@@ -1222,6 +1241,11 @@ A \texttt{Graph} is a container providing minimal functionality for the creation
   $x[it_v].out\_edges().end()$ & & \\ \hline
   $x[lit_v].out\_edges().lbegin()$ & & \\ \hline
   $x[lit_v].out\_edges().lend()$ & & \\ \hline
+  $x.out\_edges().size()$ & & \\ \hline
+  $x.out\_edges().size(proc)$ & & processor identified by $proc$ \\ \hline
+  $x.out\_edges().lsize()$ & & \\ \hline
+  $x.out\_edges().empty()$ & & \\ \hline
+  $x.out\_edges().max\_size()$ & & \\ \hline
 \end{tabularx}
 
 \section{DynamicGraph}
@@ -1284,6 +1308,7 @@ An \texttt{AttributedGraph} is a \texttt{Graph} containing arbitrary attributes 
 \item $ET$, an edge attribute type
 \item $TP$, a tuple type satisfying the STL \texttt{tuple} concept
 \item $P$, a pair type satisfying the STL \texttt{pair} concept
+\item $m$, an object of type \texttt{X::mapper}
 \item $x$, a value of type X
 \item $n_v$, a value of type \texttt{X::vertex\_size\_type}
 \item $it_1$ and $it_2$, \texttt{InputIterators} with a valid range $[it_1, it_2]$ referring to elements of type \texttt{TP<P<int, VT>, P<int, VT>, ET>}
@@ -1311,7 +1336,7 @@ An \texttt{AttributedGraph} is a \texttt{Graph} containing arbitrary attributes 
   \textbf{Expression} & \textbf{Return} & \textbf{Semantics} \\
   \endhead  
   \hline
-  $X(n_v, it_1, it_2)$ &  & constructs the graph holding $n_v$ vertices and std::distance($it_1$, $it_2$) edges given by the iterators $it_1$ and $it_2$ of an edge list container\\ \hline
+  $X(n_v, it_1, it_2, m)$ &  & constructs the graph holding $n_v$ vertices and std::distance($it_1$, $it_2$) edges given by the iterators $it_1$ and $it_2$ of an edge list container\\ \hline
   $x[it_v].attributes()$ & $vertex\_attributes\_type$ & returns the attributes of the vertex pointed to by $it_v$\\ \hline
   $x[lit_v].attributes()$ & $vertex\_attributes\_type$ & returns the attributes of the vertex pointed to by $lit_v$\\ \hline
   $x[it_e].attributes()$ & $edge\_attributes\_type$ & returns the attributes of the edge pointed to by $it_e$\\ \hline
@@ -1328,7 +1353,7 @@ An \texttt{AttributedGraph} is a \texttt{Graph} containing arbitrary attributes 
   \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
   \endhead  
   \hline
-  $X(n_v, it_1, it_2)$ &  & memory allocated for $n_v$ vertices and std::distance($it_1$, $it_2$) edges\\ \hline
+  $X(n_v, it_1, it_2, m)$ &  & memory allocated for $n_v$ vertices and std::distance($it_1$, $it_2$) edges\\ \hline
   $x[it_v].attributes()$ & $it_v$ points to a valid vertex in X & \\ \hline
   $x[lit_v].attributes()$ & $lit_v$ points to a valid vertex in X & \\ \hline
   $x[it_e].attributes()$ & $it_e$ points to a valid edge in X & \\ \hline
@@ -1348,6 +1373,7 @@ A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for 
 \item $x$, a value of type X
 \item $it_v$, a value of type \texttt{X::global\_vertex\_iterator}
 \item $lit_v$, a value of type \texttt{X::local\_vertex\_iterator}
+\item $proc$, a value of type \texttt{X::processor\_id\_type}
 \end{itemize}
 
 \subsection{Types}
@@ -1374,6 +1400,11 @@ A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for 
   $x[it_v].in\_edges().end()$ & global\_in\_edge\_iterator & iterator past the last inbound edge connected to to the vertex pointed to by $it_v$ \\ \hline
   $x[lit_v].in\_edges().lbegin()$ & local\_in\_edge\_iterator & iterator to the first inbound edge connected to the vertex pointed to by $lit_v$ \\ \hline
   $x[lit_v].in\_edges().lend()$ & local\_in\_edge\_iterator & iterator past the last inbound edge connected to to the vertex pointed to by $lit_v$ \\ \hline
+  $x.in\_edges().size()$ & vertex\_size\_type & amount of globally visible in-edges \\ \hline
+  $x.in\_edges().size(proc)$ & edge\_size\_type & amount of globally visible in-edges owned by a processor $proc$ \\ \hline
+  $x.in\_edges().lsize()$ & edge\_size\_type & amount of locally visible in-edges on the respective processor \\ \hline
+  $x.in\_edges().empty()$ & bool & true if there are more than 0 in-edges globally visible \\ \hline
+  $x.in\_edges().max\_size()$ & edge\_size\_type & maximum amount of in-edges possible \\ \hline
 \end{tabularx}
 
 \subsection{Conditions}
@@ -1390,6 +1421,11 @@ A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for 
   $x[it_v].in\_edges().end()$ & $it_v$ points to a valid vertex in X & \\ \hline
   $x[lit_v].in\_edges().lbegin()$ & $lit_v$ points to a valid vertex in X & \\ \hline
   $x[lit_v].in\_edges().lend()$ & $lit_v$ points to a valid vertex in X & \\ \hline
+  $x.in\_edges().size()$ & & \\ \hline
+  $x.in\_edges().size(proc)$ & & processor identified by $proc$ \\ \hline
+  $x.in\_edges().lsize()$ & & \\ \hline
+  $x.in\_edges().empty()$ & & \\ \hline
+  $x.in\_edges().max\_size()$ & & \\ \hline
 \end{tabularx}
 
 \section{CombinedEdgeGraph}
@@ -1401,6 +1437,7 @@ A \texttt{CombinedEdgeGraph} is a \texttt{Graph} with additional iterators for a
 \item $x$, a value of type X
 \item $it_v$, a value of type \texttt{X::global\_vertex\_iterator}
 \item $lit_v$, a value of type \texttt{X::local\_vertex\_iterator}
+\item $proc$, a value of type \texttt{X::processor\_id\_type}
 \end{itemize}
 
 \subsection{Types}
@@ -1427,6 +1464,11 @@ A \texttt{CombinedEdgeGraph} is a \texttt{Graph} with additional iterators for a
   $x[it_v].edges().end()$ & global\_edge\_iterator & iterator past the last edge (inbound and outbound) connected to to the vertex pointed to by $it_v$ \\ \hline
   $x[lit_v].edges().lbegin()$ & local\_edge\_iterator & iterator to the first edge (inbound and outbound) connected to the vertex pointed to by $lit_v$ \\ \hline
   $x[lit_v].edges().lend()$ & local\_edge\_iterator & iterator past the last edge (inbound and outbound) connected to to the vertex pointed to by $lit_v$ \\ \hline
+  $x.edges().size()$ & vertex\_size\_type & amount of globally visible edges \\ \hline
+  $x.edges().size(proc)$ & edge\_size\_type & amount of globally visible edges owned by a processor $proc$ \\ \hline
+  $x.edges().lsize()$ & edge\_size\_type & amount of locally visible edges on the respective processor \\ \hline
+  $x.edges().empty()$ & bool & true if there are more than 0 edges globally visible \\ \hline
+  $x.edges().max\_size()$ & edge\_size\_type & maximum amount of edges possible \\ \hline
 \end{tabularx}
 
 \subsection{conditions}
@@ -1443,6 +1485,11 @@ A \texttt{CombinedEdgeGraph} is a \texttt{Graph} with additional iterators for a
   $x[it_v].edges().end()$ & $it_v$ points to a valid vertex in X & \\ \hline
   $x[lit_v].edges().lbegin()$ & $lit_v$ points to a valid vertex in X & \\ \hline
   $x[lit_v].edges().lend()$ & $lit_v$ points to a valid vertex in X & \\ \hline
+  $x.edges().size()$ & & \\ \hline
+  $x.edges().size(proc)$ & & processor identified by $proc$ \\ \hline
+  $x.edges().lsize()$ & & \\ \hline
+  $x.edges().empty()$ & & \\ \hline
+  $x.edges().max\_size()$ & & \\ \hline
 \end{tabularx}
 
 \end{appendices}
