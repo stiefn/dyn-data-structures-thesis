@@ -907,6 +907,7 @@ A \textit{communication coalescing} algorithm for data writes works analogously.
 This section presents a description of the algorithms used in the case studies as well as a high level description of their implementation.
 
 \subsection{Connected Components}
+\label{cc_algorithm_section}
 \textit{Connected components} is an elementary graph algorithm based on depth-first-search \cite{ita}. It aims to find components in a graph in which every vertex is connected to at least one other vertex. The algorithm finds one or more sub-graphs with no edges between them. \autoref{cc_figure} depicts a graph comprising two connected components.
 
 \begin{figure}[ht]
@@ -990,6 +991,7 @@ The described algorithm is optimized using communication coalescing explained in
 \end{center}
 
 \subsection{Minimum Spanning Tree}
+\label{mst_algorithm_section}
 A \textit{minimum spanning tree (MST)} is a tree structure spanning a connected component along paths of minimum edge weight \cite{ita}. The tree spans all vertices in the component and the sum of edge weights of each path is guaranteed to be minimal. The MST therefore is a subset of the graph. \autoref{mst_figure} shows a graph and its corresponding minimum spanning tree.
 
 \begin{figure}[ht]
@@ -1213,8 +1215,17 @@ Because Cong et al. do not specify the exact input variables for the RMAT genera
   \caption{Input variables for RMAT graph generator}
 \end{tabularx}
 
-\subsection{Experimental results (connected components)}
+\subsection{Experimental results (Connected Components)}
+\label{cc_experiments_section}
+The experiments with the Connected Components algorithm have been conducted with two different approaches: 
+
+\begin{itemize}
+\item \textbf{Weak scaling} - An increase in compute power (amount of processors) involves a symmetrical increase in the amount of data that is to be processed.
+\item \textbf{Strong scaling} - The same amount of data is processed with a varying amount of compute power.
+\end{itemize}
+
 \subsubsection{Weak scaling (single node)}
+The processed graph contains 225.000 vertices and 900.000 edges per processor. This amounts to 6.3M vertices and 25.2M edges on a whole node. This is rougly equal to the amount of elements used in the strong scaling experiment on 16 nodes.
 
 \begin{figure}[ht]
 	\centering
@@ -1223,8 +1234,9 @@ Because Cong et al. do not specify the exact input variables for the RMAT genera
 	\label{cc_weak_single_figure}
 \end{figure}
 
-\subsubsection{Weak scaling (multiple nodes)}
+\autoref{cc_weak_single_figure} illustrates the time consumed by this experiment on a varying amount of processors. The data shows that there is already a noticeable algorithmic overhead that leads to an increase in runtime even if there is no communication over an interconnect that could introduce latency. The runtime roughly doubles with an increase of the amount of processors (and also of the dataset) of 14 times.
 
+\subsubsection{Weak scaling (multiple nodes)}
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.5\textwidth]{Bilder/plots/cc_weak_multi.pdf}
@@ -1232,42 +1244,72 @@ Because Cong et al. do not specify the exact input variables for the RMAT genera
 	\label{cc_weak_multi_figure}
 \end{figure}
 
+Weak scaling on multiple nodes is continued with the same amount of elements per processor as described in the previous section.
+
+\autoref{cc_weak_multi_figure} shows the results of algorithm runs on up to 64 nodes. Interestingly, the plot strongly resembles the plot in \autoref{cc_weak_single_figure} although parts of the data are now distributed over an interconnect.
+
+Tracing of the application has shown that parts of the algorithm converge into hotspots on the processors holding the vertices with the lowest IDs. This happens mainly in the pointer-jumping step (see \autoref{cc_algorithm_section}). Due to this fact, another algorithm run has been performed with a different setup: Vertices are distributed to their respective processors using a logarithmic function resulting in processors holding the vertices with the lowest ID to store less elements than the rest of the processors. The results are shown with a dashed line in \autoref{cc_weak_multi_figure}.
+
 \subsubsection{Strong scaling (multiple nodes)}
+Strong scaling is performed with 100M vertices and 400M edges in all setups. This is equal to the amount of elements used in the algorithm runs of \cite{pgas_algorithms}.
 
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.5\textwidth]{Bilder/plots/cc_strong_multi.pdf}
 	\caption{Connected Components: Strong scaling on multiple nodes}
-	\label{cc_weak_single_figure}
+	\label{cc_strong_multi_figure}
 \end{figure}
 
+In \autoref{cc_strong_multi_figure}, the results for an equal distribution of vertices as well as for distribution using a logarithmic function can be seen. Additionally the runtime of the Connected Components algorithm of Cong et al. (UPC CC 16N) is shown with a dashed blue line and the runtime of a shared-memory (SMP) version of the algorithm \cite{pgas_algorithms} is  drawn with a dashed red line.
+
+The UPC version of Cong et al. has only been run on a cluster of 16 nodes. Therefore, no scalability comparison is available. The SMP version has been run on a single node. Unfortunately, there is also no hardware information available.
+
 \subsection{Experimental results (minimum spanning tree)}
+Similar to \autoref{cc_experiments_section}, experiments with the Minimum Spanning Tree algorithm have been performed with weak scaling and strong scaling on a varying amount of processors/nodes.
+
 \subsubsection{Weak scaling (single node)}
+The processed graph contains 225.000 vertices and 900.000 edges per processor. This amounts to 6.3M vertices and 25.2M edges on a whole node. This is rougly equal to the amount of elements used in the strong scaling experiment on 16 nodes.
 
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.5\textwidth]{Bilder/plots/mst_weak_single.pdf}
 	\caption{Minimum Spanning Tree: Weak scaling on a single node}
-	\label{cc_weak_single_figure}
+	\label{mst_weak_single_figure}
 \end{figure}
 
+\autoref{mst_weak_single_figure} presents the runtime on a single node. A processor count/dataset increase of 14 times results in a runtime 1.9 times longer.
+
 \subsubsection{Weak scaling (multiple nodes)}
+With 225.000 vertices and 900.000 edges per processor, weak scaling of the algorithm has been performed on uop to 64 nodes.
 
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.5\textwidth]{Bilder/plots/mst_weak_multi.pdf}
 	\caption{Minimum Spanning Tree: Weak scaling on multiple nodes}
-	\label{cc_weak_multi_figure}
+	\label{mst_weak_multi_figure}
 \end{figure}
 
+The results in \autoref{mst_weak_multi_figure} indicate that the Minimum Spanning Tree algorithm is more communication-intensive in comparison to the Connected Components algorithm. The hotspot problem described in \autoref{cc_experiments_section} becomes even more apparent with this algorithm. As a matter of fact the algorithm could not be finished with an equal vertex distribution on 64 nodes.
+
+The logarithmic vertex distribution shows slightly better scalability, but an increase of the amount of processors/nodes of 16 times still results in a 4 times longer runtime.
+
 \subsubsection{Strong scaling (multiple nodes)}
+Strong scaling is performed with 100M vertices and 400M edges in all setups. This is equal to the amount of elements used in the algorithm runs of \cite{pgas_algorithms}.
 
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.5\textwidth]{Bilder/plots/mst_strong_multi.pdf}
 	\caption{Minimum Spanning Tree: Strong scaling on multiple nodes}
-	\label{cc_weak_single_figure}
+	\label{mst_strong_multi_figure}
 \end{figure}
+
+In \autoref{mst_strong_multi_figure}, the results for an equal distribution of vertices as well as for distribution using a logarithmic function can be seen. Additionally the runtime of the Minimum Spanning Tree algorithm of Cong et al. (UPC MST 16N) is shown with a dashed blue line and the runtime of a shared-memory (SMP) version of the algorithm \cite{pgas_algorithms} is  drawn with a dashed red line.
+
+The UPC version of Cong et al. has only been run on a cluster of 16 nodes. Therefore, no scalability comparison is available. The SMP version has been run on a single node. Unfortunately, there is also no hardware information available.
+
+\subsection{Result assessment}
+
+\subsection{Programming assessment}
 
 \chapter{Conclusion}
 \section{Summary}
