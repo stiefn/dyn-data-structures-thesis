@@ -1,0 +1,162 @@
+[0] MPI startup(): Multi-threaded optimized library
+[8] MPI startup(): shm data transfer mode
+[12] MPI startup(): shm data transfer mode
+[0] MPI startup(): shm data transfer mode
+[4] MPI startup(): shm data transfer mode
+[15] MPI startup(): shm data transfer mode
+[2] MPI startup(): shm data transfer mode
+[5] MPI startup(): shm data transfer mode
+[1] MPI startup(): shm data transfer mode
+[3] MPI startup(): shm data transfer mode
+[6] MPI startup(): shm data transfer mode
+[9] MPI startup(): shm data transfer mode
+[19] MPI startup(): shm data transfer mode
+[7] MPI startup(): shm data transfer mode
+[11] MPI startup(): shm data transfer mode
+[17] MPI startup(): shm data transfer mode
+[21] MPI startup(): shm data transfer mode
+[22] MPI startup(): shm data transfer mode
+[23] MPI startup(): shm data transfer mode
+[10] MPI startup(): shm data transfer mode
+[13] MPI startup(): shm data transfer mode
+[14] MPI startup(): shm data transfer mode
+[16] MPI startup(): shm data transfer mode
+[18] MPI startup(): shm data transfer mode
+[20] MPI startup(): shm data transfer mode
+[24] MPI startup(): shm data transfer mode
+[25] MPI startup(): shm data transfer mode
+[26] MPI startup(): shm data transfer mode
+[27] MPI startup(): shm data transfer mode
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       25350    i20r01c01s03  {0,28}
+[0] MPI startup(): 1       25351    i20r01c01s03  {1,29}
+[0] MPI startup(): 2       25352    i20r01c01s03  {2,30}
+[0] MPI startup(): 3       25353    i20r01c01s03  {3,31}
+[0] MPI startup(): 4       25354    i20r01c01s03  {4,32}
+[0] MPI startup(): 5       25355    i20r01c01s03  {5,33}
+[0] MPI startup(): 6       25356    i20r01c01s03  {6,34}
+[0] MPI startup(): 7       25357    i20r01c01s03  {7,35}
+[0] MPI startup(): 8       25358    i20r01c01s03  {8,36}
+[0] MPI startup(): 9       25359    i20r01c01s03  {9,37}
+[0] MPI startup(): 10      25360    i20r01c01s03  {10,38}
+[0] MPI startup(): 11      25361    i20r01c01s03  {11,39}
+[0] MPI startup(): 12      25362    i20r01c01s03  {12,40}
+[0] MPI startup(): 13      25363    i20r01c01s03  {13,41}
+[0] MPI startup(): 14      25364    i20r01c01s03  {14,42}
+[0] MPI startup(): 15      25365    i20r01c01s03  {15,43}
+[0] MPI startup(): 16      25366    i20r01c01s03  {16,44}
+[0] MPI startup(): 17      25367    i20r01c01s03  {17,45}
+[0] MPI startup(): 18      25368    i20r01c01s03  {18,46}
+[0] MPI startup(): 19      25369    i20r01c01s03  {19,47}
+[0] MPI startup(): 20      25370    i20r01c01s03  {20,48}
+[0] MPI startup(): 21      25371    i20r01c01s03  {21,49}
+[0] MPI startup(): 22      25372    i20r01c01s03  {22,50}
+[0] MPI startup(): 23      25373    i20r01c01s03  {23,51}
+[0] MPI startup(): 24      25374    i20r01c01s03  {24,52}
+[0] MPI startup(): 25      25375    i20r01c01s03  {25,53}
+[0] MPI startup(): 26      25376    i20r01c01s03  {26,54}
+[0] MPI startup(): 27      25377    i20r01c01s03  {27,55}
+[round 0] 100000 vertices per node iterated (commit): 0
+[round 0] 100000 edges per node iterated (commit): 0.01
+[round 0] 100000 vertices per node iterated (local): 0.08
+[round 0] 100000 vertices per node iterated (global): 0.27
+[round 0] 100000 edges per node iterated (local): 0.23
+[round 0] 100000 edges per node iterated (global): 0.27
+[round 1] 100000 vertices per node iterated (commit): 0.01
+[round 1] 100000 edges per node iterated (commit): 0
+[round 1] 100000 vertices per node iterated (local): 0.08
+[round 1] 100000 vertices per node iterated (global): 0.26
+[round 1] 100000 edges per node iterated (local): 0.24
+[round 1] 100000 edges per node iterated (global): 0.27
+[round 2] 100000 vertices per node iterated (commit): 0.01
+[round 2] 100000 edges per node iterated (commit): 0.01
+[round 2] 100000 vertices per node iterated (local): 0.11
+[round 2] 100000 vertices per node iterated (global): 0.27
+[round 2] 100000 edges per node iterated (local): 0.2
+[round 2] 100000 edges per node iterated (global): 0.27
+[round 3] 100000 vertices per node iterated (commit): 0
+[round 3] 100000 edges per node iterated (commit): 0
+[round 3] 100000 vertices per node iterated (local): 0.16
+[round 3] 100000 vertices per node iterated (global): 0.27
+[round 3] 100000 edges per node iterated (local): 0.15
+[round 3] 100000 edges per node iterated (global): 0.27
+[round 4] 100000 vertices per node iterated (commit): 0.01
+[round 4] 100000 edges per node iterated (commit): 0.01
+[round 4] 100000 vertices per node iterated (local): 0.11
+[round 4] 100000 vertices per node iterated (global): 0.26
+[round 4] 100000 edges per node iterated (local): 0.22
+[round 4] 100000 edges per node iterated (global): 0.27
+-----------------
+[round 0] 1000000 vertices per node iterated (commit): 0.03
+[round 0] 1000000 edges per node iterated (commit): 0.05
+[round 0] 1000000 vertices per node iterated (local): 1.17
+[round 0] 1000000 vertices per node iterated (global): 2.67
+[round 0] 1000000 edges per node iterated (local): 1.88
+[round 0] 1000000 edges per node iterated (global): 2.74
+[round 1] 1000000 vertices per node iterated (commit): 0.02
+[round 1] 1000000 edges per node iterated (commit): 0.05
+[round 1] 1000000 vertices per node iterated (local): 1.16
+[round 1] 1000000 vertices per node iterated (global): 2.67
+[round 1] 1000000 edges per node iterated (local): 1.85
+[round 1] 1000000 edges per node iterated (global): 2.74
+[round 2] 1000000 vertices per node iterated (commit): 0.03
+[round 2] 1000000 edges per node iterated (commit): 0.06
+[round 2] 1000000 vertices per node iterated (local): 1.15
+[round 2] 1000000 vertices per node iterated (global): 2.67
+[round 2] 1000000 edges per node iterated (local): 1.86
+[round 2] 1000000 edges per node iterated (global): 2.75
+[round 3] 1000000 vertices per node iterated (commit): 0.04
+[round 3] 1000000 edges per node iterated (commit): 0.06
+[round 3] 1000000 vertices per node iterated (local): 1.2
+[round 3] 1000000 vertices per node iterated (global): 2.66
+[round 3] 1000000 edges per node iterated (local): 1.84
+[round 3] 1000000 edges per node iterated (global): 2.75
+[round 4] 1000000 vertices per node iterated (commit): 0.04
+[round 4] 1000000 edges per node iterated (commit): 0.05
+[round 4] 1000000 vertices per node iterated (local): 1.16
+[round 4] 1000000 vertices per node iterated (global): 2.67
+[round 4] 1000000 edges per node iterated (local): 1.86
+[round 4] 1000000 edges per node iterated (global): 2.75
+-----------------
+[round 0] 10000000 vertices per node iterated (commit): 0.5
+[round 0] 10000000 edges per node iterated (commit): 0.81
+[round 0] 10000000 vertices per node iterated (local): 11.91
+[round 0] 10000000 vertices per node iterated (global): 26.67
+[round 0] 10000000 edges per node iterated (local): 18.88
+[round 0] 10000000 edges per node iterated (global): 27.49
+[round 1] 10000000 vertices per node iterated (commit): 0.26
+[round 1] 10000000 edges per node iterated (commit): 0.53
+[round 1] 10000000 vertices per node iterated (local): 11.85
+[round 1] 10000000 vertices per node iterated (global): 26.69
+[round 1] 10000000 edges per node iterated (local): 18.61
+[round 1] 10000000 edges per node iterated (global): 27.51
+[round 2] 10000000 vertices per node iterated (commit): 0.28
+[round 2] 10000000 edges per node iterated (commit): 0.51
+[round 2] 10000000 vertices per node iterated (local): 11.87
+[round 2] 10000000 vertices per node iterated (global): 26.68
+[round 2] 10000000 edges per node iterated (local): 18.67
+[round 2] 10000000 edges per node iterated (global): 27.5
+[round 3] 10000000 vertices per node iterated (commit): 0.29
+[round 3] 10000000 edges per node iterated (commit): 0.52
+[round 3] 10000000 vertices per node iterated (local): 11.84
+[round 3] 10000000 vertices per node iterated (global): 26.68
+[round 3] 10000000 edges per node iterated (local): 18.61
+[round 3] 10000000 edges per node iterated (global): 27.56
+[round 4] 10000000 vertices per node iterated (commit): 0.28
+[round 4] 10000000 edges per node iterated (commit): 0.52
+[round 4] 10000000 vertices per node iterated (local): 11.87
+[round 4] 10000000 vertices per node iterated (global): 26.67
+[round 4] 10000000 edges per node iterated (local): 18.64
+[round 4] 10000000 edges per node iterated (global): 27.51
+-----------------
+
+
+------------------------------------------------------
+Statistics for LoadLeveler job srv24ib.798216.0:
+
+number of nodes: 1
+number of MPI tasks: 28
+
+memory consumption (high water mark): 4.97 GiB (8.88% of consumable memory)
+
+

@@ -1,0 +1,31 @@
+[0] MPI startup(): Multi-threaded optimized library
+[0] MPI startup(): shm data transfer mode
+[2] MPI startup(): shm data transfer mode
+[3] MPI startup(): shm data transfer mode
+[1] MPI startup(): shm data transfer mode
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       2339     i20r01c01s01  {0,1,2,3,4,5,6,28,29,30,31,32,33,34}
+[0] MPI startup(): 1       2340     i20r01c01s01  {7,8,9,10,11,12,13,35,36,37,38,39,40,41}
+[0] MPI startup(): 2       2342     i20r01c01s01  {14,15,16,17,18,19,20,42,43,44,45,46,47,48}
+[0] MPI startup(): 3       2344     i20r01c01s01  {21,22,23,24,25,26,27,49,50,51,52,53,54,55}
+[round 1] construction: 11.37
+[round 1] algorithm: 44.2
+[round 2] construction: 11.34
+[round 2] algorithm: 39.71
+[round 3] construction: 11.36
+[round 3] algorithm: 41.63
+[round 4] construction: 11.31
+[round 4] algorithm: 44.15
+[round 5] construction: 11.35
+[round 5] algorithm: 42.66
+
+
+------------------------------------------------------
+Statistics for LoadLeveler job srv24ib.794284.0:
+
+number of nodes: 1
+number of MPI tasks: 4
+
+memory consumption (high water mark): 1.51 GiB (2.70% of consumable memory)
+
+

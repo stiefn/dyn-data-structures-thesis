@@ -1,0 +1,94 @@
+[0] MPI startup(): Multi-threaded optimized library
+[0] MPI startup(): shm data transfer mode
+[7] MPI startup(): shm data transfer mode
+[16] MPI startup(): shm data transfer mode
+[1] MPI startup(): shm data transfer mode
+[11] MPI startup(): shm data transfer mode
+[3] MPI startup(): shm data transfer mode
+[8] MPI startup(): shm data transfer mode
+[10] MPI startup(): shm data transfer mode
+[12] MPI startup(): shm data transfer mode
+[19] MPI startup(): shm data transfer mode
+[20] MPI startup(): shm data transfer mode
+[2] MPI startup(): shm data transfer mode
+[5] MPI startup(): shm data transfer mode
+[6] MPI startup(): shm data transfer mode
+[9] MPI startup(): shm data transfer mode
+[13] MPI startup(): shm data transfer mode
+[14] MPI startup(): shm data transfer mode
+[15] MPI startup(): shm data transfer mode
+[17] MPI startup(): shm data transfer mode
+[18] MPI startup(): shm data transfer mode
+[21] MPI startup(): shm data transfer mode
+[22] MPI startup(): shm data transfer mode
+[23] MPI startup(): shm data transfer mode
+[24] MPI startup(): shm data transfer mode
+[25] MPI startup(): shm data transfer mode
+[26] MPI startup(): shm data transfer mode
+[27] MPI startup(): shm data transfer mode
+[4] MPI startup(): shm data transfer mode
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       1628     i20r01c01s01  {0,28}
+[0] MPI startup(): 1       1629     i20r01c01s01  {1,29}
+[0] MPI startup(): 2       1630     i20r01c01s01  {2,30}
+[0] MPI startup(): 3       1631     i20r01c01s01  {3,31}
+[0] MPI startup(): 4       1632     i20r01c01s01  {4,32}
+[0] MPI startup(): 5       1633     i20r01c01s01  {5,33}
+[0] MPI startup(): 6       1634     i20r01c01s01  {6,34}
+[0] MPI startup(): 7       1635     i20r01c01s01  {7,35}
+[0] MPI startup(): 8       1636     i20r01c01s01  {8,36}
+[0] MPI startup(): 9       1637     i20r01c01s01  {9,37}
+[0] MPI startup(): 10      1638     i20r01c01s01  {10,38}
+[0] MPI startup(): 11      1639     i20r01c01s01  {11,39}
+[0] MPI startup(): 12      1640     i20r01c01s01  {12,40}
+[0] MPI startup(): 13      1641     i20r01c01s01  {13,41}
+[0] MPI startup(): 14      1642     i20r01c01s01  {14,42}
+[0] MPI startup(): 15      1643     i20r01c01s01  {15,43}
+[0] MPI startup(): 16      1644     i20r01c01s01  {16,44}
+[0] MPI startup(): 17      1645     i20r01c01s01  {17,45}
+[0] MPI startup(): 18      1646     i20r01c01s01  {18,46}
+[0] MPI startup(): 19      1647     i20r01c01s01  {19,47}
+[0] MPI startup(): 20      1648     i20r01c01s01  {20,48}
+[0] MPI startup(): 21      1649     i20r01c01s01  {21,49}
+[0] MPI startup(): 22      1650     i20r01c01s01  {22,50}
+[0] MPI startup(): 23      1651     i20r01c01s01  {23,51}
+[0] MPI startup(): 24      1652     i20r01c01s01  {24,52}
+[0] MPI startup(): 25      1653     i20r01c01s01  {25,53}
+[0] MPI startup(): 26      1654     i20r01c01s01  {26,54}
+[0] MPI startup(): 27      1655     i20r01c01s01  {27,55}
+[round 0] 448 vertices per node dereferenced (local): 0
+[round 0] 448 vertices per node dereferenced (global): 0.01
+[round 0] 448 edges per node dereferenced (local): 0
+[round 0] 448 edges per node dereferenced (global): 0.01
+-----------------
+[round 0] 896 vertices per node dereferenced (local): 0
+[round 0] 896 vertices per node dereferenced (global): 0.02
+[round 0] 896 edges per node dereferenced (local): 0
+[round 0] 896 edges per node dereferenced (global): 0.03
+-----------------
+[round 0] 1344 vertices per node dereferenced (local): 0
+[round 0] 1344 vertices per node dereferenced (global): 0.04
+[round 0] 1344 edges per node dereferenced (local): 0
+[round 0] 1344 edges per node dereferenced (global): 0.03
+-----------------
+[round 0] 1792 vertices per node dereferenced (local): 0
+[round 0] 1792 vertices per node dereferenced (global): 0.06
+[round 0] 1792 edges per node dereferenced (local): 0
+[round 0] 1792 edges per node dereferenced (global): 0.05
+-----------------
+[round 0] 2240 vertices per node dereferenced (local): 0
+[round 0] 2240 vertices per node dereferenced (global): 0.06
+[round 0] 2240 edges per node dereferenced (local): 0
+[round 0] 2240 edges per node dereferenced (global): 0.06
+-----------------
+
+
+------------------------------------------------------
+Statistics for LoadLeveler job srv23ib.798392.0:
+
+number of nodes: 1
+number of MPI tasks: 28
+
+memory consumption (high water mark): 0.33 GiB (0.59% of consumable memory)
+
+

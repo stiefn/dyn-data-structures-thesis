@@ -1,0 +1,713 @@
+[0] MPI startup(): Multi-threaded optimized library
+[41] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[8] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[1] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[6] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[2] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[5] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[4] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[29] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[33] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[35] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[36] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[40] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[30] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[32] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[28] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[84] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[86] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[88] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[85] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[62] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[9] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[19] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[47] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[59] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[58] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[56] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[50] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[51] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[16] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[37] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[38] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[34] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[52] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[31] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[43] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[48] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[17] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[49] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[53] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[46] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[42] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[39] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[15] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[44] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[45] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[55] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[54] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[21] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[25] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[26] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[22] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[27] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[65] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[18] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[63] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[7] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[66] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[61] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[70] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[80] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[14] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[3] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[57] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[87] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[23] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[60] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[10] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[20] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[64] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[0] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[12] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[24] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[11] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[13] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[71] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[92] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[95] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[90] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[94] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[91] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[98] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[99] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[100] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[93] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[101] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[103] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[96] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[105] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[107] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[97] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[108] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[102] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[104] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[106] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[109] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[110] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[33] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[33] MPI startup(): shm and dapl data transfer modes
+[36] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[35] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[36] MPI startup(): shm and dapl data transfer modes
+[35] MPI startup(): shm and dapl data transfer modes
+[41] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[29] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[41] MPI startup(): shm and dapl data transfer modes
+[29] MPI startup(): shm and dapl data transfer modes
+[4] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[4] MPI startup(): shm and dapl data transfer modes
+[1] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[1] MPI startup(): shm and dapl data transfer modes
+[5] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[5] MPI startup(): shm and dapl data transfer modes
+[2] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[6] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[2] MPI startup(): shm and dapl data transfer modes
+[89] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[6] MPI startup(): shm and dapl data transfer modes
+[111] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[8] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[8] MPI startup(): shm and dapl data transfer modes
+[84] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[84] MPI startup(): shm and dapl data transfer modes
+[40] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[40] MPI startup(): shm and dapl data transfer modes
+[28] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[28] MPI startup(): shm and dapl data transfer modes
+[32] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[30] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[9] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[32] MPI startup(): shm and dapl data transfer modes
+[30] MPI startup(): shm and dapl data transfer modes
+[19] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[9] MPI startup(): shm and dapl data transfer modes
+[19] MPI startup(): shm and dapl data transfer modes
+[81] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[82] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[83] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[88] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[86] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[88] MPI startup(): shm and dapl data transfer modes
+[86] MPI startup(): shm and dapl data transfer modes
+[85] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[85] MPI startup(): shm and dapl data transfer modes
+[79] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[69] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[75] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[72] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[74] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[76] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[73] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[77] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[78] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[67] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[68] DAPL startup(): trying to open DAPL provider from I_MPI_DAPL_PROVIDER: ofa-v2-mlx5_0-1u
+[34] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[34] MPI startup(): shm and dapl data transfer modes
+[47] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[47] MPI startup(): shm and dapl data transfer modes
+[0] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[0] MPI startup(): shm and dapl data transfer modes
+[56] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[58] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[56] MPI startup(): shm and dapl data transfer modes
+[58] MPI startup(): shm and dapl data transfer modes
+[59] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[62] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[59] MPI startup(): shm and dapl data transfer modes
+[62] MPI startup(): shm and dapl data transfer modes
+[60] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[60] MPI startup(): shm and dapl data transfer modes
+[42] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[42] MPI startup(): shm and dapl data transfer modes
+[43] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[43] MPI startup(): shm and dapl data transfer modes
+[48] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[53] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[38] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[48] MPI startup(): shm and dapl data transfer modes
+[55] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[38] MPI startup(): shm and dapl data transfer modes
+[53] MPI startup(): shm and dapl data transfer modes
+[44] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[55] MPI startup(): shm and dapl data transfer modes
+[44] MPI startup(): shm and dapl data transfer modes
+[46] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[45] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[46] MPI startup(): shm and dapl data transfer modes
+[45] MPI startup(): shm and dapl data transfer modes
+[49] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[54] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[49] MPI startup(): shm and dapl data transfer modes
+[54] MPI startup(): shm and dapl data transfer modes
+[39] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[39] MPI startup(): shm and dapl data transfer modes
+[51] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[50] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[51] MPI startup(): shm and dapl data transfer modes
+[52] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[31] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[50] MPI startup(): shm and dapl data transfer modes
+[37] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[31] MPI startup(): shm and dapl data transfer modes
+[52] MPI startup(): shm and dapl data transfer modes
+[37] MPI startup(): shm and dapl data transfer modes
+[10] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[10] MPI startup(): shm and dapl data transfer modes
+[14] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[14] MPI startup(): shm and dapl data transfer modes
+[16] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[16] MPI startup(): shm and dapl data transfer modes
+[18] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[18] MPI startup(): shm and dapl data transfer modes
+[17] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[17] MPI startup(): shm and dapl data transfer modes
+[15] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[22] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[15] MPI startup(): shm and dapl data transfer modes
+[11] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[21] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[22] MPI startup(): shm and dapl data transfer modes
+[3] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[11] MPI startup(): shm and dapl data transfer modes
+[21] MPI startup(): shm and dapl data transfer modes
+[23] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[27] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[25] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[3] MPI startup(): shm and dapl data transfer modes
+[26] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[23] MPI startup(): shm and dapl data transfer modes
+[27] MPI startup(): shm and dapl data transfer modes
+[7] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[25] MPI startup(): shm and dapl data transfer modes
+[26] MPI startup(): shm and dapl data transfer modes
+[7] MPI startup(): shm and dapl data transfer modes
+[13] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[24] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[13] MPI startup(): shm and dapl data transfer modes
+[12] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[20] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[24] MPI startup(): shm and dapl data transfer modes
+[12] MPI startup(): shm and dapl data transfer modes
+[20] MPI startup(): shm and dapl data transfer modes
+[64] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[64] MPI startup(): shm and dapl data transfer modes
+[63] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[63] MPI startup(): shm and dapl data transfer modes
+[66] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[70] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[65] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[66] MPI startup(): shm and dapl data transfer modes
+[65] MPI startup(): shm and dapl data transfer modes
+[70] MPI startup(): shm and dapl data transfer modes
+[71] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[80] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[71] MPI startup(): shm and dapl data transfer modes
+[80] MPI startup(): shm and dapl data transfer modes
+[57] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[57] MPI startup(): shm and dapl data transfer modes
+[61] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[61] MPI startup(): shm and dapl data transfer modes
+[90] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[90] MPI startup(): shm and dapl data transfer modes
+[111] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[111] MPI startup(): shm and dapl data transfer modes
+[92] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[92] MPI startup(): shm and dapl data transfer modes
+[97] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[97] MPI startup(): shm and dapl data transfer modes
+[87] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[95] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[87] MPI startup(): shm and dapl data transfer modes
+[95] MPI startup(): shm and dapl data transfer modes
+[91] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[100] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[91] MPI startup(): shm and dapl data transfer modes
+[96] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[100] MPI startup(): shm and dapl data transfer modes
+[96] MPI startup(): shm and dapl data transfer modes
+[104] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[101] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[106] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[104] MPI startup(): shm and dapl data transfer modes
+[107] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[101] MPI startup(): shm and dapl data transfer modes
+[108] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[103] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[106] MPI startup(): shm and dapl data transfer modes
+[107] MPI startup(): shm and dapl data transfer modes
+[109] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[103] MPI startup(): shm and dapl data transfer modes
+[105] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[108] MPI startup(): shm and dapl data transfer modes
+[99] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[110] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[89] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[93] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[105] MPI startup(): shm and dapl data transfer modes
+[109] MPI startup(): shm and dapl data transfer modes
+[94] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[110] MPI startup(): shm and dapl data transfer modes
+[99] MPI startup(): shm and dapl data transfer modes
+[89] MPI startup(): shm and dapl data transfer modes
+[93] MPI startup(): shm and dapl data transfer modes
+[98] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[102] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[94] MPI startup(): shm and dapl data transfer modes
+[102] MPI startup(): shm and dapl data transfer modes
+[98] MPI startup(): shm and dapl data transfer modes
+[75] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[75] MPI startup(): shm and dapl data transfer modes
+[67] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[67] MPI startup(): shm and dapl data transfer modes
+[69] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[68] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[69] MPI startup(): shm and dapl data transfer modes
+[68] MPI startup(): shm and dapl data transfer modes
+[72] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[73] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[72] MPI startup(): shm and dapl data transfer modes
+[73] MPI startup(): shm and dapl data transfer modes
+[76] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[77] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[78] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[76] MPI startup(): shm and dapl data transfer modes
+[79] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[77] MPI startup(): shm and dapl data transfer modes
+[78] MPI startup(): shm and dapl data transfer modes
+[81] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[74] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[79] MPI startup(): shm and dapl data transfer modes
+[83] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[81] MPI startup(): shm and dapl data transfer modes
+[82] MPI startup(): DAPL provider ofa-v2-mlx5_0-1u
+[74] MPI startup(): shm and dapl data transfer modes
+[83] MPI startup(): shm and dapl data transfer modes
+[82] MPI startup(): shm and dapl data transfer modes
+[80] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[80] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[64] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[64] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[60] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[60] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[78] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[78] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[75] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[75] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[71] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[71] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[70] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[70] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[57] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[57] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[67] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[67] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[62] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[62] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[58] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[58] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[59] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[59] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[66] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[66] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[63] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[63] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[61] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[61] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[56] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[56] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[81] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[81] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[105] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[105] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[65] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[65] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[83] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[83] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[68] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[68] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[72] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[72] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[77] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[77] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[79] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[79] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[82] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[82] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[69] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[69] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[76] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[76] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[73] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[73] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[74] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[74] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[104] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[104] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[100] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[100] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[109] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[109] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[87] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[87] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[98] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[98] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[108] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[108] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[101] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[101] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[102] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[102] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[99] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[99] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[110] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[110] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[94] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[94] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[103] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[103] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[91] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[91] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[107] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[107] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[93] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[93] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[18] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[18] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[97] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[97] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[88] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[88] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[90] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[90] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[106] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[106] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[92] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[92] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[96] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[96] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[24] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[24] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[95] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[95] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[89] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[89] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[86] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[86] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[26] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[26] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[84] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[84] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[85] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[85] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[5] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[5] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[25] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[25] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[111] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[111] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[15] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[15] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[19] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[19] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[22] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[22] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[21] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[21] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[17] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[17] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[23] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[23] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[6] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[6] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[8] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[8] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[12] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[12] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[27] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[27] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[3] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[3] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[4] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[4] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[16] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[16] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[0] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[0] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[14] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[14] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[1] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[1] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[2] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[2] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[13] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[13] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[20] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[20] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[7] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[7] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[9] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[9] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[11] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[11] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[10] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[10] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[52] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[52] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[30] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[30] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[49] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[49] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[51] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[51] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[33] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[33] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[37] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[37] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[44] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[44] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[48] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[48] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[41] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[41] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[45] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[45] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[47] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[47] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[42] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[42] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[50] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[50] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[31] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[31] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[54] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[54] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[46] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[46] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[40] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[40] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[36] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[36] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[53] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[53] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[35] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[35] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[55] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[55] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[29] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[29] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[34] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[34] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[39] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[39] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[28] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[28] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[32] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[32] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[38] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[38] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[43] MPID_nem_init_dapl_coll_fns(): User set DAPL collective mask = 0000
+[43] MPID_nem_init_dapl_coll_fns(): Effective DAPL collective mask = 0000
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       14167    i20r01c01s01  {0,28}
+[0] MPI startup(): 1       14168    i20r01c01s01  {1,29}
+[0] MPI startup(): 2       14169    i20r01c01s01  {2,30}
+[0] MPI startup(): 3       14170    i20r01c01s01  {3,31}
+[0] MPI startup(): 4       14171    i20r01c01s01  {4,32}
+[0] MPI startup(): 5       14172    i20r01c01s01  {5,33}
+[0] MPI startup(): 6       14173    i20r01c01s01  {6,34}
+[0] MPI startup(): 7       14174    i20r01c01s01  {7,35}
+[0] MPI startup(): 8       14175    i20r01c01s01  {8,36}
+[0] MPI startup(): 9       14176    i20r01c01s01  {9,37}
+[0] MPI startup(): 10      14177    i20r01c01s01  {10,38}
+[0] MPI startup(): 11      14178    i20r01c01s01  {11,39}
+[0] MPI startup(): 12      14179    i20r01c01s01  {12,40}
+[0] MPI startup(): 13      14180    i20r01c01s01  {13,41}
+[0] MPI startup(): 14      14181    i20r01c01s01  {14,42}
+[0] MPI startup(): 15      14182    i20r01c01s01  {15,43}
+[0] MPI startup(): 16      14183    i20r01c01s01  {16,44}
+[0] MPI startup(): 17      14184    i20r01c01s01  {17,45}
+[0] MPI startup(): 18      14185    i20r01c01s01  {18,46}
+[0] MPI startup(): 19      14186    i20r01c01s01  {19,47}
+[0] MPI startup(): 20      14187    i20r01c01s01  {20,48}
+[0] MPI startup(): 21      14188    i20r01c01s01  {21,49}
+[0] MPI startup(): 22      14189    i20r01c01s01  {22,50}
+[0] MPI startup(): 23      14190    i20r01c01s01  {23,51}
+[0] MPI startup(): 24      14191    i20r01c01s01  {24,52}
+[0] MPI startup(): 25      14192    i20r01c01s01  {25,53}
+[0] MPI startup(): 26      14193    i20r01c01s01  {26,54}
+[0] MPI startup(): 27      14194    i20r01c01s01  {27,55}
+[0] MPI startup(): 28      16759    i20r01c01s02  {0,28}
+[0] MPI startup(): 29      16760    i20r01c01s02  {1,29}
+[0] MPI startup(): 30      16761    i20r01c01s02  {2,30}
+[0] MPI startup(): 31      16762    i20r01c01s02  {3,31}
+[0] MPI startup(): 32      16763    i20r01c01s02  {4,32}
+[0] MPI startup(): 33      16764    i20r01c01s02  {5,33}
+[0] MPI startup(): 34      16765    i20r01c01s02  {6,34}
+[0] MPI startup(): 35      16766    i20r01c01s02  {7,35}
+[0] MPI startup(): 36      16767    i20r01c01s02  {8,36}
+[0] MPI startup(): 37      16768    i20r01c01s02  {9,37}
+[0] MPI startup(): 38      16769    i20r01c01s02  {10,38}
+[0] MPI startup(): 39      16770    i20r01c01s02  {11,39}
+[0] MPI startup(): 40      16771    i20r01c01s02  {12,40}
+[0] MPI startup(): 41      16772    i20r01c01s02  {13,41}
+[0] MPI startup(): 42      16773    i20r01c01s02  {14,42}
+[0] MPI startup(): 43      16774    i20r01c01s02  {15,43}
+[0] MPI startup(): 44      16775    i20r01c01s02  {16,44}
+[0] MPI startup(): 45      16776    i20r01c01s02  {17,45}
+[0] MPI startup(): 46      16777    i20r01c01s02  {18,46}
+[0] MPI startup(): 47      16778    i20r01c01s02  {19,47}
+[0] MPI startup(): 48      16779    i20r01c01s02  {20,48}
+[0] MPI startup(): 49      16780    i20r01c01s02  {21,49}
+[0] MPI startup(): 50      16781    i20r01c01s02  {22,50}
+[0] MPI startup(): 51      16782    i20r01c01s02  {23,51}
+[0] MPI startup(): 52      16783    i20r01c01s02  {24,52}
+[0] MPI startup(): 53      16784    i20r01c01s02  {25,53}
+[0] MPI startup(): 54      16785    i20r01c01s02  {26,54}
+[0] MPI startup(): 55      16786    i20r01c01s02  {27,55}
+[0] MPI startup(): 56      50616    i20r01c01s03  {0,28}
+[0] MPI startup(): 57      50617    i20r01c01s03  {1,29}
+[0] MPI startup(): 58      50618    i20r01c01s03  {2,30}
+[0] MPI startup(): 59      50619    i20r01c01s03  {3,31}
+[0] MPI startup(): 60      50620    i20r01c01s03  {4,32}
+[0] MPI startup(): 61      50621    i20r01c01s03  {5,33}
+[0] MPI startup(): 62      50622    i20r01c01s03  {6,34}
+[0] MPI startup(): 63      50623    i20r01c01s03  {7,35}
+[0] MPI startup(): 64      50624    i20r01c01s03  {8,36}
+[0] MPI startup(): 65      50625    i20r01c01s03  {9,37}
+[0] MPI startup(): 66      50626    i20r01c01s03  {10,38}
+[0] MPI startup(): 67      50627    i20r01c01s03  {11,39}
+[0] MPI startup(): 68      50628    i20r01c01s03  {12,40}
+[0] MPI startup(): 69      50629    i20r01c01s03  {13,41}
+[0] MPI startup(): 70      50630    i20r01c01s03  {14,42}
+[0] MPI startup(): 71      50631    i20r01c01s03  {15,43}
+[0] MPI startup(): 72      50632    i20r01c01s03  {16,44}
+[0] MPI startup(): 73      50633    i20r01c01s03  {17,45}
+[0] MPI startup(): 74      50634    i20r01c01s03  {18,46}
+[0] MPI startup(): 75      50635    i20r01c01s03  {19,47}
+[0] MPI startup(): 76      50636    i20r01c01s03  {20,48}
+[0] MPI startup(): 77      50637    i20r01c01s03  {21,49}
+[0] MPI startup(): 78      50638    i20r01c01s03  {22,50}
+[0] MPI startup(): 79      50639    i20r01c01s03  {23,51}
+[0] MPI startup(): 80      50641    i20r01c01s03  {24,52}
+[0] MPI startup(): 81      50642    i20r01c01s03  {25,53}
+[0] MPI startup(): 82      50643    i20r01c01s03  {26,54}
+[0] MPI startup(): 83      50644    i20r01c01s03  {27,55}
+[0] MPI startup(): 84      2690     i20r01c01s04  {0,28}
+[0] MPI startup(): 85      2692     i20r01c01s04  {1,29}
+[0] MPI startup(): 86      2693     i20r01c01s04  {2,30}
+[0] MPI startup(): 87      2694     i20r01c01s04  {3,31}
+[0] MPI startup(): 88      2695     i20r01c01s04  {4,32}
+[0] MPI startup(): 89      2696     i20r01c01s04  {5,33}
+[0] MPI startup(): 90      2697     i20r01c01s04  {6,34}
+[0] MPI startup(): 91      2698     i20r01c01s04  {7,35}
+[0] MPI startup(): 92      2699     i20r01c01s04  {8,36}
+[0] MPI startup(): 93      2700     i20r01c01s04  {9,37}
+[0] MPI startup(): 94      2701     i20r01c01s04  {10,38}
+[0] MPI startup(): 95      2702     i20r01c01s04  {11,39}
+[0] MPI startup(): 96      2703     i20r01c01s04  {12,40}
+[0] MPI startup(): 97      2704     i20r01c01s04  {13,41}
+[0] MPI startup(): 98      2705     i20r01c01s04  {14,42}
+[0] MPI startup(): 99      2706     i20r01c01s04  {15,43}
+[0] MPI startup(): 100     2707     i20r01c01s04  {16,44}
+[0] MPI startup(): 101     2708     i20r01c01s04  {17,45}
+[0] MPI startup(): 102     2709     i20r01c01s04  {18,46}
+[0] MPI startup(): 103     2710     i20r01c01s04  {19,47}
+[0] MPI startup(): 104     2711     i20r01c01s04  {20,48}
+[0] MPI startup(): 105     2712     i20r01c01s04  {21,49}
+[0] MPI startup(): 106     2713     i20r01c01s04  {22,50}
+[0] MPI startup(): 107     2714     i20r01c01s04  {23,51}
+[0] MPI startup(): 108     2715     i20r01c01s04  {24,52}
+[0] MPI startup(): 109     2716     i20r01c01s04  {25,53}
+[0] MPI startup(): 110     2717     i20r01c01s04  {26,54}
+[0] MPI startup(): 111     2718     i20r01c01s04  {27,55}
+[round 0] 448 vertices per node dereferenced (local): 0
+[round 0] 448 vertices per node dereferenced (global): 64.44
+[round 0] 448 edges per node dereferenced (local): 0
+[round 0] 448 edges per node dereferenced (global): 39.78
+-----------------
+[round 0] 896 vertices per node dereferenced (local): 0
+[round 0] 896 vertices per node dereferenced (global): 82.37
+[round 0] 896 edges per node dereferenced (local): 0
+[round 0] 896 edges per node dereferenced (global): 82.85
+-----------------
+[round 0] 1344 vertices per node dereferenced (local): 0.01
+[round 0] 1344 vertices per node dereferenced (global): 126.82
+[round 0] 1344 edges per node dereferenced (local): 0
+[round 0] 1344 edges per node dereferenced (global): 127.01
+-----------------
+[round 0] 1792 vertices per node dereferenced (local): 0
+[round 0] 1792 vertices per node dereferenced (global): 169.82
+[round 0] 1792 edges per node dereferenced (local): 0
+[round 0] 1792 edges per node dereferenced (global): 169.61
+-----------------
+[round 0] 2240 vertices per node dereferenced (local): 0
+[round 0] 2240 vertices per node dereferenced (global): 213.98
+[round 0] 2240 edges per node dereferenced (local): 0
+[round 0] 2240 edges per node dereferenced (global): 214.37
+-----------------
+
+
+------------------------------------------------------
+Statistics for LoadLeveler job srv24ib.798281.0:
+
+number of nodes: 4
+number of MPI tasks: 112
+
+memory consumption (high water mark): 1.56 GiB (0.70% of consumable memory)
+
+maximum memory per node: 0.40 GiB (0.71% of consumable memory)
+minimum memory per node: 0.38 GiB (0.68% of consumable memory)
+average memory per node: 0.39 GiB (0.70% of consumable memory)
+

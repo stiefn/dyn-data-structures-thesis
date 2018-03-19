@@ -1,0 +1,79 @@
+[0] MPI startup(): Multi-threaded optimized library
+[19] MPI startup(): shm data transfer mode
+[3] MPI startup(): shm data transfer mode
+[2] MPI startup(): shm data transfer mode
+[4] MPI startup(): shm data transfer mode
+[6] MPI startup(): shm data transfer mode
+[9] MPI startup(): shm data transfer mode
+[16] MPI startup(): shm data transfer mode
+[0] MPI startup(): shm data transfer mode
+[1] MPI startup(): shm data transfer mode
+[5] MPI startup(): shm data transfer mode
+[7] MPI startup(): shm data transfer mode
+[8] MPI startup(): shm data transfer mode
+[10] MPI startup(): shm data transfer mode
+[11] MPI startup(): shm data transfer mode
+[12] MPI startup(): shm data transfer mode
+[13] MPI startup(): shm data transfer mode
+[15] MPI startup(): shm data transfer mode
+[18] MPI startup(): shm data transfer mode
+[20] MPI startup(): shm data transfer mode
+[21] MPI startup(): shm data transfer mode
+[22] MPI startup(): shm data transfer mode
+[24] MPI startup(): shm data transfer mode
+[25] MPI startup(): shm data transfer mode
+[27] MPI startup(): shm data transfer mode
+[14] MPI startup(): shm data transfer mode
+[17] MPI startup(): shm data transfer mode
+[23] MPI startup(): shm data transfer mode
+[26] MPI startup(): shm data transfer mode
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       4403     i20r01c01s01  {0,28}
+[0] MPI startup(): 1       4404     i20r01c01s01  {1,29}
+[0] MPI startup(): 2       4405     i20r01c01s01  {2,30}
+[0] MPI startup(): 3       4406     i20r01c01s01  {3,31}
+[0] MPI startup(): 4       4407     i20r01c01s01  {4,32}
+[0] MPI startup(): 5       4408     i20r01c01s01  {5,33}
+[0] MPI startup(): 6       4409     i20r01c01s01  {6,34}
+[0] MPI startup(): 7       4410     i20r01c01s01  {7,35}
+[0] MPI startup(): 8       4411     i20r01c01s01  {8,36}
+[0] MPI startup(): 9       4412     i20r01c01s01  {9,37}
+[0] MPI startup(): 10      4413     i20r01c01s01  {10,38}
+[0] MPI startup(): 11      4414     i20r01c01s01  {11,39}
+[0] MPI startup(): 12      4415     i20r01c01s01  {12,40}
+[0] MPI startup(): 13      4416     i20r01c01s01  {13,41}
+[0] MPI startup(): 14      4417     i20r01c01s01  {14,42}
+[0] MPI startup(): 15      4418     i20r01c01s01  {15,43}
+[0] MPI startup(): 16      4419     i20r01c01s01  {16,44}
+[0] MPI startup(): 17      4420     i20r01c01s01  {17,45}
+[0] MPI startup(): 18      4421     i20r01c01s01  {18,46}
+[0] MPI startup(): 19      4422     i20r01c01s01  {19,47}
+[0] MPI startup(): 20      4423     i20r01c01s01  {20,48}
+[0] MPI startup(): 21      4424     i20r01c01s01  {21,49}
+[0] MPI startup(): 22      4425     i20r01c01s01  {22,50}
+[0] MPI startup(): 23      4426     i20r01c01s01  {23,51}
+[0] MPI startup(): 24      4427     i20r01c01s01  {24,52}
+[0] MPI startup(): 25      4428     i20r01c01s01  {25,53}
+[0] MPI startup(): 26      4429     i20r01c01s01  {26,54}
+[0] MPI startup(): 27      4430     i20r01c01s01  {27,55}
+[round 1] construction: 15.91
+[round 1] algorithm: 71.04
+[round 2] construction: 16.05
+[round 2] algorithm: 71.36
+[round 3] construction: 16.01
+[round 3] algorithm: 71.35
+[round 4] construction: 15.99
+[round 4] algorithm: 70.43
+[round 5] construction: 16.02
+[round 5] algorithm: 70.59
+
+
+------------------------------------------------------
+Statistics for LoadLeveler job srv23ib.794400.0:
+
+number of nodes: 1
+number of MPI tasks: 28
+
+memory consumption (high water mark): 12.74 GiB (22.75% of consumable memory)
+
+

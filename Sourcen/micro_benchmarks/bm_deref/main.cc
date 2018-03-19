@@ -18,12 +18,12 @@ int main(int argc, char* argv[]) {
   dash::init(&argc, &argv);
 
   int n_unit_edges = 1;
-  int n_vertices_full = 1000;
+  int n_vertices_full = 448;
   int n_edges_full = n_vertices_full * n_unit_edges;
   // not exactly n_vertices_full are generated due to rounding
   int n_vertices_start = n_vertices_full / dash::size();
   int n_size_rounds = 5;
-  int n_rounds = 5;
+  int n_rounds = 1;
   for(int rounds = 0; rounds < n_size_rounds; ++rounds) {
     for(int i = 0; i < n_rounds; ++i) {
       int scale = rounds + 1;

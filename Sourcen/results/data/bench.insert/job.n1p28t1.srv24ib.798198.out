@@ -1,0 +1,124 @@
+[0] MPI startup(): Multi-threaded optimized library
+[6] MPI startup(): shm data transfer mode
+[8] MPI startup(): shm data transfer mode
+[11] MPI startup(): shm data transfer mode
+[22] MPI startup(): shm data transfer mode
+[24] MPI startup(): shm data transfer mode
+[2] MPI startup(): shm data transfer mode
+[7] MPI startup(): shm data transfer mode
+[13] MPI startup(): shm data transfer mode
+[21] MPI startup(): shm data transfer mode
+[23] MPI startup(): shm data transfer mode
+[25] MPI startup(): shm data transfer mode
+[1] MPI startup(): shm data transfer mode
+[3] MPI startup(): shm data transfer mode
+[4] MPI startup(): shm data transfer mode
+[5] MPI startup(): shm data transfer mode
+[9] MPI startup(): shm data transfer mode
+[10] MPI startup(): shm data transfer mode
+[12] MPI startup(): shm data transfer mode
+[14] MPI startup(): shm data transfer mode
+[15] MPI startup(): shm data transfer mode
+[16] MPI startup(): shm data transfer mode
+[18] MPI startup(): shm data transfer mode
+[19] MPI startup(): shm data transfer mode
+[20] MPI startup(): shm data transfer mode
+[26] MPI startup(): shm data transfer mode
+[27] MPI startup(): shm data transfer mode
+[0] MPI startup(): shm data transfer mode
+[17] MPI startup(): shm data transfer mode
+[0] MPI startup(): Rank    Pid      Node name     Pin cpu
+[0] MPI startup(): 0       18816    i20r01c01s03  {0,28}
+[0] MPI startup(): 1       18817    i20r01c01s03  {1,29}
+[0] MPI startup(): 2       18818    i20r01c01s03  {2,30}
+[0] MPI startup(): 3       18819    i20r01c01s03  {3,31}
+[0] MPI startup(): 4       18820    i20r01c01s03  {4,32}
+[0] MPI startup(): 5       18821    i20r01c01s03  {5,33}
+[0] MPI startup(): 6       18822    i20r01c01s03  {6,34}
+[0] MPI startup(): 7       18823    i20r01c01s03  {7,35}
+[0] MPI startup(): 8       18824    i20r01c01s03  {8,36}
+[0] MPI startup(): 9       18825    i20r01c01s03  {9,37}
+[0] MPI startup(): 10      18826    i20r01c01s03  {10,38}
+[0] MPI startup(): 11      18827    i20r01c01s03  {11,39}
+[0] MPI startup(): 12      18828    i20r01c01s03  {12,40}
+[0] MPI startup(): 13      18829    i20r01c01s03  {13,41}
+[0] MPI startup(): 14      18830    i20r01c01s03  {14,42}
+[0] MPI startup(): 15      18831    i20r01c01s03  {15,43}
+[0] MPI startup(): 16      18832    i20r01c01s03  {16,44}
+[0] MPI startup(): 17      18833    i20r01c01s03  {17,45}
+[0] MPI startup(): 18      18834    i20r01c01s03  {18,46}
+[0] MPI startup(): 19      18835    i20r01c01s03  {19,47}
+[0] MPI startup(): 20      18836    i20r01c01s03  {20,48}
+[0] MPI startup(): 21      18837    i20r01c01s03  {21,49}
+[0] MPI startup(): 22      18838    i20r01c01s03  {22,50}
+[0] MPI startup(): 23      18839    i20r01c01s03  {23,51}
+[0] MPI startup(): 24      18840    i20r01c01s03  {24,52}
+[0] MPI startup(): 25      18841    i20r01c01s03  {25,53}
+[0] MPI startup(): 26      18842    i20r01c01s03  {26,54}
+[0] MPI startup(): 27      18843    i20r01c01s03  {27,55}
+[round 0] 1000 vertices added: 0
+[round 0] 1000 edges added: 0
+[round 1] 1000 vertices added: 0
+[round 1] 1000 edges added: 0
+[round 2] 1000 vertices added: 0
+[round 2] 1000 edges added: 0
+[round 3] 1000 vertices added: 0
+[round 3] 1000 edges added: 0
+[round 4] 1000 vertices added: 0
+[round 4] 1000 edges added: 0
+----------------------
+[round 0] 10000 vertices added: 0.02
+[round 0] 10000 edges added: 0.02
+[round 1] 10000 vertices added: 0.02
+[round 1] 10000 edges added: 0.02
+[round 2] 10000 vertices added: 0.02
+[round 2] 10000 edges added: 0.01
+[round 3] 10000 vertices added: 0.02
+[round 3] 10000 edges added: 0.01
+[round 4] 10000 vertices added: 0.02
+[round 4] 10000 edges added: 0.01
+----------------------
+[round 0] 100000 vertices added: 0.2
+[round 0] 100000 edges added: 0.1
+[round 1] 100000 vertices added: 0.19
+[round 1] 100000 edges added: 0.1
+[round 2] 100000 vertices added: 0.2
+[round 2] 100000 edges added: 0.1
+[round 3] 100000 vertices added: 0.19
+[round 3] 100000 edges added: 0.1
+[round 4] 100000 vertices added: 0.2
+[round 4] 100000 edges added: 0.1
+----------------------
+[round 0] 1000000 vertices added: 1.84
+[round 0] 1000000 edges added: 1.01
+[round 1] 1000000 vertices added: 1.8
+[round 1] 1000000 edges added: 1
+[round 2] 1000000 vertices added: 1.8
+[round 2] 1000000 edges added: 1.01
+[round 3] 1000000 vertices added: 1.8
+[round 3] 1000000 edges added: 1
+[round 4] 1000000 vertices added: 1.81
+[round 4] 1000000 edges added: 1
+----------------------
+[round 0] 10000000 vertices added: 21.77
+[round 0] 10000000 edges added: 10.07
+[round 1] 10000000 vertices added: 21.25
+[round 1] 10000000 edges added: 10.07
+[round 2] 10000000 vertices added: 21.29
+[round 2] 10000000 edges added: 10.07
+[round 3] 10000000 vertices added: 21.37
+[round 3] 10000000 edges added: 10.07
+[round 4] 10000000 vertices added: 21.37
+[round 4] 10000000 edges added: 10.08
+----------------------
+
+
+------------------------------------------------------
+Statistics for LoadLeveler job srv24ib.798198.0:
+
+number of nodes: 1
+number of MPI tasks: 28
+
+memory consumption (high water mark): 4.07 GiB (7.27% of consumable memory)
+
+
