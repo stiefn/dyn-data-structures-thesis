@@ -448,7 +448,7 @@ Frontiers need to be managed with a queue or a similar data structure. This data
 
 Because BFS naturally finds the paths with the least edges between vertices, it is obvious that it can be used for \textit{shortest path computation}. \textbf{Dijkstra's shortest path algorithm} \cite{dijkstra} for example is an extension to BFS: Each edge is associated with a distance attribute. Progressing in a breadth-first manner, the smallest sum of edge distances is saved in vertices as an additional attribute. If a vertex is discovered from an edge with a smaller distance sum, the attribute's content is replaced with this new sum.
 
-Similar to Dijkstra's shortest path algorithm, a minimum spanning tree algorithm such as \textbf{Prim's algorithm} \cite{prim} traverses a graph in breadth-first order and creates a tree based on the minimum of edge weight attributes for each frontier.
+Similar to Dijkstra's shortest path algorithm, a Minimum Spanning Tree algorithm such as \textbf{Prim's algorithm} \cite{prim} traverses a graph in breadth-first order and creates a tree based on the minimum of edge weight attributes for each frontier.
 
 \begin{lemma}
 Graph containers do not only have to support vertex attributes. Edge attributes are also relevant. While Dijsktra's shortest path algorithm only requires a single attribute for edges, other algorithms might require more.
@@ -459,7 +459,7 @@ Graph containers do not only have to support vertex attributes. Edge attributes 
 
 DFS uses a graph coloring scheme similar to BFS. Vertices visited for the first time are colored grey and when the backtracking takes effect, the respective vertex is colored black meaning that all edges from this vertex have been explored. DFS does not need a supporting data structure but apart from that has the same requirements on graph containers as BFS.
 
-Some algorithms use DFS as a subroutine. For example, a \textbf{topological sort} of a graph runs DFS and then creates a list with sorted vertices based on the findings of the DFS subroutine. A \textbf{strongly connected components} algorithm runs DFS on the graph and then on the transposed version of the graph (i.e. the graph with reversed edges).
+Some algorithms use DFS as a subroutine. For example, a \textbf{topological sort} of a graph runs DFS and then creates a list with sorted vertices based on the findings of the DFS subroutine. A \textbf{Strongly Connected Components} algorithm runs DFS on the graph and then on the transposed version of the graph (i.e. the graph with reversed edges).
 
 \begin{lemma}
 Some algorithms have to access graph attributes after another algorithm has stored them inside the graph. For this reason, attributes of all vertices and edges have to be persistent and accessible across single algorithms.
@@ -873,7 +873,7 @@ The mentioned methods are not part of the concept.
 \label{case_studies_section}
 This chapter illustrates use cases for the previously described graph concepts using the reference implementation explained in \autoref{impl_section}. These use cases are then evaluated against existing implementations in \autoref{eval_section}.
 
-The use cases consist of two important basic graph algorithms: \textit{connected components} and \textit{minimum spanning tree}. Both algorithms have been examined in PGAS implementations using the UPC programming language \cite{upc} and their implementations in this work will roughly follow the specifications explained in \cite{pgas_algorithms} which consists of shared-memory algorithms ported to UPC.
+The use cases consist of two important basic graph algorithms: \textit{Connected Components} and \textit{Minimum Spanning Tree}. Both algorithms have been examined in PGAS implementations using the UPC programming language \cite{upc} and their implementations in this work will roughly follow the specifications explained in \cite{pgas_algorithms} which consists of shared-memory algorithms ported to UPC.
 
 \section{Optimizations}
 While shared-memory algorithms can be directly ported to distributed machines in PGAS, performance might suffer from irregular data accesses across machines as the latency of the network is much higher than the latency of memory access in shared-memory machines. Cong et al. therefore propose performance optimizations including \textit{communication coalescing} and \textit{cache performance optimization}. While the results show that these optimizations are significant (up to 5 times faster for the designated graph size), this case study only employs the \textit{communication coalescing} optimization because it is the most beneficial for scalability and an implementation of all optimization techniques is beyond the scope of this thesis.
@@ -908,7 +908,7 @@ This section presents a description of the algorithms used in the case studies a
 
 \subsection{Connected Components}
 \label{cc_algorithm_section}
-\textit{Connected components} is an elementary graph algorithm based on depth-first-search \cite{ita}. It aims to find components in a graph in which every vertex is connected to at least one other vertex. The algorithm finds one or more sub-graphs with no edges between them. \autoref{cc_figure} depicts a graph comprising two connected components.
+\textit{Connected Components} is an elementary graph algorithm based on depth-first-search \cite{ita}. It aims to find components in a graph in which every vertex is connected to at least one other vertex. The algorithm finds one or more sub-graphs with no edges between them. \autoref{cc_figure} depicts a graph comprising two connected components.
 
 \begin{figure}[ht]
 	\centering
@@ -932,11 +932,11 @@ The algorithm requires vertex attributes for the parent component a vertex belon
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.7\textwidth]{Bilder/cc_steps.pdf}
-	\caption{Steps of connected components with initial setup (a), first step (b) and second step (c)}
+	\caption{Steps of Connected Components with initial setup (a), first step (b) and second step (c)}
 	\label{cc_steps_figure}
 \end{figure}
 
-\autoref{cc_steps_figure} a) shows the initial setup for the connected components algorithm according to the example graph of \autoref{cc_figure}: Each vertex has a parent component attribute assigned to it that is initially set to the vertex itself. For each edge in the graph, the component of the target vertex component is set to the component of the source vertex if the target component is greater than the source component in \autoref{cc_steps_figure} b). Pointer-jumping (\texttt{parent[vertex]} $\gets$ \texttt{parent[parent[vertex]]}) is then performed in \autoref{cc_steps_figure} c) so that each vertex either points to itself or to another vertex that points to itself. It is worth to note that, because edge-lists can be traversed in arbitrary order, the component of \textit{vertex 4} in the first algorithm step can also be \textit{2}. In this case, the pointer-jumping step will not perform any changes. After a second iteration, the component of \textit{vertex 2} will be set to \textit{1} resulting in termination of the algorithm.\\
+\autoref{cc_steps_figure} a) shows the initial setup for the Connected Components algorithm according to the example graph of \autoref{cc_figure}: Each vertex has a parent component attribute assigned to it that is initially set to the vertex itself. For each edge in the graph, the component of the target vertex component is set to the component of the source vertex if the target component is greater than the source component in \autoref{cc_steps_figure} b). Pointer-jumping (\texttt{parent[vertex]} $\gets$ \texttt{parent[parent[vertex]]}) is then performed in \autoref{cc_steps_figure} c) so that each vertex either points to itself or to another vertex that points to itself. It is worth to note that, because edge-lists can be traversed in arbitrary order, the component of \textit{vertex 4} in the first algorithm step can also be \textit{2}. In this case, the pointer-jumping step will not perform any changes. After a second iteration, the component of \textit{vertex 2} will be set to \textit{1} resulting in termination of the algorithm.\\
 
 The described algorithm is optimized using communication coalescing explained in \autoref{comm_coal_section}. The resulting algorithm can be seen in \autoref{cc_algorithm}. The components of the target vertices of all edges local to each processor are gathered in a bulk communication step. This data is used to set the parent component of each target's parent to the source's parent component in another bulk communication step. Pointer jumping is then performed in a synchronized way in order to allow for communication coalescing: The component of each vertex is updated and the pointers are not immediately followed but rather updated in the next iteration. The algorithm stops if there are no changes in the parent components of all vertices in an iteration. 
 
@@ -985,14 +985,14 @@ The described algorithm is optimized using communication coalescing explained in
      \textbf{if} $pj = 0$ \textbf{then} break\;
    }
  }
- \caption{Connected components with communication coalescing}
+ \caption{Connected Components with communication coalescing}
  \label{cc_algorithm}
 \end{algorithm}
 \end{center}
 
 \subsection{Minimum Spanning Tree}
 \label{mst_algorithm_section}
-A \textit{minimum spanning tree (MST)} is a tree structure spanning a connected component along paths of minimum edge weight \cite{ita}. The tree spans all vertices in the component and the sum of edge weights of each path is guaranteed to be minimal. The MST therefore is a subset of the graph. \autoref{mst_figure} shows a graph and its corresponding minimum spanning tree.
+A \textit{Minimum Spanning Tree (MST)} is a tree structure spanning a connected component along paths of minimum edge weight \cite{ita}. The tree spans all vertices in the component and the sum of edge weights of each path is guaranteed to be minimal. The MST therefore is a subset of the graph. \autoref{mst_figure} shows a graph and its corresponding minimum spanning tree.
 
 \begin{figure}[ht]
 	\centering
@@ -1016,7 +1016,7 @@ This case study however is based on a shared-memory version of \textit{Boruvka's
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.8\textwidth]{Bilder/mst_boruvka.pdf}
-	\caption{Distributed minimum spanning tree example showing the graph (a), the first iteration (b) and the second iteration (c) \cite{boruvka}}
+	\caption{Distributed Minimum Spanning Tree example showing the graph (a), the first iteration (b) and the second iteration (c) \cite{boruvka}}
 	\label{mst_boruvka_figure}
 \end{figure}
 
@@ -1079,7 +1079,7 @@ The MST algorithm of this case study can be seen in \autoref{mst_algorithm}. It 
      \textbf{if} $pj = 0$ \textbf{then} break\;
    }
  }
- \caption{Minimum spanning tree with communication coalescing}
+ \caption{Minimum Spanning Tree with communication coalescing}
  \label{mst_algorithm}
 \end{algorithm}
 \end{center}
@@ -1183,7 +1183,7 @@ This section describes the properties of \texttt{dash::Graph} used for the exami
   Graph type & Undirected graph\\ \hline
   Vertex attributes & - Parent component \\ \hline
   Edge attributes &  \\ \hline
-  \caption{Graph setup for connected components}
+  \caption{Graph setup for Connected Components}
 \end{tabularx}
 
 \begin{tabularx}{1\textwidth}{| l | l | X |}
@@ -1195,7 +1195,7 @@ This section describes the properties of \texttt{dash::Graph} used for the exami
   Vertex attributes & - Parent component \\ \hline
   Edge attributes & - Weight \\ 
   & - Processor ID \\ \hline
-  \caption{Graph setup for minimum spanning tree}
+  \caption{Graph setup for Minimum Spanning Tree}
 \end{tabularx}
 
 \subsection{Input data}
@@ -1264,7 +1264,7 @@ In \autoref{cc_strong_multi_figure}, the results for an equal distribution of ve
 
 The UPC version of Cong et al. has only been run on a cluster of 16 nodes. Therefore, no scalability comparison is available. The SMP version has been run on a single node. Unfortunately, there is also no hardware information available.
 
-\subsection{Experimental results (minimum spanning tree)}
+\subsection{Experimental results (Minimum Spanning Tree)}
 Similar to \autoref{cc_experiments_section}, experiments with the Minimum Spanning Tree algorithm have been performed with weak scaling and strong scaling on a varying amount of processors/nodes.
 
 \subsubsection{Weak scaling (single node)}
@@ -1590,7 +1590,7 @@ A \texttt{DuplexGraph} is a \texttt{Graph} with iterators for inbound edges for 
   $x.in\_edges().max\_size()$ & edge\_size\_type & maximum amount of in-edges possible \\ \hline
 \end{tabularx}
 
-\subsection{Conditions}
+\subsubsection{Conditions}
 \begin{tabularx}{1\textwidth}{| l | X | X |}
   \hline
   \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\
@@ -1654,7 +1654,7 @@ A \texttt{CombinedEdgeGraph} is a \texttt{Graph} with additional iterators for a
   $x.edges().max\_size()$ & edge\_size\_type & maximum amount of edges possible \\ \hline
 \end{tabularx}
 
-\subsection{conditions}
+\subsubsection{Conditions}
 \begin{tabularx}{1\textwidth}{| l | X | X |}
   \hline
   \textbf{Expression} & \textbf{Precondition} & \textbf{Postcondition} \\

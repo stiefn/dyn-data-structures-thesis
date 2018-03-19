@@ -66,7 +66,7 @@
 \BOOKMARK [2][-]{subsection.7.2.1}{Graph setup}{section.7.2}% 66
 \BOOKMARK [2][-]{subsection.7.2.2}{Input data}{section.7.2}% 67
 \BOOKMARK [2][-]{subsection.7.2.3}{Experimental results \(Connected Components\)}{section.7.2}% 68
-\BOOKMARK [2][-]{subsection.7.2.4}{Experimental results \(minimum spanning tree\)}{section.7.2}% 69
+\BOOKMARK [2][-]{subsection.7.2.4}{Experimental results \(Minimum Spanning Tree\)}{section.7.2}% 69
 \BOOKMARK [2][-]{subsection.7.2.5}{Result assessment}{section.7.2}% 70
 \BOOKMARK [2][-]{subsection.7.2.6}{Programming assessment}{section.7.2}% 71
 \BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 72
@@ -90,11 +90,9 @@
 \BOOKMARK [2][-]{subsection.1.A.4.1}{Requirements}{section.1.A.4}% 90
 \BOOKMARK [2][-]{subsection.1.A.4.2}{Types}{section.1.A.4}% 91
 \BOOKMARK [2][-]{subsection.1.A.4.3}{Methods and operators}{section.1.A.4}% 92
-\BOOKMARK [2][-]{subsection.1.A.4.4}{Conditions}{section.1.A.4}% 93
-\BOOKMARK [1][-]{section.1.A.5}{CombinedEdgeGraph}{Appendix.1.A}% 94
-\BOOKMARK [2][-]{subsection.1.A.5.1}{Requirements}{section.1.A.5}% 95
-\BOOKMARK [2][-]{subsection.1.A.5.2}{Types}{section.1.A.5}% 96
-\BOOKMARK [2][-]{subsection.1.A.5.3}{Methods and operators}{section.1.A.5}% 97
-\BOOKMARK [2][-]{subsection.1.A.5.4}{conditions}{section.1.A.5}% 98
-\BOOKMARK [0][-]{chapter*.22}{List of Figures}{}% 99
-\BOOKMARK [0][-]{chapter*.23}{Bibliography}{}% 100
+\BOOKMARK [1][-]{section.1.A.5}{CombinedEdgeGraph}{Appendix.1.A}% 93
+\BOOKMARK [2][-]{subsection.1.A.5.1}{Requirements}{section.1.A.5}% 94
+\BOOKMARK [2][-]{subsection.1.A.5.2}{Types}{section.1.A.5}% 95
+\BOOKMARK [2][-]{subsection.1.A.5.3}{Methods and operators}{section.1.A.5}% 96
+\BOOKMARK [0][-]{chapter*.24}{List of Figures}{}% 97
+\BOOKMARK [0][-]{chapter*.25}{Bibliography}{}% 98
