@@ -12,7 +12,7 @@ plt.xscale('log')
 plt.legend(loc='upper left')
 plt.axis([100000, 10000000, 0, 22])
 plt.grid(True)
-plt.xlabel('number of nodes')
+plt.xlabel('number of elements')
 plt.ylabel('time (s)')
 plt.tight_layout()
 

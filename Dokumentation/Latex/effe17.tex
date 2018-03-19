@@ -1086,18 +1086,16 @@ The MST algorithm of this case study can be seen in \autoref{mst_algorithm}. It 
 \label{eval_section}
 To examine the performance and functionality of the graph concepts, the reference implementation is evaluated on a live HPC system with various kernels as described in detail in this chapter.\\
 
-The testing environment consists of the \textit{SuperMUC Phase 2}\footnote[2]{\url{https://www.lrz.de/services/compute/supermuc/systemdescription/}} system at the \textit{Leibniz Supercomputing Centre} in Munich. It comprises \textit{six islands} composed of \textit{512 nodes} each. The nodes are interconnected with an \textit{Infiniband FDR14} network and contain two \textit{Intel Xeon E5-2697 v3} processors and 64GB of RAM.
+The testing environment consists of the \textit{SuperMUC Phase 2}\footnote[2]{\url{https://www.lrz.de/services/compute/supermuc/systemdescription/}} system at the \textit{Leibniz Supercomputing Centre} in Munich. It comprises \textit{six islands} composed of \textit{512 nodes} each. The nodes are interconnected with an \textit{Infiniband FDR14} network and contain two \textit{Intel Xeon E5-2697 v3} processors (with 28 cores in total) and 64GB of RAM.
 
-All tests are performed on a single island with a varying amount of nodes. Because the load on the network inside the islands might vary depending on other jobs currently running on the system, each test is performed 10 times and a mean is calculated from the results.
+All tests are performed on a single island with a varying amount of nodes. Because the load on the network inside the islands might vary depending on other jobs currently running on the system, each test is performed 5 times and the median values are presented.
 
 \section{Micro-benchmarks}
-This section presents a performance analysis of specific parts of the graph concepts. Because the concepts do not require inbound edge-lists in implementations of \textit{directed graph containers}, the micro-benchmarks in this section are performed on two different graph implementations to examine the difference an additional inbound edge-list imposes on performance. 
+This section presents a performance analysis of specific parts of the graph concepts.
 
 Since element deletion is currently not implemented in the reference implementation, no micro-benchmarking could be performed in this regard.
 
 \subsection{Element creation}
-Elements are strictly created on local machines. As no communication is performed during this micro-benchmark, the tests are performed on a single node with a varying amount of elements.
-
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.5\textwidth]{Bilder/plots/bm_insert.pdf}
@@ -1105,8 +1103,18 @@ Elements are strictly created on local machines. As no communication is performe
 	\label{bm_insert_figure}
 \end{figure}
 
+Elements are always created on local machines. As no communication is performed during this micro-benchmark, the tests are performed on a single node with a varying amount of elements.
+
+\autoref{bm_insert_figure} shows the time consumed for the insertion of vertices and edges respectively. For each element type, the insertion has been performed with 100k, 1M and 10M elements. The data shows that the time consumed is not strictly linear: For vertices, a tenfold increase of created elements results in a 11.8 times increased runtime. 
+
+This happens due to the fact that the elements are stored in memory contiguously. Since the elements are created one after another in this benchmark, the container does not know the amount of elements added beforehand. The underlying data container (see \texttt{X::vertex\_container\_type} and \texttt{X::edge\_container\_type} in \autoref{concept_appendix}) thus allocates a specific amount of memory and after its capacity is reached, a re-allocation occurs.
+
 \subsection{Attribute access}
 Attribute values of elements can be accessed on local as well as remote nodes. This test aims to highlight the differences in access times for read operations with a varying amount of elements and nodes. 
+
+\autoref{deref_figure} depicts the runtimes for remote memory access to vertices and edges respectively. The benchmark creates the desired amount of elements and then tries to access the attributes of these elements from a single processor. The data shows that, on a single node, access is almost instant while the access to data residing on remote nodes is costly: The benchmark could only be performed with a small element set because of the long runtime.
+
+\textcolor{red}{WTF? WHY IS THE RUNTIME FOR 448 VERTICES LONGER THAN FOR 896 VERTICES ON 8 NODES?}
 
 \begin{figure}[ht]
 	\centering
@@ -1115,8 +1123,14 @@ Attribute values of elements can be accessed on local as well as remote nodes. T
 	\label{deref_figure}
 \end{figure}
 
+The results clearly demonstrate that irregular access to single elements is costly and should be avoided for high performance applications.
+
 \subsection{Local iteration}
-Iteration over local elements does not have any dependencies with remote nodes. This test is therefore performed on a single node with a varying amount of elements.
+Iteration over local elements does not have any dependencies with remote nodes. For better comparability with the results of the global iteration micro-benchmark, this test is however performed on multiple nodes.
+
+\autoref{local_iter_figure} shows the results of the iteration over 1M and 10M vertices and edges respectively. To obtain better visible results, each iteration interval is \textit{repeated 10 times}.
+
+A tenfold increase in the amount of elements results in roughly a tenfold increase in the runtime.
 
 \begin{figure}[ht]
 	\centering
@@ -1126,7 +1140,7 @@ Iteration over local elements does not have any dependencies with remote nodes. 
 \end{figure}
 
 \subsection{Global iteration}
-Iteration over elements stored on multiple nodes requires additional information that can degrade performance in comparison to local iteration. This test aims to highlight the differences between global and local iteration in terms of runtime. It is performed with a varying amount of nodes and a varying amount of elements.
+Iteration over elements stored on multiple nodes requires additional information that can degrade performance in comparison to local iteration. This test aims to highlight the differences between global and local iteration in terms of runtime. It is performed with a varying amount of nodes and a varying amount of elements. The iteration is performed by a single processor.
 
 \begin{figure}[ht]
 	\centering
@@ -1135,8 +1149,12 @@ Iteration over elements stored on multiple nodes requires additional information
 	\label{global_iter_figure}
 \end{figure}
 
+In \autoref{global_iter_figure}, results of the iterations over 1M and 10M vertices and edges can be seen. For better visible results, each iteration interval is \textit{repeated 10 times}. 
+
+The data shows no noticeable runtime variations for different amounts of nodes/processors. 
+
 \subsection{Memory space synchronization}
-The memory space synchronization is performed between all participating nodes and requires additional communication for edges if inbound edge-lists are implemented: The edges have to be replicated to the node owning the target vertex. This test examines the runtime of the synchronization process with a varying amount of elements and nodes.
+The memory space synchronization is performed between all participating processors. This test examines the runtime of the synchronization process with a varying amount of elements and nodes.
 
 \begin{figure}[ht]
 	\centering
@@ -1144,6 +1162,10 @@ The memory space synchronization is performed between all participating nodes an
 	\caption{Synchronization of memory space after creation of vertices and edges}
 	\label{commit_figure}
 \end{figure}
+
+As can be seen in \autoref{commit_figure}, the runtime of the synchronization process is bound by the amount of elements per processor and not by the amount of elements in the whole graph. With an increasing amount of processors, the 1M and 10M vertices and edges are distributed in smaller chunks reducing the synchronization time. 
+
+Interestingly, the synchronization time after the creation of edges takes noticeably longer than the synchronization time after the creation of vertices. Vertices always belong to the processor on which they are created. This is not true for edges: An edge between a vertex residing on \textit{processor 1} and a vertex residing on \textit{processor 2} has to be inserted in both processors' memory. Because it is only created at one location, the synchronization step takes care of the distribution which increases the runtime.
 
 \section{Case studies}
 The case studies presented in \autoref{case_studies_section} are evaluated against their UPC counterparts \cite{pgas_algorithms} in this section. Because Cong et al. used a different HPC setup for their evaluation, the resulting numbers can not be considered as directly comparable.
