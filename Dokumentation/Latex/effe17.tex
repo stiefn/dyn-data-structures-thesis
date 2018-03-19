@@ -1098,20 +1098,52 @@ Since element deletion is currently not implemented in the reference implementat
 \subsection{Element creation}
 Elements are strictly created on local machines. As no communication is performed during this micro-benchmark, the tests are performed on a single node with a varying amount of elements.
 
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textwidth]{Bilder/plots/bm_insert.pdf}
+	\caption{Insertion of vertex and edge elements}
+	\label{bm_insert_figure}
+\end{figure}
+
 \subsection{Attribute access}
 Attribute values of elements can be accessed on local as well as remote nodes. This test aims to highlight the differences in access times for read operations with a varying amount of elements and nodes. 
 
-\subsection{Attribute mutation}
-Attribute values of elements can be changed on local as well as remote nodes. This test aims to highlight the differences in access times for write operations with a varying amount of elements and nodes.
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/plots/deref.pdf}
+	\caption{Remote attribute access for vertices and edges}
+	\label{deref_figure}
+\end{figure}
 
 \subsection{Local iteration}
 Iteration over local elements does not have any dependencies with remote nodes. This test is therefore performed on a single node with a varying amount of elements.
 
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/plots/local_iter.pdf}
+	\caption{Local iteration of vertices and edges}
+	\label{local_iter_figure}
+\end{figure}
+
 \subsection{Global iteration}
 Iteration over elements stored on multiple nodes requires additional information that can degrade performance in comparison to local iteration. This test aims to highlight the differences between global and local iteration in terms of runtime. It is performed with a varying amount of nodes and a varying amount of elements.
 
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/plots/global_iter.pdf}
+	\caption{Global iteration of vertices and edges}
+	\label{global_iter_figure}
+\end{figure}
+
 \subsection{Memory space synchronization}
 The memory space synchronization is performed between all participating nodes and requires additional communication for edges if inbound edge-lists are implemented: The edges have to be replicated to the node owning the target vertex. This test examines the runtime of the synchronization process with a varying amount of elements and nodes.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth]{Bilder/plots/commit.pdf}
+	\caption{Synchronization of memory space after creation of vertices and edges}
+	\label{commit_figure}
+\end{figure}
 
 \section{Case studies}
 The case studies presented in \autoref{case_studies_section} are evaluated against their UPC counterparts \cite{pgas_algorithms} in this section. Because Cong et al. used a different HPC setup for their evaluation, the resulting numbers can not be considered as directly comparable.
@@ -1161,13 +1193,59 @@ Because Cong et al. do not specify the exact input variables for the RMAT genera
 
 \subsection{Experimental results (connected components)}
 \subsubsection{Weak scaling (single node)}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textwidth]{Bilder/plots/cc_weak_single.pdf}
+	\caption{Connected Components: Weak scaling on a single node}
+	\label{cc_weak_single_figure}
+\end{figure}
+
 \subsubsection{Weak scaling (multiple nodes)}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textwidth]{Bilder/plots/cc_weak_multi.pdf}
+	\caption{Connected Components: Weak scaling on multiple nodes}
+	\label{cc_weak_multi_figure}
+\end{figure}
+
 \subsubsection{Strong scaling (multiple nodes)}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textwidth]{Bilder/plots/cc_strong_multi.pdf}
+	\caption{Connected Components: Strong scaling on multiple nodes}
+	\label{cc_weak_single_figure}
+\end{figure}
 
 \subsection{Experimental results (minimum spanning tree)}
 \subsubsection{Weak scaling (single node)}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textwidth]{Bilder/plots/mst_weak_single.pdf}
+	\caption{Minimum Spanning Tree: Weak scaling on a single node}
+	\label{cc_weak_single_figure}
+\end{figure}
+
 \subsubsection{Weak scaling (multiple nodes)}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textwidth]{Bilder/plots/mst_weak_multi.pdf}
+	\caption{Minimum Spanning Tree: Weak scaling on multiple nodes}
+	\label{cc_weak_multi_figure}
+\end{figure}
+
 \subsubsection{Strong scaling (multiple nodes)}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textwidth]{Bilder/plots/mst_strong_multi.pdf}
+	\caption{Minimum Spanning Tree: Strong scaling on multiple nodes}
+	\label{cc_weak_single_figure}
+\end{figure}
 
 \chapter{Conclusion}
 \section{Summary}
