@@ -87,8 +87,8 @@
 \contentsline {subsection}{\numberline {7.2.6}Programming assessment}{53}{subsection.7.2.6}
 \contentsline {chapter}{\numberline {8}Conclusion}{55}{chapter.8}
 \contentsline {section}{\numberline {8.1}Summary}{55}{section.8.1}
-\contentsline {section}{\numberline {8.2}Assessment}{55}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{55}{section.8.3}
+\contentsline {section}{\numberline {8.2}Assessment}{56}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{56}{section.8.3}
 \contentsline {chapter}{Appendices}{57}{section*.18}
 \contentsline {chapter}{\numberline {A}Graph container concepts}{59}{Appendix.1.A}
 \contentsline {section}{\numberline {A.1}Graph}{59}{section.1.A.1}

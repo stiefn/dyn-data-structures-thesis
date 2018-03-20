@@ -1344,9 +1344,31 @@ The proposed solutions are not part of this work and require additional effort t
 Considering the uses cases, the proposed data structures could reduce the lines of code of both algorithms by around 70\%.
 
 \chapter{Conclusion}
+This chapter gives a brief summary of the achieved results and progresses with an assessment on the usability of the proposed graph concepts. An outlook for possible future works is then provided.
+
 \section{Summary}
+The work presented in this thesis has been designed with a focus on universality aiming to create a graph abstraction that is suitable for as many graph-related problems as feasible. At the same time, considerations about performance have co-determined the way in which the abstraction is formulated: C++ concepts. 
+
+Because there are two fundamentally different ways in which graphs can be represented on computer machines and because these ways result in different advantages and disadvantages, there is no single abstraction that spans all possible use cases and at the same time enables high performance. 
+
+The presented graph concepts build upon the \textit{adjacency list} format which enables a wide array of use cases: Graph data structures that allow for the dynamic creation and deletion of elements during runtime. While most graph problems can be satisfactorily expressed with this abstraction, \textit{adjacency matrices} allow for a faster computation of a subset of these problems. Unfortunately, these two graph representation types cannot be combined into one single abstraction: While an \textit{adjacency list} strictly partitions data by vertices (1-dimensional partitioning), an \textit{adjacency matrix} partitions data by edges (2-dimensional partitioning). These partitioning methods are so fundamentally different that no programming abstraction could unify the concepts. In fact, the latter relies on linear algebra and thus requires different algorithms.\\
+
+With the \textit{adjacency list} as the chosen graph representation, the thesis has progressed by analysing the problem domain: Elementary graph algorithms have been examined and observations from this analysis have led to a set of functional requirements a graph abstraction has to meet at minimum. These requirements have then been transitioned into a formal concept specification resulting in five different graph concepts that can be used as building blocks for corresponding implementations.\\
+
+For verification purposes, a reference implementation has then been presented that demonstrates the feasibility of the concepts and demonstrates how the concepts can be extended for certain, more narrow use cases. Two case studies have shown the applicability of the concepts and have granted insights into the performance and scalability on a live HPC system.
+
 \section{Assessment}
+
 \section{Outlook}
+Besides the focus on a PGAS graph abstraction that is as generic as possible, another important point is programmability. Because the PGAS model enables programming on distributed machines in shared-memory style, it facilitates ease-of-use. The results of this thesis have however shown that - because bulk-synchronous communication is still needed for performance reasons - programming is not necessarily easier than with message passing. To overcome this problem, additional data structures have been proposed that facilitate \textit{communication coalescing}. These proposals however are not part of this thesis and further work is required in order to create generic abstractions that can be used in a wide array of use cases.\\
+
+It is also worth to note that the assessment of programmability of the concepts is only based on the work conducted on the uses cases by the author. For better scientific results in this regard, more comprehensive social studies have to be performed.\\
+
+Since the graph concepts only allow for the direct creation of elements on any processor, no load-balancing efforts have been considered. As shown by the experimental results of this thesis, manual domain decomposition can already lead to acceptable performance. However, for some (dynamic) graphs, requirements might change over time. Another point for future work therefore includes examining \textit{element migration} and \textit{load-balancing} capabilities as add-ons for the presented concepts.
+
+
+
+
 
 
 \begin{appendices}

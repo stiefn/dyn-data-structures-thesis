@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  20 MAR 2018 14:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  20 MAR 2018 17:15
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -1009,200 +1009,219 @@ Underfull \vbox (badness 10000) detected at line 1340
 
 [54]
 chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1354--1355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1356--1357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1364
+
+ []
+
 [55
 
 
-] [56
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1365--1366
+
+ []
+
+[56] [57
 
 
-] [57
 
 
 ] [58]
 chapter A.
 
-Underfull \hbox (badness 1107) in paragraph at lines 1394--1394
+Underfull \hbox (badness 1107) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 a proxy type for the re-
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 1394--1394
+Underfull \hbox (badness 1742) in paragraph at lines 1416--1416
 \OT1/cmr/m/n/10.95 meth-ods for the re-trieval
  []
 
 
-Underfull \hbox (badness 2165) in paragraph at lines 1394--1394
+Underfull \hbox (badness 2165) in paragraph at lines 1416--1416
 \OT1/cmr/m/n/10.95 and mod-i-fi-ca-tion of edge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
+Underfull \hbox (badness 10000) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 user-specified STL-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
+Underfull \hbox (badness 10000) in paragraph at lines 1416--1416
 \OT1/cmr/m/n/10.95 compatible con-tainer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
+Underfull \hbox (badness 10000) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 user-specified STL-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
+Underfull \hbox (badness 10000) in paragraph at lines 1416--1416
 \OT1/cmr/m/n/10.95 compatible con-tainer
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1394--1394
+Underfull \hbox (badness 5388) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1394--1394
+Underfull \hbox (badness 5388) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1394--1394
+Underfull \hbox (badness 5388) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
+Underfull \hbox (badness 10000) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1394--1394
+Underfull \hbox (badness 5388) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
+Underfull \hbox (badness 10000) in paragraph at lines 1416--1416
 []|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1394
+Underfull \vbox (badness 10000) detected at line 1416
  []
 
 [59
 
 
 ]
-Underfull \hbox (badness 1533) in paragraph at lines 1429--1429
+Underfull \hbox (badness 1533) in paragraph at lines 1451--1451
 []|\OT1/cmr/m/n/10.95 iterator to the first ver-tex in
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 1429--1429
+Underfull \hbox (badness 1803) in paragraph at lines 1451--1451
 []|\OT1/cmr/m/n/10.95 amount of lo-cally vis-i-ble out-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1429
+Underfull \vbox (badness 10000) detected at line 1451
  []
 
 [60] [61]
-Underfull \hbox (badness 6592) in paragraph at lines 1464--1464
+Underfull \hbox (badness 6592) in paragraph at lines 1486--1486
 \OT1/cmr/m/n/10.95 begin(), x.vertices().end())
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1464
+Underfull \vbox (badness 10000) detected at line 1486
  []
 
 [62]
-Underfull \hbox (badness 1430) in paragraph at lines 1497--1497
+Underfull \hbox (badness 1430) in paragraph at lines 1519--1519
 $\OML/cmm/m/it/10.95 lit[]$ \OT1/cmr/m/n/10.95 and re-turns whether
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1497
+Underfull \vbox (badness 10000) detected at line 1519
  []
 
 [63]
-Underfull \hbox (badness 1430) in paragraph at lines 1514--1514
+Underfull \hbox (badness 1430) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/10.95 locally added el-e-ments pub-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1514
+Underfull \vbox (badness 10000) detected at line 1536
  []
 
 [64]
-Underfull \vbox (badness 10000) detected at line 1546
+Underfull \vbox (badness 10000) detected at line 1568
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1563
+Underfull \vbox (badness 10000) detected at line 1585
  []
 
 [65]
-Underfull \hbox (badness 8019) in paragraph at lines 1580--1580
+Underfull \hbox (badness 8019) in paragraph at lines 1602--1602
 \OT1/cmr/m/n/10.95 tices and std::distance($\OML/cmm/m/it/10.95 it[]$\OT1/cmr/m
 /n/10.95 ,
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1580
- []
-
-[66]
-Underfull \hbox (badness 5388) in paragraph at lines 1602--1602
-[]|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1602--1602
-[]|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
- []
-
-
-Underfull \hbox (badness 5388) in paragraph at lines 1602--1602
-[]|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1602--1602
-[]|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
  []
 
 
 Underfull \vbox (badness 10000) detected at line 1602
  []
 
-
-Underfull \vbox (badness 10000) detected at line 1623
+[66]
+Underfull \hbox (badness 5388) in paragraph at lines 1624--1624
+[]|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
-[67]
-Underfull \vbox (badness 10000) detected at line 1644
- []
 
-[68]
-Underfull \hbox (badness 10000) in paragraph at lines 1666--1666
+Underfull \hbox (badness 10000) in paragraph at lines 1624--1624
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1666--1666
+Underfull \hbox (badness 5388) in paragraph at lines 1624--1624
+[]|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1624--1624
 []|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
  []
 
 
+Underfull \vbox (badness 10000) detected at line 1624
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1645
+ []
+
+[67]
 Underfull \vbox (badness 10000) detected at line 1666
  []
 
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 1688--1688
+[]|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
+ []
 
-Underfull \vbox (badness 10000) detected at line 1687
+
+Underfull \hbox (badness 10000) in paragraph at lines 1688--1688
+[]|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1688
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1709
  []
 
 [69]
-Underfull \vbox (badness 10000) detected at line 1708
+Underfull \vbox (badness 10000) detected at line 1730
  []
 
 [70] [71] [72
@@ -1219,17 +1238,17 @@ Underfull \vbox (badness 10000) detected at line 1708
 ]
 chapter without number
 [75] [76] [77] [78])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1718.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1740.
  [79]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1718.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1740.
  (effe17.aux (Titel/titel-lmu.aux)
 (Titel/erklaerung-lmu.aux) (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1718.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1718.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1740.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1740.
 
 Package rerunfilecheck Info: File `effe17.out' has not changed.
 (rerunfilecheck)             Checksum: 0EEB116F1A340F2B8493D3361146ED7B;6658.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1718.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1740.
  ) 
 Here is how much of TeX's memory you used:
  11026 strings out of 493673
@@ -1258,7 +1277,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on effe17.pdf (91 pages, 10670897 bytes).
+Output written on effe17.pdf (91 pages, 10674741 bytes).
 PDF statistics:
  2462 PDF objects out of 2487 (max. 8388607)
  495 named destinations out of 1000 (max. 500000)
