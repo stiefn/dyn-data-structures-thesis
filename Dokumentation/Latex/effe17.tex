@@ -1309,7 +1309,39 @@ The UPC version of Cong et al. has only been run on a cluster of 16 nodes. There
 
 \subsection{Result assessment}
 
+
 \subsection{Programming assessment}
+A major aspect of Partitioned Global Address Space is the ability to port shared-memory algorithms to distributed memory with low effort. This approach however can lead to degraded performance: 
+
+The Connected Components algorithm has been directly ported to a PGAS version using the graph concepts of this work. Due to many irregular remote accesses on single elements the algorithm could not be finished in a timely manner on a graph with 100M vertices and 400M edges and is thus not suitable for high performance applications.
+
+To achieve good performance results, communication has to be performed in batches even for PGAS applications. For this reason, a communication coalescing mechanism had to be used for the case studies to actually deliver acceptable results. This mechanism however requires a programmer to invest significantly more time into the development of such PGAS algorithms which counteracts the programmability of the concepts of this work.\\
+
+Judging from the experience gathered from the case studies, the communication coalescing process can be encapsulated by another data structure in order to ease the work for programmers using containers that meet the requirements of the graph concepts.
+
+The desired functionality can be achieved by two different data structures:
+
+\begin{itemize}
+\item \textbf{vertex subset}
+\item \textbf{edge subset}
+\end{itemize}
+
+Both data structures have to meet the following functional requirements:
+
+\begin{tabularx}{1\textwidth}{| X | X |}
+  \hline
+  \textbf{Requirement} & \textbf{Notes} \\ 
+  \endhead  
+  \hline
+  Element referencing & Insertion of references to single elements of the graph (local and global) \\ \hline
+  Element data creation & Creation of new data for the referenced elements \\ \hline
+  Bulk retrieval & User-induced retrieval of all referenced element data in one communication step \\ \hline
+  Bulk data mutation & User-induced mutation of the referenced elements' data using the newly created data in a bulk communication step \\ \hline
+\end{tabularx}
+
+The proposed solutions are not part of this work and require additional effort to create sophisticated concepts that span a wide array of use cases.
+
+Considering the uses cases, the proposed data structures could reduce the lines of code of both algorithms by around 70\%.
 
 \chapter{Conclusion}
 \section{Summary}
