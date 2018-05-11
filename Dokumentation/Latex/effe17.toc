@@ -1,15 +1,15 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Problem statement}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Scope and objectives}{2}{section.1.2}
+\contentsline {section}{\numberline {1.1}Problem Statement}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Scope and Objectives}{2}{section.1.2}
 \contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Graph representations}{3}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Adjacency matrix}{3}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Adjacency list}{4}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}C++ concepts}{4}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Language concepts}{4}{subsection.2.2.1}
-\contentsline {subsubsection}{\nonumberline Value and reference semantics}{4}{section*.2}
-\contentsline {subsubsection}{\nonumberline Operator overloading}{5}{section*.3}
-\contentsline {subsubsection}{\nonumberline Static vs. runtime polymorphism}{6}{section*.4}
+\contentsline {section}{\numberline {2.1}Graph Representations}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Adjacency Matrix}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Adjacency List}{4}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}C++ Concepts}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Language Concepts}{4}{subsection.2.2.1}
+\contentsline {subsubsection}{\nonumberline Value and Reference Semantics}{4}{section*.2}
+\contentsline {subsubsection}{\nonumberline Operator Overloading}{5}{section*.3}
+\contentsline {subsubsection}{\nonumberline Static vs. Runtime Polymorphism}{6}{section*.4}
 \contentsline {subsection}{\numberline {2.2.2}Standard Template Library}{7}{subsection.2.2.2}
 \contentsline {subsubsection}{\nonumberline Concepts}{8}{section*.5}
 \contentsline {subsubsection}{\nonumberline Iterators}{8}{section*.6}
@@ -19,101 +19,101 @@
 \contentsline {paragraph}{\nonumberline Distributed Memory}{10}{section*.9}
 \contentsline {section}{\numberline {2.4}Partitioned Global Address Space}{10}{section.2.4}
 \contentsline {section}{\numberline {2.5}DASH C++ Template Library}{12}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Dynamic memory allocation}{12}{subsection.2.5.1}
-\contentsline {chapter}{\numberline {3}Related work}{15}{chapter.3}
+\contentsline {subsection}{\numberline {2.5.1}Dynamic Memory Allocation}{12}{subsection.2.5.1}
+\contentsline {chapter}{\numberline {3}Related Work}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Shared Memory}{15}{section.3.1}
 \contentsline {section}{\numberline {3.2}Distributed Memory}{16}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Bulk-synchronous graph processing}{16}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Asynchronous graph processing}{17}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Linear algebra based graph processing}{18}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Graph container concepts}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Problem fundamentals}{19}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Elementary graph algorithms}{19}{subsection.4.1.1}
-\contentsline {subsubsection}{\nonumberline Breadth-first search}{19}{section*.10}
-\contentsline {subsubsection}{\nonumberline Depth-first search}{20}{section*.11}
-\contentsline {subsection}{\numberline {4.1.2}Functional requirements}{21}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Container concepts}{22}{section.4.2}
+\contentsline {subsection}{\numberline {3.2.1}Bulk-Synchronous Graph Processing}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Asynchronous Graph Processing}{17}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Linear Algebra Based Graph Processing}{18}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Graph Container Concepts}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Problem Fundamentals}{19}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Elementary Graph Algorithms}{19}{subsection.4.1.1}
+\contentsline {subsubsection}{\nonumberline Breadth-First Search}{19}{section*.10}
+\contentsline {subsubsection}{\nonumberline Depth-First Search}{20}{section*.11}
+\contentsline {subsection}{\numberline {4.1.2}Functional Requirements}{21}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Container Concepts}{22}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Graph}{22}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}DynamicGraph}{23}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}AttributedGraph}{24}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}DuplexGraph}{25}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}CombinedEdgeGraph}{26}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Memory spaces}{26}{section.4.3}
-\contentsline {section}{\numberline {4.4}Iteration spaces}{27}{section.4.4}
-\contentsline {section}{\numberline {4.5}Index spaces}{28}{section.4.5}
-\contentsline {chapter}{\numberline {5}Reference implementation}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}Overview}{29}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Data structure}{30}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Pointers and references}{30}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Graph types}{31}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Memory management}{31}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Contiguous memory}{31}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Edge list memory}{32}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Element deletion}{32}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Iteration}{32}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Local iteration}{33}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Global iteration}{33}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Edge iteration}{33}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Data access}{33}{section.5.4}
-\contentsline {section}{\numberline {5.5}Additional methods}{34}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Requirements}{34}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Types}{34}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}Methods and operators}{34}{subsection.5.5.3}
-\contentsline {chapter}{\numberline {6}Case studies}{37}{chapter.6}
+\contentsline {section}{\numberline {4.3}Memory Spaces}{26}{section.4.3}
+\contentsline {section}{\numberline {4.4}Iteration Spaces}{27}{section.4.4}
+\contentsline {section}{\numberline {4.5}Index Spaces}{28}{section.4.5}
+\contentsline {chapter}{\numberline {5}Reference Implementation}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Overview}{31}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Data Structure}{32}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Pointers and References}{32}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Graph Variants}{33}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Memory Management}{33}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Contiguous Memory}{33}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Edge List Memory}{34}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Element Deletion}{34}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Iteration}{34}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Local Iteration}{34}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Global Iteration}{35}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Edge Iteration}{35}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Data Access}{35}{section.5.4}
+\contentsline {section}{\numberline {5.5}Additional Methods}{36}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Requirements}{36}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Types}{36}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Methods and Operators}{36}{subsection.5.5.3}
+\contentsline {chapter}{\numberline {6}Case Studies}{37}{chapter.6}
 \contentsline {section}{\numberline {6.1}Optimizations}{37}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Communication coalescing}{37}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Graph algorithms}{38}{section.6.2}
+\contentsline {subsection}{\numberline {6.1.1}Communication Coalescing}{37}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Graph Algorithms}{38}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Connected Components}{38}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}Minimum Spanning Tree}{40}{subsection.6.2.2}
 \contentsline {chapter}{\numberline {7}Evaluation}{45}{chapter.7}
-\contentsline {section}{\numberline {7.1}Micro-benchmarks}{45}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Element creation}{45}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Attribute access}{46}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Local iteration}{46}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Global iteration}{47}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}Memory space synchronization}{48}{subsection.7.1.5}
-\contentsline {section}{\numberline {7.2}Case studies}{48}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Graph setup}{48}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Input data}{49}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Experimental results (Connected Components)}{49}{subsection.7.2.3}
-\contentsline {subsubsection}{\nonumberline Weak scaling (single node)}{50}{section*.12}
-\contentsline {subsubsection}{\nonumberline Weak scaling (multiple nodes)}{50}{section*.13}
-\contentsline {subsubsection}{\nonumberline Strong scaling (multiple nodes)}{51}{section*.14}
-\contentsline {subsection}{\numberline {7.2.4}Experimental results (Minimum Spanning Tree)}{51}{subsection.7.2.4}
-\contentsline {subsubsection}{\nonumberline Weak scaling (single node)}{52}{section*.15}
-\contentsline {subsubsection}{\nonumberline Weak scaling (multiple nodes)}{52}{section*.16}
-\contentsline {subsubsection}{\nonumberline Strong scaling (multiple nodes)}{53}{section*.17}
-\contentsline {subsection}{\numberline {7.2.5}Result assessment}{53}{subsection.7.2.5}
-\contentsline {subsection}{\numberline {7.2.6}Programming assessment}{53}{subsection.7.2.6}
+\contentsline {section}{\numberline {7.1}Micro-Benchmarks}{45}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Element Creation}{45}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Attribute Access}{46}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Local Iteration}{46}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Global Iteration}{47}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.5}Memory Space Synchronization}{48}{subsection.7.1.5}
+\contentsline {section}{\numberline {7.2}Case Studies}{48}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Graph Setup}{48}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Input Data}{49}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Experimental Results (Connected Components)}{49}{subsection.7.2.3}
+\contentsline {subsubsection}{\nonumberline Weak Scaling (Single Node)}{50}{section*.12}
+\contentsline {subsubsection}{\nonumberline Weak Scaling (Multiple Nodes)}{50}{section*.13}
+\contentsline {subsubsection}{\nonumberline Strong Scaling (Multiple Nodes)}{51}{section*.14}
+\contentsline {subsection}{\numberline {7.2.4}Experimental Results (Minimum Spanning Tree)}{51}{subsection.7.2.4}
+\contentsline {subsubsection}{\nonumberline Weak Scaling (Single Node)}{52}{section*.15}
+\contentsline {subsubsection}{\nonumberline Weak Scaling (Multiple Nodes)}{52}{section*.16}
+\contentsline {subsubsection}{\nonumberline Strong Scaling (Multiple Nodes)}{53}{section*.17}
+\contentsline {subsection}{\numberline {7.2.5}Result Assessment}{53}{subsection.7.2.5}
+\contentsline {subsection}{\numberline {7.2.6}Programming Assessment}{53}{subsection.7.2.6}
 \contentsline {chapter}{\numberline {8}Conclusion}{55}{chapter.8}
 \contentsline {section}{\numberline {8.1}Summary}{55}{section.8.1}
 \contentsline {section}{\numberline {8.2}Assessment}{56}{section.8.2}
 \contentsline {section}{\numberline {8.3}Outlook}{56}{section.8.3}
 \contentsline {chapter}{Appendices}{57}{section*.18}
-\contentsline {chapter}{\numberline {A}Graph container concepts}{59}{Appendix.1.A}
+\contentsline {chapter}{\numberline {A}Graph Container Concepts}{59}{Appendix.1.A}
 \contentsline {section}{\numberline {A.1}Graph}{59}{section.1.A.1}
 \contentsline {subsection}{\numberline {A.1.1}Requirements}{59}{subsection.1.A.1.1}
 \contentsline {subsection}{\numberline {A.1.2}Types}{59}{subsection.1.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Methods and operators}{60}{subsection.1.A.1.3}
+\contentsline {subsection}{\numberline {A.1.3}Methods and Operators}{60}{subsection.1.A.1.3}
 \contentsline {subsubsection}{\nonumberline Conditions}{62}{section*.19}
 \contentsline {section}{\numberline {A.2}DynamicGraph}{63}{section.1.A.2}
 \contentsline {subsection}{\numberline {A.2.1}Requirements}{63}{subsection.1.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Methods and operators}{63}{subsection.1.A.2.2}
+\contentsline {subsection}{\numberline {A.2.2}Methods and Operators}{63}{subsection.1.A.2.2}
 \contentsline {subsubsection}{\nonumberline Conditions}{64}{section*.20}
 \contentsline {section}{\numberline {A.3}AttributedGraph}{65}{section.1.A.3}
 \contentsline {subsection}{\numberline {A.3.1}Requirements}{65}{subsection.1.A.3.1}
 \contentsline {subsection}{\numberline {A.3.2}Types}{65}{subsection.1.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Methods and operators}{65}{subsection.1.A.3.3}
+\contentsline {subsection}{\numberline {A.3.3}Methods and Operators}{65}{subsection.1.A.3.3}
 \contentsline {subsubsection}{\nonumberline Conditions}{66}{section*.21}
 \contentsline {section}{\numberline {A.4}DuplexGraph}{67}{section.1.A.4}
 \contentsline {subsection}{\numberline {A.4.1}Requirements}{67}{subsection.1.A.4.1}
 \contentsline {subsection}{\numberline {A.4.2}Types}{67}{subsection.1.A.4.2}
-\contentsline {subsection}{\numberline {A.4.3}Methods and operators}{67}{subsection.1.A.4.3}
+\contentsline {subsection}{\numberline {A.4.3}Methods and Operators}{67}{subsection.1.A.4.3}
 \contentsline {subsubsection}{\nonumberline Conditions}{68}{section*.22}
 \contentsline {section}{\numberline {A.5}CombinedEdgeGraph}{69}{section.1.A.5}
 \contentsline {subsection}{\numberline {A.5.1}Requirements}{69}{subsection.1.A.5.1}
 \contentsline {subsection}{\numberline {A.5.2}Types}{69}{subsection.1.A.5.2}
-\contentsline {subsection}{\numberline {A.5.3}Methods and operators}{69}{subsection.1.A.5.3}
+\contentsline {subsection}{\numberline {A.5.3}Methods and Operators}{69}{subsection.1.A.5.3}
 \contentsline {subsubsection}{\nonumberline Conditions}{70}{section*.23}
 \contentsline {chapter}{\nonumberline List of Figures}{73}{chapter*.24}
 \contentsline {chapter}{\nonumberline Bibliography}{75}{chapter*.25}
