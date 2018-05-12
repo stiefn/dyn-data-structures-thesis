@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  11 MAY 2018 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  12 MAY 2018 18:54
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -804,6 +804,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 729--730
  []
 
 [27 <./Bilder/memspace.pdf>]
+Overfull \hbox (1.50562pt too wide) in paragraph at lines 731--732
+[]\OT1/cmr/m/n/10.95 Global and lo-cal it-er-a-tors have to strictly fol-low th
+e \OT1/cmr/m/it/10.95 STL It-er-a-tor \OT1/cmr/m/n/10.95 con-cepts (\OT1/cmtt/m
+/n/10.95 InputIterator
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 731--732
 
  []
@@ -1329,10 +1336,6 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1775.
 
 Package rerunfilecheck Info: File `effe17.out' has not changed.
 (rerunfilecheck)             Checksum: FF0F537FF0180D59F1EDA906044C81AA;6661.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1775.
  ) 
 Here is how much of TeX's memory you used:
@@ -1362,7 +1365,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on effe17.pdf (91 pages, 10675437 bytes).
+Output written on effe17.pdf (91 pages, 10675549 bytes).
 PDF statistics:
  2463 PDF objects out of 2487 (max. 8388607)
  495 named destinations out of 1000 (max. 500000)

@@ -381,7 +381,7 @@ Multiple \texttt{grow} operations result in a scattered memory space: Each call 
 \chapter{Related Work}
 \label{related_work_section}
 \section{Shared Memory}
-Graph processing on distributed machines tends to result in low processor utilization due to bad locality \cite{graph_challenges}. Shared memory systems on the other hand allow for simpler graph algorithms with better processor utilization \cite{ligra}. Because some shared memory systems with several terabytes of memory exist (e.g. the LRZ teramem\footnote[1]{\url{https://www.lrz.de/services/compute/special\_systems/teramem/}}), graphs up to a certain size can also be computed on such systems. While many libraries and frameworks for graph processing on shared memory systems exist, this section only focuses on work relevant to the HPC community.\\
+Graph processing on distributed machines tends to result in low processor utilization due to bad locality \cite{graph_challenges}. Shared memory systems on the other hand allow for simpler graph algorithms with better processor utilization \cite{ligra}. Because some shared memory systems with several terabytes of memory exist (e.g. the LRZ teramem\footnote[1]{\url{https://www.lrz.de/services/compute/special\_systems/teramem/}}), graphs up to a certain size can also be computed on such systems. While there are many libraries and frameworks for graph processing on shared memory systems, this section only focuses on work relevant to the HPC community.\\
 
 \textbf{Spatio-Temporal Interaction Networks and Graphs Extensible Representation (STINGER)} \cite{stinger} is a graph data structure for shared memory systems. STINGER tries to provide a standardized and extensible data structure that allows portability across different graph processing frameworks. The data structure consists of a set of standards that have to be abided by actual implementations.
 
@@ -389,7 +389,7 @@ At its core, STINGER is an adjacency list with a fixed structure. Vertices are s
 
 The \textbf{MultiThreaded Graph Library (MTGL)} \cite{mtgl} focuses on graph processing using specialized multithreading systems that contain processors supporting a large amount of thread contexts. The MTGL is specifically designed for the Cray MTA architecture which limits its use significantly because a Cray MTA system has to be available. Brian W. Barrett et al. have implemented an MTGL version for commodity hardware \cite{mainstream_mtgl} but its performance is significantly lower compared to the original version for serial machines.
 
-The Cray MTA architecture \cite{tera_mta} utilizes processors with relatively slow speed and without data caches. Memory access is always blocking but each processor features a large amount of threads so that there are always free threads available for computation in most cases. This results in a simple and fine-grained synchronization model that is not available on commodity hardware, but also creates subtle concurrency and performance issues. These issues are addressed by the MTGL in order to allow straight-forward programming of graph algorithms on these platforms. 
+The Cray MTA architecture \cite{tera_mta} utilizes processors with relatively slow speed and without data caches. Memory access is always blocking but each processor features a large amount of threads so that there are free threads available for computation in most cases. This results in a simple and fine-grained synchronization model that is not available on commodity hardware, but also creates subtle concurrency and performance issues. These issues are addressed by the MTGL in order to allow straight-forward programming of graph algorithms on these platforms. 
 
 Because of the architecture of the Cray MTA, locality is not an issue in the MTGL: Data is partitioned by the runtime system of the MTA. The interface of the MTGL is - like many graph processing frameworks - based on the Boost Graph Library (BGL) \cite{bgl}. It is less generic though: Only \textit{directed graphs} are supported and data is always stored in an \textit{adjacency list} structure.
 
@@ -430,7 +430,7 @@ Many graph algorithms can be expressed by a set of linear algebra operations \ci
 
 Because an adjacency matrix can be partitioned into blocks with each block being placed into the memory of a single processor, the graph can be partitioned in a 2-dimensional way. As research has shown, breadth-first-search and related algorithms can be implemented in a way that exploits the 2-D partitioning for higher performance in comparison to a 1-dimensional partitioning (i.e. partitioning based on vertices instead of edges) \cite{2d_bfs}.\\
 
-The \textbf{Combinatorial BLAS} \cite{combinatorial_blas} exploits these findings with a library containing \textit{Basic Linear Algebra Subroutines} (BLAS) specifically targeted at graph processing. It provides a subset of typical BLAS operations like matrix-matrix multiplication that are sufficient for expressing most graph algorithms. Graph data is stored in a sparse matrix data structure. Vertices are therefore not mutable which results in graphs being static. Also, algorithms like Dijkstra's shortest path, that are based on priority queues, tend to have lower performance.\\
+The \textbf{Combinatorial BLAS} \cite{combinatorial_blas} exploits these findings with a library containing \textit{Basic Linear Algebra Subroutines} (BLAS) specifically targeted at graph processing. It provides a subset of typical BLAS operations like matrix-matrix multiplication that are sufficient for expressing most graph algorithms. Graph data is stored in a sparse matrix data structure. Vertices are not mutable which results in graphs being static. Also, algorithms like Dijkstra's shortest path, that are based on priority queues, tend to have lower performance.\\
 
 The Combinatorial BLAS is also used as a computational engine for a high-level graph processing framework: the \textbf{Knowledge Discovery Toolbox (KDT)} \cite{kdt}. The KDT aims at easing use of graph algorithms for domain experts that are not experts in computer science at the same time. To achieve this, it provides an API that allows to run algorithms on graphs with only few lines of code. Algorithm developers can extend the library by creating algorithms with the underlying linear algebra primitives. While KDT can be easily used by data scientists without background in computer sciences, the performance and scalability are still promising: In comparison to the PBGL, speedups from 3 to 12 for breadth-first search can be observed depending on the problem size and core count. Because it uses the Combinatorial BLAS as underlying engine, KDT also inherits its restrictions explained above.\\
 
@@ -453,7 +453,7 @@ Most graph algorithms are based on two elementary graph algorithms: \textit{brea
 For successful graph traversal, adjacency information has to be accessible to any algorithm.
 \end{lemma}
 
-Because graphs tend to contain cycles, BFS employs a mechanism for already discovered vertices by graph coloring: All vertices start with a white color. As soon as a vertex is discovered for the first time, its color is changed to grey. Its color is changed to black once all of its adjacent vertices have been discovered. This results in the frontier being colored grey and all other processed vertices being colored black so that the traversal can be progressed in a breadth-first manner.
+Because graphs tend to contain cycles, BFS employs a mechanism for already discovered vertices called \textit{graph coloring}: All vertices start with a white color. As soon as a vertex is discovered for the first time, its color is changed to grey. Its color is changed to black once all of its adjacent vertices have been discovered. This results in the frontier being colored grey and all other processed vertices being colored black so that the traversal can be progressed in a breadth-first manner.
 
 BFS can be used to construct a \textit{breadth-first tree} that contains all paths from the source vertex to its reachable vertices.
 
@@ -473,7 +473,7 @@ Similar to Dijkstra's shortest path algorithm, a Minimum Spanning Tree algorithm
 
 \begin{lemma}
 \label{edge_attribute_lemma}
-Graph containers do not only have to support vertex attributes. Edge attributes are also relevant. While Dijsktra's shortest path algorithm only requires a single attribute for edges, other algorithms might require more.
+Graph containers do not only have to support vertex attributes. Edge attributes are also relevant.
 \end{lemma}
 
 \subsubsection{Depth-First Search}
@@ -577,13 +577,13 @@ for(auto v_it = g.vertices().lbegin(); v_it != g.vertices().lend(); ++v_it) {
 \end{lstlisting}
 
 \subsection{DynamicGraph}
-The \texttt{DynamicGraph} concept extends the \texttt{Graph} concept with functionality for dynamic addition and deletion of graph elements during runtime. Because elements can be added after construction of the graph, an upfront initialization with an edge list is not required here. For this reason, a new constructor allows the graph to be created without any elements. It initializes the graph with a certain capacity so that each processor has a fixed part of memory already assigned to it. Contrary to the constructor of \texttt{Graph}, the number of edges is not an absolute number but rather the number of edges per vertex. This means that the reserved capacity for edges equals to $number of vertices * number of edges$. The vertex and edge numbers are supplied for the whole graph, meaning that they have to be multiples of the amount of processors participating in the memory allocation for the container.
+The \texttt{DynamicGraph} concept extends the \texttt{Graph} concept with functionality for dynamic addition and deletion of graph elements during runtime. Because elements can be added after construction of the graph, an upfront initialization with an edge list is not required here. For this reason, a new constructor allows the graph to be created without any elements. It initializes the graph with a certain capacity so that each processor has a fixed part of memory already assigned to it. Contrary to the constructor of \texttt{Graph}, the number of edges is not an absolute number but rather the number of edges per vertex. This means that the reserved capacity for edges is equal to \textit{number of vertices * number of edges}. The vertex and edge numbers are supplied for the whole graph, meaning that they have to be multiples of the amount of processors participating in the memory allocation for the container.
 
-All methods for adding and removing vertices and edges can be called with either local or global iterators pointing to them. 
+All methods for adding and removing vertices and edges can be called with either local or global iterators pointing to the respective elements. 
 
 Dynamic data changes of the graph are not reflected in global memory space until the user explicitly issues a \texttt{commit} operation. Before that, the changes can only be seen on the same processor using local iterators. A \texttt{commit} operation can invalidate global iterators.
 
-Creation and deletion of elements happens locally on each processor. The resulting changes in local memory and iteration space are not reflected in the respective global spaces until the graph's \textit{barrier synchronization} is called. This \textit{epoch-based} synchronization allows for a trade-off between dynamics and performance.
+Creation and deletion of elements happen locally on each processor. The resulting changes in local memory and iteration space are not reflected in the respective global spaces until the graph's \textit{barrier synchronization} is called. This \textit{epoch-based} synchronization allows for a trade-off between dynamics and performance.
 
 \Cref{dynamic_graph_code} shows an empty graph being constructed and two vertices and an edge between them being added to it.
 
@@ -645,14 +645,14 @@ struct e_prop {
 
 AttributedDynamicGraph<v_prop, e_prop> g(2, 1);
 v_prop vp1 { 1 };
-auto v1 = g.add_vertex();
-g.set_attribute(v1, vp1);
+auto v1 = g.add_vertex();        // returns iterator to the created vertex
+g[v1].set_attribute(v1, vp1); // accesses the vertex and sets attribute
 v_prop vp2 { 2 };
 auto v2 = g.add_vertex();
-g.set_attribute(v1, vp1);
+g[v2].set_attribute(v1, vp1);
 e_prop ep1 { 1 };
 auto e1 = g.add_edge(v1, v2);
-g.set_attribute(e1, ep1);
+g[e1].set_attribute(e1, ep1);
 g.commit();
 \end{lstlisting}
 
@@ -709,7 +709,7 @@ Local edge memory space consists of multiple logically contiguous edge-list memo
 Global memory spaces are a union of local memory spaces ordered by their processor ID ascendingly.
 \end{defi}
 
-Memory spaces do not have to be completely contiguous in memory. They can consist of several contiguous memory regions. For each of these memory regions, the beginning memory address as well as the length has to be stored. An abstraction can then use this information to present a contiguous memory region to the public.
+Memory spaces do not have to be completely contiguous in memory. They can consist of several contiguous memory regions. For each of these memory regions, the beginning memory address as well as the length has to be stored. An abstraction can then use this information to present a logically contiguous memory region to the public.
 
 \Cref{memspace_figure} shows exemplary logical memory spaces for vertices and edges respectively. The memory spaces appear contiguous to the outside but parts of them might reside in different memory locations depending on the implementation.
 
@@ -728,15 +728,15 @@ Elements in all graph concepts of this work are identified by iterators. Two dif
 
 \textbf{Local iterators} identify elements residing locally in the memory space of a processor. A simple pointer to a contiguous memory region can already suffice for this task. However, dynamic containers usually require multiple memory regions to be created during their lifetime. Because local iterators must be able to iterate over the complete local portion of the elements, a more sophisticated abstraction will be needed in case the local memory space consists of more than one contiguous region.\\
 
-Global and local iterators have to strictly follow the \texttt{STL Iterator} concepts in order to be usable by STL algorithms. Additionally, they have to implement mechanisms geared towards PGAS concepts. For example, a global iterator should provide a possibility for finding out if the element it points to resides locally or on a remote node. This work is based upon \texttt{DASH Iterator} concepts \cite{dash_new} that are suitable for any implementation of the presented graph concepts.\\
+Global and local iterators have to strictly follow the \textit{STL Iterator} concepts (\texttt{InputIterator} at a minimum) in order to be usable by STL algorithms. Additionally, they have to implement mechanisms geared towards PGAS concepts. For example, a global iterator should provide a possibility for finding out if the element it points to resides locally or on a remote node. This work is based upon \texttt{DASH Iterator} concepts \cite{dash_new} that are suitable for any implementation of the presented graph concepts.\\
 
-Global and local iteration spaces directly map to global and local memory spaces explained in \cref{memspace_section}. Because of this, iterators are invalidated when changes to the memory spaces are published.
+Global and local iteration spaces directly map to global and local memory spaces explained in \cref{memspace_section}. Because of this, iterators may be invalidated when changes to the memory spaces are published.
 
 \section{Index Spaces}
 \label{indexspace_section}
 The concepts of this work rely on iterators for element identification. Additionally, an index set can be used to enumerate the element sets in canonical order. As new elements can be added or removed during the runtime of the graph container, such an index set is not equal to the iterator positions in global iteration space and thus have to be implemented as an additional set with a mapping to the respective elements. 
 
-Index spaces are not specified in this work. This section however gives a brief overview how such index spaces can be created on top of the existing concepts:\\
+Index spaces are not specified in this work. This section however gives a brief overview of how such index spaces can be created on top of the existing concepts:\\
 
 Simple integer index spaces like they are used in STL containers (e.g. \texttt{std::vector}) or static DASH containers (e.g. \texttt{dash::Array}) are problematic: Because element creation in dynamic containers requires new indices to be generated during runtime, all processors would have to find consensus so that index numbers are continuous and unique. This would require one of the following mechanisms:
 
@@ -849,7 +849,7 @@ For global iteration, a template specialization of \texttt{GlobPtr} for \texttt{
 
 While the bucket meta-data used by \texttt{GlobHeapLocalPtr} contains only information about local buckets, \texttt{GlobPtr} requires information about all buckets on all units. Therefore, \texttt{GlobHeapContiguousMem} distributes bucket information between all units during a \texttt{commit} operation. This information includes bucket sizes as well as DART global pointers to the memory locations of the buckets in global address space.
 
-With the bucket size information and the DART abstraction of global pointers, \texttt{GlobPtr} can iterate over global memory space the same way as \texttt{GlobHeapLocalPtr} iterates over local memory space. The iteration order is given by the canonical order of units.
+With the bucket size information and the DART abstraction of global pointers, \texttt{GlobPtr} can iterate over a global memory space the same way as \texttt{GlobHeapLocalPtr} iterates over local memory space. The iteration order is given by the canonical order of units.
 
 \subsection{Edge Iteration}
 Inbound and outbound edges are handled by separate \texttt{GlobHeapContiguousMem} objects. Iteration of either is therefore handled as described in \cref{local_iter_section} and \cref{global_iter_section}. The \texttt{CombinedEdgeGraph} concept however requires iteration over all existing edges. For this reason, \texttt{GlobHeapCombinedMem} is used to unify the iteration spaces of multiple \texttt{GlobHeapContiguousMem} objects.
@@ -960,7 +960,7 @@ The algorithm used in this case study is based on the shared-memory version foun
 The algorithm requires vertex attributes for the parent component a vertex belongs to. This parent component attribute is initially set to the vertex itself. The algorithm then proceeds with iteration over the following two steps until no more component changes can be found:
 
 \begin{enumerate}
-\item For each edge, set the component of the target vertex' current parent to the source vertex' parent if source vertex parent \textless{} target vertex parent
+\item For each edge, set the component of the target vertex' current parent to the source vertex' parent if source vertex parent ID \textless{} target vertex parent ID
 \item Perform \textit{pointer-jumping} over all component attributes until the parent components of all vertices point to themselves.
 \end{enumerate}
 
@@ -1059,7 +1059,7 @@ Each new iteration is computed on a graph composed of \textit{supervertices} whi
 
 Since these vertices can reside on different processors, there has to be consensus between multiple processors about the minimum weight edge. This is achieved by computing the minimum weight edge on each processor individually and then exchanging the computed edges along with their weight between all participating processors. Each processor can then determine the edge with the minimum weight and the processor it belongs to updates the edge accordingly.\\
 
-\Cref{mst_boruvka_figure} a) depicts an exemplary graph that is distributed among two processors. \Cref{mst_boruvka_figure} b) shows the first iteration of the algorithm: For each vertex, the edges with minimum weight are chosen. The resulting connected components (1, 3, 5) and (2, 6, 4) are then compacted to the new supervertices 1' and 2' which are shown in \cref{mst_boruvka_figure} c). Because processor 1 and processor 2 see different edges between these supervertices, both processors choose a different edge as a candidate for the minimum weight edge between the them. To reach consensus, both processors exchange these edges along with their weight and the processor owning the edge with minimum weight updates the minimum spanning tree.\\
+\Cref{mst_boruvka_figure} a) depicts an exemplary graph that is distributed among two processors. \Cref{mst_boruvka_figure} b) shows the first iteration of the algorithm: For each vertex, the edges with minimum weight are chosen. The resulting connected components (1, 3, 5) and (2, 6, 4) are then compacted to the new supervertices 1' and 2' which are shown in \cref{mst_boruvka_figure} c). Because processor 1 and processor 2 see different edges between these supervertices, both processors choose a different edge as a candidate for the minimum weight edge between them. To reach consensus, both processors exchange these edges along with their weight and the processor owning the edge with minimum weight updates the minimum spanning tree.\\
 
 The MST algorithm of this case study can be seen in \cref{mst_algorithm}. It is similar to \cref{cc_algorithm} but uses adjacency iteration to determine the minimum weight edge for each (super)vertex.
 
@@ -1315,7 +1315,7 @@ The processed graph contains 225.000 vertices and 900.000 edges per processor. T
 \Cref{mst_weak_single_figure} presents the runtime on a single node. A processor count/dataset increase of 14 times results in a runtime 1.9 times longer.
 
 \subsubsection{Weak Scaling (Multiple Nodes)}
-With 225.000 vertices and 900.000 edges per processor, weak scaling of the algorithm has been performed on uop to 64 nodes.
+With 225.000 vertices and 900.000 edges per processor, weak scaling of the algorithm has been performed on up to 64 nodes.
 
 \begin{figure}[ht]
 	\centering
@@ -1338,7 +1338,7 @@ Strong scaling is performed with 100M vertices and 400M edges in all setups. Thi
 	\label{mst_strong_multi_figure}
 \end{figure}
 
-In \cref{mst_strong_multi_figure}, the results for an equal distribution of vertices as well as for distribution using a logarithmic function can be seen. Additionally the runtime of the Minimum Spanning Tree algorithm of Cong et al. (UPC MST 16N) is shown with a dashed blue line and the runtime of a shared-memory (SMP) version of the algorithm \cite{pgas_algorithms} is  drawn with a dashed red line.
+In \cref{mst_strong_multi_figure}, the results for an equal distribution of vertices as well as for distribution using a logarithmic function can be seen. Additionally the runtime of the Minimum Spanning Tree algorithm of Cong et al. (UPC MST 16N) is shown with a dashed blue line and the runtime of a shared-memory (SMP) version of the algorithm \cite{pgas_algorithms} is drawn with a dashed red line.
 
 The UPC version of Cong et al. has only been run on a cluster of 16 nodes. Therefore, no scalability comparison is available. The SMP version has been run on a single node. Unfortunately, there is also no hardware information available.
 
@@ -1385,11 +1385,11 @@ The work presented in this thesis has been designed with a focus on universality
 
 Because there are two fundamentally different ways in which graphs can be represented on computer machines and because these ways result in different advantages and disadvantages, there is no single abstraction that spans all possible use cases and at the same time enables high performance. 
 
-The presented graph concepts build upon the \textit{adjacency list} format which enables a wide array of use cases: Graph data structures that allow for the dynamic creation and deletion of elements during runtime. While most graph problems can be satisfactorily expressed with this abstraction, \textit{adjacency matrices} allow for a faster computation of a subset of these problems. Unfortunately, these two graph representation types cannot be combined into one single abstraction: While an \textit{adjacency list} strictly partitions data by vertices (1-dimensional partitioning), an \textit{adjacency matrix} partitions data by edges (2-dimensional partitioning). These partitioning methods are so fundamentally different that no programming abstraction could unify the concepts. In fact, the latter relies on linear algebra and thus requires different algorithms.\\
+The presented graph concepts build upon the \textit{adjacency list} format which enables a wide array of use cases: Graph data structures that allow for the dynamic creation and deletion of elements during runtime. While most graph problems can be satisfactorily expressed with this abstraction, \textit{adjacency matrices} allow for a faster computation of a subset of these problems. Unfortunately, these two graph representation types cannot be combined into one single abstraction: While an \textit{adjacency list} strictly partitions data by vertices (1-dimensional partitioning), an \textit{adjacency matrix} partitions data by edges (2-dimensional partitioning). These partitioning methods are so fundamentally different that no programming abstraction could unify the concepts. In fact, the latter relies on linear algebra operations and thus requires entirely different algorithms.\\
 
-With the \textit{adjacency list} as the chosen graph representation, the thesis has progressed by analysing the problem domain: Elementary graph algorithms have been examined and observations from this analysis have led to a set of functional requirements a graph abstraction has to meet at minimum. These requirements have then been transitioned into a formal concept specification resulting in five different graph concepts that can be used as building blocks for corresponding implementations.\\
+With the \textit{adjacency list} as the chosen graph representation, this thesis has progressed by analysing the problem domain: Elementary graph algorithms have been examined and observations from this analysis have led to a set of functional requirements a graph abstraction has to meet at minimum. These requirements have then been transitioned into a formal concept specification resulting in five different graph concepts that can be used as building blocks for corresponding implementations.\\
 
-For verification purposes, a reference implementation has then been presented that demonstrates the feasibility of the concepts and demonstrates how the concepts can be extended for certain, more narrow use cases. Two case studies have shown the applicability of the concepts and have granted insights into the performance and scalability on a live HPC system.
+For verification purposes, a reference implementation has then been presented that demonstrates the feasibility of the concepts and explains how the concepts can be extended for certain, more narrow use cases. Two case studies have shown the applicability of the concepts and have granted insights into the performance and scalability on a live HPC system.
 
 \section{Assessment}
 
@@ -1398,7 +1398,7 @@ Besides the focus on a PGAS graph abstraction that is as generic as possible, an
 
 It is also worth to note that the assessment of programmability of the concepts is only based on the work conducted on the uses cases by the author. For better scientific results in this regard, more comprehensive social studies have to be performed.\\
 
-Since the graph concepts only allow for the direct creation of elements on any processor, no load-balancing efforts have been considered. As shown by the experimental results of this thesis, manual domain decomposition can already lead to acceptable performance. However, for some (dynamic) graphs, requirements might change over time. Another point for future work therefore includes examining \textit{element migration} and \textit{load-balancing} capabilities as add-ons for the presented concepts.
+Since no load-balancing efforts have been considered, the graph concepts only allow for the direct creation of elements on any processor. As shown by the experimental results of this thesis, manual domain decomposition can already lead to acceptable performance. However, for some (dynamic) graphs, requirements might change over time. Another point for future work therefore includes examining \textit{element migration} and \textit{load-balancing} capabilities as add-ons for the presented concepts.
 
 
 
