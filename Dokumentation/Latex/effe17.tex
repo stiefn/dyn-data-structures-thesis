@@ -69,6 +69,14 @@
 \usepackage{array}
 \setlength\extrarowheight{2pt}
 
+\newcommand*\justify{%
+  \fontdimen2\font=0.4em% interword space
+  \fontdimen3\font=0.2em% interword stretch
+  \fontdimen4\font=0.1em% interword shrink
+  \fontdimen7\font=0.1em% extra space
+  \hyphenchar\font=`\-% allowing hyphenation
+}
+
 \graphicspath{{./Bilder/}}
 
 \input{hyphenation} % in dieses File kommen Wörter die Latex nicht richtig trennt
@@ -167,7 +175,7 @@ Many object-oriented programming languages such as Java only offer reference sem
 
 For an object to be able participating in value semantics, some operations like copy construction and assignment have to be implemented in a certain way. C++ compilers provide default implementations of the required operations, but depending on the object's implementation, further measures might have to be taken by programmers. For example, objects that allocate memory dynamically on the \textit{freestore} have to explicitly copy the referenced data.\\
 
-\Cref{val_ref_semantics_code} shows an \texttt{increment} function with both value and reference semantics. \texttt{increment\_vs} takes the copy of a \texttt{VertexIndex} object as parameter, increments its offset and returns a copy of the object with incremented offset. The offset of the passed \texttt{VertexIndex} stays the same as only the offset of its copy has been changed. In contrast, \texttt{increment\_rs} changes the offset of the passed object and also returns a reference to the same object.
+\Cref{val_ref_semantics_code} shows an \texttt{increment} function with both value and reference semantics. \texttt{\justify increment\_vs} takes the copy of a \texttt{VertexIndex} object as parameter, increments its offset and returns a copy of the object with incremented offset. The offset of the passed \texttt{VertexIndex} stays the same as only the offset of its copy has been changed. In contrast, \texttt{increment\_rs} changes the offset of the passed object and also returns a reference to the same object.
 
 \begin{lstlisting}[caption={Value and reference semantics}\label{val_ref_semantics_code}] 
 VertexIndex increment_vs(VertexIndex v) { // value semantics
@@ -973,7 +981,7 @@ The algorithm requires vertex attributes for the parent component a vertex belon
 
 \Cref{cc_steps_figure} a) shows the initial setup for the Connected Components algorithm according to the example graph of \cref{cc_figure}: Each vertex has a parent component attribute assigned to it that is initially set to the vertex itself. For each edge in the graph, the component of the target vertex component is set to the component of the source vertex if the target component is greater than the source component in \cref{cc_steps_figure} b). Pointer-jumping (\texttt{parent[vertex]} $\gets$ \texttt{parent[parent[vertex]]}) is then performed in \cref{cc_steps_figure} c) so that each vertex either points to itself or to another vertex that points to itself. It is worth to note that, because edge-lists can be traversed in arbitrary order, the component of \textit{vertex 4} in the first algorithm step can also be \textit{2}. In this case, the pointer-jumping step will not perform any changes. After a second iteration, the component of \textit{vertex 2} will be set to \textit{1} resulting in termination of the algorithm.\\
 
-The described algorithm is optimized using communication coalescing explained in \cref{comm_coal_section}. The resulting algorithm can be seen in \cref{cc_algorithm}. The components of the target vertices of all edges local to each processor are gathered in a bulk communication step. This data is used to set the parent component of each target's parent to the source's parent component in another bulk communication step. Pointer jumping is then performed in a synchronized way in order to allow for communication coalescing: The component of each vertex is updated and the pointers are not immediately followed but rather updated in the next iteration. The algorithm stops if there are no changes in the parent components of all vertices in an iteration. 
+The described algorithm is optimized using communication coalescing as explained in \cref{comm_coal_section}. The resulting algorithm can be seen in \cref{cc_algorithm}. The components of the target vertices of all edges local to each processor are gathered in a bulk communication step. This data is used to set the parent component of each target's parent to the source's parent component in another bulk communication step. Pointer jumping is then performed in a synchronized way in order to allow for communication coalescing: The component of each vertex is updated and the pointers are not immediately followed but rather updated in the next iteration. The algorithm stops if there are no changes in the parent components of all vertices in an iteration. 
 
 \begin{center}
 \begin{algorithm}[h]
