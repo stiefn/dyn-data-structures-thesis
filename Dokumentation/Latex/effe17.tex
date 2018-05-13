@@ -1300,6 +1300,7 @@ In \cref{cc_strong_multi_figure}, the results for an equal distribution of verti
 The UPC version of Cong et al. has only been run on a cluster of 16 nodes. Therefore, no scalability comparison is available. The SMP version has been run on a single node. Unfortunately, there is also no hardware information available.
 
 \subsection{Experimental Results (Minimum Spanning Tree)}
+\label{mst_experiments_section}
 Similar to \cref{cc_experiments_section}, experiments with the Minimum Spanning Tree algorithm have been performed with weak scaling and strong scaling on a varying amount of processors/nodes.
 
 \subsubsection{Weak Scaling (Single Node)}
@@ -1343,8 +1344,14 @@ In \cref{mst_strong_multi_figure}, the results for an equal distribution of vert
 The UPC version of Cong et al. has only been run on a cluster of 16 nodes. Therefore, no scalability comparison is available. The SMP version has been run on a single node. Unfortunately, there is also no hardware information available.
 
 \subsection{Result Assessment}
+The results from \cref{cc_experiments_section} and \cref{mst_experiments_section} highlight the problems associated with scaling graph algorithms on distributed systems: Communication hotspots emerge from the fact that many processors require access to the same data which is located in the memory of just a few processors. This data has to be distributed over the interconnect in a one-to-many fashion overloading these processors, while other processors idle. Redistributing this data can help with specific communication hotspots, but as algorithms are composed of several computation and communication steps, such redistributions can lead to new hotspot formations in other parts of the algorithm. For this reason, depending on the algorithm, no optimal scaling solution can be found.
+
+Since the hotspots are mainly communication-centric, they have a higher impact on distributed systems in comparison to shared-memory systems because of the lower throughput and higher latency associated with communication over an interconnect in contrast to data access over a memory bus. For this reason, the discussed algorithms only outperform their shared-memory counterparts with an increase in hardware allocation. 
+
+Still, the algorithms are scalable to a certain extent, allowing to reach faster runtimes with an increase in the amount of participating processors/nodes. Additionally, weak scaling efforts allow the procession of graphs that would not fit in the memory of a single node.
 
 \subsection{Programming Assessment}
+\label{programming_assessment_section}
 A major aspect of Partitioned Global Address Space is the ability to port shared-memory algorithms to distributed memory with low effort. This approach however can lead to degraded performance: 
 
 The Connected Components algorithm has been directly ported to a PGAS version using the graph concepts of this work. Due to many irregular remote accesses on single elements the algorithm could not be finished in a timely manner on a graph with 100M vertices and 400M edges and is thus not suitable for high performance applications.
@@ -1392,6 +1399,11 @@ With the \textit{adjacency list} as the chosen graph representation, this thesis
 For verification purposes, a reference implementation has then been presented that demonstrates the feasibility of the concepts and explains how the concepts can be extended for certain, more narrow use cases. Two case studies have shown the applicability of the concepts and have granted insights into the performance and scalability on a live HPC system.
 
 \section{Assessment}
+The discussed graph concepts allow a wide array of graph algorithms to be implemented on distributed machines. There is however no guarantee that the concepts allow any possible graph algorithm to be implemented because no detailed analysis on all algorithm families could be performed due to the limited scope of this thesis.
+
+Regarding performance, the experimental evaluations of \cref{eval_section} have shown that use cases exist in which algorithms created with the graph concepts can outperform their shared-memory counterparts on distributed systems. This however comes at the expense of a lot of addition hardware that is needed for the computation. For this reason, the decision to choose the discussed concepts' distributed approach over a shared-memory implementation should be carefully planned, when the graph data fits into the memory of an available shared-memory system. 
+
+The PGAS approach of the concepts results in a more streamlined development process in comparison to traditional message passing: Algorithms can be directly ported from their shared-memory counterparts and optimizations can be iteratively applied. Additionally, direct remote access on elements allows for easier debugging. Unfortunately, to reach high performance, optimizations have to be applied that require the developer to contribute additional work which negates the advantage in development time in comparison to implementations with message passing. For this reason, further concepts are required that ease the development process.
 
 \section{Outlook}
 Besides the focus on a PGAS graph abstraction that is as generic as possible, another important point is programmability. Because the PGAS model enables programming on distributed machines in shared-memory style, it facilitates ease-of-use. The results of this thesis have however shown that - because bulk-synchronous communication is still needed for performance reasons - programming is not necessarily easier than with message passing. To overcome this problem, additional data structures have been proposed that facilitate \textit{communication coalescing}. These proposals however are not part of this thesis and further work is required in order to create generic abstractions that can be used in a wide array of use cases.\\
