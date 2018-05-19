@@ -549,7 +549,9 @@ This section describes graph container concepts that have been deduced from the 
 	\label{concepts_figure}
 \end{figure}
 
-\Cref{concepts_figure} depicts the different concepts and their relationships to each other. The \texttt{Graph} concept provides basic functionality for graph processing while the other concepts refine it with additional functionality.
+\Cref{concepts_figure} depicts the different concepts and their relationships to each other. The \texttt{Graph} concept provides basic functionality for graph processing while the other concepts refine it with additional functionality.\\
+
+The expressions and semantics of the concepts are based on existing concepts of the \textit{Boost Graph Library} \cite{bgl} as far as applicable. In respect to the related works analysis of \cref{related_work_section}, this can be regarded as best practice in the field of graph processing in C++ applications.
 
 \subsection{Graph}
 The \texttt{Graph} concept describes a graph container for static data that is suitable for \textit{directed graphs}. It consists of a constructor that creates a graph based on an existing \textit{edge list}.

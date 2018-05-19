@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  19 MAY 2018 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  19 MAY 2018 13:40
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -775,22 +775,22 @@ File: Bilder/concepts.pdf Graphic file (type pdf)
 <use Bilder/concepts.pdf>
 Package pdftex.def Info: Bilder/concepts.pdf used on input line 547.
 (pdftex.def)             Requested size: 349.97028pt x 46.15494pt.
- [22 <./Bilder/concepts.pdf>] [23] [24] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 704--705
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
-<Bilder/memspace.pdf, id=1136, 378.91562pt x 68.75688pt>
+[22 <./Bilder/concepts.pdf>] [23] [24] [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
+
+ []
+
+<Bilder/memspace.pdf, id=1138, 378.91562pt x 68.75688pt>
 File: Bilder/memspace.pdf Graphic file (type pdf)
 
 <use Bilder/memspace.pdf>
-Package pdftex.def Info: Bilder/memspace.pdf used on input line 726.
+Package pdftex.def Info: Bilder/memspace.pdf used on input line 728.
 (pdftex.def)             Requested size: 349.97028pt x 63.50572pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 733--734
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 735--736
 
@@ -802,29 +802,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 737--738
  []
 
 [27 <./Bilder/memspace.pdf>]
-Overfull \hbox (1.50562pt too wide) in paragraph at lines 739--740
+Underfull \hbox (badness 10000) in paragraph at lines 739--740
+
+ []
+
+
+Overfull \hbox (1.50562pt too wide) in paragraph at lines 741--742
 []\OT1/cmr/m/n/10.95 Global and lo-cal it-er-a-tors have to strictly fol-low th
 e \OT1/cmr/m/it/10.95 STL It-er-a-tor \OT1/cmr/m/n/10.95 con-cepts (\OT1/cmtt/m
 /n/10.95 InputIterator
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 739--740
+Underfull \hbox (badness 10000) in paragraph at lines 741--742
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 747--748
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 756--757
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 758--759
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--761
 
  []
 
@@ -834,55 +839,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 758--759
 ]
 chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 773--774
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
 
  []
 
-<Bilder/impl_overview.pdf, id=1202, 360.84813pt x 264.48813pt>
+<Bilder/impl_overview.pdf, id=1204, 360.84813pt x 264.48813pt>
 File: Bilder/impl_overview.pdf Graphic file (type pdf)
 
 <use Bilder/impl_overview.pdf>
-Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 777.
+Package pdftex.def Info: Bilder/impl_overview.pdf used on input line 779.
 (pdftex.def)             Requested size: 393.71239pt x 288.5769pt.
  [31 <./Bilder/impl_overview.pdf>]
-<Bilder/data_structure_mapping.pdf, id=1248, 251.43938pt x 120.95187pt>
+<Bilder/data_structure_mapping.pdf, id=1250, 251.43938pt x 120.95187pt>
 File: Bilder/data_structure_mapping.pdf Graphic file (type pdf)
 
 <use Bilder/data_structure_mapping.pdf>
 Package pdftex.def Info: Bilder/data_structure_mapping.pdf used on input line 7
-89.
+91.
 (pdftex.def)             Requested size: 262.47937pt x 126.26312pt.
- [32 <./Bilder/data_structure_mapping.pdf>] <Bilder/contiguous_mem.pdf, id=1296
+ [32 <./Bilder/data_structure_mapping.pdf>] <Bilder/contiguous_mem.pdf, id=1298
 , 360.34625pt x 160.6pt>
 File: Bilder/contiguous_mem.pdf Graphic file (type pdf)
 
 <use Bilder/contiguous_mem.pdf>
-Package pdftex.def Info: Bilder/contiguous_mem.pdf used on input line 829.
+Package pdftex.def Info: Bilder/contiguous_mem.pdf used on input line 831.
 (pdftex.def)             Requested size: 349.97028pt x 155.97539pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 835--836
+Underfull \hbox (badness 10000) in paragraph at lines 837--838
 
  []
 
 [33] [34 <./Bilder/contiguous_mem.pdf>]
-<Bilder/combined_edges.pdf, id=1351, 573.64313pt x 49.18375pt>
+<Bilder/combined_edges.pdf, id=1353, 573.64313pt x 49.18375pt>
 File: Bilder/combined_edges.pdf Graphic file (type pdf)
 
 <use Bilder/combined_edges.pdf>
-Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 867.
+Package pdftex.def Info: Bilder/combined_edges.pdf used on input line 869.
 (pdftex.def)             Requested size: 437.46118pt x 37.50835pt.
  [35 <./Bilder/combined_edges.pdf>]
-Underfull \vbox (badness 10000) detected at line 897
+Underfull \vbox (badness 10000) detected at line 899
  []
 
 
-Underfull \vbox (badness 10000) detected at line 911
+Underfull \vbox (badness 10000) detected at line 913
  []
 
 [36]
 chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--929
+Underfull \hbox (badness 10000) in paragraph at lines 930--931
 
  []
 
@@ -893,69 +898,69 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-Overfull \hbox (11.10367pt too wide) in paragraph at lines 954--955
+Overfull \hbox (11.10367pt too wide) in paragraph at lines 956--957
 \OT1/cmr/m/it/10.95 Connected Com-po-nents \OT1/cmr/m/n/10.95 is an el-e-men-ta
 ry graph al-go-rithm based on depth-first-search [[]].
  []
 
-<Bilder/cc.pdf, id=1417, 215.30438pt x 144.54pt>
+<Bilder/cc.pdf, id=1419, 215.30438pt x 144.54pt>
 File: Bilder/cc.pdf Graphic file (type pdf)
  <use Bilder/cc.pdf>
-Package pdftex.def Info: Bilder/cc.pdf used on input line 958.
+Package pdftex.def Info: Bilder/cc.pdf used on input line 960.
 (pdftex.def)             Requested size: 174.9818pt x 117.47372pt.
  [38 <./Bilder/cc.pdf>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 971.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 973.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 971.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 973.
 
-<Bilder/cc_steps.pdf, id=1465, 251.43938pt x 217.81375pt>
+<Bilder/cc_steps.pdf, id=1467, 251.43938pt x 217.81375pt>
 File: Bilder/cc_steps.pdf Graphic file (type pdf)
 
 <use Bilder/cc_steps.pdf>
-Package pdftex.def Info: Bilder/cc_steps.pdf used on input line 977.
+Package pdftex.def Info: Bilder/cc_steps.pdf used on input line 979.
 (pdftex.def)             Requested size: 218.73059pt x 189.4798pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 982--983
+Underfull \hbox (badness 10000) in paragraph at lines 984--985
 
  []
 
 [39 <./Bilder/cc_steps.pdf>]
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1031.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1033.
 
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Bilder/mst.pdf, id=1519, 358.84062pt x 147.04938pt>
+<Bilder/mst.pdf, id=1521, 358.84062pt x 147.04938pt>
 File: Bilder/mst.pdf Graphic file (type pdf)
  <use Bilder/mst.pdf>
-Package pdftex.def Info: Bilder/mst.pdf used on input line 1042.
+Package pdftex.def Info: Bilder/mst.pdf used on input line 1044.
 (pdftex.def)             Requested size: 306.22148pt x 125.49515pt.
 
-<Bilder/mst_boruvka.pdf, id=1523, 394.47375pt x 408.52625pt>
+<Bilder/mst_boruvka.pdf, id=1525, 394.47375pt x 408.52625pt>
 File: Bilder/mst_boruvka.pdf Graphic file (type pdf)
 
 <use Bilder/mst_boruvka.pdf>
-Package pdftex.def Info: Bilder/mst_boruvka.pdf used on input line 1061.
+Package pdftex.def Info: Bilder/mst_boruvka.pdf used on input line 1063.
 (pdftex.def)             Requested size: 349.97028pt x 362.44023pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1068--1069
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
 
  []
 
 [40 <./Bilder/mst.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
+Underfull \hbox (badness 10000) in paragraph at lines 1072--1073
 
  []
 
 [41 <./Bilder/mst_boruvka.pdf>]
 
-LaTeX Warning: Float too large for page by 105.0598pt on input line 1127.
+LaTeX Warning: Float too large for page by 105.0598pt on input line 1129.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -963,122 +968,122 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [42] [43] [44]
 chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1132--1133
+Underfull \hbox (badness 10000) in paragraph at lines 1134--1135
 
  []
 
-<Bilder/plots/bm_insert.pdf, id=1637, 361.35pt x 287.27327pt>
+<Bilder/plots/bm_insert.pdf, id=1639, 361.35pt x 287.27327pt>
 File: Bilder/plots/bm_insert.pdf Graphic file (type pdf)
 
 <use Bilder/plots/bm_insert.pdf>
-Package pdftex.def Info: Bilder/plots/bm_insert.pdf used on input line 1146.
+Package pdftex.def Info: Bilder/plots/bm_insert.pdf used on input line 1148.
 (pdftex.def)             Requested size: 218.73059pt x 173.89072pt.
  [45
 
 
  <./Bilder/plots/bm_insert.pdf>]
-<Bilder/plots/deref.pdf, id=1680, 722.7pt x 287.27327pt>
+<Bilder/plots/deref.pdf, id=1682, 722.7pt x 287.27327pt>
 File: Bilder/plots/deref.pdf Graphic file (type pdf)
 
 <use Bilder/plots/deref.pdf>
-Package pdftex.def Info: Bilder/plots/deref.pdf used on input line 1166.
+Package pdftex.def Info: Bilder/plots/deref.pdf used on input line 1168.
 (pdftex.def)             Requested size: 437.46118pt x 173.89072pt.
  [46 <./Bilder/plots/deref.pdf>]
-<Bilder/plots/local_iter.pdf, id=1720, 722.7pt x 287.27327pt>
+<Bilder/plots/local_iter.pdf, id=1722, 722.7pt x 287.27327pt>
 File: Bilder/plots/local_iter.pdf Graphic file (type pdf)
 
 <use Bilder/plots/local_iter.pdf>
-Package pdftex.def Info: Bilder/plots/local_iter.pdf used on input line 1182.
+Package pdftex.def Info: Bilder/plots/local_iter.pdf used on input line 1184.
 (pdftex.def)             Requested size: 437.46118pt x 173.89072pt.
 
-<Bilder/plots/global_iter.pdf, id=1721, 722.7pt x 287.27327pt>
+<Bilder/plots/global_iter.pdf, id=1723, 722.7pt x 287.27327pt>
 File: Bilder/plots/global_iter.pdf Graphic file (type pdf)
 
 <use Bilder/plots/global_iter.pdf>
-Package pdftex.def Info: Bilder/plots/global_iter.pdf used on input line 1192.
+Package pdftex.def Info: Bilder/plots/global_iter.pdf used on input line 1194.
 (pdftex.def)             Requested size: 437.46118pt x 173.89072pt.
  [47 <./Bilder/plots/local_iter.pdf> <./Bilder/plots/global_iter.pdf
 
 pdfTeX warning: pdflatex (file ./Bilder/plots/global_iter.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
->] <Bilder/plots/commit.pdf, id=1795, 722.7pt x 287.27327pt>
+>] <Bilder/plots/commit.pdf, id=1797, 722.7pt x 287.27327pt>
 File: Bilder/plots/commit.pdf Graphic file (type pdf)
 
 <use Bilder/plots/commit.pdf>
-Package pdftex.def Info: Bilder/plots/commit.pdf used on input line 1206.
+Package pdftex.def Info: Bilder/plots/commit.pdf used on input line 1208.
 (pdftex.def)             Requested size: 437.46118pt x 173.89072pt.
 
-Underfull \vbox (badness 10000) detected at line 1230
+Underfull \vbox (badness 10000) detected at line 1232
  []
 
 [48 <./Bilder/plots/commit.pdf>]
-Underfull \vbox (badness 10000) detected at line 1242
+Underfull \vbox (badness 10000) detected at line 1244
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1259
+Underfull \vbox (badness 10000) detected at line 1261
  []
 
-[49] <Bilder/plots/cc_weak_single.pdf, id=1850, 361.35pt x 287.27327pt>
+[49] <Bilder/plots/cc_weak_single.pdf, id=1852, 361.35pt x 287.27327pt>
 File: Bilder/plots/cc_weak_single.pdf Graphic file (type pdf)
 
 <use Bilder/plots/cc_weak_single.pdf>
 Package pdftex.def Info: Bilder/plots/cc_weak_single.pdf used on input line 127
-5.
+7.
 (pdftex.def)             Requested size: 218.73059pt x 173.89072pt.
 
-<Bilder/plots/cc_weak_multi.pdf, id=1852, 361.35pt x 287.27327pt>
+<Bilder/plots/cc_weak_multi.pdf, id=1854, 361.35pt x 287.27327pt>
 File: Bilder/plots/cc_weak_multi.pdf Graphic file (type pdf)
 
 <use Bilder/plots/cc_weak_multi.pdf>
-Package pdftex.def Info: Bilder/plots/cc_weak_multi.pdf used on input line 1285
+Package pdftex.def Info: Bilder/plots/cc_weak_multi.pdf used on input line 1287
 .
 (pdftex.def)             Requested size: 218.73059pt x 173.89072pt.
  [50 <./Bilder/plots/cc_weak_single.pdf> <./Bilder/plots/cc_weak_multi.pdf
 
 pdfTeX warning: pdflatex (file ./Bilder/plots/cc_weak_multi.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
->] <Bilder/plots/cc_strong_multi.pdf, id=1931, 361.35pt x 287.27327pt>
+>] <Bilder/plots/cc_strong_multi.pdf, id=1933, 361.35pt x 287.27327pt>
 File: Bilder/plots/cc_strong_multi.pdf Graphic file (type pdf)
 
 <use Bilder/plots/cc_strong_multi.pdf>
 Package pdftex.def Info: Bilder/plots/cc_strong_multi.pdf used on input line 13
-01.
+03.
 (pdftex.def)             Requested size: 218.73059pt x 173.89072pt.
  [51 <./Bilder/plots/cc_strong_multi.pdf>] <Bilder/plots/mst_weak_single.pdf, i
-d=1985, 361.35pt x 287.27327pt>
+d=1987, 361.35pt x 287.27327pt>
 File: Bilder/plots/mst_weak_single.pdf Graphic file (type pdf)
 
 <use Bilder/plots/mst_weak_single.pdf>
 Package pdftex.def Info: Bilder/plots/mst_weak_single.pdf used on input line 13
-19.
+21.
 (pdftex.def)             Requested size: 218.73059pt x 173.89072pt.
 
-<Bilder/plots/mst_weak_multi.pdf, id=1987, 361.35pt x 287.27327pt>
+<Bilder/plots/mst_weak_multi.pdf, id=1989, 361.35pt x 287.27327pt>
 File: Bilder/plots/mst_weak_multi.pdf Graphic file (type pdf)
 
 <use Bilder/plots/mst_weak_multi.pdf>
 Package pdftex.def Info: Bilder/plots/mst_weak_multi.pdf used on input line 133
-1.
+3.
 (pdftex.def)             Requested size: 218.73059pt x 173.89072pt.
  [52 <./Bilder/plots/mst_weak_single.pdf> <./Bilder/plots/mst_weak_multi.pdf
 
 pdfTeX warning: pdflatex (file ./Bilder/plots/mst_weak_multi.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
->] <Bilder/plots/mst_strong_multi.pdf, id=2066, 361.35pt x 287.27327pt>
+>] <Bilder/plots/mst_strong_multi.pdf, id=2068, 361.35pt x 287.27327pt>
 File: Bilder/plots/mst_strong_multi.pdf Graphic file (type pdf)
 
 <use Bilder/plots/mst_strong_multi.pdf>
 Package pdftex.def Info: Bilder/plots/mst_strong_multi.pdf used on input line 1
-345.
+347.
 (pdftex.def)             Requested size: 218.73059pt x 173.89072pt.
  [53 <./Bilder/plots/mst_strong_multi.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1367--1368
+Underfull \hbox (badness 10000) in paragraph at lines 1369--1370
 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1389
+Underfull \vbox (badness 10000) detected at line 1391
  []
 
 [54] [55] [56
@@ -1087,22 +1092,22 @@ Underfull \vbox (badness 10000) detected at line 1389
 ]
 chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1403--1404
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1405--1406
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1407--1408
+
+ []
+
 [57]
-Underfull \hbox (badness 10000) in paragraph at lines 1417--1418
+Underfull \hbox (badness 10000) in paragraph at lines 1419--1420
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1419--1420
+Underfull \hbox (badness 10000) in paragraph at lines 1421--1422
 
  []
 
@@ -1114,178 +1119,178 @@ Underfull \hbox (badness 10000) in paragraph at lines 1419--1420
 ] [60]
 chapter A.
 
-Underfull \hbox (badness 1107) in paragraph at lines 1471--1471
+Underfull \hbox (badness 1107) in paragraph at lines 1473--1473
 []|\OT1/cmr/m/n/10.95 a proxy type for the re-
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 1471--1471
+Underfull \hbox (badness 1742) in paragraph at lines 1473--1473
 \OT1/cmr/m/n/10.95 meth-ods for the re-trieval
  []
 
 
-Underfull \hbox (badness 2165) in paragraph at lines 1471--1471
+Underfull \hbox (badness 2165) in paragraph at lines 1473--1473
 \OT1/cmr/m/n/10.95 and mod-i-fi-ca-tion of edge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1471--1471
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1473
 []|\OT1/cmr/m/n/10.95 user-specified STL-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1471--1471
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1473
 \OT1/cmr/m/n/10.95 compatible con-tainer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1471--1471
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1473
 []|\OT1/cmr/m/n/10.95 user-specified STL-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1471--1471
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1473
 \OT1/cmr/m/n/10.95 compatible con-tainer
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1471--1471
+Underfull \hbox (badness 5388) in paragraph at lines 1473--1473
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1471--1471
+Underfull \hbox (badness 5388) in paragraph at lines 1473--1473
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1471--1471
+Underfull \hbox (badness 5388) in paragraph at lines 1473--1473
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1471--1471
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1473
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1471--1471
+Underfull \hbox (badness 5388) in paragraph at lines 1473--1473
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1471
+Underfull \vbox (badness 10000) detected at line 1473
  []
 
 [61
 
 
 ]
-Underfull \hbox (badness 1533) in paragraph at lines 1506--1506
+Underfull \hbox (badness 1533) in paragraph at lines 1508--1508
 []|\OT1/cmr/m/n/10.95 iterator to the first ver-tex in
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 1506--1506
+Underfull \hbox (badness 1803) in paragraph at lines 1508--1508
 []|\OT1/cmr/m/n/10.95 amount of lo-cally vis-i-ble out-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1506
+Underfull \vbox (badness 10000) detected at line 1508
  []
 
 [62] [63]
-Underfull \hbox (badness 6592) in paragraph at lines 1541--1541
+Underfull \hbox (badness 6592) in paragraph at lines 1543--1543
 \OT1/cmr/m/n/10.95 begin(), x.vertices().end())
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1541
+Underfull \vbox (badness 10000) detected at line 1543
  []
 
 [64]
-Underfull \hbox (badness 1430) in paragraph at lines 1574--1574
+Underfull \hbox (badness 1430) in paragraph at lines 1576--1576
 $\OML/cmm/m/it/10.95 lit[]$ \OT1/cmr/m/n/10.95 and re-turns whether
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1574
+Underfull \vbox (badness 10000) detected at line 1576
  []
 
 [65]
-Underfull \hbox (badness 1430) in paragraph at lines 1591--1591
+Underfull \hbox (badness 1430) in paragraph at lines 1593--1593
 []|\OT1/cmr/m/n/10.95 locally added el-e-ments pub-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1591
+Underfull \vbox (badness 10000) detected at line 1593
  []
 
 [66]
-Underfull \vbox (badness 10000) detected at line 1623
+Underfull \vbox (badness 10000) detected at line 1625
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1640
+Underfull \vbox (badness 10000) detected at line 1642
  []
 
 [67]
-Underfull \hbox (badness 8019) in paragraph at lines 1657--1657
+Underfull \hbox (badness 8019) in paragraph at lines 1659--1659
 \OT1/cmr/m/n/10.95 tices and std::distance($\OML/cmm/m/it/10.95 it[]$\OT1/cmr/m
 /n/10.95 ,
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1657
+Underfull \vbox (badness 10000) detected at line 1659
  []
 
 [68]
-Underfull \hbox (badness 5388) in paragraph at lines 1679--1679
+Underfull \hbox (badness 5388) in paragraph at lines 1681--1681
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1679--1679
+Underfull \hbox (badness 10000) in paragraph at lines 1681--1681
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 1679--1679
+Underfull \hbox (badness 5388) in paragraph at lines 1681--1681
 []|\OT1/cmr/m/n/10.95 iterator point-ing to el-e-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1679
+Underfull \vbox (badness 10000) detected at line 1681
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1700
+Underfull \vbox (badness 10000) detected at line 1702
  []
 
 [69]
-Underfull \vbox (badness 10000) detected at line 1721
+Underfull \vbox (badness 10000) detected at line 1723
  []
 
 [70]
-Underfull \hbox (badness 1609) in paragraph at lines 1743--1743
+Underfull \hbox (badness 1609) in paragraph at lines 1745--1745
 []|\OT1/cmr/m/n/10.95 global it-er-a-tor sat-is-fy-ing \OT1/cmtt/m/n/10.95 In-
  []
 
 
-Underfull \hbox (badness 5022) in paragraph at lines 1743--1743
+Underfull \hbox (badness 5022) in paragraph at lines 1745--1745
 []|\OT1/cmr/m/n/10.95 local it-er-a-tor sat-is-fy-ing \OT1/cmtt/m/n/10.95 In-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1743
+Underfull \vbox (badness 10000) detected at line 1745
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1764
+Underfull \vbox (badness 10000) detected at line 1766
  []
 
 [71]
-Underfull \vbox (badness 10000) detected at line 1785
+Underfull \vbox (badness 10000) detected at line 1787
  []
 
 [72] [73] [74
@@ -1302,17 +1307,17 @@ Underfull \vbox (badness 10000) detected at line 1785
 ]
 chapter without number
 [77] [78] [79] [80])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1795.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1797.
  [81]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1795.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1797.
  (effe17.aux (Titel/titel-lmu.aux)
 (Titel/erklaerung-lmu.aux) (abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1795.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1795.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1797.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1797.
 
 Package rerunfilecheck Info: File `effe17.out' has not changed.
 (rerunfilecheck)             Checksum: FF0F537FF0180D59F1EDA906044C81AA;6661.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1795.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1797.
  ) 
 Here is how much of TeX's memory you used:
  12677 strings out of 493673
@@ -1321,7 +1326,7 @@ Here is how much of TeX's memory you used:
  15315 multiletter control sequences out of 15000+200000
  13097 words of font info for 46 fonts, out of 3000000 for 9000
  1066 hyphenation exceptions out of 8191
- 41i,22n,66p,1082b,1899s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,22n,66p,1082b,1891s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C
@@ -1341,9 +1346,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on effe17.pdf (93 pages, 10681586 bytes).
+Output written on effe17.pdf (93 pages, 10682044 bytes).
 PDF statistics:
- 2474 PDF objects out of 2487 (max. 8388607)
+ 2476 PDF objects out of 2487 (max. 8388607)
  497 named destinations out of 1000 (max. 500000)
  910 words of extra memory for PDF output out of 10000 (max. 10000000)
 

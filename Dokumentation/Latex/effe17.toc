@@ -33,10 +33,10 @@
 \contentsline {subsubsection}{\nonumberline Depth-First Search}{20}{section*.11}
 \contentsline {subsection}{\numberline {4.1.2}Functional Requirements}{21}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Container Concepts}{22}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Graph}{22}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}DynamicGraph}{23}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.1}Graph}{23}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}DynamicGraph}{24}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}AttributedGraph}{24}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}DuplexGraph}{25}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}DuplexGraph}{26}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}CombinedEdgeGraph}{26}{subsection.4.2.5}
 \contentsline {section}{\numberline {4.3}Memory Spaces}{26}{section.4.3}
 \contentsline {section}{\numberline {4.4}Iteration Spaces}{27}{section.4.4}
