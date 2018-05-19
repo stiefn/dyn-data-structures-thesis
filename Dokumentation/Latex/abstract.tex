@@ -4,7 +4,16 @@
     \textbf{Abstract}
 \end{center}
 
-\vspace*{1cm}
+\vspace*{1cm} 
 
-\noindent \textcolor{red}{ADD ABSTRACT}
+\noindent The need for new programming abstractions in the advancements to the Exascale era has been widely recognized. In this, the cost of accessing data in Exascale systems is expected to be the dominant factor in terms of execution time and energy consumption.\\
 
+\noindent With memory intensive workloads and unpredictable access patterns, graph algorithms are notoriously hard to implement and optimize for high performance distributed-memory systems.\\
+
+\noindent The Partitioned Global Address Space (PGAS) programming model is considered as a promising approach to facilitate the shift from a compute-centric to a more data-centric focus and give application developers fine-grained control over data locality.\\
+
+\noindent Several PGAS implementations of large-scale graph data structures are known but as of this writing, no generic programming abstraction for distributed graph data structures in PGAS exists.\\
+
+\noindent This work examines PGAS graph containers as a representative use case for dynamic PGAS data structures and analyses suitable allocation and communication schemes with respect to optimized data locality.\\
+
+\noindent Additionally, this work provides a reference implementation of the mentioned graph containers that is part of DASH, an implementation of PGAS as C++ template library for distributed containers and algorithms. The reference implementation is evaluated against existing PGAS approaches regarding scalability and programmability.

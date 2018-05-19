@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  13 MAY 2018 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.2)  19 MAY 2018 13:09
 entering extended mode
 **effe17.tex
 (effe17.tex
@@ -515,7 +515,32 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ]
-(abstract.tex) [7
+(abstract.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+) [7
 
 ] [8
 
@@ -1316,7 +1341,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on effe17.pdf (93 pages, 10679749 bytes).
+Output written on effe17.pdf (93 pages, 10681586 bytes).
 PDF statistics:
  2474 PDF objects out of 2487 (max. 8388607)
  497 named destinations out of 1000 (max. 500000)
