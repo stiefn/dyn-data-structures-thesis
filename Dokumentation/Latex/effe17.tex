@@ -134,7 +134,7 @@ This chapter covers some fundamental background knowledge needed for a better un
 Since the results of this work are C++ concepts, some important language expressions and concepts are firstly discussed, along with a description of the Standard Template Library \cite{stl} on which concepts this work is built upon. The reader is then introduced to the domain of High Performance Computing which is the main application area of this work. A brief overview of the \textit{Partitioned Global Address Space} programming model is then followed by a description of the \textit{DASH Library} \cite{dash} that serves as a framework for the reference implementation.
 
 \section{Graph Representations}
-This section provides a brief overview of different graph representations used in computer sciences \cite{ita}. Basically, there are two different representations with different but overlapping application areas. 
+This section provides a brief overview of different graph representations in computer sciences discussed in \cite{ita}. Basically, there are two different representations with different but overlapping application areas. 
 
 \begin{figure}[ht]
 	\centering
@@ -1156,22 +1156,6 @@ Elements are always created on local machines. As no communication is performed 
 
 This happens due to the fact that the elements are stored in memory contiguously. Since the elements are created one after another in this benchmark, the container does not know the amount of elements added beforehand. The underlying data container (see \texttt{X::vertex\_container\_type} and \texttt{X::edge\_container\_type} in \cref{concept_appendix}) thus allocates a specific amount of memory and after its capacity is reached, a re-allocation occurs.
 
-\subsection{Attribute Access}
-Attribute values of elements can be accessed on local as well as remote nodes. This test aims to highlight the differences in access times for read operations with a varying amount of elements and nodes. 
-
-\Cref{deref_figure} depicts the runtimes for remote memory access to vertices and edges respectively. The benchmark creates the desired amount of elements and then tries to access the attributes of these elements from a single processor. The data shows that, on a single node, access is almost instant while the access to data residing on remote nodes is costly: The benchmark could only be performed with a small element set because of the long runtime.
-
-\textcolor{red}{WTF? WHY IS THE RUNTIME FOR 448 VERTICES LONGER THAN FOR 896 VERTICES ON 8 NODES?}
-
-\begin{figure}[ht]
-	\centering
-  \includegraphics[width=1\textwidth]{Bilder/plots/deref.pdf}
-	\caption{Remote attribute access for vertices and edges}
-	\label{deref_figure}
-\end{figure}
-
-The results clearly demonstrate that irregular access to single elements is costly and should be avoided for high performance applications.
-
 \subsection{Local Iteration}
 Iteration over local elements does not have any dependencies with remote nodes. For better comparability with the results of the global iteration micro-benchmark, this test is however performed on multiple nodes.
 
@@ -1182,7 +1166,7 @@ A tenfold increase in the amount of elements results in roughly a tenfold increa
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=1\textwidth]{Bilder/plots/local_iter.pdf}
-	\caption{Local iteration of vertices and edges}
+	\caption{Local iteration of vertices (left) and edges (right)}
 	\label{local_iter_figure}
 \end{figure}
 
@@ -1192,7 +1176,7 @@ Iteration over elements stored on multiple nodes requires additional information
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=1\textwidth]{Bilder/plots/global_iter.pdf}
-	\caption{Global iteration of vertices and edges}
+	\caption{Global iteration of vertices (left) and edges (right)}
 	\label{global_iter_figure}
 \end{figure}
 
@@ -1206,7 +1190,7 @@ The memory space synchronization is performed between all participating processo
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=1\textwidth]{Bilder/plots/commit.pdf}
-	\caption{Synchronization of memory space after creation of vertices and edges}
+	\caption{Synchronization of memory space after creation of vertices (left) and edges (right)}
 	\label{commit_figure}
 \end{figure}
 
@@ -1418,9 +1402,9 @@ The PGAS approach of the concepts results in a more streamlined development proc
 \section{Outlook}
 Besides the focus on a PGAS graph abstraction that is as generic as possible, another important point is programmability. Because the PGAS model enables programming on distributed machines in shared-memory style, it facilitates ease-of-use. The results of this thesis have however shown that - because bulk-synchronous communication is still needed for performance reasons - programming is not necessarily easier than with message passing. To overcome this problem, additional data structures have been proposed that facilitate \textit{communication coalescing}. These proposals however are not part of this thesis and further work is required in order to create generic abstractions that can be used in a wide array of use cases.\\
 
-It is also worth to note that the assessment of programmability of the concepts is only based on the work conducted on the uses cases by the author. For better scientific results in this regard, more comprehensive social studies have to be performed.\\
+Since no load-balancing efforts have been considered, the graph concepts only allow for the direct creation of elements on any processor. As shown by the experimental results of this thesis, manual domain decomposition can already lead to acceptable performance. However, for some (dynamic) graphs, requirements might change over time. Another point for future work therefore includes examining \textit{element migration} and \textit{load-balancing} capabilities as add-ons for the presented concepts.\\
 
-Since no load-balancing efforts have been considered, the graph concepts only allow for the direct creation of elements on any processor. As shown by the experimental results of this thesis, manual domain decomposition can already lead to acceptable performance. However, for some (dynamic) graphs, requirements might change over time. Another point for future work therefore includes examining \textit{element migration} and \textit{load-balancing} capabilities as add-ons for the presented concepts.
+Finally, the reference implementation of the graph concepts allows for the evaluation of PGAS-related communication models for distributed graph data structures which eases the process of creating graph algorithms specifically oriented towards the PGAS model.
 
 
 

@@ -19,16 +19,15 @@
 \contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Distributed Minimum Spanning Tree example showing the graph (a), the first iteration (b) and the second iteration (c) \cite {boruvka}}}{41}{figure.6.4}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Insertion of vertex and edge elements}}{45}{figure.7.1}
-\contentsline {figure}{\numberline {\relax 7.2}{\ignorespaces Remote attribute access for vertices and edges}}{46}{figure.7.2}
-\contentsline {figure}{\numberline {\relax 7.3}{\ignorespaces Local iteration of vertices and edges}}{47}{figure.7.3}
-\contentsline {figure}{\numberline {\relax 7.4}{\ignorespaces Global iteration of vertices and edges}}{47}{figure.7.4}
-\contentsline {figure}{\numberline {\relax 7.5}{\ignorespaces Synchronization of memory space after creation of vertices and edges}}{48}{figure.7.5}
-\contentsline {figure}{\numberline {\relax 7.6}{\ignorespaces Connected Components: Weak scaling on a single node}}{50}{figure.7.6}
-\contentsline {figure}{\numberline {\relax 7.7}{\ignorespaces Connected Components: Weak scaling on multiple nodes}}{50}{figure.7.7}
-\contentsline {figure}{\numberline {\relax 7.8}{\ignorespaces Connected Components: Strong scaling on multiple nodes}}{51}{figure.7.8}
-\contentsline {figure}{\numberline {\relax 7.9}{\ignorespaces Minimum Spanning Tree: Weak scaling on a single node}}{52}{figure.7.9}
-\contentsline {figure}{\numberline {\relax 7.10}{\ignorespaces Minimum Spanning Tree: Weak scaling on multiple nodes}}{52}{figure.7.10}
-\contentsline {figure}{\numberline {\relax 7.11}{\ignorespaces Minimum Spanning Tree: Strong scaling on multiple nodes}}{53}{figure.7.11}
+\contentsline {figure}{\numberline {\relax 7.2}{\ignorespaces Local iteration of vertices (left) and edges (right)}}{46}{figure.7.2}
+\contentsline {figure}{\numberline {\relax 7.3}{\ignorespaces Global iteration of vertices (left) and edges (right)}}{47}{figure.7.3}
+\contentsline {figure}{\numberline {\relax 7.4}{\ignorespaces Synchronization of memory space after creation of vertices (left) and edges (right)}}{47}{figure.7.4}
+\contentsline {figure}{\numberline {\relax 7.5}{\ignorespaces Connected Components: Weak scaling on a single node}}{49}{figure.7.5}
+\contentsline {figure}{\numberline {\relax 7.6}{\ignorespaces Connected Components: Weak scaling on multiple nodes}}{50}{figure.7.6}
+\contentsline {figure}{\numberline {\relax 7.7}{\ignorespaces Connected Components: Strong scaling on multiple nodes}}{50}{figure.7.7}
+\contentsline {figure}{\numberline {\relax 7.8}{\ignorespaces Minimum Spanning Tree: Weak scaling on a single node}}{51}{figure.7.8}
+\contentsline {figure}{\numberline {\relax 7.9}{\ignorespaces Minimum Spanning Tree: Weak scaling on multiple nodes}}{52}{figure.7.9}
+\contentsline {figure}{\numberline {\relax 7.10}{\ignorespaces Minimum Spanning Tree: Strong scaling on multiple nodes}}{52}{figure.7.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

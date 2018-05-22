@@ -68,52 +68,51 @@
 \contentsline {chapter}{\numberline {7}Evaluation}{45}{chapter.7}
 \contentsline {section}{\numberline {7.1}Micro-Benchmarks}{45}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Element Creation}{45}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Attribute Access}{46}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Local Iteration}{46}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Global Iteration}{47}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}Memory Space Synchronization}{48}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.2}Local Iteration}{46}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Global Iteration}{46}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Memory Space Synchronization}{47}{subsection.7.1.4}
 \contentsline {section}{\numberline {7.2}Case Studies}{48}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1}Graph Setup}{48}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Input Data}{49}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.2}Input Data}{48}{subsection.7.2.2}
 \contentsline {subsection}{\numberline {7.2.3}Experimental Results (Connected Components)}{49}{subsection.7.2.3}
-\contentsline {subsubsection}{\nonumberline Weak Scaling (Single Node)}{50}{section*.12}
-\contentsline {subsubsection}{\nonumberline Weak Scaling (Multiple Nodes)}{50}{section*.13}
-\contentsline {subsubsection}{\nonumberline Strong Scaling (Multiple Nodes)}{51}{section*.14}
+\contentsline {subsubsection}{\nonumberline Weak Scaling (Single Node)}{49}{section*.12}
+\contentsline {subsubsection}{\nonumberline Weak Scaling (Multiple Nodes)}{49}{section*.13}
+\contentsline {subsubsection}{\nonumberline Strong Scaling (Multiple Nodes)}{50}{section*.14}
 \contentsline {subsection}{\numberline {7.2.4}Experimental Results (Minimum Spanning Tree)}{51}{subsection.7.2.4}
-\contentsline {subsubsection}{\nonumberline Weak Scaling (Single Node)}{52}{section*.15}
-\contentsline {subsubsection}{\nonumberline Weak Scaling (Multiple Nodes)}{52}{section*.16}
-\contentsline {subsubsection}{\nonumberline Strong Scaling (Multiple Nodes)}{53}{section*.17}
+\contentsline {subsubsection}{\nonumberline Weak Scaling (Single Node)}{51}{section*.15}
+\contentsline {subsubsection}{\nonumberline Weak Scaling (Multiple Nodes)}{51}{section*.16}
+\contentsline {subsubsection}{\nonumberline Strong Scaling (Multiple Nodes)}{52}{section*.17}
 \contentsline {subsection}{\numberline {7.2.5}Result Assessment}{53}{subsection.7.2.5}
-\contentsline {subsection}{\numberline {7.2.6}Programming Assessment}{54}{subsection.7.2.6}
-\contentsline {chapter}{\numberline {8}Conclusion}{57}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{57}{section.8.1}
-\contentsline {section}{\numberline {8.2}Assessment}{58}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{58}{section.8.3}
-\contentsline {chapter}{Appendices}{59}{section*.18}
-\contentsline {chapter}{\numberline {A}Graph Container Concepts}{61}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}Graph}{61}{section.1.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Requirements}{61}{subsection.1.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Types}{61}{subsection.1.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Methods and Operators}{62}{subsection.1.A.1.3}
-\contentsline {subsubsection}{\nonumberline Conditions}{64}{section*.19}
-\contentsline {section}{\numberline {A.2}DynamicGraph}{65}{section.1.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Requirements}{65}{subsection.1.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Methods and Operators}{65}{subsection.1.A.2.2}
-\contentsline {subsubsection}{\nonumberline Conditions}{66}{section*.20}
-\contentsline {section}{\numberline {A.3}AttributedGraph}{67}{section.1.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Requirements}{67}{subsection.1.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Types}{67}{subsection.1.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Methods and Operators}{67}{subsection.1.A.3.3}
-\contentsline {subsubsection}{\nonumberline Conditions}{68}{section*.21}
-\contentsline {section}{\numberline {A.4}DuplexGraph}{69}{section.1.A.4}
-\contentsline {subsection}{\numberline {A.4.1}Requirements}{69}{subsection.1.A.4.1}
-\contentsline {subsection}{\numberline {A.4.2}Types}{69}{subsection.1.A.4.2}
-\contentsline {subsection}{\numberline {A.4.3}Methods and Operators}{69}{subsection.1.A.4.3}
-\contentsline {subsubsection}{\nonumberline Conditions}{70}{section*.22}
-\contentsline {section}{\numberline {A.5}CombinedEdgeGraph}{71}{section.1.A.5}
-\contentsline {subsection}{\numberline {A.5.1}Requirements}{71}{subsection.1.A.5.1}
-\contentsline {subsection}{\numberline {A.5.2}Types}{71}{subsection.1.A.5.2}
-\contentsline {subsection}{\numberline {A.5.3}Methods and Operators}{71}{subsection.1.A.5.3}
-\contentsline {subsubsection}{\nonumberline Conditions}{72}{section*.23}
-\contentsline {chapter}{\nonumberline List of Figures}{75}{chapter*.24}
-\contentsline {chapter}{\nonumberline Bibliography}{77}{chapter*.25}
+\contentsline {subsection}{\numberline {7.2.6}Programming Assessment}{53}{subsection.7.2.6}
+\contentsline {chapter}{\numberline {8}Conclusion}{55}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{55}{section.8.1}
+\contentsline {section}{\numberline {8.2}Assessment}{56}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{56}{section.8.3}
+\contentsline {chapter}{Appendices}{57}{section*.18}
+\contentsline {chapter}{\numberline {A}Graph Container Concepts}{59}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Graph}{59}{section.1.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Requirements}{59}{subsection.1.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Types}{59}{subsection.1.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Methods and Operators}{60}{subsection.1.A.1.3}
+\contentsline {subsubsection}{\nonumberline Conditions}{62}{section*.19}
+\contentsline {section}{\numberline {A.2}DynamicGraph}{63}{section.1.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Requirements}{63}{subsection.1.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Methods and Operators}{63}{subsection.1.A.2.2}
+\contentsline {subsubsection}{\nonumberline Conditions}{64}{section*.20}
+\contentsline {section}{\numberline {A.3}AttributedGraph}{65}{section.1.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Requirements}{65}{subsection.1.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Types}{65}{subsection.1.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Methods and Operators}{65}{subsection.1.A.3.3}
+\contentsline {subsubsection}{\nonumberline Conditions}{66}{section*.21}
+\contentsline {section}{\numberline {A.4}DuplexGraph}{67}{section.1.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Requirements}{67}{subsection.1.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Types}{67}{subsection.1.A.4.2}
+\contentsline {subsection}{\numberline {A.4.3}Methods and Operators}{67}{subsection.1.A.4.3}
+\contentsline {subsubsection}{\nonumberline Conditions}{68}{section*.22}
+\contentsline {section}{\numberline {A.5}CombinedEdgeGraph}{69}{section.1.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Requirements}{69}{subsection.1.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Types}{69}{subsection.1.A.5.2}
+\contentsline {subsection}{\numberline {A.5.3}Methods and Operators}{69}{subsection.1.A.5.3}
+\contentsline {subsubsection}{\nonumberline Conditions}{70}{section*.23}
+\contentsline {chapter}{\nonumberline List of Figures}{73}{chapter*.24}
+\contentsline {chapter}{\nonumberline Bibliography}{75}{chapter*.25}

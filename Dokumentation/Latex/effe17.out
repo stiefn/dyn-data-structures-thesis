@@ -58,41 +58,40 @@
 \BOOKMARK [0][-]{chapter.7}{Evaluation}{}% 58
 \BOOKMARK [1][-]{section.7.1}{Micro-Benchmarks}{chapter.7}% 59
 \BOOKMARK [2][-]{subsection.7.1.1}{Element Creation}{section.7.1}% 60
-\BOOKMARK [2][-]{subsection.7.1.2}{Attribute Access}{section.7.1}% 61
-\BOOKMARK [2][-]{subsection.7.1.3}{Local Iteration}{section.7.1}% 62
-\BOOKMARK [2][-]{subsection.7.1.4}{Global Iteration}{section.7.1}% 63
-\BOOKMARK [2][-]{subsection.7.1.5}{Memory Space Synchronization}{section.7.1}% 64
-\BOOKMARK [1][-]{section.7.2}{Case Studies}{chapter.7}% 65
-\BOOKMARK [2][-]{subsection.7.2.1}{Graph Setup}{section.7.2}% 66
-\BOOKMARK [2][-]{subsection.7.2.2}{Input Data}{section.7.2}% 67
-\BOOKMARK [2][-]{subsection.7.2.3}{Experimental Results \(Connected Components\)}{section.7.2}% 68
-\BOOKMARK [2][-]{subsection.7.2.4}{Experimental Results \(Minimum Spanning Tree\)}{section.7.2}% 69
-\BOOKMARK [2][-]{subsection.7.2.5}{Result Assessment}{section.7.2}% 70
-\BOOKMARK [2][-]{subsection.7.2.6}{Programming Assessment}{section.7.2}% 71
-\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 72
-\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}% 73
-\BOOKMARK [1][-]{section.8.2}{Assessment}{chapter.8}% 74
-\BOOKMARK [1][-]{section.8.3}{Outlook}{chapter.8}% 75
-\BOOKMARK [0][-]{section*.18}{Appendices}{}% 76
-\BOOKMARK [0][-]{Appendix.1.A}{Graph Container Concepts}{}% 77
-\BOOKMARK [1][-]{section.1.A.1}{Graph}{Appendix.1.A}% 78
-\BOOKMARK [2][-]{subsection.1.A.1.1}{Requirements}{section.1.A.1}% 79
-\BOOKMARK [2][-]{subsection.1.A.1.2}{Types}{section.1.A.1}% 80
-\BOOKMARK [2][-]{subsection.1.A.1.3}{Methods and Operators}{section.1.A.1}% 81
-\BOOKMARK [1][-]{section.1.A.2}{DynamicGraph}{Appendix.1.A}% 82
-\BOOKMARK [2][-]{subsection.1.A.2.1}{Requirements}{section.1.A.2}% 83
-\BOOKMARK [2][-]{subsection.1.A.2.2}{Methods and Operators}{section.1.A.2}% 84
-\BOOKMARK [1][-]{section.1.A.3}{AttributedGraph}{Appendix.1.A}% 85
-\BOOKMARK [2][-]{subsection.1.A.3.1}{Requirements}{section.1.A.3}% 86
-\BOOKMARK [2][-]{subsection.1.A.3.2}{Types}{section.1.A.3}% 87
-\BOOKMARK [2][-]{subsection.1.A.3.3}{Methods and Operators}{section.1.A.3}% 88
-\BOOKMARK [1][-]{section.1.A.4}{DuplexGraph}{Appendix.1.A}% 89
-\BOOKMARK [2][-]{subsection.1.A.4.1}{Requirements}{section.1.A.4}% 90
-\BOOKMARK [2][-]{subsection.1.A.4.2}{Types}{section.1.A.4}% 91
-\BOOKMARK [2][-]{subsection.1.A.4.3}{Methods and Operators}{section.1.A.4}% 92
-\BOOKMARK [1][-]{section.1.A.5}{CombinedEdgeGraph}{Appendix.1.A}% 93
-\BOOKMARK [2][-]{subsection.1.A.5.1}{Requirements}{section.1.A.5}% 94
-\BOOKMARK [2][-]{subsection.1.A.5.2}{Types}{section.1.A.5}% 95
-\BOOKMARK [2][-]{subsection.1.A.5.3}{Methods and Operators}{section.1.A.5}% 96
-\BOOKMARK [0][-]{chapter*.24}{List of Figures}{}% 97
-\BOOKMARK [0][-]{chapter*.25}{Bibliography}{}% 98
+\BOOKMARK [2][-]{subsection.7.1.2}{Local Iteration}{section.7.1}% 61
+\BOOKMARK [2][-]{subsection.7.1.3}{Global Iteration}{section.7.1}% 62
+\BOOKMARK [2][-]{subsection.7.1.4}{Memory Space Synchronization}{section.7.1}% 63
+\BOOKMARK [1][-]{section.7.2}{Case Studies}{chapter.7}% 64
+\BOOKMARK [2][-]{subsection.7.2.1}{Graph Setup}{section.7.2}% 65
+\BOOKMARK [2][-]{subsection.7.2.2}{Input Data}{section.7.2}% 66
+\BOOKMARK [2][-]{subsection.7.2.3}{Experimental Results \(Connected Components\)}{section.7.2}% 67
+\BOOKMARK [2][-]{subsection.7.2.4}{Experimental Results \(Minimum Spanning Tree\)}{section.7.2}% 68
+\BOOKMARK [2][-]{subsection.7.2.5}{Result Assessment}{section.7.2}% 69
+\BOOKMARK [2][-]{subsection.7.2.6}{Programming Assessment}{section.7.2}% 70
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 71
+\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}% 72
+\BOOKMARK [1][-]{section.8.2}{Assessment}{chapter.8}% 73
+\BOOKMARK [1][-]{section.8.3}{Outlook}{chapter.8}% 74
+\BOOKMARK [0][-]{section*.18}{Appendices}{}% 75
+\BOOKMARK [0][-]{Appendix.1.A}{Graph Container Concepts}{}% 76
+\BOOKMARK [1][-]{section.1.A.1}{Graph}{Appendix.1.A}% 77
+\BOOKMARK [2][-]{subsection.1.A.1.1}{Requirements}{section.1.A.1}% 78
+\BOOKMARK [2][-]{subsection.1.A.1.2}{Types}{section.1.A.1}% 79
+\BOOKMARK [2][-]{subsection.1.A.1.3}{Methods and Operators}{section.1.A.1}% 80
+\BOOKMARK [1][-]{section.1.A.2}{DynamicGraph}{Appendix.1.A}% 81
+\BOOKMARK [2][-]{subsection.1.A.2.1}{Requirements}{section.1.A.2}% 82
+\BOOKMARK [2][-]{subsection.1.A.2.2}{Methods and Operators}{section.1.A.2}% 83
+\BOOKMARK [1][-]{section.1.A.3}{AttributedGraph}{Appendix.1.A}% 84
+\BOOKMARK [2][-]{subsection.1.A.3.1}{Requirements}{section.1.A.3}% 85
+\BOOKMARK [2][-]{subsection.1.A.3.2}{Types}{section.1.A.3}% 86
+\BOOKMARK [2][-]{subsection.1.A.3.3}{Methods and Operators}{section.1.A.3}% 87
+\BOOKMARK [1][-]{section.1.A.4}{DuplexGraph}{Appendix.1.A}% 88
+\BOOKMARK [2][-]{subsection.1.A.4.1}{Requirements}{section.1.A.4}% 89
+\BOOKMARK [2][-]{subsection.1.A.4.2}{Types}{section.1.A.4}% 90
+\BOOKMARK [2][-]{subsection.1.A.4.3}{Methods and Operators}{section.1.A.4}% 91
+\BOOKMARK [1][-]{section.1.A.5}{CombinedEdgeGraph}{Appendix.1.A}% 92
+\BOOKMARK [2][-]{subsection.1.A.5.1}{Requirements}{section.1.A.5}% 93
+\BOOKMARK [2][-]{subsection.1.A.5.2}{Types}{section.1.A.5}% 94
+\BOOKMARK [2][-]{subsection.1.A.5.3}{Methods and Operators}{section.1.A.5}% 95
+\BOOKMARK [0][-]{chapter*.24}{List of Figures}{}% 96
+\BOOKMARK [0][-]{chapter*.25}{Bibliography}{}% 97
