@@ -212,7 +212,7 @@ Iterator it;
 \Cref{op_overloading_code} shows a class \texttt{Iterator} with an overloaded version of the pre-increment operator. The operator can be directly applied to an object of \texttt{Iterator} incrementing the \texttt{position} member.
 
 \subsubsection{Static vs. Runtime Polymorphism}
-In object-oriented programming languages, polymorphism allows multiple types responding to the same calls with the caller being agnostic of the actual type it is calling. C++ offers two kinds of polymorphism: \textit{static} and \textit{runtime}. The difference lies in the way types are bound. \textit{Static polymorphism} can be completely resolved at compile time, while types in \textit{runtime polymorphism} have to be resolved during the runtime of a program. 
+In polymorphic programming languages like C++, values and variables may have more than one type \cite{polymorphism}. C++ offers two kinds of polymorphism: \textit{static} and \textit{runtime}. The difference lies in the way types are bound. \textit{Static polymorphism} can be completely resolved at compile time, while types in \textit{runtime polymorphism} have to be resolved during the runtime of a program. 
 
 In runtime polymorphism, methods of a derived class are called with a pointer of the base class by using \textit{virtual functions} of the base class. A call to such a virtual function requires resolving which concrete derived class the pointer of the base class refers to during runtime. This is achieved by storing a \textit{vtable} for each base class in memory and linking to this \textit{vtable} with a pointer from all related objects. The runtime can then lookup the address of the desired class's method. 
 

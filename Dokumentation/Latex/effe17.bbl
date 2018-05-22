@@ -89,6 +89,14 @@
 \newblock The MIT Press, 2009. --
 \newblock ISBN 0262033844, 9780262033848
 
+\bibitem[CW85]{polymorphism}
+\textsc{Cardelli}, Luca ; \textsc{Wegner}, Peter:
+\newblock On Understanding Types, Data Abstraction, and Polymorphism.
+\newblock {In: }\emph{ACM Comput. Surv.} 17 (1985), Dezember, Nr. 4, 471--523.
+\newblock \url{http://dx.doi.org/10.1145/6041.6042}. --
+\newblock DOI 10.1145/6041.6042. --
+\newblock ISSN 0360--0300
+
 \bibitem[CZF04]{rmat}
 \textsc{Chakrabarti}, Deepayan ; \textsc{Zhan}, Yiping  ; \textsc{Faloutsos},
   Christos:
